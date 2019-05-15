@@ -1,0 +1,7 @@
+<scroll-view scroll-x scroll-with-animation scroll-left="{{scrollLeft}}" class='catetory-nav-scroll catetory-nav-scroll_wrapper'>
+  <view class='catetory-nav-scroll__inner'>
+      <view class='catetory-nav flex flex_v_center' catchtap='navSwitch'>
+          <view wx:for="{{navArr}}" data-index="{{index}}" wx:key="{{item.id}}" class='catetory-nav__item {{current === index ? "catetory-nav__item_active" : ""}}'>{{item.title || item}}</view>
+      </view>
+  </view>
+</scroll-view>

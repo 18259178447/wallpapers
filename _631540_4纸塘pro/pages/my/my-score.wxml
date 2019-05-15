@@ -1,0 +1,63 @@
+<view class="container _11c29a8">
+    <view class="navbar-container _11c29a8">
+        <view style="background:{{$navbar$color}};height:{{$navbar$height}};width:100%"></view>
+        <view style="height: 46px;line-height:46px;background:{{$navbar$color}}">
+            <view class="navbar-title-wrap" wx:if="{{$navbar$title}}">
+                <view catchtap="$navbar$back" class="back"></view>
+                <view class="content">{{$navbar$title}}</view>
+                <view class="last"></view>
+            </view>
+            <view wx:else></view>
+        </view>
+    </view>
+    <view style="height:{{$navbar$marginHeight}}px;width:100%;" wx:if="{{$navbar$showPadding}}"></view>
+    <view class="score-info _11c29a8" url="/pages/my/my-score">
+        <image class="bg _11c29a8" src="/assets/imgs/score_in_bg.png"></image>
+        <view class="_11c29a8">{{user.score}}</view>
+        <view class="_11c29a8" style="font-size:30rpx;color:rgba(24,31,44,0.6);padding-bottom:20rpx;">当前积分</view>
+    </view>
+    <view class="tabbar _11c29a8">
+        <view bindtap="selected" class="tab-item {{selectedTab==0?'active':''}} _11c29a8" data-wpyselected-a="0">积分记录</view>
+        <view bindtap="selected" class="tab-item {{selectedTab==1?'active':''}} _11c29a8" data-wpyselected-a="1" style="text-align:right">积分说明</view>
+    </view>
+    <view class="help _11c29a8" wx:if="{{selectedTab==1}}">
+        <view class="list-header-container _11c29a8">
+            <view class="list-header-title" style="font-size:{{$header1$fontSize}}">
+      {{$header1$title}}
+      <text class="list-header-sub-title" wx:if="{{$header1$subTitle}}">/{{$header1$subTitle}}</text>
+            </view>
+            <view catchtap="$header1$itemTap" class="list-header-trail" wx:if="{{$header1$content}}">{{$header1$content}}</view>
+        </view>
+        <view class="help-content _11c29a8">
+        1. 上传并审核通过一张壁纸增加1积分
+      </view>
+        <view class="list-header-container _11c29a8">
+            <view class="list-header-title" style="font-size:{{$header2$fontSize}}">
+      {{$header2$title}}
+      <text class="list-header-sub-title" wx:if="{{$header2$subTitle}}">/{{$header2$subTitle}}</text>
+            </view>
+            <view catchtap="$header2$itemTap" class="list-header-trail" wx:if="{{$header2$content}}">{{$header2$content}}</view>
+        </view>
+        <view class="help-content _11c29a8">1. 积分可以用来额外下载2K以上的壁纸</view>
+        <view class="help-content _11c29a8">2. 积分规划中可以兑换商品</view>
+    </view>
+    <view class="_11c29a8" style="margin: 30rpx 0" wx:else>
+        <view class="item-container item-container-title _11c29a8" wx:if="{{totalPages>0}}">
+            <view class="sub-item-time _11c29a8">时间</view>
+            <view class="sub-item-score _11c29a8">积分</view>
+            <view class="sub-item-desc _11c29a8">说明</view>
+        </view>
+        <view class="item-container item-container-content _11c29a8" wx:for="{{records}}" wx:key="index">
+            <view class="sub-item-time _11c29a8">{{item.time}}</view>
+            <view class="sub-item-score _11c29a8">{{item.score>0?'+':''}}<text class="_11c29a8">{{item.score}}</text>
+            </view>
+            <view class="sub-item-desc _11c29a8">{{item.desc}}</view>
+        </view>
+        <view class="empty _7641959 _11c29a8" wx:if="{{totalPages==0}}">
+            <image class="_7641959" mode="aspectFill" src="/assets/imgs/empty.png"></image>
+            <view class="_7641959">
+      空空如也～
+    </view>
+        </view>
+    </view>
+</view>

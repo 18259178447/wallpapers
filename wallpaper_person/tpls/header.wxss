@@ -1,0 +1,245 @@
+
+/* 自定义导航头 */
+
+.header {
+  padding-bottom: 12rpx;
+  background-color: #fff;
+}
+
+.header.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  pointer-events: none;
+}
+
+.header.transparent {
+  background-color: transparent;
+}
+.header.pb0{
+  padding-bottom: 0
+}
+.header .header-body {
+  min-height: 74rpx;
+  position: relative;
+  pointer-events: auto;
+}
+
+.header .capsule {
+  width: 200rpx;
+}
+
+.android .header-statusBar, .iPhone5s .header-statusBar,
+.iPhone5 .header-statusBar {
+  margin-bottom: 14rpx;
+}
+
+.android .capsule, .iPhone5s .capsule, .iPhone5 .capsule {
+  width: 250rpx;
+}
+
+/* 12+74 */
+
+.header-placehold {
+  padding-bottom: 86rpx;
+}
+
+.header-placehold.bothHeader{
+  padding-bottom: 176rpx;
+}
+
+.back-btn {
+  width: 86rpx;
+  height: 74rpx;
+  background: url(https://minibizhi.313515.com/BiZhiStatic/icon-all-back-black.svg) center center no-repeat;
+  background-size: 28rpx 43rpx;
+}
+
+.back-btn.white {
+  background-image: url(https://minibizhi.313515.com/BiZhiStatic/icon-all-back-white.svg);
+}
+
+.home.back-btn {
+  background-image: url(https://minibizhi.313515.com/BiZhiStatic/icon-bottom-nav-home.svg);
+  background-size: 50rpx 50rpx;
+}
+
+/* 导航模板之 返回(主页)-标题 */
+
+.back-title .title {
+  font-size: 38rpx;
+  color: #3c3d40;
+  text-align: center;
+  font-weight: 500;
+  line-height: 74rpx;
+}
+
+/* 导航模板之 分享-搜索 */
+
+.back-search-btn .share {
+  padding-top: 46rpx;
+  background: url(https://minibizhi.313515.com/BiZhiStatic/icon-bottom-nav-share.svg) center 0 no-repeat;
+  background-size: 46rpx 46rpx;
+  box-sizing: border-box;
+  font-size: 22rpx;
+  line-height: 28rpx;
+  width: 100rpx;
+  text-align: center;
+}
+
+.back-search-btn .search-btn {
+  font-size: 28rpx;
+  display: flex;
+  height: 66rpx;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  background: #f2f2f2;
+  border-radius: 52rpx;
+}
+
+.back-search-btn .search-btn .icon {
+  width: 36rpx;
+  height: 36rpx;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAfCAMAAACxiD++AAAARVBMVEUAAABqeINwhI9reINreoWams1reYVreYNqeYZseoVreYNreYRqeIRqeYRreYRreoVteYZtfYdueoVreYRreoOAgL9qeINeRicsAAAAFnRSTlMA2QzkIwKTsVNJ8+zHvoFkPzEWz2sElMs+iwAAAL5JREFUKM+Fk0kOgzAMRR1nIpABaPvvf9RKbZqCsPDbZOEnxSMNtlrMPJtSN5KYDAZmuoRdBmxIjtmlYIHszvF1gW2eOr5ZLOspDkSmAxyBg+EWBE8nfMDy/yUjjvgwIvLIH5bpAlv8ajFoJNBgen9gvSR4i2/HKgKJBNTPW5BkIaH0FJwsuJ7EDJYFxqwK6hdqkmqZaqO0VqvD0satLoy2curSPuN+v/YRZr89nP0xDPH0hiEzDNaMiW7h9HoDyqYNez1DzTYAAAAASUVORK5CYII=) 0 0 no-repeat;
+  background-size: 100% 100%;
+  margin-right: 12rpx;
+}
+.back-search-btn .search-btn .reset-btn{
+    width: 72rpx;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    background: url(https://minibizhi.313515.com/BiZhiStatic/close2.svg) center center no-repeat;
+    background-size: 28rpx 28rpx;
+} 
+.back-search-btn .search-btn text {
+  font-size: 28rpx;
+  color: #9b9b9b;
+  display: block;
+}
+
+.back-search-btn .search-btn input{
+  height:100%;
+  width:100%;
+  vertical-align:middle;
+  box-sizing:border-box;
+}
+
+/* 导航模板之 返回（主页）-导航 */
+
+.back-nav-list {
+  justify-content: space-around;
+  padding: 0 200rpx 0 160rpx;
+}
+
+.android .back-nav-list {
+  padding-right: 240rpx;
+}
+
+.back-nav-list text {
+  font-size: 32rpx;
+  color: #6a7883;
+  line-height: 60rpx;
+  display: block;
+  height: 60rpx;
+}
+
+.back-nav-list text.active {
+  color: #239efe;
+  font-size: 36rpx;
+  border-bottom: 4rpx solid #239efe;
+  font-weight: 500;
+  box-sizing: border-box;
+}
+
+.android .back-nav-list text.active {
+  font-weight: 600;
+  border-bottom: 4rpx solid #239efe;
+}
+
+/* 导航模板之(返回 分享)-搜索 - 滚动导航 双导航 */
+.back-search-scroll-nav{
+  position: relative;
+}
+.nav-view-toggle{
+  width: 104rpx;
+  height: 96rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 2;
+}
+.nav-view-toggle::before{
+  content: '';
+  width: 14rpx;
+  height: 14rpx;
+  border:2rpx solid #6A7883; 
+  border-bottom-color: transparent; 
+  border-left-color: transparent; 
+  display: block;
+  top: 58%;
+  left:50%;
+  border-radius: 3rpx;
+  position: absolute;
+  margin-left: -8rpx;
+  margin-top: -8rpx;
+  transform-origin: 75% 25%;
+  transform:rotate(135deg) translateZ(0);   
+  transition: all 0.3s;
+   /* background-color: red  */
+}
+.nav-view-toggle.on::before{
+  transform:rotate(-45deg) translateZ(0);
+}
+.nav-view-content{
+  transform:translate3d(0,-100%,0);
+  transition:all 0.3s;
+}
+.nav-view-content.on{
+  transform:translate3d(0,0,0);
+}
+.nav-view-content .top{
+  background-color: #fff;
+  height: 96rpx;
+  font-size: 30rpx;
+  color: #6A7883;
+  line-height: 96rpx;
+  padding-left: 40rpx;
+  border-bottom:1rpx solid #e8e8e8;
+}
+.nav-view-content .bottom{
+  background-color: #fff;
+  padding-left:44rpx;
+  overflow:scroll;
+  align-content: flex-start;
+}
+.nav-view-content .bottom view{
+  margin-right:60rpx;
+  margin-top:26rpx;
+}
+.nav-view-content .bottom view:nth-child(4n){
+  margin-right:0
+}
+.nav-view-content .bottom image{
+  width:120rpx;
+  height:120rpx;
+  pointer-events: none;
+}
+.nav-view-content .bottom text{
+  font-size:26rpx;
+  color:#4C4C4C;
+  text-align:center;
+  width:120rpx;
+  line-height:60rpx;
+  height:60rpx;
+  padding:0 10rpx;
+  box-sizing:border-box;
+  display:block;
+  pointer-events: none;
+}

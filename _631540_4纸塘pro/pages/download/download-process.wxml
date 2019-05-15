@@ -1,0 +1,54 @@
+<view class="_e918845" wx:if="{{state=='none'}}">
+    <view class="process _416eb3d _e918845" wx:if="{{$countdown$process>0&&$countdown$type=='per'}}">
+        <text class="_416eb3d" style="font-size:80rpx;font-weight:bold;">{{$countdown$process}}</text>%
+  </view>
+    <view class="process _416eb3d" wx:else>
+        <text class="_416eb3d" style="font-size:80rpx;font-weight:bold;" wx:if="{{$countdown$process<$countdown$total}}">{{$countdown$process}}/{{$countdown$total}}</text>
+        <view class="complete _416eb3d" wx:else>
+            <view class="ok _416eb3d"></view>
+        </view>
+    </view>
+    <canvas canvasId="countdown" class="canvas _416eb3d" style="with:300px;height:278px;margin:auto"></canvas>
+    <view class="tip-text _e918845">努力下载中,请稍后..</view>.
+    
+  </view>
+<view class="_e918845" style="text-align:center;padding:30rpx" wx:if="{{state=='success'}}">
+    <view catchtap="close" class="close _e918845" data-wpyclose-a="">
+        <image class="_e918845" src="/assets/imgs/close.png"></image>
+    </view>
+    <image class="icon-tip _e918845" src="/assets/imgs/download_success.png"></image>
+    <view class="tip-text _e918845">下载成功</view>
+    <view class="other-title _e918845">
+        <view class="_e918845">你还可以</view>
+    </view>
+    <view class="other-func _e918845">
+        <button class="btn-share func-item _e918845" openType="share">
+            <image class="_e918845" src="/assets/imgs/d_share.png"></image>
+            <view class="_e918845">告诉好友</view>
+        </button>
+        <button bindtap="pay" class="btn-share func-item _e918845">
+            <image class="_e918845" src="/assets/imgs/d_money.png"></image>
+            <view class="_e918845">打赏分享者</view>
+        </button>
+        <button bindtap="upload" class="btn-share func-item _e918845">
+            <image class="_e918845" src="/assets/imgs/d_upload.png"></image>
+            <view class="_e918845">上传壁纸</view>
+        </button>
+    </view>
+</view>
+<view class="_e918845" style="text-align:center;padding:30rpx" wx:if="{{state=='fail'}}">
+    <view catchtap="close" class="close _e918845" data-wpyclose-a="">
+        <image class="_e918845" src="/assets/imgs/close.png"></image>
+    </view>
+    <image class="icon-tip _e918845" src="/assets/imgs/download_fail.png"></image>
+    <view class="tip-text _e918845">下载失败</view>
+    <button bindtap="reDownload" class="btn-fail _e918845" data-wpyredownload-a="">重新下载</button>
+</view>
+<view class="_e918845" style="text-align:center;padding:30rpx" wx:if="{{state=='score'}}">
+    <view catchtap="close" class="close _e918845" data-wpyclose-a="">
+        <image class="_e918845" src="/assets/imgs/close.png"></image>
+    </view>
+    <image class="icon-tip _e918845" src="/assets/imgs/download_score.png" style="width:186rpx;height:186rpx;"></image>
+    <view class="tip-text _e918845" style="color:#666">您的积分不足，无法下载，您可以上传壁纸获或者下载2K壁纸</view>
+    <button bindtap="reDownload" class="btn-fail _e918845" data-wpyredownload-a="">朕知道了</button>
+</view>

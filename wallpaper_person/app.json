@@ -1,0 +1,67 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/my/my",
+    "pages/albumDetail/albumDetail",
+    "pages/category/category",
+    "pages/categoryList/categoryList",
+    "pages/preview/preview",
+    "pages/search/search",
+    "pages/new/new",
+    "pages/album/album",
+    "pages/download/download",
+    "pages/collect/collect"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wx7d5c5308d07a1559"
+  ],
+  "usingComponents": {
+    "ad-fn": "/components/myAd/ad-fn/ad-fn",
+    "ladloop": "/components/myAd/ladloop/ladloop"
+  },
+  "tabBar": {
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "selectedColor": "#239EFE",
+    "color": "#6A7883",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "精选",
+        "iconPath": "tabIcons/tab-jx-on.png",
+        "selectedIconPath": "tabIcons/tab-jx-active.png"
+      },
+      {
+        "pagePath": "pages/new/new",
+        "text": "最新",
+        "iconPath": "tabIcons/tab-zx-on.png",
+        "selectedIconPath": "tabIcons/tab-zx-active.png"
+      },
+      {
+        "pagePath": "pages/album/album",
+        "text": "专辑",
+        "iconPath": "tabIcons/tab-st-on.png",
+        "selectedIconPath": "tabIcons/tab-st-active.png"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "text": "分类",
+        "iconPath": "tabIcons/tab-fl-on.png",
+        "selectedIconPath": "tabIcons/tab-fl-active.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "tabIcons/tab-my-on.png",
+        "selectedIconPath": "tabIcons/tab-my-active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

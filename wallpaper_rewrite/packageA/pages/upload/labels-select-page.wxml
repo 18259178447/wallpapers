@@ -1,0 +1,7 @@
+<view class='labels-select-page select-page page'>
+  <view class='title'>具体标签</view>
+  <view class='labels-box' catchtap='selectSubCategory'>
+    <view wx:for="{{subCategory}}" wx:key="{{index}}" data-index="{{index}}" class='{{uploadCommon.isSelect(subCategoryIndexs,index) ? "blue" : ""}}' >{{item}}</view>
+  </view>
+  <view class='complete' data-pageindex="1" catchtap='changePage' >完成</view>
+</view>

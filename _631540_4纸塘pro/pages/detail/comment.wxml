@@ -1,0 +1,35 @@
+<view class="container _5e4c9de">
+    <view class="navbar-container _5e4c9de">
+        <view style="background:{{$navbar$color}};height:{{$navbar$height}};width:100%"></view>
+        <view style="height: 46px;line-height:46px;background:{{$navbar$color}}">
+            <view class="navbar-title-wrap" wx:if="{{$navbar$title}}">
+                <view catchtap="$navbar$back" class="back"></view>
+                <view class="content">{{$navbar$title}}</view>
+                <view class="last"></view>
+            </view>
+            <view wx:else></view>
+        </view>
+    </view>
+    <view style="height:{{$navbar$marginHeight}}px;width:100%;" wx:if="{{$navbar$showPadding}}"></view>
+    <view class="comment-list-container _e3cf4be _5e4c9de">
+        <view class="comment-item-container _e3cf4be" wx:for="{{$commentList$comments}}" wx:for-index="$commentList$index" wx:for-item="$commentList$comment" wx:key="$commentList$index">
+            <view class="item-author _e3cf4be">
+                <image class="avatar _e3cf4be" src="{{$commentList$comment.avatar}}"></image>
+                <view class="author _e3cf4be">
+            {{$commentList$comment.author}}
+          </view>
+                <image bindtap="$commentList$delete" class="remove _e3cf4be" data-wpydelete-a="{{$commentList$index}}" src="/assets/imgs/delete.png" wx:if="{{$commentList$comment.isSelf}}"></image>
+            </view>
+            <view class="item-content _e3cf4be">
+                <view class="comment-content _e3cf4be">{{$commentList$comment.content}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="_5e4c9de" style="text-align:center;" wx:if="{{totalPages>1&&index>=totalPages}}">别扯了，我也是有底线的~</view>
+    <view class="_5e4c9de" style="padding-bottom: 120rpx"></view>
+    <view class="_5e4c9de" style="text-align:center;color:rgba(255,255,255,0.5);" wx:if="{{totalPages==0}}">还没有说说，快来抢沙发吧～</view>
+    <view class="comment-input _5e4c9de">
+        <input autoFocus="{{autoFocus}}" bindconfirm="submit" bindinput="input" class="_5e4c9de" confirmType="done" focus="{{autoFocus}}" maxlength="500" placeholder="说点什么吧..." placeholderClass="placeholder" type="text" value="{{initValue}}"></input>
+        <view catchtap="submit" class="btn-submit _5e4c9de">发表</view>
+    </view>
+</view>

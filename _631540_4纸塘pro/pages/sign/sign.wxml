@@ -1,0 +1,27 @@
+<view bindtap="back" class="custom-navbar-container _a175f43" style="top:{{statusHeight}}px;">
+    <view class="back _a175f43"></view>
+</view>
+<swiper bindchange="change" circular="{{false}}" class="_a175f43">
+    <swiper-item class="_a175f43" wx:for="{{wallpapers}}" wx:key="id">
+        <view class="imagesize _a175f43" style="background-image:url({{item.url}})">
+            <view class="mask _a175f43"></view>
+            <view class="date _a175f43">
+                <view class="day _a175f43">
+                    <text class="_a175f43" id="date-day{{index}}">{{item.day}}</text>
+                </view>
+                <view class="other _a175f43">
+                    <text class="_a175f43" id="date-other{{index}}">{{item.month}}.{{item.year}}</text>
+                </view>
+            </view>
+            <view class="content _a175f43">
+                <text class="_a175f43" id="content{{index}}">{{item.content}}</text>
+            </view>
+            <view class="author _a175f43">
+                <text class="_a175f43" id="author{{index}}">{{item.author}}</text>
+            </view>
+        </view>
+    </swiper-item>
+</swiper>
+<view class="canvas-box _a175f43" hidden="{{hidden}}">
+    <canvas canvasId="todayImage" class="_a175f43" style="width: {{width}}px;height: {{height}}px;"></canvas>
+</view>

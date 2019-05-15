@@ -1,0 +1,30 @@
+@import "../../__wuBaseWxss__/7.wxss";
+
+.tip._6a33c84 {
+    font-size: 30rpx;
+    color: rgba(255,255,255,0.6);
+    padding: 46rpx 30rpx;
+}
+
+.image._6a33c84 {
+    width: 560rpx;
+    height: 560rpx;
+    margin: auto;
+}
+
+.no-pay._6a33c84 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1a1a1a;
+}
+
+.btn-upload._6a33c84 {
+    width: 400rpx;
+    height: 72rpx;
+    background: linear-gradient(90deg,#ffe600 0%,#ffd11d 100%);
+    border-radius: 4rpx;
+    color: #333;
+    font-size: 30rpx;
+    margin: 100rpx auto;
+}

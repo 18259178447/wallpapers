@@ -1,0 +1,11 @@
+<view class="hot-album" wx:if="{{hotAlbum}}">
+  <navigator url="/packageA/pages/pageLists/pageLists?pagename=albumList" hover-class="none" class="module-title">热门专辑</navigator>
+  <view class="album-view">
+    <navigator wx:for="{{hotAlbum}}" url="{{item.url}}" hover-class="none" class="hot-btn" wx:key="{{index}}">
+      <image src="{{item.ImgUrl}}" class="album-item" mode="widthFix" />
+      <text wx:if="{{item.AlbumType === 3}}">话题</text>
+      <text wx:if="{{item.AlbumType === 4}}" class='act'>活动</text>
+      <view class="line-e">{{item.AlbumName}}</view>
+    </navigator>
+  </view>
+</view>

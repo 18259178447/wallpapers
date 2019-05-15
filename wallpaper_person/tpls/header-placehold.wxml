@@ -1,0 +1,3 @@
+<view class='header-placehold {{header.placeholdClass}}'>
+    <view class='header-statusBar' style='height:{{header.statusBarHeight}}px'></view>
+</view>

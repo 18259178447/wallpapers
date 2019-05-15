@@ -1,0 +1,6 @@
+<button wx:if="{{hasUserInfo}}" class="_class" catchtap='tapHandle' hover-class='none' disabled='{{disabled}}'>
+  <slot></slot>
+</button>
+<button wx:else bindgetuserinfo="login" open-type="getUserInfo" class="_class" hover-class='none' disabled='{{disabled}}'>
+  <slot></slot>
+</button>

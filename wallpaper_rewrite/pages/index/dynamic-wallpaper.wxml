@@ -1,0 +1,12 @@
+<view class='dynamic-wallpaper' wx:if="{{dynamicWallpaper}}">
+  <navigator class='module-title dynamic-wallpaper-more' hover-class='none' url="/packageA/pages/pageList/pageList?pagename=dynamicWallpaper">
+    动态视频
+  </navigator>
+  <view class='dynamic-wallpaper-view' bindtap='videoPreview'>
+    <image class='dynamic-image' src='{{item.ThumbImage}}' wx:for="{{dynamicWallpaper}}" wx:key="{{index}}" data-index="{{index}}" ></image>
+  </view>
+  <view class="change-data" catchtap="changeData" data-type="3">
+    <image src='https://minibizhi.313515.com/BiZhiStatic/change-data.svg'></image>
+    <text>换一换</text>
+  </view>
+</view>

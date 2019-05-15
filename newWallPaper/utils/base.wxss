@@ -1,0 +1,26 @@
+@import "/css_blocks/ellipsis.wxss";
+@import "/css_blocks/flex.wxss";
+@import "/css_blocks/loading-text.wxss";
+
+
+
+.height-100vh,.page{
+  height: 100vh;
+}
+.full-height{
+  height: 100%;
+}
+.defalut{
+  background-color: #3a3a46;
+}
+.pen{
+  pointer-events: none;
+}
+.pea{
+  pointer-events: auto;
+}
+
+
+.theme-bgcolor{
+  background: #181824
+}

@@ -1,0 +1,21 @@
+.process._416eb3d {
+    position: absolute;
+    font-size: 40rpx;
+    color: #ffce00;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    top: 120px;
+}
+
+.complete .ok._416eb3d {
+    width: 53px;
+    height: 20px;
+    border-image: linear-gradient(180deg,#ffe500,#ffcb00) 8 8;
+    border-bottom: 8px solid;
+    border-left: 8px solid;
+    border-top: 0 solid;
+    border-right: 0 solid;
+    margin: 20px auto;
+    transform: rotate(-45deg);
+}

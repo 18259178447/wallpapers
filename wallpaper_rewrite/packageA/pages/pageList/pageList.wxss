@@ -1,0 +1,174 @@
+/* packageA/pages/pageList/pageList.wxss */
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+/* 赞我的 评论我的 列表 */
+
+.praise-comment-my-list .list-item {
+  padding: 0 0 40rpx 30rpx;
+  position: relative;
+}
+
+.praise-comment-my-list .praise-my-list::after {
+  content: '+1';
+  display: block;
+  position: absolute;
+  font-size: 24rpx;
+  color: #2e93c4;
+  line-height: 33rpx;
+  height: 33rpx;
+  width: 80rpx;
+  top: 70rpx;
+  right: 0;
+  background: url('https://minibizhi.313515.com/svg/thumb-up-active.svg') 0 center no-repeat;
+  background-size: 31rpx 33rpx;
+  padding-left: 36rpx;
+  pointer-events: none;
+}
+
+.praise-comment-my-list .content {
+  margin: 0 30rpx 0 96rpx;
+}
+
+.praise-comment-my-list .target-content {
+  padding: 10rpx;
+  background: #f7f7f7;
+}
+
+.praise-comment-my-list .comment-content {
+  font-size: 28rpx;
+  color: #4c4c4c;
+  line-height: 1.1;
+  margin-bottom: 30rpx;
+}
+
+.praise-comment-my-list .target-content image {
+  width: 100rpx;
+  height: 178rpx;
+  display: block;
+  margin-right: 10rpx;
+}
+
+.praise-comment-my-list .target-content text {
+  font-size: 28rpx;
+  color: #949494;
+  line-height: 40rpx;
+  display: block;
+  flex: 1;
+  padding: 10rpx;
+}
+
+.bottom-border {
+  position: relative;
+}
+
+.bottom-border::before {
+  display: block;
+  content: '';
+  width: 624rpx;
+  height: 0;
+  border-bottom: 1rpx solid #e6e6e6;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+
+/* 关注我的 */
+
+.attention-my-list .list-item{
+  padding:0 30rpx;
+}
+.user-view .attention-text{
+  font-size:28rpx;
+  color:#949494;
+  margin-top:2rpx;
+  margin-left: 10rpx;
+  flex: 1;
+  line-height: 1.4
+}
+
+/* 粉丝 及 已关注列表 */
+.fan-attention-list .list-item{
+  padding: 0 30rpx;
+}
+
+
+/* 聊天背景列表 */
+
+.chat-bg-list .data-list-view>image{
+  width:354rpx;
+  height:630rpx;
+}
+
+.chat-bg-list .chat-mask{
+  position: absolute;
+  left: 0;
+  top: 80rpx;
+  height: 94rpx;
+  width:354rpx;
+
+}
+
+/* 主题套图 天生一对 */
+
+.pair-wallpaper-list .pair-download{
+  width: 100%;
+  height: 90rpx;
+  padding-bottom: 24rpx;
+  border-bottom: 1rpx solid #E6E6E6;
+  margin-bottom: 40rpx;
+}
+.pair-wallpaper-list .pair-download .title{
+  font-size: 28rpx;
+  color: #333333;
+  letter-spacing: 0.49rpx;
+  line-height: 1.2;
+}
+.pair-wallpaper-list .pair-download .pair-btn{
+  width: 148rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 26rpx;
+  color: #fff;
+  background: #239EFE;
+  border-radius: 40rpx;
+  margin-right: 10rpx;
+  text-align: center
+}
+.pair-wallpaper-list image{
+  width:354rpx;
+  height:630rpx;
+}
+.iPhoneX .pair-wallpaper-list image{
+  height:766.5rpx;
+}
+
+
+/* 可删除上传壁纸列表 */
+
+.examine-status{
+  line-height: 60rpx;
+  height: 60rpx;
+  font-size: 28rpx;
+  color: #4C4C4C;
+  text-align: left;
+  margin: -16rpx 0 16rpx 0;
+}
+
+.examine-status.success{
+  padding-left: 30rpx;
+  color: #239EFE;
+  background: url(https://testminibizhi.313515.com/BiZhiStatic/uploadList-content-verify-success.svg) left center no-repeat;
+  background-size: 22rpx 22rpx;
+}
+.examine-status.fail{
+  padding-left: 30rpx;
+  color: #FF6168;
+  background: url(https://testminibizhi.313515.com/BiZhiStatic/uploadList-content-verify-failed.svg) left center no-repeat;
+  background-size: 22rpx 22rpx;
+}

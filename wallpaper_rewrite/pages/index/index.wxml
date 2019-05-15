@@ -1,0 +1,38 @@
+<import src="../../tpls/base.wxml" />
+<import src="../../tpls/mul-fn-btn.wxml" />
+<view class='container {{supperClass}}'>
+  <view class='body'>
+    <scroll-view scroll-y bindscrolltolower="onReachBottom_" lower-threshold="150" enable-back-to-top scroll-top="{{toScollTop}}" bindscroll="onPageScroll_" class='index-scroll-view'>
+
+      <include src="../../tpls/header-placehold.wxml" />
+      <include src="swiper.wxml"/>
+      <view class="top-nav-container flex" wx:if="{{nav}}" >
+        <mul-fn-btn wx:for="{{nav}}" wx:key="{{index}}" btn-data="{{item}}" class="top-nav-btn">
+          <image src="{{item.ProductIcon}}" mode="aspectFit" class="icon"></image>
+          <text class='line-e'>{{item.ProductName}}</text>
+        </mul-fn-btn>
+      </view>      
+      <block wx:for="{{muduleSort}}" wx:key="{{item}}">
+      <include src="hot-album.wxml" wx:if="{{item === 'hot-album'}}"/>
+      <include src="hot-dynamic.wxml" wx:elif="{{item === 'hot-dynamic'}}" />
+      <include src="author-column.wxml" wx:elif="{{item === 'author-column'}}"/>
+      <include src="dynamic-wallpaper.wxml" wx:elif="{{item === 'dynamic-wallpaper'}}"/>
+      </block>
+
+      <view class='follow-nav-container'>
+        <view class='follow-nav-wrap {{isCrossPos ? "crossFixed" : ""}}'>
+            <block wx:if="{{isCrossPos}}">
+            <include src="../../tpls/header-placehold.wxml" />
+            </block>
+            <include src="../../tpls/list-scroll-nav.wxml" />
+        </view>
+      </view>
+      
+      <view class='list-container {{listNav[currentIndex].diffPos ? "row2" : ""}}'>
+        <template is="base-wallpaper-list" data="{{baseData:baseDatas[currentIndex],reTry}}" />
+      </view>
+
+    </scroll-view>
+  </view>
+  <include src="../../tpls/public.wxml" />
+</view>

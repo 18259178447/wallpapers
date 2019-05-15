@@ -1,0 +1,10 @@
+<import src="base.wxml" />
+<swiper duration="300" class="swiper-list" bindchange="change" current="{{currentIndex}}">
+  <swiper-item wx:for="{{listNav}}" wx:key="{{index}}" class="{{item.listClass || ''}}">
+    <scroll-view scroll-y bindscrolltolower="onReachBottom_" lower-threshold="150" enable-back-to-top scroll-top="{{baseDatas[index].scrollTop}}" bindscroll="onPageScroll_">
+      <include src="header-placehold.wxml" />
+      <template wx:if="{{baseDatas[index]}}" is="{{item.template || template}}" data="{{reTry,baseData:baseDatas[index],defaultImage:item.defaultImage || defaultImage,defaultText:item.defaultText || defaultText}}" />
+      <include src="footer-placehold.wxml" />
+    </scroll-view>
+  </swiper-item>
+</swiper> 

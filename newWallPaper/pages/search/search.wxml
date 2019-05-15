@@ -1,0 +1,42 @@
+<header-box fixed capsule _class="theme-bgcolor">
+  <view class="search">
+    <mini-icon type="back" bindtap='back'></mini-icon>
+    <view class='search__search-btn flex flex_v_center'>
+      <view class='search__search-icon pen'></view>
+      <input class='search__input flex__1' 
+        placeholder='搜索壁纸'
+        name="searchKey"
+        confirm-type="search"
+        focus="{{focus}}"
+        value='{{searchKey}}'
+        maxlength="30"
+        bindinput="inputHandle"
+        bindconfirm="confirmHandle"
+      ></input>
+      <view class='search-reset' bindtap='resetHandle' hidden='{{!showReset}}'></view>
+    </view>
+  </view>
+</header-box>
+
+<view class="page theme-bgcolor">
+  <header-box placehold></header-box>
+  <view class='search-keys' wx:if="{{historyKeys.length}}">
+     <view class='search-keys__name'>历史搜索</view>
+     <view class='search-keys__box flex flex_wrap' bindtap='event'>
+        <view class='search-keys__item' data-word="{{item}}" wx:for="{{historyKeys}}" wx:key="{{item}}" data-event="selectLabel">{{item}}</view>
+     </view>
+  </view>
+  <view class='search-keys'>
+     <view class='search-keys__name'>热门搜索</view>
+     <view class='search-keys__box flex flex_wrap' bindtap='event' data-event="selectLabel">
+        <view class='search-keys__item' data-word="{{item}}" wx:for="{{hotKeys}}" wx:key="{{item}}" data-event="selectLabel">{{item}}</view>
+     </view>
+  </view>
+
+  <view class='search-result theme-bgcolor' hidden='{{!showResult}}'>
+    <image-list id="image-list" placeholdHeader="84rpx">
+  
+    </image-list>
+  </view>
+
+</view>

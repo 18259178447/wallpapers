@@ -1,0 +1,14 @@
+<view class="comment-list-container _e3cf4be">
+    <view class="comment-item-container _e3cf4be" wx:for="{{comments}}" wx:for-item="comment" wx:key="index">
+        <view class="item-author _e3cf4be">
+            <image class="avatar _e3cf4be" src="{{comment.avatar}}"></image>
+            <view class="author _e3cf4be">
+            {{comment.author}}
+          </view>
+            <image bindtap="delete" class="remove _e3cf4be" data-wpydelete-a="{{index}}" src="/assets/imgs/delete.png" wx:if="{{comment.isSelf}}"></image>
+        </view>
+        <view class="item-content _e3cf4be">
+            <view class="comment-content _e3cf4be">{{comment.content}}</view>
+        </view>
+    </view>
+</view>

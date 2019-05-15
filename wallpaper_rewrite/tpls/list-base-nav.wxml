@@ -1,0 +1,3 @@
+<view class='list-base-nav flexV flex-nowrap' catchtap='navSwitch'>
+  <text class="nav-item {{currentIndex == index ? 'active' : ''}}" wx:for="{{listNav}}" wx:key="{{index}}" data-index="{{index}}">{{item.title}}</text>
+</view>

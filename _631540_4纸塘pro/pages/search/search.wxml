@@ -1,0 +1,30 @@
+<view class="container _6d7793a">
+    <view class="navbar-container _6d7793a">
+        <view style="background:{{$navbar$color}};height:{{$navbar$height}};width:100%"></view>
+        <view style="height: 46px;line-height:46px;background:{{$navbar$color}}">
+            <view class="navbar-title-wrap" wx:if="{{$navbar$title}}">
+                <view catchtap="$navbar$back" class="back"></view>
+                <view class="content">{{$navbar$title}}</view>
+                <view class="last"></view>
+            </view>
+            <view wx:else></view>
+        </view>
+    </view>
+    <view style="height:{{$navbar$marginHeight}}px;width:100%;" wx:if="{{$navbar$showPadding}}"></view>
+    <view class="search _6d7793a">
+        <image class="search-icon _6d7793a" lazyLoad="false" mode="scaleToFill" src="/assets/imgs/search.png"></image>
+        <input autoFocus bindconfirm="search" bindinput="input" class="_6d7793a" confirmType="search" maxlength="140" placeholder="请输入壁纸码搜索" placeholderClass="placeholder" type="text" value="{{searchValue}}"></input>
+        <image bindtap="clearContent" class="clear-icon _6d7793a" lazyLoad="false" mode="scaleToFill" src="/assets/imgs/clear.png" wx:if="{{searchValue}}"></image>
+    </view>
+    <view class="result _6d7793a" wx:if="{{search}}">
+        <image bindtap="goDetail" class="_6d7793a" lazyLoad="false" mode="aspectFill" src="{{result.url}}" wx:if="{{result}}"></image>
+        <view class="_6d7793a" wx:else>
+            <view class="empty _7641959 _6d7793a">
+                <image class="_7641959" mode="aspectFill" src="/assets/imgs/empty.png"></image>
+                <view class="_7641959">
+      暂无搜索结果
+    </view>
+            </view>
+        </view>
+    </view>
+</view>

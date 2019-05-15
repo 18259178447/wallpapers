@@ -1,0 +1,20 @@
+<view class='dynamic-wallpaper-container flexHV-C'>
+  <view class='dynamic-wallpaper-view' bindtap='previewImage'>
+    <swiper duration="300" class="preview-swiper" bindchange="swiperChange" current="{{current}}" circular="{{circular}}">
+      <swiper-item wx:for="{{imgs}}" wx:key="{{item.PicInfoID}}" class="flexHV">
+          <image src='{{item.ThumbImage}}' mode='widthFix' class='preview-image'>
+            <image src='{{item.Image}}' mode='widthFix'></image>
+          </image>
+          <image src='https://minibizhi.313515.com/BiZhiStatic/icon-all-dynamic-video.svg' class='video-btn'></image>
+          <view class='wifi-tip' wx:if="{{!isWifi}}">使用流量播放</view>
+      </swiper-item>
+    </swiper>
+  </view>
+  <navigator url="/packageA/pages/pageBase/pageBase?pagename=videoGuide" class='guide-btn' hover-class="none">动态视频设置壁纸教程</navigator>
+
+  <view class='preview-video flexHV {{isPlayVideo ? "playing" : ""}}'>
+    <video id="previewVideo" src="{{imgs[currentIndex].VideoUrl}}" objectFit="fill" show-center-play-btn="{{false}}" enable-progress-gesture="{{false}}" bindended='videoEnd' autoplay wx:if="{{isPlayVideo}}"></video>
+  </view>
+
+</view>
+

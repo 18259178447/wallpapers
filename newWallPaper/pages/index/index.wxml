@@ -1,0 +1,53 @@
+<!-- <image-list></image-list> -->
+<!-- <header-box placehold="144rpx"></header-box> -->
+
+<header-box fixed capsule _class="fixed-header">
+  <share-search></share-search>
+  <catetory-nav navArr="{{navArr}}" current="{{currentIndex}}" bindchange="navChanges"></catetory-nav>
+</header-box>
+
+<view class='page'>
+  <swiper duration="{{200}}" class="page-swiper full-height" current="{{currentIndex}}" bindchange="navChanges">
+    <swiper-item wx:for="{{navArr}}" wx:key="{{item.id}}">
+      <image-list id="image-list{{index}}" placeholdHeader="154rpx">
+        <block wx:if="{{index === 0}}">
+          <view class='module' wx:if="{{albums.length}}">
+            <view class='module__header flex flex_v_center'>
+              <view class='module__icon'></view>
+              <view class='module__title'> 推荐专题 </view>
+              <view class='module__more'>查看更多></view>
+            </view>
+            <view class='module__body'>
+              <scroll-x innerSwiper="208rpx">
+                <view class='module__image-box flex'>
+                  <image wx:for="{{albums}}" wx:key="{{item.id}}" class='module__image-item defalut module__image-item_size_354x188' src='{{item.ThumbImage}}'></image>
+                </view>
+              </scroll-x>
+            </view>
+          </view>
+
+          <view class='module' wx:if="{{origins.length}}">
+            <view class='module__header flex flex_v_center'>
+              <view class='module__icon'></view>
+              <view class='module__title'>限免专区</view>
+              <view class='module__more'>查看更多></view>
+            </view>
+            <view class='module__body'>
+              <scroll-x innerSwiper="518rpx">
+                <view class='module__image-box flex'>
+                  <image wx:for="{{origins}}" wx:key="{{item.id}}" class='module__image-item defalut module__image-item_size_280x498' src='{{item.ThumbImage}}'></image>
+                </view>
+              </scroll-x>
+            </view>
+          </view>
+
+          <view class='module__header flex flex_v_center'>
+            <view class='module__icon'></view>
+            <view class='module__title'>今日精选</view>
+          </view>
+        </block>
+
+      </image-list>
+    </swiper-item>
+  </swiper>
+</view>

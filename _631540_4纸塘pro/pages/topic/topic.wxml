@@ -1,0 +1,65 @@
+<view bindtap="back" class="custom-navbar-container _dc67f7a" style="top:{{marginHeight}}px;">
+    <view class="back _dc67f7a"></view>
+</view>
+<view class="lds-dual-ring _d56c170 _dc67f7a" style="width:{{$loading$width}}rpx;height:{{$loading$height}}rpx;margin-top:{{$loading$top}}rpx" wx:if="{{imgs.length<=0}}"></view>
+<view class="page-container iphoneX-bottom _dc67f7a">
+    <view class="navbar _dc67f7a" style="background-image:url({{imgs[0].url}})">
+        <view class="background _dc67f7a"></view>
+        <view class="_dc67f7a" style="width:100%;z-index:-1;opacity:0">
+            <view class="back-container _dc67f7a" style="padding-top:{{marginHeight}}px"></view>
+            <view class="nav-title _dc67f7a">{{topic.title}}</view>
+            <view class="nav-content _dc67f7a">
+                <text class="_dc67f7a">{{topic.content}}</text>
+            </view>
+        </view>
+        <view class="_dc67f7a" style="position:absolute;width:100%;z-index:9999;top:0;">
+            <view class="back-container _dc67f7a" style="padding-top:{{marginHeight}}px"></view>
+            <view class="nav-title _dc67f7a">{{topic.title}}</view>
+            <view class="nav-content _dc67f7a">
+                <text class="_dc67f7a">{{topic.content}}</text>
+            </view>
+        </view>
+        <view class="info-bar _dc67f7a">
+            <view class="_dc67f7a">
+                <image class="_dc67f7a" src="/assets/imgs/t_eye.png" style="width:25px;height:25px;"></image>
+                <text class="_dc67f7a">{{topic.viewNum||0}}</text>
+            </view>
+            <view class="_dc67f7a">
+                <image class="_dc67f7a" src="/assets/imgs/t_comment.png" style="width:25px;height:25px;"></image>
+                <text class="_dc67f7a">{{topic.commentNum||0}}</text>
+            </view>
+            <button class="btn-share _dc67f7a" openType="share">
+                <image class="_dc67f7a" src="/assets/imgs/t_share.png" style="width:25px;height:25px;"></image>
+                <text class="_dc67f7a" style="padding-left:16rpx;">分享</text>
+            </button>
+        </view>
+    </view>
+    <view class="pic-container _dc67f7a">
+        <view class="pic-item-wrap _dc67f7a" wx:for="{{imgs}}" wx:key="index">
+            <view class="pic default-img-bg _dc67f7a">
+                <image bindtap="goPicDetail" class="_dc67f7a" data-wpygopicdetail-a="{{item.id}}" lazyLoad="false" mode="aspectFill" src="{{item.url}}"></image>
+            </view>
+        </view>
+    </view>
+    <view class="comment-container _dc67f7a">
+        <view class="comment-container-title _dc67f7a">说说（{{topic.commentNum}}）</view>
+        <view bindtap="lookDetail" class="comment-input _dc67f7a" data-wpylookdetail-a="true">
+        说点什么吧...
+      </view>
+        <view class="comment-list-container _e3cf4be _dc67f7a">
+            <view class="comment-item-container _e3cf4be" wx:for="{{$commentList$comments}}" wx:for-index="$commentList$index" wx:for-item="$commentList$comment" wx:key="$commentList$index">
+                <view class="item-author _e3cf4be">
+                    <image class="avatar _e3cf4be" src="{{$commentList$comment.avatar}}"></image>
+                    <view class="author _e3cf4be">
+            {{$commentList$comment.author}}
+          </view>
+                    <image bindtap="$commentList$delete" class="remove _e3cf4be" data-wpydelete-a="{{$commentList$index}}" src="/assets/imgs/delete.png" wx:if="{{$commentList$comment.isSelf}}"></image>
+                </view>
+                <view class="item-content _e3cf4be">
+                    <view class="comment-content _e3cf4be">{{$commentList$comment.content}}</view>
+                </view>
+            </view>
+        </view>
+        <view bindtap="lookDetail" class="btn _dc67f7a" data-wpylookdetail-a="false" wx:if="{{topic.commentNum>2}}">全部{{topic.commentNum}}条说说</view>
+    </view>
+</view>

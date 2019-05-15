@@ -1,0 +1,91 @@
+<!-- 返回(主页)-标题 -->
+<template name="back-title">
+  <view class='header-body back-title'>
+      <block wx:if="{{!header.firstPage}}">
+          <view class='back-btn ab {{header.backClass || ""}}' catchtap='back' wx:if="{{header.eventBack}}"></view>
+          <navigator open-type="navigateBack" class='back-btn ab {{header.backClass || ""}}' hover-class="none" wx:else></navigator>
+      </block>
+      <navigator url="/pages/index/index" hover-class="none" class='back-btn ab home' open-type="switchTab" wx:else></navigator>
+      <view class='title' wx:if="{{header.title}}">{{header.title}}</view>
+  </view>
+</template>
+
+<!-- 返回(分享)-搜索按钮 版 -->
+<template name="back-search-btn">
+  <view class='header-body back-search-btn flexV'>
+    <button hover-class="none" open-type="share" class='share' wx:if="{{header.mustShowShare || header.firstPage}}">分享</button>
+    <navigator open-type="navigateBack" class='back-btn' hover-class="none" wx:else></navigator>
+    <view class='search-btn flex1' catchtap='event' data-url="/pages/search/search?currentIndex={{header.searchIndex || 0}}">
+        <view class='pen icon'></view>
+        <text class='pen'>{{header.placehold || '搜索壁纸'}}</text>
+    </view>
+    <view class='capsule'></view>
+  </view>
+</template>
+
+<!-- 返回(分享)-搜索输入版 -->
+<template name="back-search-input">
+  <view class='header-body back-search-btn flexV'>
+  <navigator url="/pages/index/index" hover-class="none" class='back-btn home' open-type="switchTab" wx:if="{{header.firstPage}}"></navigator>
+    <!-- <button hover-class="none" open-type="share" class='share' wx:if="{{header.firstPage}}">分享</button> -->
+    <view class='back-btn' catchtap='back' wx:else></view>
+    <!-- <navigator open-type="navigateBack" class='back-btn' hover-class="none" wx:else></navigator> -->
+    <view class='search-btn flex1'>
+      <input name="searchKey" placeholder="搜索你想要的{{header.title}}" confirm-type="search" placeholder-class="placeholder" bindconfirm="searchHandle" bindinput="inputHandle" value="{{header.searchKey}}" focus="{{header.isFocus}}" maxlength="30"/>
+      <view class='reset-btn' catchtap='resetHandle' wx:if="{{header.resetShow}}"></view>
+    </view>
+    <view class='capsule'></view>
+  </view>
+
+  <view class='list-base-nav flexV flex-nowrap' catchtap='navSwitch'>
+    <text class="nav-item {{currentIndex == index ? 'active' : ''}}" wx:for="{{['壁纸','表情','头像']}}" wx:key="{{index}}" data-index="{{index}}">{{item}}</text>
+  </view>
+</template>
+
+
+
+<!--返回(主页)-列表导航 -->
+<template name="back-nav-list">
+  <view class='header-body back-nav-list flexV' catchtap='navSwitch'>
+      <text wx:for="{{listNav}}" wx:key="{{index}}" class='{{currentIndex === index ? "active" : ""}}' data-index="{{index}}">{{item.title}}</text>
+      <block wx:if="{{!header.noBack}}">
+      <navigator open-type="navigateBack" class='back-btn ab' hover-class="none" wx:if="{{!header.firstPage}}"></navigator>
+      <navigator url="/pages/index/index" hover-class="none" class='back-btn ab home' open-type="switchTab" wx:else></navigator>
+      </block>
+  </view>
+</template>
+
+<!-- 返回(分享)-搜索按钮 - 顶部滚动版 -->
+<template name="back-search-scroll-nav">
+    <template is="back-search-btn" data="{{header}}"/>
+    <view class='back-search-scroll-nav flex'>
+      <include src="./list-scroll-nav.wxml" />
+      <block wx:if="{{header.hasNavView}}">
+        <view class='nav-view-toggle pea {{header.isNavView ? "on" : ""}}' catchtap='toggle' data-toggle="header.isNavView"></view>
+        <view class='nav-view-content flex-C f-f {{header.isNavView ? "on" : ""}}'>
+          <view style='height:{{header.statusBarHeight}}px;padding-bottom:74rpx'></view>
+          <view class='top'>标签</view>
+          <view class='bottom flex1 flex flex-wrap pea' catchtap='navSwitch'>
+            <view wx:for="{{listNav}}" wx:key="{{item.CategoryID}}" data-index="{{index}}">
+              <image src='{{item.CategoryIcon}}'></image>
+              <text class="title line-e">{{item.CategoryName}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+</template>
+<!-- 返回(主页)-标题 - 顶部不滚动版 -->
+<template name="back-title-base-nav">
+  <template is="back-title" data="{{header}}"/>
+  <include src="./list-base-nav.wxml" />
+</template>
+
+<template name="empty">
+
+</template>
+
+<view class='header fixed {{header.class || ""}}'>
+    <view class='header-statusBar' style='height:{{header.statusBarHeight}}px'></view>
+    <template is="{{header.mode}}" data="{{header,listNav,currentIndex,scrollLeft,hasUserInfo}}"/>
+</view>

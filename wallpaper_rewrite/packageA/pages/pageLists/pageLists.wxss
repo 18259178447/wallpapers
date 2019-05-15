@@ -1,0 +1,159 @@
+/* packageA/pages/pageLists/pageLists.wxss */
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+/* 基本专辑列表 */
+.base-album-list view{
+  margin-bottom: 16rpx;
+}
+.base-album-list image{
+  width:354rpx;
+  height:188rpx;
+  margin-top:0;
+}
+
+.base-album-list text{
+  font-size: 24rpx;
+  color: #9B9B9B;
+  display: block;
+  width: 354rpx;
+  line-height: 54rpx;
+}
+
+/* 作者列表 */
+
+.author-item{
+  margin-top: 80rpx;
+}
+.author-item:first-child{
+  margin-top: 24rpx;
+}
+.authors-list .data-list-column-view{
+  padding:0 16rpx;
+}
+.author-item .top{
+  /* display: flex;
+  align-items: center; */
+  line-height: 1;
+  text-align: left;
+  background:url(https://minibizhi.313515.com/BiZhiStatic/icon-all-more.svg) right center no-repeat;
+  background-size:80rpx 36rpx;
+}
+.author-item .top .author-avatar{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.author-item .top .author-info text{
+  display: block;
+}
+.author-item .top .author-info text:first-child{
+  font-size: 28rpx;
+  color: #4C4C4C;
+  line-height: 32rpx;
+  font-weight: 500
+}
+.author-item .top .author-info text:last-child{
+  font-size: 22rpx;
+  color: #949494;
+  line-height: 24rpx;
+  margin-top: 4rpx;
+}
+.author-item .bottom{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25rpx;
+}
+
+.author-item .bottom>image{
+  width: 176rpx;
+  height: auto;
+  display: block;
+  position: relative
+}
+
+.author-item .bottom .buy-flag{
+  width: 70rpx;
+  /* height: 36rpx; */
+  height: auto;
+  position: absolute;
+  top: 8rpx;
+  left: 6rpx;
+  background: none;
+  pointer-events: none;
+}
+
+
+/* 入驻 */
+.enter-info{
+  padding: 66rpx 30rpx 98rpx;
+  /* letter-spacing: 0.4rpx; */
+}
+.ipx .enter-info{
+  padding-bottom: 146rpx;
+}
+.explain{
+  font-size: 28rpx;
+  font-weight: 500;
+  line-height: 42rpx;
+}
+
+.enter-info .enter{
+  font-size: 26rpx;
+  line-height: 42rpx;
+  white-space:pre-wrap;
+}
+.recent-author .title{
+  font-size: 28rpx;
+  line-height: 42rpx;
+  margin-top: 58rpx;
+  font-weight: 500;
+}
+.recent-author .recent-author-view {
+  display: flex;
+  flex-wrap: wrap;
+}
+.recent-author .recent-author-view navigator{
+  width: 33.3%;
+  margin-top: 26rpx;
+}
+.recent-author .recent-author-view image{
+  width: 140rpx;
+  height: 140rpx;
+  display: block;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.recent-author .recent-author-view text{
+  font-size: 28rpx;
+  color: #487b74;
+  display: block;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 10rpx;
+}
+
+
+/* 可删除列表 */
+
+.can-delete-avatar-emote-list .wallpaper-list-view>image{
+  height:230rpx;
+}
+.can-delete-dynamic-wallpaper-list image::before{
+  position: absolute;
+  content: '';
+  display: block;
+  width: 37rpx;
+  height: 37rpx;
+  left: 13rpx;
+  top: 10rpx;
+  background: url(https://minibizhi.313515.com/BiZhiStatic/icon-all-dynamic-video.svg) 0 0 no-repeat;
+  background-size: cover;
+  pointer-events: none;
+}

@@ -1,0 +1,6 @@
+<swiper duration="300" class="preview-swiper emote-avatar-preview" bindchange="swiperChange" current="{{current}}" circular="{{circular}}">
+  <swiper-item wx:for="{{imgs}}" wx:key="{{item.PicInfoID}}" class="flexHV">
+      <image src='{{item.Image}}' mode='widthFix' class='preview-image'></image>
+  </swiper-item>
+</swiper>
+  <navigator wx:if="{{diyLink}}" target="miniProgram" open-type="navigate" app-id="wxda9432ebe54d8136" path="pages/diy/diy?bizhi={{imgs[currentIndex].ID}}" hover-class='none' class='touxiang-mini-btn'>头像挂件DIY</navigator>

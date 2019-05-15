@@ -1,0 +1,29 @@
+@import "../../__wuBaseWxss__/7.wxss";
+
+@import "comment-list.wxss";
+
+.comment-input._5e4c9de {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+}
+
+.comment-input input._5e4c9de {
+    height: 72rpx;
+    line-height: 72rpx;
+    background: #1a1a1a;
+    border-radius: 8px;
+    margin: 13rpx 10px 13rpx 30rpx;
+    flex: 1;
+}
+
+.btn-submit._5e4c9de {
+    font-size: 30rpx;
+    font-weight: 400;
+    color: #ffe725;
+    line-height: 42rpx;
+    margin-right: 30rpx;
+}

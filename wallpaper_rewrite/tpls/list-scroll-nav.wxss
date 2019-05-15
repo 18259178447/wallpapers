@@ -1,0 +1,34 @@
+/* 滚动导航 */
+.scroll-nav-container{
+  height: 96rpx;
+}
+.scroll-nav-wrap{
+  white-space: nowrap;
+  height: 100%;
+  padding: 0 16rpx;
+  display: inline-block
+}
+.scroll-nav-wrap.hasNavView{
+  padding-right: 110rpx;
+}
+.scroll-nav-view{
+  height: 100%;
+}
+.scroll-nav-wrap text{
+  display: block;
+  padding: 0rpx 34rpx;
+  font-size: 26rpx;
+  color: #818181;
+  line-height: 56rpx;
+  background: #F7F7F7;
+  border-radius: 28rpx;
+  letter-spacing: 0.4rpx;
+  margin-right:30rpx;
+}
+.scroll-nav-wrap text:last-child{
+  margin-right: 0
+}
+.scroll-nav-wrap text.active{
+  color:#239EFE;
+  background:rgba(35,158,254,0.20);
+}

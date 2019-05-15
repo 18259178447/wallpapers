@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/upload/index",
+    "pages/search/search",
+    "pages/detail/detail",
+    "pages/detail/comment",
+    "pages/picture/all",
+    "pages/picture/category",
+    "pages/login/login",
+    "pages/person/index",
+    "pages/topic/index",
+    "pages/topic/topic",
+    "pages/my/index",
+    "pages/my/my-upload",
+    "pages/my/my-download",
+    "pages/my/my-collection",
+    "pages/my/about",
+    "pages/my/help",
+    "pages/my/my-score",
+    "pages/my/my-fans",
+    "pages/my/my-pay",
+    "pages/my/my-attention",
+    "pages/my/my-info",
+    "pages/my/edit-name",
+    "pages/my/photo-cropper",
+    "pages/sign/sign",
+    "pages/my/wx-official",
+    "pages/upload/upload",
+    "pages/my/upload-detail"
+  ],
+  "window": {
+    "navigationStyle": "custom",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#141414",
+    "navigationBarTitleText": "纸塘壁纸pro",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#141414"
+  },
+  "sitemapLocation": "sitemap.json"
+}

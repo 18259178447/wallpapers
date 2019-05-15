@@ -1,0 +1,11 @@
+.empty._7641959 {
+    margin: 200rpx auto;
+    text-align: center;
+    color: rgba(255,255,255,0.5);
+    font-size: 30rpx;
+}
+
+.empty image._7641959 {
+    width: 240rpx;
+    height: 395rpx;
+}

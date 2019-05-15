@@ -1,0 +1,24 @@
+
+
+<wxs module="uploadCommon">
+  module.exports.isSelect = function(indexArr,index) {
+    return indexArr.indexOf(index) > -1
+  };
+</wxs>
+
+<view class='container {{supperClass}}'>
+  <view class='body flex-C'>
+    <include src="../../../tpls/header-placehold.wxml" />
+    <view class='page-wrap flex1' style='transform: translateX(-{{pageIndex / 4 * 100}}%) translateZ(0)'>
+        <include src="screenshot-page.wxml" />
+        <include src="upload-page.wxml" />
+        <include src="category-select-page.wxml" />
+        <include src="labels-select-page.wxml" />
+        <!-- <template is="screenshot-page" data="{{isScreenshot}}" />
+        <template is="upload-page" data="{{resSrc,category,categoryIndex,subCategory,subCategoryIndexs}}" />
+        <template is="category-select-page" data="{{category,categoryIndex}}" />
+        <template is="labels-select-page" data="{{subCategory,subCategoryIndexs}}" /> -->
+      </view>
+  </view>
+  <include src="../../../tpls/public.wxml" />
+</view>

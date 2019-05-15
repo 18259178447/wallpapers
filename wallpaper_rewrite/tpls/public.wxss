@@ -1,0 +1,84 @@
+
+/* 无网络 */
+.noNetWorkPage {
+  z-index: 1000;
+  background: #fff;
+}
+
+.noNetWorkPage image {
+  width: 314rpx;
+  height: 290rpx;
+}
+.noNetWorkPage text {
+  font-size: 30rpx;
+  color: #a0a0a0;
+  margin-top: 50rpx;
+}
+.noNetWorkPage .button {
+  width: 316rpx;
+  height: 87rpx;
+  background-color: #fff;
+  font-size: 32rpx;
+  color: #2e93c4;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 87rpx;
+  border: 2rpx solid #2e93c4;
+  border-radius: 8rpx;
+  margin-top: 20rpx;
+}
+
+/* 右下角悬浮相关 */
+.suspension-container {
+  position: fixed;
+  right: 30rpx;
+  bottom: 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end
+}
+
+.suspension-container.hasFooter{
+  bottom: 128rpx;
+}
+
+.iPhoneX .suspension-container.hasFooter{bottom: 176rpx;}
+
+
+.suspension-container .backTop{
+  width: 76rpx;
+  height: 76rpx;
+  border-radius: 50%;
+  box-shadow: 0px 0px 3px 1px rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.5) center center no-repeat;
+  z-index: 99;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAMAAACf4xmcAAAANlBMVEUAAAD////////////////////////////////////////////////////////////////////xY8b8AAAAEXRSTlMA94pF0ZYUAVgP8nurdmc6KMEdkv4AAABgSURBVDjL7co5EoAgAATB9QY8+f9n1SLYbDC1ikkmabVqnduhekOXc/9J2ZFKdqDGebIDpcUOlOxI2aGyA0XOipwVOStyVuSsyFmRs2IXU1HkgnQVhW5/HtYokXtB60fdkHIH8zHGKYwAAAAASUVORK5CYII=);
+  background-size: 38rpx 38rpx;
+}
+
+
+.authorization{
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.authorization .content{
+  background-color: #fff;
+  border-radius: 25rpx;
+  position: relative
+}
+
+.authorization .close{
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.authorization .authorization-btn{
+  position: absolute;
+  bottom: 40rpx;
+  left: 40rpx;
+  width: 500rpx;
+  height: 90rpx;
+}

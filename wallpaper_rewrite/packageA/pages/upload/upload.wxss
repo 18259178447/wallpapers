@@ -1,0 +1,125 @@
+/* packageA/pages/upload/upload.wxss */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.page-wrap{
+  display: flex;
+  flex-wrap: nowrap;
+  width: 400%;
+  /* transform: translate(-100px,0) */
+}
+.page-wrap .page{
+  flex: 1;
+  height: 100%;
+  position: relative;
+}
+
+.screenshot-page{
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+  box-sizing: border-box;
+}
+.screenshot-page canvas{
+  flex: 1;
+  width: 100%;
+}
+.screenshot-page .cropper-btns{
+  display: flex;
+  justify-content: space-between;
+  border-top: 1rpx solid #3d3d3d;
+}
+.iPhoneX .screenshot-page .cropper-btns{
+  padding-bottom: 46rpx;
+}
+.screenshot-page .cropper-btns view{
+  width: 164rpx;
+  height: 124rpx;
+  color: #fff;
+  line-height: 124rpx;
+  text-align: center;
+}
+
+.upload-page .upload-btn{
+  width: 147rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  border: 1rpx solid #239EFE;
+  border-radius: 30rpx;
+  font-size: 32rpx;
+  color: #239EFE;
+  font-weight: 500;
+  position: absolute;
+  top: 20rpx;
+  right: 60rpx;
+  text-align: center;
+}
+.upload-page .res-src{
+  min-height: 399rpx;
+}
+.upload-page .res-src image{
+  width: 225rpx;
+  height: auto;
+  min-height: 399rpx;
+  margin: 90rpx auto 0;
+  /* background-color: red; */
+}
+.upload-page .add-btn{
+  height: 62rpx;
+  line-height: 62rpx;
+  text-align: left;
+  padding-left: 54rpx;
+  margin: 100rpx 20rpx 0;
+  border-bottom: 1rpx solid #e6e6e6;
+  background: url(https://testminibizhi.313515.com/BiZhiStatic/upload-add-label.svg) 10rpx center no-repeat;
+  background-size: 28rpx 28rpx;
+}
+
+
+.select-page .title{
+  background: #F2F2F2;
+  height: 64rpx;
+  line-height: 64rpx;
+  font-size: 28rpx;
+  color: #4C4C4C;
+  padding-left: 40rpx;
+}
+
+.labels-box{
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 40rpx;
+}
+
+.labels-box view{
+  width: 140rpx;
+  border: 1rpx solid #949494;
+  height: 48rpx;
+  line-height: 48rpx;
+  font-size: 24rpx;
+  color: #949494;
+  margin-right: 30rpx;
+  border-radius: 20rpx;
+  margin-top: 40rpx;
+  text-align: center;
+}
+.labels-box view.blue{
+  border-color: #239EFE;
+  color: #239EFE;
+}
+.complete{
+  background: #239EFE;
+  border-radius: 28rpx;
+  font-size: 32rpx;
+  color: #FFFFFF;
+  width: 346rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  font-weight: bold;
+  position: absolute;
+  bottom: 60rpx;
+  left: 202rpx;
+  text-align: center;
+}

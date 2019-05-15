@@ -1,0 +1,51 @@
+
+/* 海报弹窗 */
+.poster-container{
+  z-index: 101
+}
+.poster-container .poster{
+  width: 466rpx;
+  height: 773rpx;
+  background:#fff url(https://minibizhi.313515.com/BiZhiStatic/loading.svg) center center no-repeat;
+  background-size: 60rpx 60rpx;
+
+}
+.poster-container .poster image{
+  width: 100%;
+  height: 100%;
+}
+.poster-container text{
+  display: block;
+  text-align: center;
+  font-size: 28rpx;
+  color: #FFFFFF;
+  line-height: 30rpx;
+  margin: 38rpx 0 54rpx;
+}
+.poster-container button{
+  background: #FFFFFF;
+  border-radius: 42px;
+  height: 84rpx;
+  width: 248rpx;
+  text-align: center;
+  font-size: 36rpx;
+  line-height: 84rpx;
+}
+.poster-container button:first-child{
+  color: #4C4C4C;
+}
+.poster-container button:last-child{
+  background: #5BEDC9;
+  color: #005C46;
+  margin-left: 116rpx;
+}
+.myCanvas{
+  width: 466rpx;
+  height: 773rpx;
+  position: fixed;
+  top:0;
+   left: 100%; 
+  /* left: 0;
+  background-color: red;
+  z-index: 999 */
+}

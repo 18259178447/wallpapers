@@ -1,0 +1,10 @@
+@import "../../__wuBaseWxss__/7.wxss";
+
+.item-container._4d85a8a {
+    margin: 30rpx 0;
+}
+
+.item-container input._4d85a8a {
+    background: #000;
+    padding: 10rpx 30rpx;
+}

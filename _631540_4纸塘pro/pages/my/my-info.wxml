@@ -1,0 +1,33 @@
+<view class="container _6a52688">
+    <view class="navbar-container _6a52688">
+        <view style="background:{{$navbar$color}};height:{{$navbar$height}};width:100%"></view>
+        <view style="height: 46px;line-height:46px;background:{{$navbar$color}}">
+            <view class="navbar-title-wrap" wx:if="{{$navbar$title}}">
+                <view catchtap="$navbar$back" class="back"></view>
+                <view class="content">{{$navbar$title}}</view>
+                <view class="last"></view>
+            </view>
+            <view wx:else></view>
+        </view>
+    </view>
+    <view style="height:{{$navbar$marginHeight}}px;width:100%;" wx:if="{{$navbar$showPadding}}"></view>
+    <view bindtap="changeAvatar" class="item-container _6a52688">
+        <view class="_6a52688" style="flex:1;">头像</view>
+        <image class="avatar _6a52688" src="{{user.avatar}}"></image>
+        <image class="forward _6a52688" src="/assets/imgs/forward.png"></image>
+    </view>
+    <navigator class="item-container _6a52688" url="/pages/my/edit-name">
+        <view class="_6a52688" style="flex:1;">昵称</view>
+        <view class="_6a52688" style="margin-right:10rpx;color:rgba(255,255,255,0.5);">{{user.name}}</view>
+        <image class="forward _6a52688" src="/assets/imgs/forward.png"></image>
+    </navigator>
+    <navigator class="item-container _6a52688" url="/pages/my/about?type=protocol">
+        <view class="_6a52688">用户协议与隐私条款</view>
+        <image class="forward _6a52688" src="/assets/imgs/forward.png"></image>
+    </navigator>
+    <navigator class="item-container _6a52688" url="/pages/my/about?type=copyright">
+        <view class="_6a52688">版权说明</view>
+        <image class="forward _6a52688" src="/assets/imgs/forward.png"></image>
+    </navigator>
+    <button bindtap="logout" class="btn-logout _6a52688">退出登录</button>
+</view>

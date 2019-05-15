@@ -1,0 +1,73 @@
+@import "../../__wuBaseWxss__/7.wxss";
+
+@import "discovery.wxss";
+
+@import "recommend.wxss";
+
+.tabbar._01b8e92 {
+    width: 100%;
+    height: 98rpx;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.tabbar image._01b8e92 {
+    width: 50rpx;
+    height: 50rpx;
+    margin-top: 24rpx;
+}
+
+.tabbar .tab-item._01b8e92 {
+    width: 50%;
+    text-align: center;
+    background: #222;
+    height: 98rpx;
+}
+
+.tabbar .tab-item-left._01b8e92 {
+    border-top-right-radius: 32rpx;
+}
+
+.tabbar .tab-item-right._01b8e92 {
+    border-top-left-radius: 32rpx;
+}
+
+.tabbar .tab-plus._01b8e92 {
+    width: 136rpx;
+    min-width: 136rpx;
+    height: 136rpx;
+    position: relative;
+    top: 30rpx;
+    background: radial-gradient(top center,circle,transparent 0%,transparent 50%,#222222 50%,#222222 100%);
+}
+
+.tabbar .tab-plus .circle._01b8e92 {
+    position: absolute;
+    bottom: 52%;
+    left: 20rpx;
+    width: 96rpx;
+    height: 104rpx;
+}
+
+.tabbar .tab-plus .circle image._01b8e92 {
+    width: 96rpx;
+    height: 104rpx;
+    margin-top: 0;
+}
+
+.page-container._01b8e92 {
+    position: relative;
+    width: 100%;
+}
+
+.page-container .page._01b8e92 {
+    max-width: 100%;
+    min-width: 100%;
+    position: absolute;
+    top: 0;
+    transition: left 300ms;
+    overflow-x: hidden;
+}

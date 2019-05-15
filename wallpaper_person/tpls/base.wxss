@@ -1,0 +1,153 @@
+
+/* 列表相关 */
+.wallpaper-list-view{
+  /* padding: 0 16rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; */
+}
+.wallpaper-list-view>image {
+  width: 230rpx;
+  height: 410rpx;
+  margin-bottom: 16rpx;
+  position: relative
+}
+
+.iPhoneX .wallpaper-list-view>image{
+  height: 498rpx;
+}
+
+.avatar-emote-list-view>image{
+  width:230rpx;
+  height:230rpx;
+  margin-bottom: 16rpx;
+}
+
+
+
+/* 原创专栏购买标志 */
+.wallpaper-list-view .buy-flag{
+  width:104rpx;
+  height:36rpx;
+  position:absolute;
+  top:8rpx;
+  left:6rpx;
+  background:none;
+}
+
+.loading{
+  text-align:center;
+  font-size:24rpx;
+  padding:20rpx;
+  color:#555;
+  margin-top: -16rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  /* line-height: 2; */
+}
+.default{
+  text-align: center;
+  min-height: 75vh;
+}
+.default image{
+  width: 460rpx;
+  height: 460rpx;
+}
+.default text{
+  font-size:32rpx;
+  color:#6a7883;
+  margin-top: 20rpx;
+}
+
+
+/* 关注按钮 */
+.attention-btn{
+  width: 128rpx;
+  height: 146rpx;
+  background: url(https://minibizhi.313515.com/BiZhiStatic/attention.svg) center center no-repeat;
+  background-size: 100% auto;
+}
+.attention-btn.active{
+  background-image: url(https://minibizhi.313515.com/BiZhiStatic/attention-active.svg)
+}
+
+/* 加载错误重试按钮 */
+.retry-btn {
+  width: 600rpx;
+  height: 88rpx;
+  background-color: #fff;
+  font-size: 32rpx;
+  color: #2e93c4;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 88rpx;
+  border: 2rpx solid #2e93c4;
+  border-radius: 8rpx;
+  margin: 10rpx auto 20rpx;
+}
+
+
+/* 动态壁纸列表 */
+
+.dynamic-wallpaper-list>image {
+  width: 230rpx;
+  height: 410rpx;
+  margin-bottom: 16rpx;
+  position: relative
+}
+
+
+/* 评论列表 */
+
+
+.comment-list-item{
+
+}
+.comment-list-item .user-view{
+  height: auto;
+  padding: 30rpx 0 0 30rpx;
+}
+.comment-list-item .top-right{
+  padding: 0 25rpx 0 20rpx
+}
+.comment-list-item .top-center image,.comment-list-item .top-right image{
+  width:26rpx;
+  height:28rpx;
+  padding:0 5rpx;
+  /* display:inline-block; */
+}
+.comment-list-item .top-center text,.comment-list-item .top-right text{
+  font-size:24rpx;
+  color:#949494;
+  padding:0 5rpx;
+}
+
+.comment-list-item .top-right text.on{
+  color: #2E93C4
+}
+
+.comment-list-item .bottom{
+  margin-left: 126rpx;
+  
+  border-bottom:1rpx solid #e3e3e3;
+}
+.comment-list-item .bottom .comment-content,.comment-list-item .bottom .reply-content{
+  font-size:30rpx;
+  color:#949494;
+  line-height:44rpx;
+}
+.comment-list-item .bottom .comment-content{
+  margin:14rpx 0 22rpx 0;
+  padding-right:30rpx;
+
+}
+.comment-list-item .bottom .reply-content{
+  padding:20rpx 30rpx;
+  background:#F7F7F7;
+  margin-right:30rpx;
+  margin-bottom: 40rpx;
+}
+.comment-list-item .bottom .reply-name{
+  color:#4c4c4c;
+  font-weight:500;
+}

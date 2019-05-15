@@ -1,0 +1,25 @@
+<import src="../../tpls/user-view.wxml" />
+<import src="../../tpls/base.wxml" />
+<swiper duration="300" class="preview-swiper wallpaper-preview" bindchange="swiperChange" current="{{current}}" circular="{{circular}}">
+  <swiper-item wx:for="{{imgs}}" wx:key="{{item.PicInfoID}}">
+    <scroll-view scroll-y bindscrolltolower="onReachBottom_" scroll-top="{{scrollTops[index] || 0}}">
+      <image src='{{item.ThumbImage}}' mode='widthFix' class='preview-image' bindtap='previewImage'>
+        <image src='{{item.Image}}' mode='widthFix'></image>
+      </image>
+      <view class='wallpaper-relative' bindtap='event'>
+        <view class='author-info flexV'>
+          <template is="user-view" data="{{...item.user,class:'flex1'}}" />
+          <view catchtap='wallpaperReport' class='report-btn'></view>
+        </view>
+        <view class='labels flex'>
+          <view wx:for="{{item.Labels}}" wx:key="{{index}}" data-url="/packageA/pages/pageList/pageList?pagename=labels&title={{item}}" wx:if="{{item}}">{{item}}</view>
+        </view>
+      </view>
+      <view class='relative-intro' wx:if="{{currentIndex === index}}">
+        <view class='title'>相关推荐</view>
+        <template is="base-wallpaper-list" data="{{baseData,reTry}}" />
+      </view>
+      <include src="../../tpls/footer-placehold.wxml" />
+    </scroll-view>
+  </swiper-item>
+</swiper>

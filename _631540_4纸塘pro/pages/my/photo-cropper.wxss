@@ -1,0 +1,7 @@
+.cropper-buttons._6be5a82 {
+    display: flex;
+    justify-content: space-between;
+    height: 98rpx;
+    align-items: center;
+    padding: 0 30rpx;
+}

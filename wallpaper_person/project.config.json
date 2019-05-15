@@ -1,0 +1,136 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.6.5",
+	"appid": "wxd3fab7dc660d0a6f",
+	"projectname": "美美",
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 13,
+			"list": [
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/my/my",
+					"query": "",
+					"scene": "1025"
+				},
+				{
+					"id": 1,
+					"name": "通用多列表页",
+					"pathName": "packageA/pages/pageLists/pageLists",
+					"query": "pagename=rankList",
+					"scene": "1025"
+				},
+				{
+					"id": 2,
+					"name": "通用单列表页",
+					"pathName": "packageA/pages/pageList/pageList",
+					"query": "pagename=uploadList",
+					"scene": "1025"
+				},
+				{
+					"id": 3,
+					"name": "通用基本页",
+					"pathName": "packageA/pages/pageBase/pageBase",
+					"query": "pagename=setting",
+					"scene": "1025"
+				},
+				{
+					"id": -1,
+					"name": "预览页",
+					"pathName": "pages/preview/preview",
+					"query": ""
+				},
+				{
+					"id": 5,
+					"name": "大图预览页",
+					"pathName": "pages/preview/preview",
+					"query": "scene=627811"
+				},
+				{
+					"id": -1,
+					"name": "分类",
+					"pathName": "pages/category/category",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "专辑详情",
+					"pathName": "pages/albumDetail/albumDetail",
+					"query": "albumID=31991",
+					"scene": "1025"
+				},
+				{
+					"id": 8,
+					"name": "搜索",
+					"pathName": "pages/search/search",
+					"query": "keyword=66"
+				},
+				{
+					"id": 9,
+					"name": "web页面",
+					"pathName": "packageB/pages/web/web",
+					"query": "url=http%3A%2F%2Fgao7.com%3Fa%3D1%26encrypt%3D1"
+				},
+				{
+					"id": -1,
+					"name": "下载",
+					"pathName": "pages/download/download",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "收藏",
+					"pathName": "pages/collect/collect",
+					"query": ""
+				},
+				{
+					"id": 12,
+					"name": "ffff",
+					"pathName": "pages/index/index",
+					"query": "currentIndex=2",
+					"scene": "1037",
+					"referrerInfo": {
+						"appId": "dddddd",
+						"extraData": "{}"
+					}
+				},
+				{
+					"id": -1,
+					"name": "fff",
+					"pathName": "pages/ence_push/ence_push"
+				}
+			]
+		}
+	}
+}

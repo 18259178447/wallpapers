@@ -1,0 +1,21 @@
+<import src="../../tpls/base.wxml" />
+
+<view class='container flex-C {{supperClass}}'>
+<include src="../../tpls/header-placehold.wxml" />
+  <view class='flex1 flex'>
+    <!--左边导航-->
+    <view class="left-nav" bindtap='navSwitch'>
+      <scroll-view scroll-y>
+        <view wx:for="{{mainCategorys}}" wx:key="{{item.CategoryID}}" class='{{index === currentIndex ? "active" : ""}}' data-index="{{index}}">{{item.CategoryTitle}}</view>
+      </scroll-view>
+    </view>
+    <!--右边内容-->
+    <view class="right-content flex1">
+      <scroll-view scroll-y>
+          <include src="navigator-other-program.wxml" wx:if="{{subCategory[0].appid}}" />
+          <include src="navigator-self-program.wxml" wx:else />
+      </scroll-view>
+    </view>
+  </view>
+  <include src="../../tpls/public.wxml" />
+</view>

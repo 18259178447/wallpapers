@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "mul-fn-btn": "/components/mul-fn-btn/mul-fn-btn"
+  }
+}

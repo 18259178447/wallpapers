@@ -1,0 +1,1 @@
+<view wx:if="{{footer}}" class="footer-placehold"></view>

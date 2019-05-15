@@ -1,0 +1,76 @@
+<view class="container _60fed43">
+    <view class="nav _60fed43" style="padding-top:{{marginHeight}}px">
+        <view class="title _60fed43">
+            <view bindtap="back" class="back _60fed43"></view>
+            <view class="content _60fed43">完善壁纸信息</view>
+            <view class="last _60fed43"></view>
+        </view>
+    </view>
+    <view class="_60fed43" style="margin-top:{{marginHeight+46}}px"></view>
+    <view class="_60fed43" style="background:#1a1a1a">
+        <view class="pic-container _60fed43" wx:for="{{tempFiles}}" wx:key="index">
+            <view class="pic-item-wrapper _60fed43">
+                <image class="pic-preview _60fed43" mode="widthFix" src="{{item.path}}"></image>
+                <view class="pic-info _60fed43">
+                    <view class="item-wrap _60fed43">
+                        <image class="item-wrap-icon _60fed43" src="/assets/imgs/size.png"></image>
+                        <view class="item-wrap-content _60fed43">{{item.width}}X{{item.height}}</view>
+                    </view>
+                    <view class="item-wrap _60fed43">
+                        <image class="item-wrap-icon _60fed43" src="/assets/imgs/mem.png"></image>
+                        <view class="item-wrap-content _60fed43">{{item.size}}MB</view>
+                    </view>
+                    <view bindtap="chooseSource" class="item-wrap _60fed43" data-index="{{index}}" data-wpychoosesource-a="true">
+                        <image class="item-wrap-icon _60fed43" src="/assets/imgs/{{item.owner?'checked':'check'}}.png"></image>
+                        <view class="item-wrap-content _60fed43">原创</view>
+                    </view>
+                    <view bindtap="chooseSource" class="item-wrap _60fed43" data-index="{{index}}" data-wpychoosesource-a="false">
+                        <image class="item-wrap-icon _60fed43" src="/assets/imgs/{{item.owner?'check':'checked'}}.png"></image>
+                        <view class="item-wrap-content _60fed43">转载</view>
+                    </view>
+                    <view class="item-wrap _60fed43" wx:if="{{!item.owner}}">
+                        <input bindinput="input" class="_60fed43" data-wpyinput-a="{{index}}" placeholder="请填写出处(选填)"></input>
+                    </view>
+                    <view class="btn-wrapper _60fed43">
+                        <button bindtap="changePic" class="btn-outline _60fed43" data-wpychangepic-a="{{index}}">更换图片</button>
+                        <button bindtap="delete" class="btn-outline-delete _60fed43" data-wpydelete-a="{{index}}">删除</button>
+                    </view>
+                </view>
+            </view>
+            <view class="tips _60fed43" wx:if="{{!item.ok}}">
+          分辨率不能低于1080P，请重新选择
+        </view>
+        </view>
+    </view>
+    <view class="bottom-bar _60fed43" wx:if="{{tempFiles&&tempFiles.length}}">
+        <button bindtap="upload" class="btn-submit _60fed43">确定投稿</button>
+    </view>
+</view>
+<view class="mask mask-status mask-status--{{$dialog$alMask$status}} _84cb6dd _75bccc0 _60fed43" style="z-index: {{$dialog$alMask$zIndex}};">
+    <view catchtap="$dialog$alMask$maskTap" catchtouchmove="$dialog$alMask$longTap" class="mask-bg _84cb6dd" style="background: rgba({{$dialog$alMask$backgroundColor}},{{$dialog$alMask$opacity}});"></view>
+    <view class="mask-content mask-content--{{$dialog$alMask$cAlign}} _84cb6dd" style="{{$dialog$alMask$__positionStyle}}"></view>
+</view>
+<view catchtap="$dialog$popupTap" catchtouchmove="$dialog$stop" class="popup popup-status popup-status--{{$dialog$status}} popup-content-align--{{$dialog$align}} popup-status--{{$dialog$status}}--animotion-{{$dialog$animationMode}} _75bccc0" style="z-index: {{$dialog$zIndex}};">
+    <view class="download-process _60fed43" wx:if="{{upState=='loading'||upState=='complete'}}">
+        <image class="download-bg _60fed43" src="/assets/imgs/dialog_bg.png"></image>
+        <view class="_60fed43" style="position:absolute;z-index:2;width:100%;">
+            <view class="process _416eb3d _60fed43" wx:if="{{$countdown$process>0&&$countdown$type=='per'}}">
+                <text class="_416eb3d" style="font-size:80rpx;font-weight:bold;">{{$countdown$process}}</text>%
+  </view>
+            <view class="process _416eb3d" wx:else>
+                <text class="_416eb3d" style="font-size:80rpx;font-weight:bold;" wx:if="{{$countdown$process<$countdown$total}}">{{$countdown$process}}/{{$countdown$total}}</text>
+                <view class="complete _416eb3d" wx:else>
+                    <view class="ok _416eb3d"></view>
+                </view>
+            </view>
+            <canvas canvasId="countdown" class="canvas _416eb3d" style="with:300px;height:278px;margin:auto"></canvas>
+            <view catchtap="back" class="close _60fed43" data-wpyback-a="" wx:if="{{upState=='complete'}}">
+                <image class="_60fed43" src="/assets/imgs/close.png"></image>
+            </view>
+            <view class="tip-text _60fed43">
+                <view class="_60fed43" wx:if="{{upState=='complete'}}">{{'成功上传'+successNum+'张壁纸'}}</view>
+                <view class="loading _60fed43" wx:if="{{upState=='loading'}}">{{'努力上传中,请稍候...'}}</view>
+            </view>
+        </view>
+    </view>
+</view>

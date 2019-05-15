@@ -1,0 +1,102 @@
+<view catchtap="lookSign" class="banner _bd24a7c" wx:if="{{daySigns&&daySigns.length}}">
+    <image class="_bd24a7c" lazyLoad="false" mode="aspectFill" src="{{daySigns[0].url}}"></image>
+    <view class="_bd24a7c" style="text-shadow: 0px 4rpx 12rpx rgba(58, 53, 36, 0.36);">
+        <text class="day _bd24a7c">{{daySigns[0].day}}</text>
+        <text class="_bd24a7c">{{daySigns[0].month}}.</text>
+        <text class="_bd24a7c">{{daySigns[0].year}}</text>
+    </view>
+    <button class="btn _bd24a7c">查看日签</button>
+</view>
+<view class="list-header-container _bd24a7c" wx:if="{{today.length}}">
+    <view class="list-header-title" style="font-size:{{$choiceHeader$fontSize}}">
+      {{$choiceHeader$title}}
+      <text class="list-header-sub-title" wx:if="{{$choiceHeader$subTitle}}">/{{$choiceHeader$subTitle}}</text>
+    </view>
+    <view catchtap="$choiceHeader$itemTap" class="list-header-trail" wx:if="{{$choiceHeader$content}}">{{$choiceHeader$content}}</view>
+</view>
+<scroll-view scrollX class="_6bd9f40 _bd24a7c" scrollWithAnimation="scroll-with-animation">
+    <view class="img-view _6bd9f40">
+        <view class="image-item default-img-bg img-{{$todayImg$type}} _6bd9f40" wx:for="{{$todayImg$imgs}}" wx:for-index="$todayImg$index" wx:for-item="$todayImg$img" wx:key="$todayImg$index">
+            <image binderror="$todayImg$error" bindtap="$todayImg$detail" class="img-{{$todayImg$type}} _6bd9f40" data-index="{{$todayImg$index}}" data-wpydetail-a="{{$todayImg$img.id}}" data-wpyerror-a="{{$todayImg$index}}" lazyLoad="{{$todayImg$true}}" mode="aspectFill" src="{{$todayImg$img.url}}"></image>
+            <view class="author _6bd9f40" wx:if="{{$todayImg$author}}">
+                <image catchtap="$todayImg$goPerson" class="avatar _6bd9f40" data-wpygoperson-a="{{$todayImg$img}}" lazyLoad="{{$todayImg$true}}" mode="scaleToFill" src="{{$todayImg$img.avatar}}"></image>
+                <view class="name _6bd9f40">{{$todayImg$img.author}}</view>
+            </view>
+        </view>
+    </view>
+</scroll-view>
+<view class="list-header-container _bd24a7c" wx:if="{{topics.length}}">
+    <view class="list-header-title" style="font-size:{{$topicHeader$fontSize}}">
+      {{$topicHeader$title}}
+      <text class="list-header-sub-title" wx:if="{{$topicHeader$subTitle}}">/{{$topicHeader$subTitle}}</text>
+    </view>
+    <view catchtap="$topicHeader$itemTap" class="list-header-trail" wx:if="{{$topicHeader$content}}">{{$topicHeader$content}}</view>
+</view>
+<scroll-view scrollX class="_6bd9f40 _bd24a7c" scrollWithAnimation="scroll-with-animation">
+    <view class="img-view _6bd9f40">
+        <view class="image-item default-img-bg img-{{$topicImg$type}} _6bd9f40" wx:for="{{$topicImg$imgs}}" wx:for-index="$topicImg$index" wx:for-item="$topicImg$img" wx:key="$topicImg$index">
+            <image binderror="$topicImg$error" bindtap="$topicImg$detail" class="img-{{$topicImg$type}} _6bd9f40" data-index="{{$topicImg$index}}" data-wpydetail-a="{{$topicImg$img.id}}" data-wpyerror-a="{{$topicImg$index}}" lazyLoad="{{$topicImg$true}}" mode="aspectFill" src="{{$topicImg$img.url}}"></image>
+            <view class="author _6bd9f40" wx:if="{{$topicImg$author}}">
+                <image catchtap="$topicImg$goPerson" class="avatar _6bd9f40" data-wpygoperson-a="{{$topicImg$img}}" lazyLoad="{{$topicImg$true}}" mode="scaleToFill" src="{{$topicImg$img.avatar}}"></image>
+                <view class="name _6bd9f40">{{$topicImg$img.author}}</view>
+            </view>
+        </view>
+    </view>
+</scroll-view>
+<view class="list-header-container _bd24a7c" wx:if="{{nImgs.length}}">
+    <view class="list-header-title" style="font-size:{{$newHeader$fontSize}}">
+      {{$newHeader$title}}
+      <text class="list-header-sub-title" wx:if="{{$newHeader$subTitle}}">/{{$newHeader$subTitle}}</text>
+    </view>
+    <view catchtap="$newHeader$itemTap" class="list-header-trail" wx:if="{{$newHeader$content}}">{{$newHeader$content}}</view>
+</view>
+<scroll-view scrollX class="_6bd9f40 _bd24a7c" scrollWithAnimation="scroll-with-animation">
+    <view class="img-view _6bd9f40">
+        <view class="image-item default-img-bg img-{{$newImg$type}} _6bd9f40" wx:for="{{$newImg$imgs}}" wx:for-index="$newImg$index" wx:for-item="$newImg$img" wx:key="$newImg$index">
+            <image binderror="$newImg$error" bindtap="$newImg$detail" class="img-{{$newImg$type}} _6bd9f40" data-index="{{$newImg$index}}" data-wpydetail-a="{{$newImg$img.id}}" data-wpyerror-a="{{$newImg$index}}" lazyLoad="{{$newImg$true}}" mode="aspectFill" src="{{$newImg$img.url}}"></image>
+            <view class="author _6bd9f40" wx:if="{{$newImg$author}}">
+                <image catchtap="$newImg$goPerson" class="avatar _6bd9f40" data-wpygoperson-a="{{$newImg$img}}" lazyLoad="{{$newImg$true}}" mode="scaleToFill" src="{{$newImg$img.avatar}}"></image>
+                <view class="name _6bd9f40">{{$newImg$img.author}}</view>
+            </view>
+        </view>
+    </view>
+</scroll-view>
+<view class="list-header-container _bd24a7c" wx:if="{{downloadImgs.length}}">
+    <view class="list-header-title" style="font-size:{{$downloadHeader$fontSize}}">
+      {{$downloadHeader$title}}
+      <text class="list-header-sub-title" wx:if="{{$downloadHeader$subTitle}}">/{{$downloadHeader$subTitle}}</text>
+    </view>
+    <view catchtap="$downloadHeader$itemTap" class="list-header-trail" wx:if="{{$downloadHeader$content}}">{{$downloadHeader$content}}</view>
+</view>
+<scroll-view scrollX class="_6bd9f40 _bd24a7c" scrollWithAnimation="scroll-with-animation">
+    <view class="img-view _6bd9f40">
+        <view class="image-item default-img-bg img-{{$downloadImg$type}} _6bd9f40" wx:for="{{$downloadImg$imgs}}" wx:for-index="$downloadImg$index" wx:for-item="$downloadImg$img" wx:key="$downloadImg$index">
+            <image binderror="$downloadImg$error" bindtap="$downloadImg$detail" class="img-{{$downloadImg$type}} _6bd9f40" data-index="{{$downloadImg$index}}" data-wpydetail-a="{{$downloadImg$img.id}}" data-wpyerror-a="{{$downloadImg$index}}" lazyLoad="{{$downloadImg$true}}" mode="aspectFill" src="{{$downloadImg$img.url}}"></image>
+            <view class="author _6bd9f40" wx:if="{{$downloadImg$author}}">
+                <image catchtap="$downloadImg$goPerson" class="avatar _6bd9f40" data-wpygoperson-a="{{$downloadImg$img}}" lazyLoad="{{$downloadImg$true}}" mode="scaleToFill" src="{{$downloadImg$img.avatar}}"></image>
+                <view class="name _6bd9f40">{{$downloadImg$img.author}}</view>
+            </view>
+        </view>
+    </view>
+</scroll-view>
+<view class="list-header-container _bd24a7c" wx:if="{{recommends.length}}">
+    <view class="list-header-title" style="font-size:{{$recommendHeader$fontSize}}">
+      {{$recommendHeader$title}}
+      <text class="list-header-sub-title" wx:if="{{$recommendHeader$subTitle}}">/{{$recommendHeader$subTitle}}</text>
+    </view>
+    <view catchtap="$recommendHeader$itemTap" class="list-header-trail" wx:if="{{$recommendHeader$content}}">{{$recommendHeader$content}}</view>
+</view>
+<scroll-view scrollX class="_6bd9f40 _bd24a7c" scrollWithAnimation="scroll-with-animation">
+    <view class="img-view _6bd9f40">
+        <view class="image-item default-img-bg img-{{$recommendImg$type}} _6bd9f40" wx:for="{{$recommendImg$imgs}}" wx:for-index="$recommendImg$index" wx:for-item="$recommendImg$img" wx:key="$recommendImg$index">
+            <image binderror="$recommendImg$error" bindtap="$recommendImg$detail" class="img-{{$recommendImg$type}} _6bd9f40" data-index="{{$recommendImg$index}}" data-wpydetail-a="{{$recommendImg$img.id}}" data-wpyerror-a="{{$recommendImg$index}}" lazyLoad="{{$recommendImg$true}}" mode="aspectFill" src="{{$recommendImg$img.url}}"></image>
+            <view class="author _6bd9f40" wx:if="{{$recommendImg$author}}">
+                <image catchtap="$recommendImg$goPerson" class="avatar _6bd9f40" data-wpygoperson-a="{{$recommendImg$img}}" lazyLoad="{{$recommendImg$true}}" mode="scaleToFill" src="{{$recommendImg$img.avatar}}"></image>
+                <view class="name _6bd9f40">{{$recommendImg$img.author}}</view>
+            </view>
+        </view>
+    </view>
+</scroll-view>
+<view class="_bd24a7c" style="width:100%;height:200rpx;">
+    <view class="lds-dual-ring _d56c170 _bd24a7c" style="width:{{$loading$width}}rpx;height:{{$loading$height}}rpx;margin-top:{{$loading$top}}rpx" wx:if="{{today.length==0&&topics.length==0&&downloadImgs==0&&nImgs.length==0&&recommends.length==0}}"></view>
+</view>

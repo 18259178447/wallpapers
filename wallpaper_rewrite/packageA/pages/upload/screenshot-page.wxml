@@ -1,0 +1,14 @@
+<view class='screenshot-page page'>
+  <canvas
+          class="cropper"
+          disable-scroll="true"
+          bindtouchstart="touchStart"
+          bindtouchmove="touchMove"
+          bindtouchend="touchEnd"
+          canvas-id="cropper">
+  </canvas>
+  <view class='cropper-btns' catchtap='event'>
+    <view data-event="back">取消</view>
+    <view data-pageindex="1" data-event="changePage">确认</view>
+  </view>
+</view>

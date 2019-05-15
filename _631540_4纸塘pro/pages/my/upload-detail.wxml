@@ -1,0 +1,9 @@
+<view bindtap="back" class="custom-navbar-container _19c2a2c" style="top:{{statusHeight}}px;">
+    <view class="back _19c2a2c"></view>
+</view>
+<view bindtap="back" class="imagesize _19c2a2c" style="background-image:url({{image.url}})">
+    <view class="mask _19c2a2c"></view>
+    <view class="reason _19c2a2c">
+     拒绝理由：{{image.reviewReason}}
+    </view>
+</view>

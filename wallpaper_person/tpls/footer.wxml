@@ -1,0 +1,150 @@
+<template name="footer-home">
+  <button formType="submit" hover-class="none" data-method="switchTab" data-url="/pages/index/index">
+    <image src='/assets/icon-home.png'></image>
+    <text>首页</text>
+  </button>
+</template>
+
+<template name="footer-share">
+  <button hover-class="none" class="btn-share btn" open-type="share" data-type="2">
+    <image src='/assets/icon-share.png'></image>
+    <text>分享</text>
+  </button>
+</template>
+
+<template name="footer-collect">
+  <button formType="submit" hover-class="none" data-event="collectHandle" class="btn-collect btn">
+    <block wx:if="{{footer.isCollected}}">
+      <image src='/assets/icon-collect-active.png'></image>
+      <text style='color: #F32B2B;'>取消收藏</text>
+    </block>
+    <block wx:else>
+      <image src='/assets/icon-collect-on.png'></image>
+      <text>收藏</text>
+    </block>
+  </button>
+</template>
+
+<template name="footer-poster">
+  <button formType="submit" hover-class="none" data-event="openPoster">
+    <image src='https://minibizhi.313515.com/BiZhiStatic/icon-all-poster.svg'></image>
+    <text>海报</text>
+  </button>
+</template>
+
+<template name="footer-download">
+  <button formType="submit" hover-class="none" data-event="downloadInit" class="btn-download btn">
+    <view></view>
+    <image src='/assets/icon-download.png'></image>
+    <text>下载</text>
+  </button>
+</template>
+<!-- 动态壁纸设置教程 -->
+<template name="footer-guide">
+  <button formType="submit" hover-class="none" data-url="/packageA/pages/pageBase/pageBase?pagename=videoGuide">
+      <image src='https://minibizhi.313515.com/BiZhiStatic/icon-all-bottom-setting.svg'></image>
+      <text>设置教程</text> 
+  </button>
+</template>
+
+<template name="footer-comment-list">
+  <button formType="submit" hover-class="none" data-event="moreComment">
+      <image src='https://minibizhi.313515.com/BiZhiStatic/icon-bottom-nav-comment.svg'></image>
+      <text>{{footer.commentCount}}</text> 
+  </button>
+</template>
+<template name="footer-comment">
+    <button formType="submit" class='comment-btn' hover-class="none" data-event="openComment">
+        留言
+    </button>
+</template>
+
+
+<template name="footer-sort">
+  <button wx:if="{{!footer.hideSort}}" formType="submit" hover-class="none" data-event="toggle" data-toggle="footer.isSortItem">
+    <image src='https://minibizhi.313515.com/BiZhiStatic/icon-all-bottom-order.svg'></image>
+    <text>{{footer.sortText[footer.sortIndex]}}</text>
+  </button>
+</template>
+<template name="footer-sort-extra">
+  <view class='sort-mask f-f' formType="submit" hover-class="none" catchtap="toggle" data-toggle="footer.isSortItem" wx:if="{{footer.isSortItem}}"></view>
+  <view class='sort-items {{footer.isSortItem ? "on" : ""}}' style='height:{{footer.sortText.length * 85}}rpx'>
+     <view class='sort-items-wrap f-ab' catchtap="sortSelected">
+        <view wx:for="{{footer.sortText}}" wx:key="{{index}}" class='{{footer.sortIndex === index ? "on" : ""}}' data-index="{{index}}">{{item}}</view>
+     </view>
+  </view>
+</template>
+
+
+<!--自定义 大图页的解锁按钮 -->
+<template name="unlock-btn">
+  <form class='footer' bindsubmit="formSubmit" report-submit="{{footer.isFormId}}">
+    <view class='footer-wrap unlock-btn flexHV'>
+      <button hover-class="none" class='' data-event="unlock" formType="submit">
+        <image src='https://minibizhi.313515.com/BiZhiStatic/icon-lock.svg'></image>
+        <text>观看视频解锁壁纸</text>
+      </button>
+      <!-- <button formType="submit" hover-class="none" data-event="openBuyPanel">
+          <image src="https://minibizhi.313515.com/BiZhiStatic/icon-preview-unlock-reward.svg" />
+          <text>赞赏解锁</text>
+      </button> -->
+    </view>
+  </form>
+</template>
+
+
+<!--自定义 上传页delete front部分-->
+<template name="upload-delete-front">
+    <button formType="submit" hover-class="none" data-event="uploadHandle" class='upload flex1'>上传</button>
+    <button formType="submit" hover-class="none" data-event="toggle" class='delete flex1'>删除</button>
+    <button formType="submit" hover-class="none" data-event="openExplain" class='explain flex1'>声明</button>
+</template>
+<!--自定义 删除按钮控制 -->
+<template name="delete-ctrl">
+  <form class='footer' bindsubmit="formSubmit" report-submit="{{footer.isFormId}}" hidden="{{footer.isDeleteCtrlHide}}">
+    <view class='footer-wrap delete-ctrl'>
+        <view class='front flexHV' hidden='{{footer.deleteCtrlfrontHidden}}'>
+            <button wx:if="{{!footer.deleteFrontMode}}" formType="submit" hover-class="none" data-event="toggle" class='delete flex1'>删除</button>
+            <template wx:else is="{{footer.deleteFrontMode}}" data="{{footer,currentIndex}}" />
+        </view>
+        <view class='back flex-sb' hidden='{{!footer.deleteCtrlfrontHidden}}'>
+          <button formType="submit" hover-class="none" data-event="toggle">取消</button>
+          <button formType="submit" hover-class="none" data-event="deleteSubmit">删除</button>
+        </view>
+    </view>
+  </form>
+</template>
+
+<!-- 自定义 评论列表页 评论输入框 -->
+<template name="comment-input">
+  <form class='footer' bindsubmit="formSubmit" report-submit="{{footer.isFormId}}" >
+    <view class='footer-wrap flexV comment-input'>
+        <button data-event="openComment" formType="submit" hover-class="none" class="comment-input-btn">说说你的想法吧！</button>
+        <button class="comment-input-icon flexV">
+          <image src="https://minibizhi.313515.com/BiZhiStatic/icon-commet-count.svg" mode="aspectFill" />
+          <text>{{footer.commentCount}}</text>
+        </button>
+    </view>
+  </form>
+</template>
+
+<!-- 空 -->
+<template name="footer-empty">
+
+</template>
+
+<!-- 如果有底部 -->
+<block wx:if="{{footer}}">
+  <!-- 如果没有自定义底部，这使用通用的底部 -->
+  <block wx:if="{{!footer.mode}}">
+    <form class='footer {{footer.class || ""}}' bindsubmit="formSubmit" report-submit="{{footer.isFormId}}">
+      <view class='footer-wrap flexV'>
+        <template wx:for="{{footer.btns}}" is="{{'footer-' + item}}" wx:key="{{item}}" data="{{footer,currentIndex}}" />
+      </view>
+    </form>
+    <!-- 辅助上面的底部，提供额外的模板 -->
+    <template wx:if="{{footer.extra}}" is="{{footer.extra}}" data="{{footer,currentIndex}}" />
+  </block>
+  <!--不使用通用 自定义底部 -->
+  <template wx:else is="{{footer.mode}}" data="{{footer,currentIndex}}" />
+</block>

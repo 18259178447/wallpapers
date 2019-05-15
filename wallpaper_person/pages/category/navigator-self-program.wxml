@@ -1,0 +1,11 @@
+<view bindtap='navgatorEvent'>
+  <image class='banner' mode='widthFix' src='{{mainCategorys[currentIndex].Image}}' data-index="{{0}}"></image>
+  <view class="title" data-index="{{0}}">{{mainCategorys[currentIndex].CategoryTitle}}</view>
+  <view class='subCategory-content'>
+    <view wx:for="{{subCategory}}" wx:key="{{item.SubID}}" wx:if="{{index !== 0}}" data-index="{{index}}">
+      <image src='{{item.IconUrl}}'></image>
+      <text class='line-e'>{{item.SubName}}</text>
+    </view>
+    <view wx:if="{{(subCategory.length - 1) % 3 === 2}}"><image src=''></image></view>
+  </view>
+</view>

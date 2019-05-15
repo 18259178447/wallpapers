@@ -1,0 +1,26 @@
+.list-base-nav{
+  justify-content: space-around;
+  height:96rpx;
+  padding:0 50rpx;
+  background-color: #fff;
+  pointer-events: auto;
+}
+
+.list-base-nav text{
+  display: block;
+  padding: 0rpx 34rpx;
+  font-size: 26rpx;
+  color: #818181;
+  line-height: 56rpx;
+  background: #F7F7F7;
+  border-radius: 28rpx;
+  letter-spacing: 0.4rpx;
+  /* margin-right:30rpx; */
+  white-space: nowrap
+}
+
+
+.list-base-nav text.active{
+  color:#239EFE;
+  background:rgba(35,158,254,0.20);
+}

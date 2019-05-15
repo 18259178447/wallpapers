@@ -1,0 +1,28 @@
+.picture-container._4ad0e24 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    overflow: auto;
+    padding: 30rpx 16rpx 120rpx;
+}
+
+.picture-container .picture-wrap._4ad0e24 {
+    flex: 1 50%;
+    max-width: 50%;
+    text-align: center;
+    padding-bottom: 20rpx;
+}
+
+.picture-container .picture-wrap .picture-wrap-item._4ad0e24 {
+    width: 334rpx;
+    height: 594rpx;
+    border-radius: 4px;
+    margin: auto;
+}
+
+.picture-container .picture-wrap image._4ad0e24 {
+    width: 334rpx;
+    height: 594rpx;
+    box-shadow: 0 2px 16px 0 #000;
+    border-radius: 4px;
+}

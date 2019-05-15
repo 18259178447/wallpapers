@@ -1,0 +1,9 @@
+@import "../../utils/base.wxss";
+@import "../../css_blocks/module.wxss";
+.fixed-header{
+  background: #181824
+}
+
+.page{
+   background: #181824
+}

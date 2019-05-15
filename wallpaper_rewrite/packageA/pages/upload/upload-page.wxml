@@ -1,0 +1,11 @@
+<view class='upload-page page' catchtap='event'>
+  <view data-event="uploadHandle" class='upload-btn'>上传</view>
+  <view class='res-src'>
+    <image wx:if="{{resSrc}}" src='{{resSrc}}' mode='widthFix'></image>
+  </view>
+  <view data-pageindex="2" data-event="changePage" class='add-btn'>添加标签</view>
+  <view class='labels-box'>
+    <view class='blue' hover-class="none" wx:if="{{categoryIndex > -1}}">{{mainCategorys[categoryIndex].CategoryTitle}}</view>
+    <view class='blue' wx:for="{{subCategoryIndexs}}" wx:key="{{index}}" hover-class="none">{{subCategory[item]}}</view>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+<scroll-view scroll-x scroll-with-animation scroll-left="{{scrollLeft}}" class='scroll-nav-container pea'>
+  <view class='scroll-nav-wrap {{header.hasNavView ? "hasNavView" : ""}}'>
+    <view class='scroll-nav-view flexV flex-nowrap' catchtap='navSwitch'>
+      <text class="nav-item {{currentIndex == index ? 'active' : ''}}" wx:for="{{listNav}}" wx:key="{{index}}" data-index="{{index}}">{{item.CategoryName}}</text>
+    </view>
+  </view>
+</scroll-view>

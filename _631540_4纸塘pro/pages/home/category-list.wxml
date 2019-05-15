@@ -1,0 +1,16 @@
+<block wx:for="{{imgs}}" wx:key="index">
+    <view class="list-header-container _33ff366" wx:if="{{item.images.length}}">
+        <view class="list-header-title _33ff366">
+        {{item.name}}
+        <text class="list-header-sub-title _33ff366">/分类</text>
+        </view>
+        <view catchtap="itemTap" class="list-header-trail scondary _33ff366" data-wpyitemtap-a="{{index}}">查看更多</view>
+    </view>
+    <scroll-view scrollX class="_33ff366" scrollWithAnimation="scroll-with-animation">
+        <view class="img-view _33ff366">
+            <view class="image-item default-img-bg img-normal _33ff366" wx:for="{{item.images}}" wx:for-item="img" wx:key="index">
+                <image binderror="error" bindtap="detail" class="img-normal _33ff366" data-index="{{index}}" data-wpydetail-a="{{img.id}}" data-wpyerror-a="{{index}}" lazyLoad="{{true}}" mode="aspectFill" src="{{img.url}}"></image>
+            </view>
+        </view>
+    </scroll-view>
+</block>

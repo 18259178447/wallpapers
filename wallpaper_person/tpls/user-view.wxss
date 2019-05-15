@@ -1,0 +1,31 @@
+
+/* 用户信息 */
+.user-view{
+  padding-top: 10rpx;
+  height: 136rpx;
+}
+.user-view .left{
+  width: 76rpx;
+  height: 76rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+  box-shadow: 0px 0px 3rpx 1rpx rgba(0, 0, 0, 0.2);
+  background-image: url('https://minibizhi.313515.com/svg/default.svg');
+  background-size: cover;
+}
+.user-view .nickName{
+  font-size:28rpx;
+  color:#4c4c4c;
+  line-height:1.4;
+  text-align:left;
+  font-weight:500;
+  max-width: 450rpx;
+  pointer-events: none;
+}
+.user-view .createTime{
+  font-size:24rpx;
+  color:#949494;
+  margin-top:5rpx;
+  font-weight:normal;
+  pointer-events: none;
+}

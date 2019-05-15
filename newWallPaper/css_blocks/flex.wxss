@@ -1,0 +1,43 @@
+/* flex模块 */
+.flex{
+  display: flex;
+}
+.flex_h_center{
+  justify-content: center;
+}
+.flex_h_sb{
+  justify-content: space-between;
+}
+.flex_h_sa{
+  justify-content: space-around;
+}
+
+.flex_v_center{
+  align-items: center;
+}
+.flex_hv_center,.flex-c_hv_center{
+  justify-content: center;
+  align-items: center;
+}
+.flex_nowrap{
+  flex-wrap: nowrap;
+}
+.flex_wrap{
+  flex-wrap: wrap;
+}
+
+.flex__1,.flex-c__1{
+  flex: 1;
+}
+
+/* flex-c模块 */
+.flex-c{
+  display: flex;
+  flex-direction: column;
+}
+.flex-c_h_center{
+  align-items: center;
+}
+.flex-c_v_center{
+  justify-content: center;
+}

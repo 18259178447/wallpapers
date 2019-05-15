@@ -1,0 +1,108 @@
+<view class="navbar-container _fb854e2">
+    <view style="background:{{$navbar$color}};height:{{$navbar$height}};width:100%"></view>
+    <view style="height: 46px;line-height:46px;background:{{$navbar$color}}">
+        <view class="navbar-title-wrap" wx:if="{{$navbar$title}}">
+            <view catchtap="$navbar$back" class="back"></view>
+            <view class="content">{{$navbar$title}}</view>
+            <view class="last"></view>
+        </view>
+        <view wx:else>
+            <view class="tab-custom-container scondary _fb854e2">
+                <view catchtap="back" class="back _fb854e2"></view>
+                <view bindtap="choose" class="{{selectedTab==0?'active':''}} _fb854e2" data-wpychoose-a="0">已通过</view>
+                <view bindtap="choose" class="{{selectedTab==1?'active':''}} _fb854e2" data-wpychoose-a="1">审核中</view>
+                <view bindtap="choose" class="{{selectedTab==2?'active':''}} _fb854e2" data-wpychoose-a="2">已拒绝</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view style="height:{{$navbar$marginHeight}}px;width:100%;" wx:if="{{$navbar$showPadding}}"></view>
+<view class="page-container _fb854e2">
+    <scroll-view scrollY bindscroll="scroll" class="page _fb854e2" scrollTop="{{passScrollTop}}" style="left: {{page1Left}}">
+        <view class="_fb854e2" style="height:{{marginHeight}}px;width:100%;"></view>
+        <view class="empty _7641959 _fb854e2" wx:if="{{passTotalPages==0}}">
+            <image class="_7641959" mode="aspectFill" src="/assets/imgs/empty.png"></image>
+            <view class="_7641959">
+      空空如也～
+    </view>
+        </view>
+        <view class="picture-container _4ad0e24 _fb854e2">
+            <view class="picture-wrap _4ad0e24" wx:for="{{$passPictureList$pics}}" wx:for-index="$passPictureList$index" wx:for-item="$passPictureList$item" wx:key="$passPictureList$index">
+                <view class="picture-wrap-item default-img-bg _4ad0e24">
+                    <image bindtap="$passPictureList$goDetail" class="_4ad0e24" data-wpygodetail-a="{{$passPictureList$item.id}}" lazyLoad="{{$passPictureList$true}}" mode="aspectFill" src="{{$passPictureList$item.url}}"></image>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+    <scroll-view scrollY bindscroll="scroll" class="page _fb854e2" scrollTop="{{applyingScrollTop}}" style="left: {{page2Left}}">
+        <view class="_fb854e2" style="height:{{marginHeight}}px;width:100%;"></view>
+        <view class="empty _7641959 _fb854e2" wx:if="{{applyingTotalPages==0}}">
+            <image class="_7641959" mode="aspectFill" src="/assets/imgs/empty.png"></image>
+            <view class="_7641959">
+      空空如也～
+    </view>
+        </view>
+        <view class="picture-container _4ad0e24 _fb854e2">
+            <view class="picture-wrap _4ad0e24" wx:for="{{$applyingPictureList$pics}}" wx:for-index="$applyingPictureList$index" wx:for-item="$applyingPictureList$item" wx:key="$applyingPictureList$index">
+                <view class="picture-wrap-item default-img-bg _4ad0e24">
+                    <image bindtap="$applyingPictureList$goDetail" class="_4ad0e24" data-wpygodetail-a="{{$applyingPictureList$item.id}}" lazyLoad="{{$applyingPictureList$true}}" mode="aspectFill" src="{{$applyingPictureList$item.url}}"></image>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+    <scroll-view scrollY bindscroll="scroll" class="page _fb854e2" scrollTop="{{refuseScrollTop}}" style="left: {{page3Left}}">
+        <view class="_fb854e2" style="height:{{marginHeight}}px;width:100%;"></view>
+        <view class="_fb854e2" style="font-size:28rpx;color:#ffe725;padding:30rpx 30rpx 0;">仅保留近期被拒绝的投稿</view>
+        <view class="empty _7641959 _fb854e2" wx:if="{{refuseTotalPages==0}}">
+            <image class="_7641959" mode="aspectFill" src="/assets/imgs/empty.png"></image>
+            <view class="_7641959">
+      空空如也～
+    </view>
+        </view>
+        <view class="picture-container _4ad0e24 _fb854e2">
+            <view class="picture-wrap _4ad0e24" wx:for="{{$refusePictureList$pics}}" wx:for-index="$refusePictureList$index" wx:for-item="$refusePictureList$item" wx:key="$refusePictureList$index">
+                <view class="picture-wrap-item default-img-bg _4ad0e24">
+                    <image bindtap="$refusePictureList$goDetail" class="_4ad0e24" data-wpygodetail-a="{{$refusePictureList$item.id}}" lazyLoad="{{$refusePictureList$true}}" mode="aspectFill" src="{{$refusePictureList$item.url}}"></image>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>
+<view class="_fb854e2" style="position: fixed;bottom: 0;width:100%">
+    <view class="bottom-bar _c35f166 _fb854e2" wx:if="{{selectedTab==0&&passTotalPages>0}}">
+        <view bindtap="$passPager$last" class="bottom-item _c35f166" data-wpylast-a="" style="flex 1 40rpx;margin-left:30rpx">
+            <image class="back _c35f166" src="/assets/imgs/forward.png"></image>上一页
+    </view>
+        <view class="bottom-item _c35f166" style="text-align:center;margin:0">
+            <input bindconfirm="$passPager$inputChange" class="input _c35f166" type="text" value="{{$passPager$currentIndex}}"></input>
+            <view class="_c35f166">/{{$passPager$total}}页</view>
+        </view>
+        <view bindtap="$passPager$next" class="bottom-item _c35f166" data-wpynext-a="" style="flex 1 40rpx;text-align:right;justify-content: flex-end;margin-right:30rpx">下一页
+      <image class="forward _c35f166" src="/assets/imgs/forward.png"></image>
+        </view>
+    </view>
+    <view class="bottom-bar _c35f166 _fb854e2" wx:if="{{selectedTab==1&&applyingTotalPages>0}}">
+        <view bindtap="$applyingPager$last" class="bottom-item _c35f166" data-wpylast-a="" style="flex 1 40rpx;margin-left:30rpx">
+            <image class="back _c35f166" src="/assets/imgs/forward.png"></image>上一页
+    </view>
+        <view class="bottom-item _c35f166" style="text-align:center;margin:0">
+            <input bindconfirm="$applyingPager$inputChange" class="input _c35f166" type="text" value="{{$applyingPager$currentIndex}}"></input>
+            <view class="_c35f166">/{{$applyingPager$total}}页</view>
+        </view>
+        <view bindtap="$applyingPager$next" class="bottom-item _c35f166" data-wpynext-a="" style="flex 1 40rpx;text-align:right;justify-content: flex-end;margin-right:30rpx">下一页
+      <image class="forward _c35f166" src="/assets/imgs/forward.png"></image>
+        </view>
+    </view>
+    <view class="bottom-bar _c35f166 _fb854e2" wx:if="{{selectedTab==2&&refuseTotalPages>0}}">
+        <view bindtap="$refusePager$last" class="bottom-item _c35f166" data-wpylast-a="" style="flex 1 40rpx;margin-left:30rpx">
+            <image class="back _c35f166" src="/assets/imgs/forward.png"></image>上一页
+    </view>
+        <view class="bottom-item _c35f166" style="text-align:center;margin:0">
+            <input bindconfirm="$refusePager$inputChange" class="input _c35f166" type="text" value="{{$refusePager$currentIndex}}"></input>
+            <view class="_c35f166">/{{$refusePager$total}}页</view>
+        </view>
+        <view bindtap="$refusePager$next" class="bottom-item _c35f166" data-wpynext-a="" style="flex 1 40rpx;text-align:right;justify-content: flex-end;margin-right:30rpx">下一页
+      <image class="forward _c35f166" src="/assets/imgs/forward.png"></image>
+        </view>
+    </view>
+</view>

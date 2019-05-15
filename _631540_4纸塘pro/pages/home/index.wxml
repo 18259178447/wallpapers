@@ -1,0 +1,189 @@
+<view class="navbar-container _01b8e92">
+    <view style="background:{{$navbar$color}};height:{{$navbar$height}};width:100%"></view>
+    <view style="height: 46px;line-height:46px;background:{{$navbar$color}}">
+        <view class="navbar-title-wrap" wx:if="{{$navbar$title}}">
+            <view catchtap="$navbar$back" class="back"></view>
+            <view class="content">{{$navbar$title}}</view>
+            <view class="last"></view>
+        </view>
+        <view wx:else>
+            <view class="navbar-custom-wrap _01b8e92">
+                <view catchtap="goMy" class="avatar-container _01b8e92">
+                    <image class="avatar _01b8e92" lazyLoad="false" mode="scaleToFill" src="{{user?user.avatar:'/assets/imgs/default.jpg'}}"></image>
+                </view>
+                <view class="title _01b8e92">
+        纸塘壁纸
+      </view>
+                <view class="_01b8e92" style="width: 30px"></view>
+            </view>
+        </view>
+    </view>
+</view>
+<view style="height:{{$navbar$marginHeight}}px;width:100%;" wx:if="{{$navbar$showPadding}}"></view>
+<view class="_01b8e92" style="height:{{height}}px;"></view>
+<view class="page-container; _01b8e92">
+    <view class="page _01b8e92" hidden="{{selectedTab==0?false:true}}" style="left: {{selectedTab==0?0:'-100%'}};">
+        <view catchtap="$recommend$lookSign" class="banner _bd24a7c _01b8e92" wx:if="{{$recommend$daySigns&&$recommend$daySigns.length}}">
+            <image class="_bd24a7c" lazyLoad="false" mode="aspectFill" src="{{$recommend$daySigns[0].url}}"></image>
+            <view class="_bd24a7c" style="text-shadow: 0px 4rpx 12rpx rgba(58, 53, 36, 0.36);">
+                <text class="day _bd24a7c">{{$recommend$daySigns[0].day}}</text>
+                <text class="_bd24a7c">{{$recommend$daySigns[0].month}}.</text>
+                <text class="_bd24a7c">{{$recommend$daySigns[0].year}}</text>
+            </view>
+            <button class="btn _bd24a7c">查看日签</button>
+        </view>
+        <view class="list-header-container _bd24a7c" wx:if="{{$recommend$today.length}}">
+            <view class="list-header-title" style="font-size:{{$recommend$choiceHeader$fontSize}}">
+      {{$recommend$choiceHeader$title}}
+      <text class="list-header-sub-title" wx:if="{{$recommend$choiceHeader$subTitle}}">/{{$recommend$choiceHeader$subTitle}}</text>
+            </view>
+            <view catchtap="$recommend$choiceHeader$itemTap" class="list-header-trail" wx:if="{{$recommend$choiceHeader$content}}">{{$recommend$choiceHeader$content}}</view>
+        </view>
+        <scroll-view scrollX class="_6bd9f40 _bd24a7c" scrollWithAnimation="scroll-with-animation">
+            <view class="img-view _6bd9f40">
+                <view class="image-item default-img-bg img-{{$recommend$todayImg$type}} _6bd9f40" wx:for="{{$recommend$todayImg$imgs}}" wx:for-index="$recommend$todayImg$index" wx:for-item="$recommend$todayImg$img" wx:key="$recommend$todayImg$index">
+                    <image binderror="$recommend$todayImg$error" bindtap="$recommend$todayImg$detail" class="img-{{$recommend$todayImg$type}} _6bd9f40" data-index="{{$recommend$todayImg$index}}" data-wpydetail-a="{{$recommend$todayImg$img.id}}" data-wpyerror-a="{{$recommend$todayImg$index}}" lazyLoad="{{$recommend$todayImg$true}}" mode="aspectFill" src="{{$recommend$todayImg$img.url}}"></image>
+                    <view class="author _6bd9f40" wx:if="{{$recommend$todayImg$author}}">
+                        <image catchtap="$recommend$todayImg$goPerson" class="avatar _6bd9f40" data-wpygoperson-a="{{$recommend$todayImg$img}}" lazyLoad="{{$recommend$todayImg$true}}" mode="scaleToFill" src="{{$recommend$todayImg$img.avatar}}"></image>
+                        <view class="name _6bd9f40">{{$recommend$todayImg$img.author}}</view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+        <view class="list-header-container _bd24a7c" wx:if="{{$recommend$topics.length}}">
+            <view class="list-header-title" style="font-size:{{$recommend$topicHeader$fontSize}}">
+      {{$recommend$topicHeader$title}}
+      <text class="list-header-sub-title" wx:if="{{$recommend$topicHeader$subTitle}}">/{{$recommend$topicHeader$subTitle}}</text>
+            </view>
+            <view catchtap="$recommend$topicHeader$itemTap" class="list-header-trail" wx:if="{{$recommend$topicHeader$content}}">{{$recommend$topicHeader$content}}</view>
+        </view>
+        <scroll-view scrollX class="_6bd9f40 _bd24a7c" scrollWithAnimation="scroll-with-animation">
+            <view class="img-view _6bd9f40">
+                <view class="image-item default-img-bg img-{{$recommend$topicImg$type}} _6bd9f40" wx:for="{{$recommend$topicImg$imgs}}" wx:for-index="$recommend$topicImg$index" wx:for-item="$recommend$topicImg$img" wx:key="$recommend$topicImg$index">
+                    <image binderror="$recommend$topicImg$error" bindtap="$recommend$topicImg$detail" class="img-{{$recommend$topicImg$type}} _6bd9f40" data-index="{{$recommend$topicImg$index}}" data-wpydetail-a="{{$recommend$topicImg$img.id}}" data-wpyerror-a="{{$recommend$topicImg$index}}" lazyLoad="{{$recommend$topicImg$true}}" mode="aspectFill" src="{{$recommend$topicImg$img.url}}"></image>
+                    <view class="author _6bd9f40" wx:if="{{$recommend$topicImg$author}}">
+                        <image catchtap="$recommend$topicImg$goPerson" class="avatar _6bd9f40" data-wpygoperson-a="{{$recommend$topicImg$img}}" lazyLoad="{{$recommend$topicImg$true}}" mode="scaleToFill" src="{{$recommend$topicImg$img.avatar}}"></image>
+                        <view class="name _6bd9f40">{{$recommend$topicImg$img.author}}</view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+        <view class="list-header-container _bd24a7c" wx:if="{{$recommend$nImgs.length}}">
+            <view class="list-header-title" style="font-size:{{$recommend$newHeader$fontSize}}">
+      {{$recommend$newHeader$title}}
+      <text class="list-header-sub-title" wx:if="{{$recommend$newHeader$subTitle}}">/{{$recommend$newHeader$subTitle}}</text>
+            </view>
+            <view catchtap="$recommend$newHeader$itemTap" class="list-header-trail" wx:if="{{$recommend$newHeader$content}}">{{$recommend$newHeader$content}}</view>
+        </view>
+        <scroll-view scrollX class="_6bd9f40 _bd24a7c" scrollWithAnimation="scroll-with-animation">
+            <view class="img-view _6bd9f40">
+                <view class="image-item default-img-bg img-{{$recommend$newImg$type}} _6bd9f40" wx:for="{{$recommend$newImg$imgs}}" wx:for-index="$recommend$newImg$index" wx:for-item="$recommend$newImg$img" wx:key="$recommend$newImg$index">
+                    <image binderror="$recommend$newImg$error" bindtap="$recommend$newImg$detail" class="img-{{$recommend$newImg$type}} _6bd9f40" data-index="{{$recommend$newImg$index}}" data-wpydetail-a="{{$recommend$newImg$img.id}}" data-wpyerror-a="{{$recommend$newImg$index}}" lazyLoad="{{$recommend$newImg$true}}" mode="aspectFill" src="{{$recommend$newImg$img.url}}"></image>
+                    <view class="author _6bd9f40" wx:if="{{$recommend$newImg$author}}">
+                        <image catchtap="$recommend$newImg$goPerson" class="avatar _6bd9f40" data-wpygoperson-a="{{$recommend$newImg$img}}" lazyLoad="{{$recommend$newImg$true}}" mode="scaleToFill" src="{{$recommend$newImg$img.avatar}}"></image>
+                        <view class="name _6bd9f40">{{$recommend$newImg$img.author}}</view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+        <view class="list-header-container _bd24a7c" wx:if="{{$recommend$downloadImgs.length}}">
+            <view class="list-header-title" style="font-size:{{$recommend$downloadHeader$fontSize}}">
+      {{$recommend$downloadHeader$title}}
+      <text class="list-header-sub-title" wx:if="{{$recommend$downloadHeader$subTitle}}">/{{$recommend$downloadHeader$subTitle}}</text>
+            </view>
+            <view catchtap="$recommend$downloadHeader$itemTap" class="list-header-trail" wx:if="{{$recommend$downloadHeader$content}}">{{$recommend$downloadHeader$content}}</view>
+        </view>
+        <scroll-view scrollX class="_6bd9f40 _bd24a7c" scrollWithAnimation="scroll-with-animation">
+            <view class="img-view _6bd9f40">
+                <view class="image-item default-img-bg img-{{$recommend$downloadImg$type}} _6bd9f40" wx:for="{{$recommend$downloadImg$imgs}}" wx:for-index="$recommend$downloadImg$index" wx:for-item="$recommend$downloadImg$img" wx:key="$recommend$downloadImg$index">
+                    <image binderror="$recommend$downloadImg$error" bindtap="$recommend$downloadImg$detail" class="img-{{$recommend$downloadImg$type}} _6bd9f40" data-index="{{$recommend$downloadImg$index}}" data-wpydetail-a="{{$recommend$downloadImg$img.id}}" data-wpyerror-a="{{$recommend$downloadImg$index}}" lazyLoad="{{$recommend$downloadImg$true}}" mode="aspectFill" src="{{$recommend$downloadImg$img.url}}"></image>
+                    <view class="author _6bd9f40" wx:if="{{$recommend$downloadImg$author}}">
+                        <image catchtap="$recommend$downloadImg$goPerson" class="avatar _6bd9f40" data-wpygoperson-a="{{$recommend$downloadImg$img}}" lazyLoad="{{$recommend$downloadImg$true}}" mode="scaleToFill" src="{{$recommend$downloadImg$img.avatar}}"></image>
+                        <view class="name _6bd9f40">{{$recommend$downloadImg$img.author}}</view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+        <view class="list-header-container _bd24a7c" wx:if="{{$recommend$recommends.length}}">
+            <view class="list-header-title" style="font-size:{{$recommend$recommendHeader$fontSize}}">
+      {{$recommend$recommendHeader$title}}
+      <text class="list-header-sub-title" wx:if="{{$recommend$recommendHeader$subTitle}}">/{{$recommend$recommendHeader$subTitle}}</text>
+            </view>
+            <view catchtap="$recommend$recommendHeader$itemTap" class="list-header-trail" wx:if="{{$recommend$recommendHeader$content}}">{{$recommend$recommendHeader$content}}</view>
+        </view>
+        <scroll-view scrollX class="_6bd9f40 _bd24a7c" scrollWithAnimation="scroll-with-animation">
+            <view class="img-view _6bd9f40">
+                <view class="image-item default-img-bg img-{{$recommend$recommendImg$type}} _6bd9f40" wx:for="{{$recommend$recommendImg$imgs}}" wx:for-index="$recommend$recommendImg$index" wx:for-item="$recommend$recommendImg$img" wx:key="$recommend$recommendImg$index">
+                    <image binderror="$recommend$recommendImg$error" bindtap="$recommend$recommendImg$detail" class="img-{{$recommend$recommendImg$type}} _6bd9f40" data-index="{{$recommend$recommendImg$index}}" data-wpydetail-a="{{$recommend$recommendImg$img.id}}" data-wpyerror-a="{{$recommend$recommendImg$index}}" lazyLoad="{{$recommend$recommendImg$true}}" mode="aspectFill" src="{{$recommend$recommendImg$img.url}}"></image>
+                    <view class="author _6bd9f40" wx:if="{{$recommend$recommendImg$author}}">
+                        <image catchtap="$recommend$recommendImg$goPerson" class="avatar _6bd9f40" data-wpygoperson-a="{{$recommend$recommendImg$img}}" lazyLoad="{{$recommend$recommendImg$true}}" mode="scaleToFill" src="{{$recommend$recommendImg$img.avatar}}"></image>
+                        <view class="name _6bd9f40">{{$recommend$recommendImg$img.author}}</view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+        <view class="_bd24a7c" style="width:100%;height:200rpx;">
+            <view class="lds-dual-ring _d56c170 _bd24a7c" style="width:{{$recommend$loading$width}}rpx;height:{{$recommend$loading$height}}rpx;margin-top:{{$recommend$loading$top}}rpx" wx:if="{{$recommend$today.length==0&&$recommend$topics.length==0&&$recommend$downloadImgs==0&&$recommend$nImgs.length==0&&$recommend$recommends.length==0}}"></view>
+        </view>
+    </view>
+    <view class="page _01b8e92" hidden="{{selectedTab==1?false:true}}" style="left: {{selectedTab==1?0:'100%'}};">
+        <view bindtap="$discovery$search" class="search _1b72570 _01b8e92">
+            <image class="search-icon _1b72570" lazyLoad="false" mode="scaleToFill" src="/assets/imgs/search.png"></image>请输入壁纸码搜索
+    <view catchtap="$discovery$closeTip" class="guide _1b72570" wx:if="{{$discovery$showTip}}">每张壁纸都有一个壁纸码，可以直接通过输入壁纸码获取壁纸
+      <view class="_1b72570">知道了</view>
+            </view>
+        </view>
+        <view class="list-header-container _1b72570" wx:if="{{$discovery$user&&$discovery$likes.length||!$discovery$user}}">
+            <view class="list-header-title" style="font-size:{{$discovery$likeHeader$fontSize}}">
+      {{$discovery$likeHeader$title}}
+      <text class="list-header-sub-title" wx:if="{{$discovery$likeHeader$subTitle}}">/{{$discovery$likeHeader$subTitle}}</text>
+            </view>
+            <view catchtap="$discovery$likeHeader$itemTap" class="list-header-trail" wx:if="{{$discovery$likeHeader$content}}">{{$discovery$likeHeader$content}}</view>
+        </view>
+        <scroll-view scrollX class="_6bd9f40 _1b72570" scrollWithAnimation="scroll-with-animation" wx:if="{{$discovery$user}}">
+            <view class="img-view _6bd9f40">
+                <view class="image-item default-img-bg img-{{$discovery$likeImg$type}} _6bd9f40" wx:for="{{$discovery$likeImg$imgs}}" wx:for-index="$discovery$likeImg$index" wx:for-item="$discovery$likeImg$img" wx:key="$discovery$likeImg$index">
+                    <image binderror="$discovery$likeImg$error" bindtap="$discovery$likeImg$detail" class="img-{{$discovery$likeImg$type}} _6bd9f40" data-index="{{$discovery$likeImg$index}}" data-wpydetail-a="{{$discovery$likeImg$img.id}}" data-wpyerror-a="{{$discovery$likeImg$index}}" lazyLoad="{{$discovery$likeImg$true}}" mode="aspectFill" src="{{$discovery$likeImg$img.url}}"></image>
+                    <view class="author _6bd9f40" wx:if="{{$discovery$likeImg$author}}">
+                        <image catchtap="$discovery$likeImg$goPerson" class="avatar _6bd9f40" data-wpygoperson-a="{{$discovery$likeImg$img}}" lazyLoad="{{$discovery$likeImg$true}}" mode="scaleToFill" src="{{$discovery$likeImg$img.avatar}}"></image>
+                        <view class="name _6bd9f40">{{$discovery$likeImg$img.author}}</view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+        <view class="login _1b72570" wx:else>
+    登录后查看我的关注
+    <button bindtap="$discovery$login" class="btn-login _1b72570">去登录</button>
+        </view>
+        <block wx:for="{{$discovery$category$imgs}}" wx:for-index="$discovery$category$index" wx:for-item="$discovery$category$item" wx:key="$discovery$category$index">
+            <view class="list-header-container _33ff366" wx:if="{{$discovery$category$item.images.length}}">
+                <view class="list-header-title _33ff366">
+        {{$discovery$category$item.name}}
+        <text class="list-header-sub-title _33ff366">/分类</text>
+                </view>
+                <view catchtap="$discovery$category$itemTap" class="list-header-trail scondary _33ff366" data-wpyitemtap-a="{{$discovery$category$index}}">查看更多</view>
+            </view>
+            <scroll-view scrollX class="_33ff366" scrollWithAnimation="scroll-with-animation">
+                <view class="img-view _33ff366">
+                    <view class="image-item default-img-bg img-normal _33ff366" wx:for="{{$discovery$category$item.images}}" wx:for-index="$discovery$category$index" wx:for-item="$discovery$category$img" wx:key="$discovery$category$index">
+                        <image binderror="$discovery$category$error" bindtap="$discovery$category$detail" class="img-normal _33ff366" data-index="{{$discovery$category$index}}" data-wpydetail-a="{{$discovery$category$img.id}}" data-wpyerror-a="{{$discovery$category$index}}" lazyLoad="{{$discovery$category$true}}" mode="aspectFill" src="{{$discovery$category$img.url}}"></image>
+                    </view>
+                </view>
+            </scroll-view>
+        </block>
+        <view class="_1b72570" style="width:100%;height:200rpx;"></view>
+    </view>
+</view>
+<view class="tabbar _01b8e92" style="border-bottom:{{isIpx?'24px solid #222':none}}">
+    <view catchtap="chooseTab" class="tab-item tab-item-left _01b8e92" data-wpychoosetab-a="0">
+        <image class="_01b8e92" lazyLoad="false" mode="scaleToFill" src="{{selectedTab==0?'/assets/imgs/home_selected.png':'/assets/imgs/home.png'}}"></image>
+    </view>
+    <view class="tab-plus _01b8e92">
+        <view catchtap="goUpload" class="circle _01b8e92">
+            <image class="_01b8e92" src="/assets/imgs/plus.png"></image>
+        </view>
+    </view>
+    <view catchtap="chooseTab" class="tab-item tab-item-right _01b8e92" data-wpychoosetab-a="1">
+        <image class="_01b8e92" lazyLoad="false" mode="scaleToFill" src="{{selectedTab==1?'/assets/imgs/category_selected.png':'/assets/imgs/category.png'}}"></image>
+    </view>
+</view>

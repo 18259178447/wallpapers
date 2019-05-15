@@ -1,0 +1,37 @@
+/* pages/new/new.wxss */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+/* .base-album-list view{
+  margin: 20rpx 0;
+}
+.base-album-list image{
+  height: 380rpx;
+  width: 718rpx;
+}
+.base-album-list text{
+  font-size: 30rpx;
+  color: #4C4C4C;
+  line-height: 82rpx;
+  display: block;
+} */
+
+/* 基本专辑列表 */
+.base-album-list view{
+  margin-bottom: 16rpx;
+}
+.base-album-list image{
+  width:354rpx;
+  height:188rpx;
+  margin-top:0;
+}
+
+.base-album-list text{
+  font-size: 24rpx;
+  color: #9B9B9B;
+  display: block;
+  width: 354rpx;
+  line-height: 54rpx;
+}

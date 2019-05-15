@@ -1,0 +1,33 @@
+
+<view class='container {{supperClass}}'>
+  <view wx:if="{{!tpl}}"></view>
+  <include wx:else src="wallpaper.wxml" />
+  <include src="share-reward-popup.wxml" />
+  <include src="../../tpls/public.wxml" />
+  <include src="../../tpls/poster.wxml" />
+
+<ad-fn id="ad-fn" bindvideo="hasVideo"></ad-fn>
+
+  <view wx:if="{{false}}" class='p-ad {{!isShowFreeUnlock ? "hide" : ""}}' >
+    <view class='p-ad-content'>
+      <!-- <text>今日免费{{freeCount}}张下载已用完</text> -->
+      <text>点击广告后可下载壁纸</text>
+      <!-- <block wx:else>
+        <text>点击广告后可无限次下载壁纸</text>
+        <text>体验广告产品{{BrowsedTime}}秒后才可解锁哦~</text>
+      </block> -->
+    <view class='p-ad-view xmad_title' capture-bind:tap='adClick'>
+        <ad unit-id="adunit-cf02a930ba6c97f1" bindload="adLoad" binderror="adError" wx:if="{{adIndex === 0}}"></ad>
+        <view class='p-ad-btn'>
+          <image src="https://minibizhi.313515.com/BiZhiStatic/icon-lock.svg" />
+          <text>点击广告解锁</text>
+        </view>  
+    </view>
+      <!-- <template is="ad-container" data="{{adData:limitAd,suspensionInfo,template:'preview-limit-ad'}}" /> -->
+      <image src="https://minibizhi.313515.com/BiZhiStatic/preview-p-ad-close.svg" catchtap='closeFreeUnlock' />
+    </view>
+    <!-- <view wx:if="{{isShowFreeUnlock}}" class='p-ad-mask mask' catchtap='closeFreeUnlock'></view> -->
+  </view>
+
+
+</view>

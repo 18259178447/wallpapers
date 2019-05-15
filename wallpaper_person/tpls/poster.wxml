@@ -1,0 +1,12 @@
+<view class='poster-container f-f mask flexHV-C' wx:if="{{isShowPoster}}">
+    <view class='poster'>
+      <image wx:if="{{poster}}" src='{{poster}}'></image>
+    </view>
+    <text wx:if="{{!isClose}}">保存后可分享朋友圈</text>
+    <text wx:else></text>
+    <view class='poster-btn flexV' bindtap='event'>
+        <button data-event="toggle" data-toggle="isShowPoster">取消</button>
+        <button data-event="savePoster">保存</button>
+    </view>
+</view>
+<canvas canvas-id="myCanvas" class='myCanvas'/>

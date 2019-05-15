@@ -1,0 +1,14 @@
+<view class='share-reward-popup f-ab-mask flexHV-C' wx:if="{{rewardWallPaper}}">
+  <view class='share-reward-content'>
+    <image src='../../assets/share-reward-bg.png' mode='widthFix'></image>
+    <image src='{{rewardWallPaper.ThumbImage || rewardWallPaper.Image}}'></image>
+  </view>
+  <button hover-class="none" bindtap="shareRewardReceive" class='btn-down flexHV-C'>
+    <text>点击领取</text>
+    <text>原价：￥{{rewardWallPaper.PriceType}}</text>
+  </button>
+  <view class='tip'>今日领取次数剩余{{rewardWallPaper.remain}}次</view>
+  <button hover-class="none" catchtap='toggle' data-toggle="rewardWallPaper" class='btn-close'>
+    <image src='https://minibizhi.313515.com/BiZhiStatic/icon-preview-share-reward-close.svg'></image>
+  </button>
+</view>

@@ -1,0 +1,6 @@
+<view class='page-screen'>
+
+    <view class='page-screen__loading'></view>
+
+    <view class='page-screen__no-data'></view>
+</view>

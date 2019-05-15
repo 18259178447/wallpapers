@@ -1,0 +1,89 @@
+/* packageA/pages/pageBase/pageBese.wxss */
+
+/* 消息中心页 */
+
+.msg-title {
+  background: #f2f2f2;
+  font-size: 30rpx;
+  color: #4c4c4c;
+  height: 70rpx;
+  line-height: 70rpx;
+  padding-left: 30rpx;
+}
+.my-btn {
+  height: 102rpx;
+  padding-left: 30rpx;
+  background-color: transparent;
+}
+.btn-box {
+  display: flex;
+  border-bottom: 1rpx solid #eee;
+  align-items: center;
+  height: 100%;
+  box-sizing: border-box;
+}
+.btn-box .icon {
+  width: 50rpx;
+  height: 50rpx;
+}
+.btn-box text {
+  font-size: 30rpx;
+  color: #4c4c4c;
+  margin-left: 20rpx;
+  flex: 1;
+  text-align: left;
+}
+.btn-box .pointer {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 33rpx;
+}
+.red-point {
+  width: 14rpx;
+  height: 14rpx;
+  background: #ee3c2e;
+  border: 1rpx solid #fff;
+  border-radius: 50%;
+  margin-right: 8rpx;
+}
+.my-btn.btn-hover {
+  background-color: #f8f8f8;
+}
+
+
+
+/* 动态视频设置教程页 */
+.video-guide-container{
+  padding: 0 20rpx;
+}
+.video-guide-container view{
+  font-size: 32rpx;
+  color: #4c4c4c;
+  line-height: 48rpx;
+}
+.video-guide-container image{
+  width: 80%;
+  padding-bottom: 80rpx;
+  margin: 15rpx auto 0
+}
+.first-line{margin-top: 100rpx;}
+
+
+/* 设置 */
+
+.notify-switch{
+    height: 88rpx;
+    border-bottom: 1rpx solid #eee;
+    margin-left: 30rpx;
+}
+.notify-switch view{
+  font-size: 32rpx;
+  color: #4C4C4C;
+}
+.innerUser{
+  position: absolute;
+  width: 100%;
+  height: 20%;
+  bottom: 0;
+  left: 0;
+}

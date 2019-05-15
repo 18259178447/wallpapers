@@ -1,0 +1,33 @@
+<view class='author-column'>
+  <navigator class='module-title' hover-class='none' url="/packageA/pages/pageLists/pageLists?pagename=authorColumn&currentIndex=0">
+    作者专栏
+    <text>分享免费</text>
+  </navigator>
+  <view class='author-column-view'>
+    <view class='img-btn' wx:for="{{authorColumn.wallpapers}}" wx:key="{{index}}" data-index="{{index}}" catchtap='oriPreview'>
+      <image src='{{item.ThumbImage}}' mode="aspectFill"></image>
+      <image wx:if="{{item.PriceType > 0}}" src="{{item.isLock?'https://minibizhi.313515.com/BiZhiStatic/original-nobuy.svg' : 'https://minibizhi.313515.com/BiZhiStatic/original-buy.svg'}}" mode="widthFix" class="buy-flag"></image>
+    </view>
+    <view class='author'>
+      <navigator class='top' hover-class='none' url="{{authorColumn.url}}">
+        <view class='top-left'>
+          <text>{{authorColumn.AuthorName}}</text>
+          <text>{{authorColumn.AuthorDesc}}</text>
+        </view>
+        <view class='top-right'>
+          <image src='{{authorColumn.AuthorAvatarUrl}}' mode="aspectFill"></image>
+          <image src='https://minibizhi.313515.com/BiZhiStatic/icon-v.svg' mode="aspectFill"></image>
+        </view>
+      </navigator>
+      <view class='bottom'>
+        <view class='mul-e'>
+          <text>{{authorColumn.AuthorMotto}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="change-data" catchtap="changeData" data-type="2">
+    <image src='https://minibizhi.313515.com/BiZhiStatic/change-data.svg'></image>
+    <text>换一换</text>
+  </view>
+</view>

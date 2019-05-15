@@ -1,0 +1,18 @@
+<!-- 包含跳h5 小程序 客服 -->
+<!-- 客服 -->
+<button open-type="contact" hover-class="none" session-from="{{btnData.AdId}}" wx:if="{{btnData.JumpType === 2}}" bindtap='tapHandle' class="_class">
+  <slot></slot>
+</button>
+<!-- 小程序 -->
+<navigator target="miniProgram" app-id="{{btnData.AppID}}" path="{{btnData.JumpUrl}}" hover-class="none" wx:elif="{{btnData.JumpType === 4}}" bindtap='tapHandle' class="_class">
+<slot></slot>
+</navigator>
+<!-- 管点通 -->
+<view wx:elif="{{btnData.JumpType === 5}}" class="_class">
+  <slot></slot>
+</view>
+
+<!-- 小程序内页 -->
+<view hover-class="none" wx:else  bindtap='tapHandle' class="_class">
+<slot></slot>
+</view>

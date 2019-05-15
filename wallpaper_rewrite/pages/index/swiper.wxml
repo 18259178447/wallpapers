@@ -1,0 +1,10 @@
+<swiper autoplay="{{!isCrossPos}}" interval="3000" duration="500" class="swiper" previous-margin="50rpx" next-margin="50rpx" circular="true" bindchange="swiperChange">
+  <swiper-item wx:for="{{swiper}}" wx:key="{{index}}">
+      <navigator url="{{item.url}}" hover-class="none" wx:if="{{item.jumpType === 'navigateTo'}}" class='{{swiperIndex === index ? "ori" : ""}}'>
+        <image src="{{item.ImgUrl}}" mode="aspectFill"  class="swiper-image"/>
+      </navigator>
+      <navigator target="miniProgram" app-id="{{item.appid}}" path="{{item.url}}" hover-class="none" class='{{swiperIndex === index ? "ori" : ""}}' wx:else >
+        <image src="{{item.ImgUrl}}" mode="aspectFill"  class="swiper-image"/>
+      </navigator>
+  </swiper-item>
+</swiper>

@@ -1,0 +1,25 @@
+<!-- 包含跳h5 小程序 客服 -->
+<template name="multi-fn-btn">
+    <!-- 客服 -->
+    <button open-type="contact" hover-class="none" session-from="{{btnObj.AdId}}" class='multi-fn-btn' wx:if="{{btnObj.JumpType === 2}}">
+        <template is="{{template}}" data="{{btnObj}}" />
+    </button>
+    <!-- 小程序 -->
+    <navigator target="miniProgram" data-adid="{{btnObj.AdId}}" data-id="{{btnObj.AppID}}" app-id="{{btnObj.AppID}}" path="{{btnObj.JumpUrl}}" hover-class="none" wx:elif="{{btnObj.JumpType === 4}}" class='multi-fn-btn' bindtap='miniProgramClicked'>
+      <template is="{{template}}" data="{{btnObj}}" />
+    </navigator>
+
+    <!-- 小程序内页 -->
+    <navigator url="{{btnObj.JumpUrl}}" hover-class="none" class="multi-fn-btn" wx:else>
+      <template is="{{template}}" data="{{btnObj}}" />
+    </navigator>
+</template>
+
+<!-- 图文 -->
+<template name="img-word-view">
+    <image src="{{btnObj.ProductIcon}}" mode="aspectFit" class="icon"></image>
+    <text>{{btnObj.ProductName}}</text>
+</template>
+<template name="img-view">
+    <image src="{{btnObj.ProductIcon}}" mode="aspectFill" class="icon"></image>
+</template>

@@ -1,0 +1,21 @@
+// 列表缺省
+module.exports.defaultText = function (defaultPage, index) {
+  var text = '';
+  switch (defaultPage) {
+    case 'no-wallpaper':
+      text = '暂无壁纸'; break;
+    case 'no-collect':
+      text = '快去收藏' + (index === 0 ? "壁纸" : (index === 1 ? "表情" : "头像")) +'吧';break;
+    case 'no-result':
+      text = '暂无搜索结果'; break;
+    case 'no-download':
+      text = '快去下载' + (index === 0 ? "壁纸" : (index === 1 ? "表情" : "头像")) + '吧'; break;
+    case 'no-fan':
+      text = '还没有粉丝关注你哦～'; break;
+    case 'no-attention':
+      text = '快去关注一些朋友吧'; break;
+    case 'no-upload':
+      text = '暂无上传的壁纸'; break;
+  }
+  return text;
+};

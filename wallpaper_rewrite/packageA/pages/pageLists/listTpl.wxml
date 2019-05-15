@@ -1,0 +1,69 @@
+<import src="../../../tpls/user-view.wxml" />
+<import src="../../../tpls/base.wxml" />
+
+<!-- 作者列表-->
+<template name="authors-list">
+  <template is="list-default" wx:if="{{baseData.defaultPage}}" data="{{defaultText,defaultImage}}" />
+  <view class="data-list-box authors-list" wx:else>
+    <view class="data-list-column-view">
+        <view class='author-item' wx:for-index="idx" wx:for="{{baseData.dataList}}" wx:key="{{idx}}">
+          <navigator class="top flexV" url="/packageB/pages/authorHome/authorHome?authorid={{item.author.AuthorID}}"  hover-class='none'>
+              <image class='author-avatar' src='{{item.author.AuthorAvatarUrl}}'></image>
+              <view class='author-info'>
+                  <text>{{item.author.AuthorName}}</text>
+                  <text>{{item.author.AuthorDesc}}</text>
+              </view>
+          </navigator>
+          <view class='bottom' bindtap='oriPreview'>
+            <image wx:for="{{item.images}}" wx:key="{{index}}" src="{{item.ThumbImage}}" mode="widthFix"  data-index="{{index}}"  data-idx="{{idx}}">
+              <image wx:if="{{item.PriceType}}" src="{{item.isLock?'https://minibizhi.313515.com/BiZhiStatic/original-nobuy.svg' : 'https://minibizhi.313515.com/BiZhiStatic/original-buy.svg'}}" mode="widthFix" class="buy-flag"></image>
+            </image>
+          </view>
+        </view>
+    </view>
+    <view class="loading" wx:if="{{baseData.LoadingText}}">{{baseData.LoadingText}}</view>
+    <view catchtap="reTry" wx:if="{{baseData.Error}}" class='retry-btn'> 刷新重试 </view>
+  </view>
+</template>
+
+<!-- 作者中心-->
+<template name="authors-enter">
+  <view class='enter-info'>
+    <view class='explain'>壁纸原创作者是通过哎喔壁纸原创平台注册的设计师，并上传作品、个人资料，且审核通过审核过的入驻的用户。</view>
+    <view class='enter-after enter'>
+
+入驻后，您可以： 
+1．在哎喔壁纸平台上上传个人原创设计作品，并进行售卖 
+2．个人原创设计作品获得的收益全部归您个人所有； 
+3．您的作品有机会被推荐到首页，获得更多的曝光机会；</view>
+    <view class='enter-method enter'>
+入驻方式： 
+1. 添加官方运营 QQ 账号：1291651584; 
+2. 发送作品到官方运营账号：Megan@gao7.com，我们会尽快和您取得联系；</view>
+    <view class='recent-author'>
+      <view class='title'>近期入驻设计师：</view>
+      <view class='recent-author-view'>
+        <navigator wx:for="{{baseData.dataList}}" wx:key="{{item.AuthorID}}" url="/packageB/pages/authorHome/authorHome?authorid={{item.AuthorID}}"  hover-class='none'>
+          <image class='pen' src="{{item.AuthorAvatarUrl}}" ></image>
+          <text class='line-e pen'>{{item.AuthorName}}</text>
+        </navigator>          
+      </view>
+    </view>
+  </view>  
+</template>
+
+
+<!-- 可删除通用列表 -->
+<template name="can-delete-list">
+  <template is="list-default" wx:if="{{baseData.defaultPage}}" data="{{defaultText,defaultImage}}" />
+  <view class="data-list-box" wx:else>
+    <view class="list-flex-wrap wallpaper-list-view" bindtap='clickImage'>
+      <image src="{{item.ThumbImage}}" data-index="{{index}}" wx:for="{{baseData.dataList}}" wx:key="{{index}}" >
+        <view class="delete-selecte-status {{item.deleteSelected ? 'on' : ''}}" hidden="{{!others.isDeleteSelected}}"></view>
+      </image>
+      <image src="" wx:if="{{baseData.dataList.length % 3 === 2}}"></image>
+    </view>
+    <view class="loading" wx:if="{{baseData.LoadingText}}">{{baseData.LoadingText}}</view>
+    <view catchtap="reTry" wx:if="{{baseData.Error}}" class='retry-btn'> 刷新重试 </view>
+  </view>
+</template>

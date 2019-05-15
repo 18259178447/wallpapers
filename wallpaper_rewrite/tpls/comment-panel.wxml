@@ -1,0 +1,9 @@
+<view class="comment-panel f-ab" wx:if="{{isOpenCommentPanel}}">
+  <include src="header-placehold.wxml" />
+  <view class="comment-panel-btns flexV-sb">
+    <view class="cancle" bindtap='cancleComment'>取消</view>
+    <view class='title'>{{commentPlaceholder === "" ? "评论" : "回复评论"}}</view>
+    <button catchtap='publishHandle' hover-class='none' disabled='{{isTextAreaEmpty}}' class="publish-btn {{isTextAreaEmpty ? '' : 'blue'}}">发表</button>
+  </view>
+  <textarea placeholder="{{commentPlaceholder || '说说你的想法吧'}}" fixed="true" focus="{{textAreaFocus}}" maxlength="500" bindinput="textareaIphut" value="{{textareaVal}}" />
+</view>

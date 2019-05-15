@@ -1,0 +1,17 @@
+/* 多行省略 */
+
+.mul-e {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* 单行省略 */
+
+.line-e {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

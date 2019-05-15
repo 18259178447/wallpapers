@@ -1,0 +1,36 @@
+@import "download-process.wxss";
+
+@import "../../__wuBaseWxss__/0.wxss";
+
+@import "../../__wuBaseWxss__/2.wxss";
+
+.download-tip._28088a3 {
+    color: #333;
+    display: flex;
+    align-items: center;
+    padding: 40rpx 0 36rpx;
+    margin: 0 32rpx;
+}
+
+.download-tip .tip._28088a3 {
+    flex: 1;
+}
+
+.download-tip .tip .tip-desc._28088a3 {
+    font-weight: 400;
+    color: #b4b4b4;
+    font-size: 28rpx;
+    padding-top: 16rpx;
+    padding-right: 18px;
+}
+
+.download-tip .btn._28088a3 {
+    width: 176rpx;
+    height: 68rpx;
+    line-height: 68rpx;
+    background: #141414;
+    border-radius: 8rpx;
+    background: #010101;
+    color: #ffffff;
+    font-size: 32rpx;
+}

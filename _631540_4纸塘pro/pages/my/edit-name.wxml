@@ -1,0 +1,17 @@
+<view class="container _4d85a8a">
+    <view class="navbar-container _4d85a8a">
+        <view style="background:{{$navbar$color}};height:{{$navbar$height}};width:100%"></view>
+        <view style="height: 46px;line-height:46px;background:{{$navbar$color}}">
+            <view class="navbar-title-wrap" wx:if="{{$navbar$title}}">
+                <view catchtap="$navbar$back" class="back"></view>
+                <view class="content">{{$navbar$title}}</view>
+                <view class="last"></view>
+            </view>
+            <view wx:else></view>
+        </view>
+    </view>
+    <view style="height:{{$navbar$marginHeight}}px;width:100%;" wx:if="{{$navbar$showPadding}}"></view>
+    <view class="item-container _4d85a8a">
+        <input autoFocus focus bindconfirm="submit" class="_4d85a8a" value="{{user.name}}"></input>
+    </view>
+</view>

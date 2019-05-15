@@ -1,0 +1,10 @@
+<view class='banner'>
+  <image src="{{AlbumObj.ImgUrl}}" mode="widthFix" />
+  <view bindtap='collectHandle' class='collect-btn {{AlbumObj.IsCollection ? "on" : ""}}'></view>
+</view>
+<view class='album-desc'>
+  <block wx:for="{{AlbumObj.Desc}}" wx:key="{{index}}">
+    <text wx:if="{{!item.url}}">{{item.text}}</text>
+    <navigator wx:else url="/pages/web/web?url={{item.url}}" hover-class="none">{{item.text}}</navigator>
+  </block>
+</view>

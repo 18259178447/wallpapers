@@ -1,0 +1,13 @@
+<import src="../../tpls/base.wxml" />
+<view class='container {{supperClass}}'>
+  <view class='body'>
+    <scroll-view scroll-y bindscrolltolower="onReachBottom_" lower-threshold="150" enable-back-to-top scroll-top="{{baseData.scrollTop}}" bindscroll="onPageScroll_">
+      <include src="../../tpls/header-placehold.wxml" />
+      <include src="banner.wxml" />
+      <!-- 列表 -->
+      <template is="base-wallpaper-list" data="{{baseData,reTry,defaultImage,defaultText}}" />
+      <include src="../../tpls/footer-placehold.wxml" />
+    </scroll-view>
+  </view>
+  <include src="../../tpls/public.wxml" />
+</view>

@@ -1,0 +1,274 @@
+.footer {
+  background-color: rgba(255, 255, 255, 0.85);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 90;
+}
+.footer .footer-wrap {
+  height: 98rpx;
+}
+
+.iPhoneX .footer {
+  padding-bottom: 48rpx;
+  /* height: 146rpx; */
+}
+.footer button {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+.footer button image {
+  width: 32rpx;
+  height: 32rpx;
+  display: block;
+  margin-bottom: 10rpx;
+}
+.footer button text {
+  font-size: 28rpx;
+  color: #4c4c4c;
+  line-height: 30rpx;
+}
+
+
+/* 下载按钮特殊处理 */
+/* .footer .btn-download{
+  overflow: visible
+}
+.footer .btn-download text{
+  margin-top: 48rpx; 
+}
+.footer .btn-download image{
+  position: absolute;
+  width: 92rpx;
+  height: 92rpx;
+  top: -32rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.footer .btn-download view{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 40rpx;
+  width: 102rpx;
+  transform: translate(-50%,-100%);
+  overflow: hidden;
+}
+.footer .btn-download view::after{
+  content: '';
+  display: block;
+  width: 100%;
+  padding-top: 100%;
+  height: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+} */
+
+/* 预览页解锁按钮特殊处理 */
+.footer .unlock-btn.footer-wrap{
+  height:120rpx;
+  justify-content: space-around;
+  padding: 0 20rpx;
+}
+.footer .unlock-btn button{
+  border-radius: 200rpx;
+  width: 410rpx;
+  height: 80rpx;
+  flex: none;
+  flex-direction:row;
+  background:#F5A623;
+}
+.footer .unlock-btn button:first-child{
+  background: #239efe;
+}
+
+.footer .unlock-btn button image{
+  width:32rpx;
+  height:32rpx;
+  margin-right:10rpx;
+}
+.footer .unlock-btn button text{
+  font-size: 32rpx;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.footer-placehold{
+  height: 98rpx;
+}
+
+.iPhoneX .footer-placehold {
+  padding-bottom: 48rpx; 
+}
+
+
+/* 排序按钮特殊处理 */
+
+.sort-mask{
+  background-color:rgba(0, 0, 0, 0.2);
+  z-index:100;
+}
+
+.sort-items{
+  position: fixed;
+  bottom: 116rpx;
+  left: 300rpx;
+  box-shadow: 0 0 12rpx 0 rgba(0,0,0,0.27);
+  width: 306rpx;
+  height: 255rpx;
+  border-radius: 8rpx;
+  background: #FFFFFF;
+  transition: all 0.3s;
+  transform-origin: 25% 110%;
+  transform:scale(0) translateZ(0); 
+  z-index: 100
+}
+.iPhoneX .sort-items{
+  bottom: 164rpx;
+}
+.sort-items.on{
+  transform: scale(1) translateZ(0);
+}
+.sort-items::after{
+  width: 42rpx;
+  height: 42rpx;
+  content: '';
+  display: block;
+  background: #fff;
+  box-shadow: 0 0 12rpx 0 rgba(0,0,0,0.27);
+  border-radius: 10rpx;
+  position: absolute;
+  bottom: -12rpx;
+  left: 56rpx;
+  transform: rotate(45deg);
+  pointer-events: none
+}
+
+
+.sort-items .sort-items-wrap{
+  z-index: 1;
+  background: #FFFFFF;
+  border-radius: 8rpx;
+  padding: 0 20rpx;
+}
+
+
+.sort-items .sort-items-wrap view{
+  font-size: 32rpx;
+  color: #4C4C4C;
+  letter-spacing: 0.38rpx;
+  height: 84rpx;
+  line-height: 84rpx;
+  border-top: 1rpx solid #E3E3E3;
+  text-align: left;
+}
+.sort-items .sort-items-wrap view.on{
+  background: url(https://minibizhi.313515.com/BiZhiStatic/icon-all-bottom-select.svg) right center no-repeat;
+  background-size: 29rpx 22rpx;
+  font-weight: 500;
+}
+
+.sort-items .sort-items-wrap view:first-child{
+  border-color: transparent;
+}
+
+
+/* 删除相关 */
+.delete-ctrl{
+  background:rgba(255,255,255,0.9);
+  box-shadow:0 -1px 0 0 #ECECEC;
+}
+.delete-ctrl .front button{
+  font-size:24rpx;
+  color:#4C4C4C;
+  line-height:28rpx;
+  padding-top:60rpx;
+  box-sizing:border-box;
+  flex:1;
+  background:url(https://minibizhi.313515.com/BiZhiStatic/uploadList-bottom-nav-delete.svg) center 12rpx no-repeat;
+  background-size:46rpx 46rpx;
+}
+
+.delete-ctrl .front button.upload{
+  background-image: url(https://minibizhi.313515.com/BiZhiStatic/uploadList-bottom-nav-upload.svg)
+}
+.delete-ctrl .front button.explain{
+  background-image: url(https://minibizhi.313515.com/BiZhiStatic/upload-bottom-nav-statement.svg);
+  margin-left:268rpx;
+}
+
+.delete-ctrl .back button{
+  width:160rpx;
+  vertical-align:middle;
+  line-height:98rpx;
+  font-size:32rpx;
+  flex: none;
+  color: #3C3D40;
+}
+.delete-ctrl .back button:last-child{
+  color: #3399CB;
+}
+
+
+/* 留言 */
+
+.footer .comment-btn{
+  background: #239EFE;
+  height: 60rpx;
+  border-radius: 30rpx;
+  width: 182rpx;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: #FFFFFF;
+  flex:1.3;
+  margin-right:30rpx;
+}
+
+
+.footer .comment-input{
+  height: 90rpx;
+  border-top:1rpx solid #eee;
+  background-color:#f3f3f3;
+
+}
+
+
+.footer .comment-input .comment-input-btn {
+  border: 1rpx solid #e3e3e3;
+  border-radius: 8rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+  font-size: 28rpx;
+  color: #949494;
+  margin-left: 20rpx;
+  flex: 1;
+  text-align: left;
+  padding-left: 20rpx;
+  background-color: #fff;
+}
+
+.footer .comment-input .comment-input-icon {
+  padding: 0 20rpx;
+  flex: none;
+  flex-direction:row;
+
+}
+
+.footer .comment-input image {
+  width: 36rpx;
+  height: 33rpx;
+  display: block;
+}
+
+.footer .comment-input text {
+  display: block;
+  font-size: 22rpx;
+  color: #949494;
+  margin-left: 10rpx;
+}

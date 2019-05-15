@@ -1,0 +1,48 @@
+<view class="container _fd95737" wx:if="{{step==1}}">
+    <view class="_fd95737" style="height:{{marginHeight+46}}px"></view>
+    <view class="login-title _fd95737">登录纸塘壁纸pro</view>
+    <view class="login-tip _fd95737">
+      登录后可以使用更多的功能，比如上传自己的壁纸、收藏和下载更加高清的壁纸。我们会保护您的信息安全，点击此处查看
+      <text bindtap="goProtocol" class="_fd95737" style="color:#ffe725">隐私协议</text>
+    </view>
+    <view class="_fd95737" style="text-align:center" wx:if="{{loginType=='wx'}}">
+        <button bindgetphonenumber="wxLogin" class="wx-container _fd95737" openType="getPhoneNumber">
+            <image class="wx _fd95737" src="/assets/imgs/wx_login.png"></image>
+        </button>
+        <view class="_fd95737">微信一键登录</view>
+    </view>
+    <view class="_fd95737" wx:if="{{loginType=='phone'}}">
+        <view class="input-container _fd95737">
+            <view class="label _fd95737">手机号</view>
+            <view class="input _fd95737">
+                <input bindinput="phoneInput" class="_fd95737" maxlength="11" placeholder="请输入手机号" type="number"></input>
+            </view>
+        </view>
+        <view class="input-container _fd95737">
+            <view class="label _fd95737">验证码</view>
+            <view class="input _fd95737">
+                <input bindinput="codeInput" class="_fd95737" maxlength="6" placeholder="请输入验证码" type="number"></input>
+            </view>
+            <view bindtap="sendCode" class="btn-code _fd95737" style="background:{{sending?'linear-gradient(90deg, #c7c7c7 0%, #c7c7c7 100%)':''}}">{{codeText}}</view>
+        </view>
+        <view bindtap="next" class="btn-next _fd95737">下一步</view>
+    </view>
+    <view class="other-login _fd95737">
+        <view class="_fd95737">其它登录方式</view>
+    </view>
+    <view class="cellphone _fd95737" wx:if="{{loginType=='wx'}}">
+        <image bindtap="changeType" class="_fd95737" data-wpychangetype-a="phone" src="/assets/imgs/cellphone.png"></image>
+    </view>
+    <button bindgetphonenumber="wxLogin" class="cellphone _fd95737" openType="getPhoneNumber" style="padding:0" wx:if="{{loginType=='phone'}}">
+        <image class="_fd95737" src="/assets/imgs/wx_login.png" style="height:40rpx;"></image>
+    </button>
+</view>
+<view class="container _fd95737" wx:if="{{step==2}}">
+    <view class="_fd95737" style="height:{{marginHeight+46}}px"></view>
+    <view class="logo _fd95737">
+        <image class="_fd95737" src="/assets/imgs/logo.png"></image>
+    </view>
+    <view class="login-title _fd95737" style="font-size:44rpx;text-align:center">感谢您登录纸塘壁纸pro</view>
+    <view class="login-tip _fd95737" style="text-align:center">为了快捷设置你的头像和昵称，请同意我们获取您的微信头像和昵称</view>
+    <button bindgetuserinfo="getUserInfo" class="goin _fd95737" openType="getUserInfo">进入纸塘壁纸</button>
+</view>

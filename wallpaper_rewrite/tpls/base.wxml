@@ -1,0 +1,153 @@
+<import src="user-view.wxml" />
+<wxs module="listCommon">
+  module.exports.defaultText = function(defaultPage, index) {
+    var text = '';
+    switch (defaultPage) {
+      case 'no-wallpaper':
+        text = '暂无壁纸';
+        break;
+      case 'no-collect':
+        text = '快去收藏' + (index === 0 ? "壁纸" : (index === 1 ? "表情" : "头像")) + '吧';
+        break;
+      case 'no-result':
+        text = '暂无搜索结果';
+        break;
+      case 'no-download':
+        text = '快去下载' + (index === 0 ? "壁纸" : (index === 1 ? "表情" : "头像")) + '吧';
+        break;
+      case 'no-fan':
+        text = '还没有粉丝关注你哦～';
+        break;
+      case 'no-attention':
+        text = '快去关注一些朋友吧';
+        break;
+      case 'no-upload':
+        text = '暂无上传的壁纸';
+        break;
+    }
+    return text;
+  };
+</wxs>
+
+
+<template name="list-default">
+  <view class='default flexHV-C'>
+    <image src='https://minibizhi.313515.com/BiZhiStatic/default-{{defaultImage || "no-wallpaper"}}.svg'></image>
+    <text>{{defaultText || '暂无壁纸'}}</text>
+  </view>
+</template>
+<!-- 基本壁纸列表 -->
+<template name="base-wallpaper-list">
+  <template is="list-default" wx:if="{{baseData.defaultPage}}" data="{{defaultText,defaultImage}}" />
+  <view class="data-list-box" wx:else>
+    <view class="list-flex-wrap wallpaper-list-view" style='padding-top:{{baseData.paddingTop}}px' bindtap='preview'>
+      <!-- <block ></block> -->
+      <image src="{{item}}" data-index="{{index}}" wx:for="{{baseData.dataList}}" wx:key="{{index}}" class='{{index % baseData.every ===0 ? "benchmark"+ baseData.listIndex : "" }}' wx:if="{{index>=baseData.beforeIndex && index<baseData.afterIndex}}"></image>
+      <image src="" wx:if="{{baseData.afterIndex >= baseData.dataList.length && baseData.dataList.length % 3 === 2}}"></image>
+    </view>
+
+    <view class="loading" wx:if="{{baseData.LoadingText}}">{{baseData.LoadingText}}</view>
+    <view catchtap="reTry" wx:if="{{baseData.Error}}" class='retry-btn'> 刷新重试 </view>
+  </view>
+</template>
+
+
+<!-- 原创壁纸列表 -->
+<template name="original-wallpaper-list">
+  <template is="list-default" wx:if="{{baseData.defaultPage}}" data="{{defaultText,defaultImage}}" />
+  <view class="data-list-box" wx:else>
+    <view class="list-flex-wrap wallpaper-list-view" style='padding-top:{{baseData.paddingTop}}px' bindtap='preview'>
+      <!-- <block ></block> -->
+      <image src="{{item.ThumbImage}}" data-index="{{index}}" wx:for="{{baseData.dataList}}" wx:key="{{index}}" class='{{index % baseData.every ===0 ? "benchmark"+ baseData.listIndex : "" }}' wx:if="{{index>=baseData.beforeIndex && index<baseData.afterIndex}}">
+        <image wx:if="{{item.PriceType}}" src="{{item.isLock?'https://minibizhi.313515.com/BiZhiStatic/original-nobuy.svg' : 'https://minibizhi.313515.com/BiZhiStatic/original-buy.svg'}}" mode="aspectFill" class="buy-flag"></image>
+      </image>
+      <image src="" wx:if="{{baseData.afterIndex >= baseData.dataList.length && baseData.dataList.length % 3 === 2}}"></image>
+    </view>
+
+    <view class="loading" wx:if="{{baseData.LoadingText}}">{{baseData.LoadingText}}</view>
+    <view catchtap="reTry" wx:if="{{baseData.Error}}" class='retry-btn'> 刷新重试 </view>
+  </view>
+</template>
+
+
+<!-- 基本专辑列表 -->
+<template name="base-album-list">
+  <template is="list-default" wx:if="{{baseData.defaultPage}}" data="{{defaultText,defaultImage}}" />
+  <view class="data-list-box" wx:else>
+    <view class="list-flex-wrap base-album-list" style='padding-top:{{baseData.paddingTop}}px' bindtap='preview'>
+        <view wx:for="{{baseData.dataList}}" wx:key="{{index}}" class='item'>
+          <image src="{{item.ImgUrl}}" mode="aspectFill"></image>
+          <text class='line-e'>{{item.AlbumName}}</text>
+        </view>
+    </view>
+    <view class="loading" wx:if="{{baseData.LoadingText}}">{{baseData.LoadingText}}</view>
+    <view catchtap="reTry" wx:if="{{baseData.Error}}" class='retry-btn'> 刷新重试 </view>
+  </view>
+</template>
+
+
+
+<!-- 基本头像表情列表 -->
+<template name="avatar-emote-list">
+  <template is="list-default" wx:if="{{baseData.defaultPage}}" data="{{defaultText,defaultImage}}" />
+  <view class="data-list-box" wx:else>
+    <view class="list-flex-wrap avatar-emote-list-view" style='padding-top:{{baseData.paddingTop}}px' bindtap='preview'>
+      <!-- <block ></block> -->
+      <image lazy-load="{{true}}" src="{{item}}" data-index="{{index}}" wx:for="{{baseData.dataList}}" wx:key="{{index}}" class='{{index % baseData.every ===0 ? "benchmark"+ baseData.listIndex : "" }}' wx:if="{{index>=baseData.beforeIndex && index<baseData.afterIndex}}"></image>
+      <image src="" wx:if="{{baseData.afterIndex >= baseData.dataList.length && baseData.dataList.length % 3 === 2}}"></image>
+    </view>
+    <view class="loading" wx:if="{{baseData.LoadingText}}">{{baseData.LoadingText}}</view>
+    <view catchtap="reTry" wx:if="{{baseData.Error}}" class='retry-btn'> 刷新重试 </view>
+  </view>
+</template>
+
+<!-- 动态视频列表 -->
+<template name="dynamic-wallpaper-list">
+  <template is="list-default" wx:if="{{baseData.defaultPage}}" data="{{defaultText,defaultImage}}"/>
+  <view class="data-list-box" wx:else>
+    <view class="list-flex-wrap dynamic-wallpaper-list" style='padding-top:{{baseData.paddingTop}}px' bindtap='preview'>
+      <image src="{{item}}" data-index="{{index}}" wx:for="{{baseData.dataList}}" wx:key="{{index}}" class="dynamic-image"></image>
+      <image src="" wx:if="{{baseData.dataList.length % 3 === 2}}"></image>
+    </view>
+    <view class="loading" wx:if="{{baseData.LoadingText}}">{{baseData.LoadingText}}</view>
+    <view catchtap="reTry" wx:if="{{baseData.Error}}" class='retry-btn'> 刷新重试 </view>
+  </view>
+</template>
+
+
+<!-- 评论列表 -->
+<template name="base-comment-list">
+  <template is="list-default" wx:if="{{baseData.defaultPage}}" data="{{defaultText,defaultImage}}"/>
+  <view class="data-list-box" wx:else>
+    <view class="base-comment-list" bindtap='event'>
+        <view class='comment-list-item' wx:for="{{baseData.dataList}}" wx:key="{{item.CommentID}}">
+            <view class='top flex'>
+              <template is="user-view" data="{{class:'flex1',...item.user}}" />
+              <view class='flexHV top-center' data-event="openComment" data-id="{{item.CommentID}}" data-nickname="{{item.user.NickName}}" data-content="{{item.Content}}">
+                <image class='pen' src="https://minibizhi.313515.com/BiZhiStatic/comment-icon-reply.svg" mode="aspectFill" />
+                <text class='pen'>回复</text>
+              </view>
+              <view class='top-right flexV' data-index="{{index}}" data-listName="{{baseData.listName || ''}}" data-event="thumbUp">
+                <text class='pen {{item.IsPraise ? "on":""}}'>{{item.LikeCount}}</text>
+                <image class='pen' wx:if="{{item.IsPraise}}" src="https://minibizhi.313515.com/BiZhiStatic/thumb-up-active.svg"/>
+                <image class='pen' wx:else src="https://minibizhi.313515.com/BiZhiStatic/thumb-up.svg"/>          
+              </view>
+            </view>
+            <view class='bottom'>
+              <view class='comment-content'><text wx:if="{{item.ReplyContent}}">回复<text class='reply-name'>@{{item.ReplyNickName}}：</text></text>{{item.Content}}</view>
+              <view class='reply-content' wx:if="{{item.ReplyContent}}">
+                  <text class='reply-name'>{{item.ReplyNickName}}：</text>
+                  <text>{{item.ReplyContent}}</text>
+              </view>
+            </view>
+        </view>
+    </view>
+    <view class="loading" wx:if="{{baseData.LoadingText}}">{{baseData.LoadingText}}</view>
+    <view catchtap="reTry" wx:if="{{baseData.Error}}" class='retry-btn'> 刷新重试 </view>
+  </view>
+</template>
+
+
+
+
+

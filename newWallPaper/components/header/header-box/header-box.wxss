@@ -1,0 +1,24 @@
+.android .status-bar, .iPhone5s .status-bar,
+.iPhone5 .status-bar {
+  padding-bottom: 14rpx;
+}
+
+.capsule {
+  padding-right: 210rpx;
+}
+
+.android .capsule, .iPhone5s .capsule, .iPhone5 .capsule {
+  padding-right: 270rpx;
+}
+
+.body{
+  padding-bottom: 12rpx;
+}
+
+.fixed{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99
+}

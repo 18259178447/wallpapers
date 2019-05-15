@@ -1,0 +1,7 @@
+<view class="picture-container _4ad0e24">
+    <view class="picture-wrap _4ad0e24" wx:for="{{pics}}" wx:key="index">
+        <view class="picture-wrap-item default-img-bg _4ad0e24">
+            <image bindtap="goDetail" class="_4ad0e24" data-wpygodetail-a="{{item.id}}" lazyLoad="{{true}}" mode="aspectFill" src="{{item.url}}"></image>
+        </view>
+    </view>
+</view>

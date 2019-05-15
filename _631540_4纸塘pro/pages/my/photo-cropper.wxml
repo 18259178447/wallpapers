@@ -1,0 +1,9 @@
+<canvas binderror="canvasError" bindtouchend="te" bindtouchmove="tm" bindtouchstart="ts" canvasId="cropper" class="cropper _6be5a82" disableScroll="true" style="width:{{options.width}}px;height:{{options.height}}px;background-color: rgba(0, 0, 0, 0.8)"></canvas>
+<view class="cropper-buttons _6be5a82">
+    <view bindtap="cancel" class="cancel _6be5a82">
+      取消
+    </view>
+    <view bindtap="submit" class="submit _6be5a82">
+      确定
+    </view>
+</view>

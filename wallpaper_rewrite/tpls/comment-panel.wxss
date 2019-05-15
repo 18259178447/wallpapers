@@ -1,0 +1,41 @@
+
+.comment-panel {
+  background: #f1f5f7;
+  z-index: 98;
+}
+
+
+.comment-panel-btns {
+  height: 80rpx;
+}
+
+.comment-panel textarea {
+  background: #fff;
+  border: 1rpx solid #e3e3e3;
+  width: 702rpx;
+  height: 256rpx;
+  font-size: 32rpx;
+  color: #4c4c4c;
+  margin: 0 auto;
+  padding: 16rpx;
+  box-sizing: border-box;
+}
+.comment-panel .cancle,.comment-panel .publish-btn{
+  font-size: 30rpx;
+  padding: 0 25rpx;
+  
+}
+.comment-panel .cancle{
+  color:#4c4c4c;
+}
+.comment-panel .publish-btn{
+   color: #949494;
+}
+.comment-panel .publish-btn.blue{
+  color: #2e93c4;
+}
+
+.comment-panel .title {
+  font-size: 36rpx;
+  color: #4c4c4c;
+}

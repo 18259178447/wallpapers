@@ -1,0 +1,8 @@
+<view class='category-select-page select-page page'>
+  <view class='title'>所属分类</view>
+  <view class='labels-box' catchtap='selectCategory'>
+    <view wx:for="{{mainCategorys}}" wx:key="{{index}}" data-index="{{index}}" class='{{categoryIndex === index ? "blue" : ""}}' wx:if="{{!(item.CategoryID === 102 || item.CategoryID === 133)}}">{{item.CategoryTitle}}</view>
+  </view>
+
+  <view class='complete'  data-pageindex="3" catchtap='changePage'>完成</view>
+</view>

@@ -1,0 +1,39 @@
+<view class="navbar-container">
+    <view style="background:{{$navbar$color}};height:{{$navbar$height}};width:100%"></view>
+    <view style="height: 46px;line-height:46px;background:{{$navbar$color}}">
+        <view class="navbar-title-wrap" wx:if="{{$navbar$title}}">
+            <view catchtap="$navbar$back" class="back"></view>
+            <view class="content">{{$navbar$title}}</view>
+            <view class="last"></view>
+        </view>
+        <view wx:else></view>
+    </view>
+</view>
+<view style="height:{{$navbar$marginHeight}}px;width:100%;" wx:if="{{$navbar$showPadding}}"></view>
+<view class="picture-container _4ad0e24">
+    <view class="picture-wrap _4ad0e24" wx:for="{{$pictureList$pics}}" wx:for-index="$pictureList$index" wx:for-item="$pictureList$item" wx:key="$pictureList$index">
+        <view class="picture-wrap-item default-img-bg _4ad0e24">
+            <image bindtap="$pictureList$goDetail" class="_4ad0e24" data-wpygodetail-a="{{$pictureList$item.id}}" lazyLoad="{{$pictureList$true}}" mode="aspectFill" src="{{$pictureList$item.url}}"></image>
+        </view>
+    </view>
+</view>
+<view style="position: fixed;bottom: 0;width:100%" wx:if="{{imgs.length>0}}">
+    <view class="bottom-bar _c35f166" wx:if="{{$pager$total>0}}">
+        <view bindtap="$pager$last" class="bottom-item _c35f166" data-wpylast-a="" style="flex 1 40rpx;margin-left:30rpx">
+            <image class="back _c35f166" src="/assets/imgs/forward.png"></image>上一页
+    </view>
+        <view class="bottom-item _c35f166" style="text-align:center;margin:0">
+            <input bindconfirm="$pager$inputChange" class="input _c35f166" type="text" value="{{$pager$currentIndex}}"></input>
+            <view class="_c35f166">/{{$pager$total}}页</view>
+        </view>
+        <view bindtap="$pager$next" class="bottom-item _c35f166" data-wpynext-a="" style="flex 1 40rpx;text-align:right;justify-content: flex-end;margin-right:30rpx">下一页
+      <image class="forward _c35f166" src="/assets/imgs/forward.png"></image>
+        </view>
+    </view>
+</view>
+<view class="empty _7641959" wx:if="{{totalPages==0}}">
+    <image class="_7641959" mode="aspectFill" src="/assets/imgs/empty.png"></image>
+    <view class="_7641959">
+      空空如也～
+    </view>
+</view>

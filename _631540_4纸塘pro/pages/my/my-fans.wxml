@@ -1,0 +1,25 @@
+<view class="container _98ff264">
+    <view class="navbar-container _98ff264">
+        <view style="background:{{$navbar$color}};height:{{$navbar$height}};width:100%"></view>
+        <view style="height: 46px;line-height:46px;background:{{$navbar$color}}">
+            <view class="navbar-title-wrap" wx:if="{{$navbar$title}}">
+                <view catchtap="$navbar$back" class="back"></view>
+                <view class="content">{{$navbar$title}}</view>
+                <view class="last"></view>
+            </view>
+            <view wx:else></view>
+        </view>
+    </view>
+    <view style="height:{{$navbar$marginHeight}}px;width:100%;" wx:if="{{$navbar$showPadding}}"></view>
+    <view bindtap="goPerson" class="user-container _98ff264" data-wpygoperson-a="{{index}}" wx:for="{{users}}" wx:key="index">
+        <image class="avatar _98ff264" src="{{item.avatar}}"></image>
+        <view class="_98ff264">{{item.name}}</view>
+        <image class="forward _98ff264" src="/assets/imgs/forward.png"></image>
+    </view>
+    <view class="empty _7641959 _98ff264" wx:if="{{totalPages==0}}">
+        <image class="_7641959" mode="aspectFill" src="/assets/imgs/empty.png"></image>
+        <view class="_7641959">
+      空空如也～
+    </view>
+    </view>
+</view>

@@ -1,0 +1,34 @@
+@import "picture-list.wxss";
+
+@import "pager.wxss";
+
+@import "../../__wuBaseWxss__/7.wxss";
+
+.page-container._cd306f8 {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.page-container .page._cd306f8 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    transition: left 300ms;
+}
+
+.random-page .picture-container._cd306f8 {
+    padding-bottom: 0;
+}
+
+.btn-random._cd306f8 {
+    height: 76rpx;
+    margin: 30rpx 76rpx;
+    background: linear-gradient(90deg,#ffe600 0%,#ffd11d 100%);
+    border-radius: 4rpx;
+    font-size: 30rpx;
+    color: #333;
+}

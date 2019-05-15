@@ -1,0 +1,5 @@
+@import "picture-list.wxss";
+
+@import "pager.wxss";
+
+@import "../../__wuBaseWxss__/7.wxss";

@@ -1,0 +1,34 @@
+<view class='hot-dynamic'>
+  <view class="module-title">
+    社区动态
+    <view class='topicLabel act' wx:if="{{hotDynamic.TypeID === 2}}">活动</view>
+    <view class='topicLabel brandAct' wx:elif="{{hotDynamic.TypeID === 3}}">品牌活动</view>
+    <view class='topicLabel' wx:else>话题</view>
+  </view>
+  <view class='dynamic-view' wx:if="{{hotDynamic.TypeID === undefined}}">
+    <navigator class='dynamic-view-body' hover-class='none' url="/packageA/pages/topicReplyDetail/topicReplyDetail?partID={{hotDynamic.PartID}}&topicID={{hotDynamic.TopicID}}">
+      <image mode="aspectFill" class='left' src="{{hotDynamic.Thumb}}" url="/packageB/pages/userHome/userHome?userid={{hotDynamic.UserID}}"></image>
+      <view class='right'>
+        <navigator url="/packageB/pages/userHome/userHome?userid={{hotDynamic.UserID}}" hover-class='none' class='userInfo'>
+          <image src="{{hotDynamic.AvatarUrl}}" mode="aspectFill" />
+          <text class='flex1 line-e'>{{hotDynamic.NickName}}</text>
+        </navigator>
+        <view class='reply-word mul-e'>{{hotDynamic.PartTitle}}</view>
+        <navigator url="/packageA/pages/topicDetail/topicDetail?topicid={{hotDynamic.TopicID}}" hover-class='none' class='toTopicBtn line-e'>#{{hotDynamic.TopicTitle}}#</navigator>
+      </view>
+    </navigator>
+    <view class="change-data" catchtap="changeData" data-type="1">
+      <image src='https://minibizhi.313515.com/BiZhiStatic/change-data.svg'></image>
+      <text>换一换</text>
+    </view>
+  </view>
+  <navigator class='activity-view' url="/packageA/pages/topicDetail/topicDetail?topicid={{hotDynamic.TopicID}}" hover-class='none' wx:else>
+    <image src='{{hotDynamic.TopicIcon}}' class='bg'></image>
+    <text class='mul-e'>#{{hotDynamic.TopicTitle}}#</text>
+    <view class='brand' wx:if="{{hotDynamic.TypeID === 3}}">
+      <image src="{{hotDynamic.Icon}}" />
+      <image src="https://minibizhi.313515.com/BiZhiStatic/topicDetail-icon-x-white.svg" class='x' />
+      <image src="{{hotDynamic.OfficialIcon}}" />
+    </view>
+  </navigator>
+</view>

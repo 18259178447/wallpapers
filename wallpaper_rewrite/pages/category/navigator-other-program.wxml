@@ -1,0 +1,13 @@
+<navigator target="miniProgram" app-id="{{subCategory[0].appid}}" path="{{subCategory[0].path}}" hover-class='none'>
+  <image class='banner' mode='widthFix' src='{{mainCategorys[currentIndex].Image}}'></image>
+  <view class="title">{{mainCategorys[currentIndex].CategoryTitle}}</view>
+</navigator>
+<view class='subCategory-content'>
+  <navigator wx:for="{{subCategory}}" wx:key="{{item.SubID}}" target="miniProgram" app-id="{{item.appid}}" path="{{item.path}}" hover-class='none' wx:if="{{index !== 0}}">
+    <image src='{{item.IconUrl}}'></image>
+    <text class='line-e'>{{item.SubName}}</text>
+  </navigator>
+  <view wx:if="{{(subCategory.length - 1) % 3 === 2}}">
+    <image src=''></image>
+  </view>
+</view>

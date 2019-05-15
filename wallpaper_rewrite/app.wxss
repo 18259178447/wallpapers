@@ -1,0 +1,135 @@
+@import "common/common.wxss";
+@import "tpls/header.wxss";
+@import "tpls/footer.wxss";
+@import "tpls/base.wxss";
+@import "tpls/public.wxss";
+@import "tpls/list-scroll-nav.wxss";
+@import "tpls/list-base-nav.wxss";
+@import "tpls/user-view.wxss";
+@import "tpls/comment-panel.wxss";
+page,.container,scroll-view,.body,.swiper-list{
+  height: 100%;
+}
+.body{
+  overflow: hidden;
+  /* background-color: red; */
+}
+
+/* 模块标题 */
+.module-title {
+  height: 32rpx;
+  position: relative;
+  padding-left: 20rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #4c4c4c;
+  line-height: 32rpx;
+  vertical-align: middle;
+  background: url(https://minibizhi.313515.com/BiZhiStatic/icon-all-more.svg) right center no-repeat;
+  background-size: 80rpx 36rpx;
+  text-align: left;
+}
+
+.module-title::before,.follow-nav-wrap .nav-title::before {
+  width: 6rpx;
+  height: 32rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #239EFE;
+  content: '';
+  display: block;
+  border-radius: 6rpx;
+}
+
+/* 跳转到话题的蓝色文字按钮 */
+.toTopicBtn {
+  font-size: 32rpx;
+  color: #239EFE;
+  line-height: 46rpx;
+  background: #f2f2f2;
+  border-radius: 68rpx;
+  padding: 0 20rpx;
+  display: inline-block;
+  box-sizing: border-box;
+  margin-right: 20rpx;
+}
+
+.list-flex-wrap{
+  padding:0 16rpx;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+}
+
+/* 动态视频 */
+.dynamic-image{
+  position: relative;
+}
+.dynamic-image::before{
+  position: absolute;
+  content: '';
+  display: block;
+  width: 37rpx;
+  height: 37rpx;
+  left: 13rpx;
+  top: 10rpx;
+  background: url(https://minibizhi.313515.com/BiZhiStatic/icon-all-dynamic-video.svg) 0 0 no-repeat;
+  background-size: cover;
+  pointer-events: none;
+}
+
+
+/* 删除勾选 */
+.delete-selecte-status{
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  box-shadow: 0px 0px 3px 1px rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.5) center center no-repeat;
+  pointer-events: none;
+}
+.delete-selecte-status.on {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAARBAMAAAArn0GwAAAALVBMVEUAAADy8vLz8/Pz8/P4+Pjz8/P4+Pj////z8/Pz8/Pz8/Pz8/P09PT29vby8vKb2rZEAAAADnRSTlMA9D3lJeYnC8bTrlNGOY5LDGkAAABFSURBVAjXY4AD9u0ItvMLOJPF7iVC+J0QQvihAsnCVb0I4XNAEZjqUqAQTDVb3EMVuCGp70RBwlCJdwizU0HCMIlOqDAA5v4cMmtRhqgAAAAASUVORK5CYII=);
+  background-size: 22rpx 17rpx;
+}
+
+/* 评论相关 */
+.comment-title {
+  height: 90rpx;
+  font-size: 30rpx;
+  color: #4c4c4c;
+  background-color: #f2f2f2;
+  line-height: 90rpx;
+  padding-left: 32rpx;
+}
+
+.more-comment {
+  font-size: 28rpx;
+  /* color: #2e93c4; */
+  color: #4C4C4C;
+  line-height: 80rpx;
+  text-align: center;
+  height: 80rpx;
+}
+
+
+
+/* 跟随导航容器 */
+/* .follow-nav-container{
+  height: 102rpx;
+  position: relative;
+}
+
+.scroll-nav{
+  height: 96rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #fff;
+} */

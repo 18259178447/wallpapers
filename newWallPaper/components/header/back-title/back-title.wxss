@@ -1,0 +1,35 @@
+/* components/header/back-title/back-title.wxss */
+.fixed{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99
+}
+.back-title-box{
+  height: 74rpx;
+  position: relative;
+}
+.black{
+  background-color: #181824;
+}
+.back-title-box .title{
+  font-size:36rpx;
+  color:#fff;
+  text-align:center;
+  font-weight:bold;
+  line-height:74rpx;
+}
+
+.header-btn{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+.back-btn{
+  padding-left: 16rpx;
+  width: 80rpx;
+}

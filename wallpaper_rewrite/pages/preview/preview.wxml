@@ -1,0 +1,10 @@
+
+<view class='container {{supperClass}}'>
+  <view wx:if="{{!tpl}}"></view>
+  <include wx:elif="{{tpl === 'wallpaper'}}" src="wallpaper.wxml" />
+  <include wx:elif="{{tpl === 'emote-avatar'}}" src="emote-avatar.wxml" />
+  <include wx:elif="{{tpl === 'dynamic-wallpaper'}}" src="dynamic-wallpaper.wxml" />
+  <include src="share-reward-popup.wxml" />
+  <include src="../../tpls/public.wxml" />
+  <include src="../../tpls/poster.wxml" />
+</view>

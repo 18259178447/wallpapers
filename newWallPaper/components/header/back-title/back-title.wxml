@@ -1,0 +1,13 @@
+<view class="_class black {{header.type}}" style='{{header.backgroundColor ? "background-color:" + header.backgroundColor : ""}}'>
+  <header-box>
+    <view class='back-title-box'>
+      <view class='title' wx:if="{{header.title}}">{{header.title}}</view>
+      <view class='header-btn'>
+        <view class='back-btn' catchtap='back'>
+          <mini-icon type="{{backType}}"></mini-icon>
+        </view>
+      </view>
+    </view>
+    <slot></slot>
+  </header-box>
+</view>

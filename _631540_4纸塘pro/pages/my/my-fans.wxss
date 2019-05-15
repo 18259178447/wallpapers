@@ -1,0 +1,26 @@
+@import "../../__wuBaseWxss__/3.wxss";
+
+@import "../../__wuBaseWxss__/7.wxss";
+
+.user-container._98ff264 {
+    display: flex;
+    align-items: center;
+    padding: 18rpx 30rpx;
+}
+
+.user-container view._98ff264 {
+    flex: 1;
+    font-size: 30rpx;
+}
+
+.user-container .avatar._98ff264 {
+    width: 84rpx;
+    height: 84rpx;
+    border-radius: 50%;
+    margin-right: 28rpx;
+}
+
+.user-container .forward._98ff264 {
+    width: 16rpx;
+    height: 24rpx;
+}

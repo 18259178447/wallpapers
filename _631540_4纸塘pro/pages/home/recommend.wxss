@@ -1,0 +1,56 @@
+@import "../../__wuBaseWxss__/6.wxss";
+
+@import "../../__wuBaseWxss__/4.wxss";
+
+@import "../../__wuBaseWxss__/5.wxss";
+
+.nav._bd24a7c {
+    color: #999999;
+    font-size: 36rpx;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+.banner._bd24a7c {
+    font-family: 'DINCond';
+    margin: 40rpx 30rpx 0;
+    height: 180rpx;
+    border-radius: 2px;
+    font-weight: bold;
+    font-size: 40rpx;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(11,21,80,0.38);
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.banner image._bd24a7c {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 180rpx;
+    border-radius: 2px;
+    z-index: -1;
+}
+
+.banner .day._bd24a7c {
+    font-family: 'DINCond';
+    font-size: 116rpx;
+    font-weight: bold;
+    padding: 0 12rpx 0 64rpx;
+}
+
+.banner .btn._bd24a7c {
+    height: 64rpx;
+    background: #fff;
+    border-radius: 32rpx;
+    font-weight: 400;
+    color: #5d3072;
+    font-size: 28rpx;
+    line-height: 64rpx;
+    margin-right: 30rpx;
+}

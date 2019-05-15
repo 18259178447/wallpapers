@@ -1,0 +1,22 @@
+<view class="container _946c938">
+    <view class="navbar-container _946c938">
+        <view style="background:{{$navbar$color}};height:{{$navbar$height}};width:100%"></view>
+        <view style="height: 46px;line-height:46px;background:{{$navbar$color}}">
+            <view class="navbar-title-wrap" wx:if="{{$navbar$title}}">
+                <view catchtap="$navbar$back" class="back"></view>
+                <view class="content">{{$navbar$title}}</view>
+                <view class="last"></view>
+            </view>
+            <view wx:else></view>
+        </view>
+    </view>
+    <view style="height:{{$navbar$marginHeight}}px;width:100%;" wx:if="{{$navbar$showPadding}}"></view>
+    <view class="title _946c938"> 纸塘Pro官方公众号</view>
+    <view class="content _946c938">可以通过以下方式关注公众号 </view>
+    <view bindlongtap="copyData" class="content _946c938"> 1.在微信搜索微信公众号:<text class="_946c938" style="color:#fff235;">纸塘（</text>微信号:iwannabefreeee,长按复制）</view>
+    <view class="content _946c938"> 2.扫描以下二维码
+    </view>
+    <image class="_946c938" lazyLoad="false" mode="scaleToFill" src="/assets/imgs/wx_official.jpg" style="width:200rpx;height:200rpx;margin: 0 30rpx;"></image>
+    <view class="content _946c938">3.点击下方【关注公众号】按钮后，回复“1”即可打开关注公众号的链接</view>
+    <button bindtap="kf" class="btn _946c938" openType="contact" sessionFrom="{'type':'url', 'title':'点击进入关注公众号', 'url':'https://mp.weixin.qq.com/s/be9GCiDf0dQu7GWCQxBFOw'}">关注公众号</button>
+</view>

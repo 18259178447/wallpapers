@@ -1,0 +1,27 @@
+<view class="container iphoneX-bottom _c56db34">
+    <view class="navbar-container _c56db34">
+        <view style="background:{{$navbar$color}};height:{{$navbar$height}};width:100%"></view>
+        <view style="height: 46px;line-height:46px;background:{{$navbar$color}}">
+            <view class="navbar-title-wrap" wx:if="{{$navbar$title}}">
+                <view catchtap="$navbar$back" class="back"></view>
+                <view class="content">{{$navbar$title}}</view>
+                <view class="last"></view>
+            </view>
+            <view wx:else></view>
+        </view>
+    </view>
+    <view style="height:{{$navbar$marginHeight}}px;width:100%;" wx:if="{{$navbar$showPadding}}"></view>
+    <view class="list-item-container _c56db34" wx:for="{{topics}}" wx:key="index">
+        <view class="item-num _c56db34">
+            <view class="_c56db34">{{item.num}}</view>
+            <view class="_c56db34" style="font-size:32rpx;color:rgba(255,255,255,0.7)；padding-top:10px;">Vol</view>
+        </view>
+        <view bindtap="goDetail" class="item-content _c56db34" data-wpygodetail-a="{{index}}">
+            <image class="show-img _c56db34" lazyLoad="true" mode="aspectFill" src="{{item.showImg}}"></image>
+            <view class="topic-title _c56db34">{{item.title}}</view>
+            <view class="topic-time _c56db34">
+                <image class="_c56db34" src="/assets/imgs/leave.png"></image>发布于{{item.time}}
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,60 @@
+<!--pages/search/search.wxml-->
+<import src="../../tpls/base.wxml" />
+
+
+<template name="keywords-content">
+  <view class="recent-search search-keys" wx:if="{{keyword.recent.length!= 0}}" bindtap='event'>
+    <text>最近搜索</text>
+    <button class="keyClear" data-event="clearRecentKey" ></button>
+    <view class="key-btns">
+      <view data-event="keySearch" wx:for="{{keyword.recent}}" data-value="{{item}}" wx:key="{{item}}"> {{item}} </view>
+    </view>
+  </view>
+  <view class="hot-search search-keys" bindtap='event'>
+    <text>热门搜索</text>
+    <view class="key-btns">
+      <view data-event="keySearch" wx:for="{{keyword.hot}}" data-value="{{item}}" wx:key="{{item}}" class='mul-e'> {{item}} </view>
+    </view>
+  </view>
+</template>
+
+
+<view class='container {{supperClass}}'>
+  <view class='body'>
+    <swiper duration="300" class="swiper-list" bindchange="change" current="{{currentIndex}}">
+      <swiper-item wx:for="{{3}}" wx:key="{{index}}">
+        <scroll-view scroll-y>
+            <include src="../../tpls/header-placehold.wxml" />
+            <template is="keywords-content" data="{{keyword:keyWords[index]}}" />
+            <mul-fn-btn wx:for="{{adData}}" wx:key="{{index}}" btn-data="{{item}}" _class="card-ad">
+            <image src="{{item.ProductIcon}}" mode="aspectFill" class="icon"></image>
+            <view class='right'>
+                <text>{{item.ProductName}}</text>
+                <text>{{item.Describe}}</text>
+            </view>
+            </mul-fn-btn>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class='result-page flex-C f-f pen' hidden="{{isHideResult}}">
+      <view class='header-placehold'>
+          <view class='header-statusBar' style='height:{{header.statusBarHeight}}px'></view>
+      </view>
+      <view class='result-content flex1 pea'>
+        <scroll-view scroll-y bindscrolltolower="onReachBottom_" lower-threshold="150" enable-back-to-top scroll-top="{{baseData.scrollTop}}" bindscroll="onPageScroll_">
+            <!-- 列表 -->
+            <template is="{{suffix === 'bz' ? 'base-wallpaper-list' : 'avatar-emote-list'}}" data="{{baseData,reTry,defaultImage,defaultText}}" />
+            <include src="../../tpls/footer-placehold.wxml" />
+          </scroll-view>
+      </view>
+  </view>
+
+  <include src="../../tpls/public.wxml" />
+</view>
+
+
+        <!-- <mul-fn-btn wx:for="{{nav}}" wx:key="{{index}}" btn-data="{{item}}" class="top-nav-btn">
+          <image src="{{item.ProductIcon}}" mode="aspectFit" class="icon"></image>
+          <text class='line-e'>{{item.ProductName}}</text>
+        </mul-fn-btn> -->

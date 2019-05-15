@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/preview/preview",
+    "pages/search/search",
+    "pages/catetory/catetory",
+    "pages/my/my"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "white",
+    "navigationStyle": "custom"
+  },
+  "usingComponents": {
+    "header-box": "/components/header/header-box/header-box",
+    "footer-box": "/components/footer/footer-box/footer-box",
+    "back-title": "/components/header/back-title/back-title",
+    "catetory-nav": "/components/header/catetory-nav/catetory-nav",
+    "share-search": "/components/header/share-search/share-search",
+    "image-list": "/components/image-list/image-list",
+    "page-screen": "/components/page-screen/page-screen",
+    "scroll-x": "/components/scroll-x/scroll-x",
+    "mini-icon": "/components/mini-icon/mini-icon"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "backgroundColor": "#181824",
+    "borderStyle": "white",
+    "selectedColor": "#eacd34",
+    "color": "#898995",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "tabbar/home.png",
+        "selectedIconPath": "tabbar/home-on.png"
+      },
+      {
+        "pagePath": "pages/catetory/catetory",
+        "text": "分类",
+        "iconPath": "tabbar/catetory.png",
+        "selectedIconPath": "tabbar/catetory-on.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "tabbar/my.png",
+        "selectedIconPath": "tabbar/my-on.png"
+      }
+    ]
+  }
+}

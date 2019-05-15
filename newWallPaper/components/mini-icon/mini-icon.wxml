@@ -1,0 +1,3 @@
+<view class="_class mini-icon {{type}}">
+  <slot></slot>
+</view>

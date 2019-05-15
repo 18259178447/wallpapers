@@ -1,0 +1,6 @@
+<import src="../../tpls/base.wxml" />
+<view class="comment-title">热门评论</view>
+<view class='comment-list'>
+  <template wx:if="{{commentObj}}" is="base-comment-list" data="{{baseData:commentObj,defaultText:'就等你发表看法了~!'}}" />
+</view>
+<view class='more-comment' wx:if="{{isMoreComment}}" bindtap='moreComment'>查看全部评论 ></view>

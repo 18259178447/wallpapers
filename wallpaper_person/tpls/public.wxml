@@ -1,0 +1,22 @@
+<include src="header.wxml" />
+
+
+<!-- 无网络 -->
+<view class="noNetWorkPage f-f flexHV-C" wx:if="{{!netWork}}">
+  <image src="/assets/noWork.png" mode="aspectFill" />
+  <text>网络无法连接，请刷新重试</text>
+  <view class="button" catchtap="reTry">刷新网络</view>
+</view>
+<!-- 授权 -->
+<view class='authorization f-f flexHV' wx:if="{{isOPenLoginPanel}}" bindtap='toggle' data-toggle="isOPenLoginPanel">
+    <view class='content' >
+       <image src='/assets/authorization.png'></image>
+       <view class='close' data-toggle="isOPenLoginPanel"></view>
+       <button bindgetuserinfo="login" open-type="getUserInfo" class='authorization-btn' hover-class='none'></button>
+    </view>
+</view>
+
+<view class="suspension-container {{footer ? 'hasFooter' : ''}}">
+    <view class='backTop' bindtap='backTop' wx:if="{{!isHideBackTop}}"></view>
+</view>
+<include src="footer.wxml" />

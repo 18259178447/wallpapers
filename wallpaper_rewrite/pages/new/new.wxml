@@ -1,0 +1,8 @@
+<import src="../../tpls/base.wxml" />
+<import src="../../tpls/mul-fn-btn.wxml" />
+<view class='container {{supperClass}}'>
+  <view class='body'>
+    <include src="../../tpls/mul-list.wxml" />
+  </view>
+  <include src="../../tpls/public.wxml" />
+</view>

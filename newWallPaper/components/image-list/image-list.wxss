@@ -1,0 +1,16 @@
+/* components/image-list/image-list.wxss */
+@import "/utils/base.wxss";
+.wallpaper-box{
+  padding: 0 27.5rpx;
+}
+
+.wallpaper-box__image{
+  width: 334rpx;
+  height: 594rpx;
+  border-radius:8rpx;
+  margin-bottom: 27.5rpx;
+}
+
+.wallpaper-box__image_x{
+  height: 723rpx;
+}

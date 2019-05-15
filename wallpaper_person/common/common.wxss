@@ -1,0 +1,151 @@
+/* 多行省略 */
+
+.mul-e {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* 单行省略 */
+
+.line-e {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* flex相关 */
+
+.flexH {
+  display: flex;
+  justify-content: center;
+}
+
+.flexV {
+  display: flex;
+  align-items: center;
+}
+
+.flexHV {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexH-C {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.flexV-C {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.flexHV-C {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-C {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex1 {
+  flex: 1;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+.flex-wrap{
+  flex-wrap: wrap
+}
+.flex-sb{
+  display: flex;
+  justify-content: space-between;
+}
+.flexV-sb{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-sa{
+  display: flex;
+  justify-content: space-around;
+}
+
+/* 可否点击相关 */
+
+.pen {
+  pointer-events: none;
+}
+
+.pea {
+  pointer-events: auto;
+}
+
+/* 图片块元素 */
+
+image {
+  display: block;
+}
+
+/* 满屏定位 */
+
+.f-ab {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.f-f {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.f-ab-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.mask{
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.ab {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* button重置 */
+
+button {
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+button::after {
+  border: none;
+}

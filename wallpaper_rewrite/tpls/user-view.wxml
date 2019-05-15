@@ -1,0 +1,20 @@
+<template name="user-view">
+  <view class="user-view flexV pen {{class || ''}}">
+    <image src="{{AvatarUrl}}" class='left pea' data-url="/packageB/pages/userHome/userHome?userid={{UserID}}" />
+    <view class='center pea' data-url="/packageB/pages/userHome/userHome?userid={{UserID}}">
+      <view class='nickName mul-e'>{{NickName || '游客'}}</view>
+      <view class='createTime' wx:if="{{CreateDate}}">{{CreateDate}}</view>
+    </view>
+  </view>
+</template>
+
+<template name="user-view2">
+  <view class='list-item bottom-border' data-url="/packageB/pages/userHome/userHome?userid={{UserID}}">
+    <view class="user-view flexV pen">
+      <image src="{{AvatarUrl}}" class='left' />
+      <view class='nickName mul-e'>{{NickName || '游客'}}</view>
+      <view class='attention-text'>关注了你</view>
+      <view class='createTime'>{{CreateDate}}</view>
+    </view>
+  </view>
+</template>

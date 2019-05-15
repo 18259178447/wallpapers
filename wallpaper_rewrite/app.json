@@ -1,0 +1,83 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/my/my",
+    "pages/albumDetail/albumDetail",
+    "pages/category/category",
+    "pages/piazza/piazza",
+    "pages/preview/preview",
+    "pages/search/search",
+    "pages/new/new"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "subPackages": [
+    {
+      "root": "packageA",
+      "pages": [
+        "pages/topicDetail/topicDetail",
+        "pages/topicReplyDetail/topicReplyDetail",
+        "pages/pageLists/pageLists",
+        "pages/pageList/pageList",
+        "pages/pageBase/pageBase",
+        "pages/upload/upload",
+        "pages/commentList/commentList"
+      ]
+    },
+    {
+      "root": "packageB",
+      "pages": [
+        "pages/authorHome/authorHome",
+        "pages/userHome/userHome",
+        "pages/replyTopic/replyTopic",
+        "pages/commentList/commentList",
+        "pages/officeNotes/officeNotes",
+        "pages/intro/intro",
+        "pages/web/web"
+      ]
+    }
+  ],
+  "tabBar": {
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "selectedColor": "#239EFE",
+    "color": "#6A7883",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "精选",
+        "iconPath": "tabIcons/tab-jx-on.png",
+        "selectedIconPath": "tabIcons/tab-jx-active.png"
+      },
+      {
+        "pagePath": "pages/new/new",
+        "text": "最新",
+        "iconPath": "tabIcons/tab-zx-on.png",
+        "selectedIconPath": "tabIcons/tab-zx-active.png"
+      },
+      {
+        "pagePath": "pages/piazza/piazza",
+        "text": "圈子",
+        "iconPath": "tabIcons/tab-qz-on.png",
+        "selectedIconPath": "tabIcons/tab-qz-active.png"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "text": "分类",
+        "iconPath": "tabIcons/tab-fl-on.png",
+        "selectedIconPath": "tabIcons/tab-fl-active.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "tabIcons/tab-my-on.png",
+        "selectedIconPath": "tabIcons/tab-my-active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

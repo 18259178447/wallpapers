@@ -1,0 +1,80 @@
+<view class="navbar-container _cd306f8">
+    <view style="background:{{$navbar$color}};height:{{$navbar$height}};width:100%"></view>
+    <view style="height: 46px;line-height:46px;background:{{$navbar$color}}">
+        <view class="navbar-title-wrap" wx:if="{{$navbar$title}}">
+            <view catchtap="$navbar$back" class="back"></view>
+            <view class="content">{{$navbar$title}}</view>
+            <view class="last"></view>
+        </view>
+        <view wx:else>
+            <view class="tab-custom-container scondary _cd306f8">
+                <view catchtap="back" class="back _cd306f8"></view>
+                <view bindtap="choose" class="{{selectedTab==0?'active':''}} _cd306f8" data-wpychoose-a="0">全部</view>
+                <view bindtap="choose" class="{{selectedTab==1?'active':''}} _cd306f8" data-wpychoose-a="1">热门</view>
+                <view bindtap="choose" class="{{selectedTab==2?'active':''}} _cd306f8" data-wpychoose-a="2">随机</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view style="height:{{$navbar$marginHeight}}px;width:100%;" wx:if="{{$navbar$showPadding}}"></view>
+<view class="page-container _cd306f8">
+    <scroll-view scrollY bindscroll="scroll" class="page _cd306f8" scrollTop="{{allScrollTop}}" style="left: {{page1Left}}">
+        <view class="_cd306f8" style="height:{{marginHeight}}px;width:100%;"></view>
+        <view class="picture-container _4ad0e24 _cd306f8">
+            <view class="picture-wrap _4ad0e24" wx:for="{{$allPictureList$pics}}" wx:for-index="$allPictureList$index" wx:for-item="$allPictureList$item" wx:key="$allPictureList$index">
+                <view class="picture-wrap-item default-img-bg _4ad0e24">
+                    <image bindtap="$allPictureList$goDetail" class="_4ad0e24" data-wpygodetail-a="{{$allPictureList$item.id}}" lazyLoad="{{$allPictureList$true}}" mode="aspectFill" src="{{$allPictureList$item.url}}"></image>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+    <scroll-view scrollY bindscroll="scroll" class="page _cd306f8" scrollTop="{{hotScrollTop}}" style="left: {{page2Left}}">
+        <view class="_cd306f8" style="height:{{marginHeight}}px;width:100%;"></view>
+        <view class="picture-container _4ad0e24 _cd306f8">
+            <view class="picture-wrap _4ad0e24" wx:for="{{$hotPictureList$pics}}" wx:for-index="$hotPictureList$index" wx:for-item="$hotPictureList$item" wx:key="$hotPictureList$index">
+                <view class="picture-wrap-item default-img-bg _4ad0e24">
+                    <image bindtap="$hotPictureList$goDetail" class="_4ad0e24" data-wpygodetail-a="{{$hotPictureList$item.id}}" lazyLoad="{{$hotPictureList$true}}" mode="aspectFill" src="{{$hotPictureList$item.url}}"></image>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+    <scroll-view scrollY bindscroll="scroll" class="page _cd306f8" scrollTop="{{randomScrollTop}}" style="left: {{page3Left}}">
+        <view class="_cd306f8" style="height:{{marginHeight}}px;width:100%;"></view>
+        <view class="picture-container _4ad0e24 _cd306f8">
+            <view class="picture-wrap _4ad0e24" wx:for="{{$randomPictureList$pics}}" wx:for-index="$randomPictureList$index" wx:for-item="$randomPictureList$item" wx:key="$randomPictureList$index">
+                <view class="picture-wrap-item default-img-bg _4ad0e24">
+                    <image bindtap="$randomPictureList$goDetail" class="_4ad0e24" data-wpygodetail-a="{{$randomPictureList$item.id}}" lazyLoad="{{$randomPictureList$true}}" mode="aspectFill" src="{{$randomPictureList$item.url}}"></image>
+                </view>
+            </view>
+        </view>
+        <view class="_cd306f8">
+            <button bindtap="random" class="btn-random _cd306f8">重新随机</button>
+        </view>
+    </scroll-view>
+</view>
+<view class="_cd306f8" style="position: fixed;bottom: 0;width:100%">
+    <view class="bottom-bar _c35f166 _cd306f8" wx:if="{{selectedTab==0}}">
+        <view bindtap="$allPager$last" class="bottom-item _c35f166" data-wpylast-a="" style="flex 1 40rpx;margin-left:30rpx">
+            <image class="back _c35f166" src="/assets/imgs/forward.png"></image>上一页
+    </view>
+        <view class="bottom-item _c35f166" style="text-align:center;margin:0">
+            <input bindconfirm="$allPager$inputChange" class="input _c35f166" type="text" value="{{$allPager$currentIndex}}"></input>
+            <view class="_c35f166">/{{$allPager$total}}页</view>
+        </view>
+        <view bindtap="$allPager$next" class="bottom-item _c35f166" data-wpynext-a="" style="flex 1 40rpx;text-align:right;justify-content: flex-end;margin-right:30rpx">下一页
+      <image class="forward _c35f166" src="/assets/imgs/forward.png"></image>
+        </view>
+    </view>
+    <view class="bottom-bar _c35f166 _cd306f8" wx:if="{{selectedTab==1}}">
+        <view bindtap="$hotPager$last" class="bottom-item _c35f166" data-wpylast-a="" style="flex 1 40rpx;margin-left:30rpx">
+            <image class="back _c35f166" src="/assets/imgs/forward.png"></image>上一页
+    </view>
+        <view class="bottom-item _c35f166" style="text-align:center;margin:0">
+            <input bindconfirm="$hotPager$inputChange" class="input _c35f166" type="text" value="{{$hotPager$currentIndex}}"></input>
+            <view class="_c35f166">/{{$hotPager$total}}页</view>
+        </view>
+        <view bindtap="$hotPager$next" class="bottom-item _c35f166" data-wpynext-a="" style="flex 1 40rpx;text-align:right;justify-content: flex-end;margin-right:30rpx">下一页
+      <image class="forward _c35f166" src="/assets/imgs/forward.png"></image>
+        </view>
+    </view>
+</view>

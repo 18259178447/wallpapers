@@ -1,0 +1,35 @@
+<view class='container {{supperClass}}'>
+  <view class="user-info flexHV-C">
+    <view class='avatar-box'>
+      <open-data type="userAvatarUrl" class="avatar"></open-data>
+    </view>
+    <open-data type="userNickName" class="nickName"></open-data>
+    <view class='fans-attention'>
+      <navigator url="/packageA/pages/pageList/pageList?pagename=fan" hover-class="none">粉丝 {{fansCount}}</navigator>
+      <navigator url="/packageA/pages/pageList/pageList?pagename=myAttention" hover-class="none">已关注 {{UserAttentionCount}}</navigator>
+    </view>
+
+    <navigator url="/packageA/pages/pageBase/pageBase?pagename=message" hover-class="none" class="message header transparent">
+      <view class='header-statusBar' style='height:{{header.statusBarHeight}}px'></view>
+      <view class='header-body'>
+        <image src="https://minibizhi.313515.com/BiZhiStatic/message.svg"></image>
+        <view class='red-point' wx:if="{{newMessage}}"></view>
+      </view>
+    </navigator>
+  </view>
+
+  <navigator wx:for="{{nav}}" wx:key="{{index}}" url="{{item.url}}" hover-class="btn-hover" class='my-btn'>
+    <view class='btn-box pen'>
+      <image src="https://minibizhi.313515.com/BiZhiStatic/{{item.icon}}" class="icon"></image>
+      <text>{{item.title}}</text>
+      <image src="https://minibizhi.313515.com/BiZhiStatic/icon-pointer.svg" class="pointer"></image>
+    </view>
+  </navigator>
+  <button hover-class="btn-hover" class='my-btn' open-type="contact">
+    <view class="btn-box">
+      <image src="https://minibizhi.313515.com/BiZhiStatic/icon-give-feedback.svg" mode="aspectFill" class="icon"></image>
+      <text>意见反馈</text>
+      <image src="https://minibizhi.313515.com/BiZhiStatic/icon-pointer.svg" mode="aspectFill" class="pointer"></image>
+    </view>
+  </button>
+</view>

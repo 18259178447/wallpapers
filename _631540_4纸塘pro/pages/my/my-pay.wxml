@@ -1,0 +1,22 @@
+<view class="container _6a33c84">
+    <view class="navbar-container _6a33c84">
+        <view style="background:{{$navbar$color}};height:{{$navbar$height}};width:100%"></view>
+        <view style="height: 46px;line-height:46px;background:{{$navbar$color}}">
+            <view class="navbar-title-wrap" wx:if="{{$navbar$title}}">
+                <view catchtap="$navbar$back" class="back"></view>
+                <view class="content">{{$navbar$title}}</view>
+                <view class="last"></view>
+            </view>
+            <view wx:else></view>
+        </view>
+    </view>
+    <view style="height:{{$navbar$marginHeight}}px;width:100%;" wx:if="{{$navbar$showPadding}}"></view>
+    <view class="tip _6a33c84">您可以上传自己的微信打赏码，这样当用户下载了您的壁纸后，可以选择为您打赏</view>
+    <view class="image no-pay _6a33c84" wx:if="{{!user.payUrl}}">
+        <image bindtap="upload" class="_6a33c84" src="/assets/imgs/photo.png" style="width:108rpx;height:94rpx;"></image>
+    </view>
+    <view class="_6a33c84" style="text-align:center">
+        <image class="image _6a33c84" src="{{user.payUrl}}" wx:if="{{user.payUrl}}"></image>
+    </view>
+    <button bindtap="upload" class="btn-upload _6a33c84">{{user.payUrl?'重新上传':'我要上传'}}</button>
+</view>

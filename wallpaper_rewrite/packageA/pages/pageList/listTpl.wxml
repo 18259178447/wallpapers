@@ -1,0 +1,109 @@
+<import src="../../../tpls/user-view.wxml" />
+<import src="../../../tpls/base.wxml" />
+
+<!-- 赞我的 评论我的-->
+<template name="praise-comment-my-list">
+  <template is="list-default" wx:if="{{baseData.defaultPage}}" data="{{defaultText,defaultImage}}" />
+  <view class="data-list-box praise-comment-my-list" wx:else>
+    <view class="data-list-column-view {{others || ''}}" bindtap='event'>
+      <view class='list-item bottom-border' wx:for="{{baseData.dataList}}" wx:key="{{index}}" data-url="{{item.url}}">
+        <template is="user-view" data="{{...item.user}}" />
+        <view class='content pen'>
+          <view class='comment-content' wx:if="{{item.CommentContent}}">{{item.CommentContent}}</view>
+          <view class='target-content flexV'>
+            <image src="{{item.Thumb}}" wx:if="{{item.Thumb}}" mode="aspectFill" />
+            <text class='m-e' wx:if="{{item.Content}}">{{item.Content}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="loading" wx:if="{{baseData.LoadingText}}">{{baseData.LoadingText}}</view>
+    <view catchtap="reTry" wx:if="{{baseData.Error}}" class='retry-btn'> 刷新重试 </view>
+  </view>
+</template>
+
+
+<!-- 关注我的-->
+<template name="attention-my-list">
+  <template is="list-default" wx:if="{{baseData.defaultPage}}" data="{{defaultText,defaultImage}}" />
+  <view class="data-list-box attention-my-list" wx:else>
+    <view class="data-list-column-view" bindtap='event'>
+      <template is="user-view2" wx:for="{{baseData.dataList}}" wx:key="{{index}}" data="{{...item}}" />
+    </view>
+    <view class="loading" wx:if="{{baseData.LoadingText}}">{{baseData.LoadingText}}</view>
+    <view catchtap="reTry" wx:if="{{baseData.Error}}" class='retry-btn'> 刷新重试 </view>
+  </view>
+</template>
+
+
+<!-- 粉丝及已关注-->
+<template name="fan-attention-list">
+  <template is="list-default" wx:if="{{baseData.defaultPage}}" data="{{defaultText,defaultImage}}" />
+  <view class="data-list-box fan-attention-list" wx:else>
+    <view class="data-list-column-view" bindtap='event'>
+      <view class='list-item flexV bottom-border' wx:for="{{baseData.dataList}}" wx:key="{{index}}">
+        <template is="user-view" data="{{...item,class:'flex1'}}" />
+        <view wx:if="{{!others}}" class='attention-btn {{item.IsAttention ? "active" : ""}}' data-event="attention" data-index="{{index}}"></view>
+      </view>
+    </view>
+    <view class="loading" wx:if="{{baseData.LoadingText}}">{{baseData.LoadingText}}</view>
+    <view catchtap="reTry" wx:if="{{baseData.Error}}" class='retry-btn'> 刷新重试 </view>
+  </view>
+</template>
+
+
+<!-- 聊天背景列表 -->
+<template name="chat-bg-list">
+  <template is="list-default" wx:if="{{baseData.defaultPage}}" data="{{defaultText,defaultImage}}" />
+  <view class="chat-bg-list" wx:else>
+    <view class="list-flex-wrap wallpaper-list-view" style='padding-top:{{baseData.paddingTop}}px' bindtap='preview'>
+      <!-- <block ></block> -->
+      <image src="{{item}}" data-index="{{index}}" wx:for="{{baseData.dataList}}" wx:key="{{index}}" class='{{index % baseData.every ===0 ? "benchmark"+ baseData.listIndex : "" }}' wx:if="{{index>=baseData.beforeIndex && index<baseData.afterIndex}}">
+      <image src="https://minibizhi.313515.com/BiZhiStatic/chatbg.png" mode="aspectFill" class="chat-mask"></image>
+      </image>
+    </view>
+    <view class="loading" wx:if="{{baseData.LoadingText}}">{{baseData.LoadingText}}</view>
+    <view catchtap="reTry" wx:if="{{baseData.Error}}" class='retry-btn'> 刷新重试 </view>
+  </view>
+</template>
+
+
+<!-- 主题套图 天生一对 -->
+<template name="pair-wallpaper-list">
+  <template is="list-default" wx:if="{{baseData.defaultPage}}" data="{{defaultText,defaultImage}}" />
+  <view class="data-list-box" wx:else>
+    <view class="list-flex-wrap pair-wallpaper-list" bindtap='event'>
+      <block wx:for="{{baseData.dataList}}" wx:key="{{index}}">
+        <image src="{{item.ThumbImage}}" data-index="{{index}}" data-event="preview"></image>
+        <view class='pair-download flexV' wx:if="{{index % 2 === 1}}">
+            <view class='title flex1 line-e'>{{item.Title}}</view>
+            <view class='pair-btn' data-index="{{index}}" data-event="downloadPair" >一键下载</view>
+        </view>
+      </block>
+      <image src="" wx:if="{{baseData.dataList.length % 3 === 2}}"></image>
+    </view>
+    <view class="loading" wx:if="{{baseData.LoadingText}}">{{baseData.LoadingText}}</view>
+    <view catchtap="reTry" wx:if="{{baseData.Error}}" class='retry-btn'> 刷新重试 </view>
+  </view>
+</template>
+
+
+<!-- 可删除删除列表 -->
+<template name="can-delete-upload-list">
+  <template is="list-default" wx:if="{{baseData.defaultPage}}" data="{{defaultText,defaultImage}}" />
+  <view class="data-list-box" wx:else>
+    <view class="list-flex-wrap" bindtap='clickImage'>
+      <view class='wallpaper-list-view' wx:for="{{baseData.dataList}}" wx:key="{{index}}" >
+        <image src="{{item.ThumbImage}}" data-index="{{index}}">
+          <view class="delete-selecte-status {{item.deleteSelected ? 'on' : ''}}" hidden="{{!others.isDeleteSelected}}"></view>
+        </image>
+        <view class='examine-status {{item.StatusClass}}'>{{item.StatusText}}</view>
+      </view>
+      <view class='wallpaper-list-view' wx:if="{{baseData.dataList.length % 3 === 2}}">
+        <image src=""></image>
+      </view>
+    </view>
+    <view class="loading" wx:if="{{baseData.LoadingText}}">{{baseData.LoadingText}}</view>
+    <view catchtap="reTry" wx:if="{{baseData.Error}}" class='retry-btn'> 刷新重试 </view>
+  </view>
+</template>

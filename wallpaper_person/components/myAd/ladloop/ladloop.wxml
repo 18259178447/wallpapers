@@ -1,0 +1,6 @@
+<!--components/ladloop/ladloop.wxml-->
+<view wx:if="{{hide}}" class='{{hide ? "hide" : ""}}'>
+    <ad wx:if="{{id && index === 0}}" unit-id="{{id}}" binderror="adError"></ad>
+</view>
+
+<ad wx:elif="{{id && index === 0}}" unit-id="{{id}}" binderror="adError"></ad>

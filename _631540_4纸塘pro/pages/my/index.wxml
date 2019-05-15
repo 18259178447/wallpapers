@@ -1,0 +1,75 @@
+<view class="container _db88ac2">
+    <view class="navbar-container _db88ac2">
+        <view style="background:{{$navbar$color}};height:{{$navbar$height}};width:100%"></view>
+        <view style="height: 46px;line-height:46px;background:{{$navbar$color}}">
+            <view class="navbar-title-wrap" wx:if="{{$navbar$title}}">
+                <view catchtap="$navbar$back" class="back"></view>
+                <view class="content">{{$navbar$title}}</view>
+                <view class="last"></view>
+            </view>
+            <view wx:else></view>
+        </view>
+    </view>
+    <view style="height:{{$navbar$marginHeight}}px;width:100%;" wx:if="{{$navbar$showPadding}}"></view>
+    <view class="header _db88ac2">
+        <view class="info _db88ac2">
+            <view class="_db88ac2">{{user.name||'--'}}</view>
+            <view class="p-info _db88ac2">
+                <view class="_db88ac2">关注<text class="_db88ac2">{{user.attentionNum}}</text>
+                </view>
+                <view bindtap="goFans" class="_db88ac2">粉丝<text class="_db88ac2">{{user.fansNum}}</text>
+                </view>
+            </view>
+            <view class="_db88ac2">
+                <button bindtap="goMyInfo" class="btn-edit _db88ac2">设置</button>
+            </view>
+        </view>
+        <view class="avatar _db88ac2">
+            <image bindtap="goPerson" class="avatar-url _db88ac2" src="{{user.avatar||'/assets/imgs/default.jpg'}}"></image>
+        </view>
+    </view>
+    <view class="info-bar _db88ac2">
+        <navigator class="info-item _db88ac2" url="/pages/my/my-upload">
+            <view class="_db88ac2">{{user.uploadNum||0}}</view>
+            <view class="info-item-name _db88ac2">投稿</view>
+        </navigator>
+        <navigator class="info-item _db88ac2" url="/pages/my/my-collection">
+            <view class="_db88ac2">{{user.collectionNum||0}}</view>
+            <view class="info-item-name _db88ac2">收藏</view>
+        </navigator>
+        <navigator class="info-item _db88ac2" url="/pages/my/my-download">
+            <view class="_db88ac2">{{user.downloadNum||0}}</view>
+            <view class="info-item-name _db88ac2">近期下载</view>
+        </navigator>
+        <navigator class="info-item _db88ac2" url="/pages/my/my-attention">
+            <view class="_db88ac2">{{user.attentionNum||0}}</view>
+            <view class="info-item-name _db88ac2">关注</view>
+        </navigator>
+    </view>
+    <navigator class="score-info _db88ac2" url="/pages/my/my-score">
+        <image class="bg _db88ac2" src="/assets/imgs/score_bg.png"></image>
+        <view class="score-detail _db88ac2">
+            <view class="_db88ac2">我的积分</view>
+            <view class="_db88ac2" style="font-size:24rpx;">当前积分: {{user.score||'0'}}</view>
+        </view>
+        <image class="_db88ac2" src="/assets/imgs/forward.png" style="width:18rpx;height:28rpx;margin-right:30rpx"></image>
+    </navigator>
+    <view class="func-container _db88ac2">
+        <navigator class="func-item-container _db88ac2" url="/pages/my/my-pay">
+            <image class="_db88ac2" src="/assets/imgs/pay.png"></image>
+            <view class="_db88ac2">我的打赏码</view>
+        </navigator>
+        <navigator class="func-item-container _db88ac2" url="/pages/my/help">
+            <image class="_db88ac2" src="/assets/imgs/help.png"></image>
+            <view class="_db88ac2">帮助说明</view>
+        </navigator>
+        <navigator class="func-item-container _db88ac2" url="/pages/my/wx-official">
+            <image class="_db88ac2" src="/assets/imgs/wx.png"></image>
+            <view class="_db88ac2">微信公众号</view>
+        </navigator>
+        <button bindtap="kf" class="func-item-container _db88ac2" openType="contact" sessionFrom="{'type':'url', 'title':'点击进入关注公众号', 'url':'https://mp.weixin.qq.com/s/be9GCiDf0dQu7GWCQxBFOw'}">
+            <image class="_db88ac2" src="/assets/imgs/contact.png"></image>
+            <view class="_db88ac2" style="color:white;">联系我们</view>
+        </button>
+    </view>
+</view>

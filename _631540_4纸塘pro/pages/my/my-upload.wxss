@@ -1,0 +1,52 @@
+@import "../picture/picture-list.wxss";
+
+@import "../picture/pager.wxss";
+
+@import "../../__wuBaseWxss__/3.wxss";
+
+@import "../../__wuBaseWxss__/7.wxss";
+
+.tab-custom-container._fb854e2 {
+    margin: 0 40rpx;
+}
+
+.tab-custom-container .active._fb854e2::after {
+    content: ' ';
+    display: inline-block;
+    position: absolute;
+    width: 50rpx;
+    height: 4rpx;
+    bottom: 4rpx;
+    left: 23rpx;
+    background: white;
+    border-radius: 4rpx;
+}
+
+.page-container._fb854e2 {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.page._fb854e2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    transition: left 300ms;
+}
+
+.random-page .picture-container._fb854e2 {
+    padding-bottom: 0;
+}
+
+.btn-random._fb854e2 {
+    height: 76rpx;
+    margin: 30rpx 76rpx;
+    background: linear-gradient(90deg,#ffe600 0%,#ffd11d 100%);
+    border-radius: 4rpx;
+    font-size: 30rpx;
+    color: #333;
+}

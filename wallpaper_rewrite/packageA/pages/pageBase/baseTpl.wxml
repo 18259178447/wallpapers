@@ -1,0 +1,38 @@
+<template name="message">
+  <include src="../../../tpls/header-placehold.wxml" />
+  <view class='msg-title'>广场消息</view>
+  <view wx:for="{{extra}}" wx:key="{{index}}" class='my-btn' data-index="{{index}}" bindtap='navClick'>
+    <view class='btn-box'>
+      <image src="{{'https://minibizhi.313515.com/BiZhiStatic/' + item.icon}}" mode="aspectFill" class="icon"></image>
+      <text>{{item.title}}</text>
+      <view class="red-point" wx:if="{{item.redPoint}}"></view>
+      <image src="https://minibizhi.313515.com/BiZhiStatic/icon-pointer.svg" mode="aspectFill" class="pointer"></image>
+    </view>
+  </view>
+</template>
+
+
+<template name="video-guide">
+  <view class='video-guide-container'>
+    <include src="../../../tpls/header-placehold.wxml" />
+    <view class='first-line'>1.在各大应用市场下载最新版本的“抖音”APP，并注册账号</view>
+    <image src='https://minibizhi.313515.com/BiZhiStatic/img-guide1.jpg' mode='widthFix'></image>
+    <view>2.点击底部标签栏“上传”按钮，将下载的动态壁纸视频上传到抖音</view>
+    <image src='https://minibizhi.313515.com/BiZhiStatic/img-guide2.jpg' mode='widthFix'></image>
+    <view>3.在个人中心找到上传的动态壁纸视频并打开</view>
+    <image src='https://minibizhi.313515.com/BiZhiStatic/img-guide3.jpg' mode='widthFix'></image>
+    <view>4.打开后进入视频播放页，点击“分享”按钮</view>
+    <image src='https://minibizhi.313515.com/BiZhiStatic/img-guide4.jpg' mode='widthFix'></image>
+    <view>5.选中“动态壁纸”就可以生成壁纸啦~</view>
+    <image src='https://minibizhi.313515.com/BiZhiStatic/img-guide5.jpg' mode='widthFix'></image>
+  </view>
+</template>
+
+<template name="setting">
+  <include src="../../../tpls/header-placehold.wxml" />
+  <view class='notify-switch flexV-sb'>
+      <view>每日推荐消息，开启推送</view>
+      <switch checked="{{extra.isNotify}}" bindchange="switch1Change" color="#239EFE"/>
+  </view>
+  <view class='innerUser' bindlongpress='toggleCopy'></view>
+</template>

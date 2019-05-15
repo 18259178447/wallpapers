@@ -1,0 +1,34 @@
+<import src="../../tpls/base.wxml" />
+<view class='container {{supperClass}}'>
+  <view class='body'>
+    <swiper duration="300" class="swiper-list" bindchange="change" current="{{currentIndex}}">
+      <swiper-item wx:for="{{listNav}}" wx:key="{{index}}" class="{{item.listClass || ''}}">
+        <scroll-view scroll-y bindscrolltolower="onReachBottom_" lower-threshold="150" enable-back-to-top scroll-top="{{baseDatas[index].scrollTop}}" bindscroll="onPageScroll_">
+          <include src="../../tpls/header-placehold.wxml" />
+          <template is="base-wallpaper-list" data="{{reTry,baseData:baseDatas[index]}}" />
+          <include src="../../tpls/footer-placehold.wxml" />
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+  </view>
+  <include src="../../tpls/public.wxml" />
+</view>
+
+
+<view class='quiz' wx:if="{{istoQuiz}}">
+  <swiper autoplay interval="3000" duration="500" class="swiper">
+              <swiper-item>
+        <navigator target="miniProgram" open-type="navigate" app-id="wx7d5c5308d07a1559" path="pages/my2019/my2019" extra-data="" version="release"><image src="../../assets/index_bg1.png" mode='widthFix'></image></navigator>
+    </swiper-item>
+    <swiper-item>
+        <navigator target="miniProgram" open-type="navigate" app-id="wx7d5c5308d07a1559" path="pkgquiz/quiz/quiz?id=6559&title=你的智商、情商、爱商有多高？" extra-data="" version="release"><image src="http://uploads-admin.cdn.woquhudong.cn/quce/1539769982D8HZv.png" mode='widthFix'></image></navigator>
+    </swiper-item>
+        <swiper-item>
+        <navigator target="miniProgram" open-type="navigate" app-id="wx7d5c5308d07a1559" path="pkgquiz/quiz/quiz?id=6538&title=你会是渣男or渣女吗？" extra-data="" version="release"><image src="http://uploads-admin.cdn.woquhudong.cn/quce/1539653164G8xsT.png" mode='widthFix'></image></navigator>
+    </swiper-item>
+        <swiper-item>
+        <navigator target="miniProgram" open-type="navigate" app-id="wx7d5c5308d07a1559" path="pkgquiz/quiz/quiz?id=6540&title=真实年龄报告" extra-data="" version="release"><image src="http://uploads-admin.cdn.woquhudong.cn/quce/1539683937pOooE.png" mode='widthFix'></image></navigator>
+    </swiper-item>
+  </swiper>
+  <view class='close' bindtap='closeQuiz'></view>
+</view>

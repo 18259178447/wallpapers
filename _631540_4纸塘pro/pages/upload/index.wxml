@@ -1,0 +1,23 @@
+<view class="login-container _72d15b4" wx:if="{{!user||!firstIn}}">
+    <image class="upload-icon _72d15b4" src="/assets/imgs/upload.png"></image>
+    <view class="_72d15b4">上传壁纸前需要登录</view>
+    <button bindtap="login" class="btn _72d15b4">去登录</button>
+    <image bindtap="back" class="close-icon _72d15b4" src="/assets/imgs/close.png"></image>
+</view>
+<view class="protocal-container _72d15b4" wx:if="{{user&&firstIn}}">
+    <view class="title _72d15b4">图片上传协议</view>
+    <view class="protocal-content-container _72d15b4">
+        <view class="sub-title _72d15b4">图片内容说明</view>
+        <view class="protocal-item _72d15b4">1. 为了给大家高质量的壁纸体验，请尽量上传高清的图片，我们会对所有的图片进行人工审核</view>
+        <view class="protocal-item _72d15b4">2. 带有粗俗、色情、暴力等违规图片将不会被通过；同时，生活照、清晰度较低、已重复的图片也不会被通过；</view>
+        <view class="protocal-item _72d15b4">3. 没有通过审核的图片仅会保留一段时间，之后会自动删除，请自行做好备份</view>
+        <view class="protocal-item _72d15b4">3. 如果上传了尺寸不对，但是质量较高的图片，纸塘壁纸官方有可能会为您剪裁好之后通过审核</view>
+        <view class="sub-title _72d15b4">图片版权说明</view>
+        <view class="protocal-item _72d15b4">1. 上传选择原创时，请确保您是图片的原创者并拥有图片的版权</view>
+        <view class="protocal-item _72d15b4">2. 上传转载图片时，请尽量注明来源并且请确保该图片可以被上传</view>
+        <view class="protocal-item _72d15b4">3. 如果图片存在版权问题，纸塘壁纸官方有权在不告知您的情况下删除图片</view>
+        <view class="protocal-item _72d15b4">4. 当您上传壁纸后，纸塘壁纸官方可能会在不告知您的情况下以署名的形式将壁纸发布到其他渠道，比如微信公众号等</view>
+    </view>
+    <button bindtap="agree" class="btn _72d15b4">同意</button>
+    <image bindtap="back" class="close-icon _72d15b4" src="/assets/imgs/close.png"></image>
+</view>

@@ -1,0 +1,45 @@
+<view bindtap="search" class="search _1b72570">
+    <image class="search-icon _1b72570" lazyLoad="false" mode="scaleToFill" src="/assets/imgs/search.png"></image>请输入壁纸码搜索
+    <view catchtap="closeTip" class="guide _1b72570" wx:if="{{showTip}}">每张壁纸都有一个壁纸码，可以直接通过输入壁纸码获取壁纸
+      <view class="_1b72570">知道了</view>
+    </view>
+</view>
+<view class="list-header-container _1b72570" wx:if="{{user&&likes.length||!user}}">
+    <view class="list-header-title" style="font-size:{{$likeHeader$fontSize}}">
+      {{$likeHeader$title}}
+      <text class="list-header-sub-title" wx:if="{{$likeHeader$subTitle}}">/{{$likeHeader$subTitle}}</text>
+    </view>
+    <view catchtap="$likeHeader$itemTap" class="list-header-trail" wx:if="{{$likeHeader$content}}">{{$likeHeader$content}}</view>
+</view>
+<scroll-view scrollX class="_6bd9f40 _1b72570" scrollWithAnimation="scroll-with-animation" wx:if="{{user}}">
+    <view class="img-view _6bd9f40">
+        <view class="image-item default-img-bg img-{{$likeImg$type}} _6bd9f40" wx:for="{{$likeImg$imgs}}" wx:for-index="$likeImg$index" wx:for-item="$likeImg$img" wx:key="$likeImg$index">
+            <image binderror="$likeImg$error" bindtap="$likeImg$detail" class="img-{{$likeImg$type}} _6bd9f40" data-index="{{$likeImg$index}}" data-wpydetail-a="{{$likeImg$img.id}}" data-wpyerror-a="{{$likeImg$index}}" lazyLoad="{{$likeImg$true}}" mode="aspectFill" src="{{$likeImg$img.url}}"></image>
+            <view class="author _6bd9f40" wx:if="{{$likeImg$author}}">
+                <image catchtap="$likeImg$goPerson" class="avatar _6bd9f40" data-wpygoperson-a="{{$likeImg$img}}" lazyLoad="{{$likeImg$true}}" mode="scaleToFill" src="{{$likeImg$img.avatar}}"></image>
+                <view class="name _6bd9f40">{{$likeImg$img.author}}</view>
+            </view>
+        </view>
+    </view>
+</scroll-view>
+<view class="login _1b72570" wx:else>
+    登录后查看我的关注
+    <button bindtap="login" class="btn-login _1b72570">去登录</button>
+</view>
+<block wx:for="{{$category$imgs}}" wx:for-index="$category$index" wx:for-item="$category$item" wx:key="$category$index">
+    <view class="list-header-container _33ff366" wx:if="{{$category$item.images.length}}">
+        <view class="list-header-title _33ff366">
+        {{$category$item.name}}
+        <text class="list-header-sub-title _33ff366">/分类</text>
+        </view>
+        <view catchtap="$category$itemTap" class="list-header-trail scondary _33ff366" data-wpyitemtap-a="{{$category$index}}">查看更多</view>
+    </view>
+    <scroll-view scrollX class="_33ff366" scrollWithAnimation="scroll-with-animation">
+        <view class="img-view _33ff366">
+            <view class="image-item default-img-bg img-normal _33ff366" wx:for="{{$category$item.images}}" wx:for-index="$category$index" wx:for-item="$category$img" wx:key="$category$index">
+                <image binderror="$category$error" bindtap="$category$detail" class="img-normal _33ff366" data-index="{{$category$index}}" data-wpydetail-a="{{$category$img.id}}" data-wpyerror-a="{{$category$index}}" lazyLoad="{{$category$true}}" mode="aspectFill" src="{{$category$img.url}}"></image>
+            </view>
+        </view>
+    </scroll-view>
+</block>
+<view class="_1b72570" style="width:100%;height:200rpx;"></view>

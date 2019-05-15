@@ -1,0 +1,5 @@
+<import src="baseTpl.wxml" />
+<view class='{{supperClass}}'>
+  <template wx:if="{{template}}" is="{{template}}" data="{{extra,header}}" />
+  <include src="../../../tpls/header.wxml" />
+</view>
