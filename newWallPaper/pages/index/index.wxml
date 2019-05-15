@@ -1,7 +1,7 @@
 <!-- <image-list></image-list> -->
 <!-- <header-box placehold="144rpx"></header-box> -->
 
-<header-box fixed capsule _class="fixed-header">
+<header-box fixed capsule _class="theme-bgcolor">
   <share-search></share-search>
   <catetory-nav navArr="{{navArr}}" current="{{currentIndex}}" bindchange="navChanges"></catetory-nav>
 </header-box>

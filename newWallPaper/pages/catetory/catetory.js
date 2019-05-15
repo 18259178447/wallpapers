@@ -1,66 +1,31 @@
 // pages/catetory/catetory.js
-Page({
+wx.Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    currentIndex:0,
+    subCategory:[],
+    mainCategorys:[]
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onInit({ currentIndex = 0}){
+    currentIndex = +currentIndex;
+    wx.Tool.getCatetorys().then(categorys=>{
+      this.subCategorys = categorys.subCategorys;
+      this.setData({
+        mainCategorys: categorys.mainCategorys,
+        subCategory: categorys.subCategorys[currentIndex],
+        currentIndex
+      })
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  navSwitch: function (e) {
+    var index = e.target.dataset.index;
+    if (index === undefined || index == this.data.currentIndex) return;
+    this.setData({
+      currentIndex: index,
+      subCategory: this.subCategorys[index]
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

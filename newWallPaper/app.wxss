@@ -6,7 +6,9 @@ button {
   border-radius: 0;
   background-color: transparent;
 }
-
+image{
+  display: block
+}
 button::after {
   border: none;
 }

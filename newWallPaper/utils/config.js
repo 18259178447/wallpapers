@@ -6,6 +6,7 @@ module.exports = {
     OriginalList:'List/OriginalList',
     AlbumList:'List/AlbumList',
     SearchList:'List/SearchList',
+    Categorys:'List/Categorys',
 
   }
 }
