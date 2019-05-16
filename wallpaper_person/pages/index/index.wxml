@@ -31,7 +31,7 @@
   <include src="../../tpls/public.wxml" />
 </view>
 
-
+<!-- 
 
 <view class='quiz' wx:if="{{istoQuiz}}">
   <swiper autoplay interval="3000" duration="500" class="swiper">
@@ -51,4 +51,4 @@
 
   </swiper>
   <view class='close' bindtap='closeQuiz'></view>
-</view>
+</view> -->
