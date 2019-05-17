@@ -1,0 +1,64 @@
+/* pages/zhouyi/zhouyi.wxss */
+page {
+    background: url(http://r.itiexue.net/tiexue/wechatapp/suangua/dbg1.jpg) no-repeat;
+    background-size: 100%;
+    height: 100%;
+}
+
+view {
+    overflow: initial;
+}
+
+.page {
+    width: 100%;
+    overflow: hidden;
+}
+
+.circleOut {
+    margin: 200rpx auto;
+    position: relative;
+    width: 700rpx;
+    height: 700rpx;
+    border-radius: 50%;
+    background-color: #850000;
+    box-shadow: 0rpx 0 40rpx #000;
+}
+
+.circleIn {
+    position: absolute;
+    width: 660rpx;
+    height: 660rpx;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    background: url(http://r.itiexue.net/tiexue/wechatapp/suangua/zhuanpan1.png) no-repeat;
+    background-size: 100%;
+}
+
+.arrow {
+    width: 400rpx;
+    height: 430rpx;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: url(http://r.itiexue.net/tiexue/wechatapp/suangua/arrow.png) no-repeat;
+    background-size: 100%;
+}
+
+.jiegua {
+    background: url(http://r.itiexue.net/tiexue/wechatapp/suangua/btn.png) no-repeat;
+    background-size: 100%;
+    width: 300rpx;
+    height: 70rpx;
+    position: absolute;
+    left: 50%;
+    bottom: 120rpx;
+    margin-left: -150rpx;
+}

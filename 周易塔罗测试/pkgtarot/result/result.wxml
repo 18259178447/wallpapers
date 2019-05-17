@@ -1,0 +1,39 @@
+<view class="m_loding_ball" wx:if="{{resultData.length<=0}}"></view>
+<block wx:if="{{resultData.length>0}}">
+    <view class="result_wrap" wx:if="{{type==1}}">
+        <view class="rw_box" wx:for="{{resultData}}" wx:key="{{index}}">
+            <view class="rw_card_tip">{{index+1}}、{{item.tip}}</view>
+            <view class="rw_card_info">
+                <image class="rw_card_img {{item.pos==1?'':'rw_card_img_back'}}" mode="widthFix" src="{{item.img}}"></image>
+                <view class="rw_card_name">{{item.cn}}</view>
+                <view class="rw_card_ename">{{item.en}}</view>
+                <view class="rw_card_pos">牌位：{{item.pos==1?'正位':'逆位'}}</view>
+            </view>
+            <view class="rw_card_text">
+                <view class="">爱情和婚姻</view>
+                <text class="">{{item.result.aiqing}}</text>
+            </view>
+            <view class="rw_card_text">
+                <view class="">人际关系</view>
+                <text class="">{{item.result.renji}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="result_wrap" wx:else>
+        <view class="rw_box" wx:for="{{resultData}}" wx:key="{{index}}">
+            <view class="rw_card_tip">{{index+1}}、{{item.tip}}</view>
+            <view class="rw_card_info">
+                <image class="rw_card_img {{item.pos==1?'':'rw_card_img_back'}}" mode="widthFix" src="{{item.img}}"></image>
+                <view class="rw_card_name">{{item.cn}}</view>
+                <view class="rw_card_ename">{{item.en}}</view>
+                <view class="rw_card_pos">牌位：{{item.pos==1?'正位':'逆位'}}</view>
+            </view>
+            <view class="rw_card_text">
+                <text class="">{{item.result}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="result_btn">
+        <navigator openType="switchTab" url="/pages/tarot/tarot">重新占卜</navigator>
+    </view>
+</block>

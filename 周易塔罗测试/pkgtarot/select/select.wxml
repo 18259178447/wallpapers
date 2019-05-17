@@ -1,0 +1,15 @@
+<view class="select_wrap">
+    <image class="sw_bg" mode="widthFix" src="../assets/select_bg.png"></image>
+    <image class="sw_card_num" mode="widthFix" src="../assets/select_card_{{selectCardTotal}}.png"></image>
+    <view class="sw_all_card {{showAnim?'sw_all_card_anim':''}}">
+        <image bindtap="cardSelect" class="{{removeIndex===item.num||item.sel==true?'card_remove':''}}" data-cardnum="{{item.num}}" data-index="{{index}}" mode="widthFix" src="../assets/card_bg.png" style="left:{{index*2.6}}%;animation-delay:{{index*0.1}}s;" wx:for="{{allCard}}" wx:key="num"></image>
+    </view>
+    <view class="sw_select_card sw_select_card{{selectCardTotal}}">
+        <image class="{{item<=selectCard.length?'card_show':''}}" id="{{item}}" mode="widthFix" src="../assets/card_bg.png" wx:if="{{item<=selectCardTotal}}" wx:for="{{[1,2,3,4,5,6,7]}}" wx:key="*this"></image>
+    </view>
+    <view class="sw_btn">
+        <view bindtap="refreshCard" class="">重新洗牌</view>
+        <view bindtap="toResult" class="">查看分析</view>
+    </view>
+</view>
+<include src="../footer.wxml"></include>

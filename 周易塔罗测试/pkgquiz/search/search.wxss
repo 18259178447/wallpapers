@@ -1,0 +1,8 @@
+@import "../common.wxss";
+
+.keyword {
+    display: inline-block;
+    font-family: "microsoft yahei",sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+}

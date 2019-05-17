@@ -1,0 +1,79 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/zhouyi/zhouyi",
+    "pages/tarot/tarot",
+    "pages/my2019/my2019"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "subPackages": [
+    {
+      "root": "pkgquiz",
+      "pages": [
+        "quiz/quiz",
+        "result/result",
+        "search/search",
+        "more/more"
+      ]
+    },
+    {
+      "root": "pkgtarot",
+      "pages": [
+        "select/select",
+        "mode/mode",
+        "result/result"
+      ]
+    },
+    {
+      "root": "pkgzhouyi",
+      "pages": [
+        "translate/translate",
+        "result/result"
+      ]
+    },
+    {
+      "root": "pkgtime",
+      "pages": [
+        "result/result"
+      ]
+    }
+  ],
+  "tabBar": {
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "selectedColor": "#b83f3e",
+    "color": "#515151",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "趣测",
+        "iconPath": "tabbar/quiz.png",
+        "selectedIconPath": "tabbar/quiz-on.png"
+      },
+      {
+        "pagePath": "pages/my2019/my2019",
+        "text": "我的2019",
+        "iconPath": "tabbar/time.png",
+        "selectedIconPath": "tabbar/time-on.png"
+      },
+      {
+        "pagePath": "pages/tarot/tarot",
+        "text": "塔罗",
+        "iconPath": "tabbar/tarot.png",
+        "selectedIconPath": "tabbar/tarot-on.png"
+      },
+      {
+        "pagePath": "pages/zhouyi/zhouyi",
+        "text": "周易",
+        "iconPath": "tabbar/zhouyi.png",
+        "selectedIconPath": "tabbar/zhouyi-on.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

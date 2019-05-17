@@ -1,0 +1,99 @@
+<view>
+    <view class="r-cont">
+        <view class="r-top" style="{{topStyle}}">
+            <view class="txt">{{topTxt}}</view>
+            <button openType="share" plain="false"></button>
+        </view>
+        <view class="r-topInfo">
+            <div class="item">
+                <span>求卦时间</span>
+                <text>{{resTime}}</text>
+            </div>
+            <div class="item">
+                <span>求测干支</span>
+                <text>{{resGz}}</text>
+            </div>
+            <div class="item">
+                <span>求卦事件</span>
+                <text>{{resThing}}</text>
+            </div>
+        </view>
+        <view class="r-lan"></view>
+        <view class="r-gua">
+            <view class="r-gua-item">
+                <view class="r-gua-a">六神</view>
+                <view class="r-gua-a">本卦</view>
+                <view class="r-gua-a">变卦</view>
+            </view>
+            <view class="r-gua-item" wx:for="{{rLiushen}}">
+                <view class="r-gua-a">{{item.shen}}</view>
+                <view class="r-gua-a">
+                    <p>
+                        <span class="{{item.span}}"></span>
+                    </p>
+                    <text>{{item.text}}</text>
+                </view>
+                <view class="r-gua-a">
+                    <p>
+                        <span class="{{item.span2}}"></span>
+                    </p>
+                    <text>{{item.text2}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="r-lan" style=""></view>
+        <view>
+            <view class="r-gua-ban">
+                <image src="../assets/zgdx.png" style="{{gxBanner}}"></image>
+            </view>
+            <view class="gx-explain">
+                <view class="ex-item">
+                    <view class="ex-able"> 卦名：</view>
+                    <view class="ex-text">{{mExplain[0].text}}</view>
+                </view>
+                <view class="ex-item">
+                    <view class="ex-able">卦辞：</view>
+                    <view class="ex-text">{{mExplain[1].text}}</view>
+                </view>
+                <view class="ex-item">
+                    <view class="ex-able">卦意：</view>
+                    <view class="ex-text">{{mExplain[2].text}}</view>
+                </view>
+                <view class="ex-item">
+                    <view class="ex-able">玄机：</view>
+                    <view class="ex-text">{{mExplain[3].text}}</view>
+                </view>
+                <view class="ex-item ex-item2">
+                    <view class="ex-able ex-able">周易卦文：</view>
+                    <view class="ex-text">{{mExplain[4].text}}</view>
+                </view>
+            </view>
+            <view class="r-gua-ban">
+                <image src="../assets/bgdx.png" style="{{gxBanner}}"></image>
+            </view>
+            <view class="gx-explain">
+                <view class="ex-item">
+                    <view class="ex-able"> 卦名：</view>
+                    <view class="ex-text">{{cExplain[0].text}}</view>
+                </view>
+                <view class="ex-item">
+                    <view class="ex-able">卦辞：</view>
+                    <view class="ex-text">{{cExplain[1].text}}</view>
+                </view>
+                <view class="ex-item">
+                    <view class="ex-able">卦意：</view>
+                    <view class="ex-text">{{cExplain[2].text}}</view>
+                </view>
+                <view class="ex-item">
+                    <view class="ex-able">玄机：</view>
+                    <view class="ex-text">{{cExplain[3].text}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="r-lan" style=""></view>
+        <view class="btnBox">
+            <button bindtap="anew" class="btn1" plain="false" style="{{btnStyle}}"></button>
+            <button class="btn2" openType="share" plain="false" style="{{btnStyle}}"></button>
+        </view>
+    </view>
+</view>

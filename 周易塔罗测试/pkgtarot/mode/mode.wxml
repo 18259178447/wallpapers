@@ -1,0 +1,10 @@
+<view class="mode_wrap">
+    <image class="mw_bg" mode="widthFix" src="../assets/mode_bg.png"></image>
+    <view class="mw_content {{showAnim?'mw_content_anim':''}}">
+        <view bindtap="selectCat" class="" data-cat="2">魔法六芒阵</view>
+        <view bindtap="selectCat" class="" data-cat="4">圣三角法</view>
+        <view bindtap="selectCat" class="" data-cat="1">四要素法</view>
+        <view bindtap="selectCat" class="" data-cat="3">大十字法</view>
+        <view bindtap="selectCat" class="" data-cat="5">小大字法</view>
+    </view>
+</view>

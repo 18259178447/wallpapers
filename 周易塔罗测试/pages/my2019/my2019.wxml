@@ -1,0 +1,33 @@
+<view>
+    <view class="top_bg">
+        <image class="index_bg1" src="../../assets/my2019/index_bg1.png"></image>
+    </view>
+    <view class="num">当前共有4642525人在玩</view>
+    <view class="msg_box">
+        <view class="name">
+            <text>姓名：</text>
+            <view>
+                <input bindinput="changeValue" maxlength="5" placeholder="请输入你的姓名" placeholderStyle="background:none" value="{{name}}"></input>
+            </view>
+        </view>
+        <view class="sexy">
+            <text>性别：</text>
+            <radio-group bindchange="changeV" class="radio-group">
+                <label>
+                    <radio checked="checked" color="#fff" value="男"></radio>男
+        </label>
+                <label>
+                    <radio color="#fff" value="女"></radio>女
+        </label>
+            </radio-group>
+        </view>
+        <button bindgetuserinfo="draw" class="sc_btn" hoverClass="none" openType="getUserInfo">
+            <image src="../../assets/my2019/sc_btn.png"></image>
+        </button>
+    </view>
+    <!-- <view style="width:90%;margin:-50rpx auto 0;position:relative;z-index:1">
+        <ad unitId="adunit-a8550c49452493b8"></ad>
+    </view> -->
+    <image class="index_bg2" src="../../assets/my2019/index_bg2.png"></image>
+</view>
+<canvas canvasId="myCanvas" style="width:340px;height:500px;background:#fff;position:fixed;top:0;left:2000rpx"></canvas>

@@ -1,0 +1,69 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": [
+			{
+				"type": "file",
+				"value": "not"
+			}
+		]
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.4.3",
+	"appid": "wx7d5c5308d07a1559",
+	"projectname": "%E5%91%A8%E6%98%93%E5%A1%94%E7%BD%97%E6%B5%8B%E8%AF%95",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 2,
+			"list": [
+				{
+					"id": -1,
+					"name": "周易",
+					"pathName": "pages/zhouyi/zhouyi",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "塔罗",
+					"pathName": "pages/tarot/tarot",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的2019",
+					"pathName": "pages/my2019/my2019"
+				}
+			]
+		}
+	}
+}

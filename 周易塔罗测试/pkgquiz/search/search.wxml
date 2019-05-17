@@ -1,0 +1,29 @@
+<view class="search diy-content-space-small">
+    <view class="form">
+        <view class="search-input">
+            <input bindinput="bindKeyInput" placeholder="{{keyword}}" type="text"></input>
+        </view>
+        <button bindtap="doSearch" data-keyword="{{keyword}}" size="mini">搜索</button>
+    </view>
+</view>
+<view class="section diy-content-space">
+    <view class="diy-content-padded">与
+        <view class="keyword"> {{keyword}}</view>相关的测试</view>
+    <view bindtap="playgame" class="list-item" data-gid="{{item.id}}" data-kefu="{{item.kefu}}" data-original="{{item.original}}" data-quiz_id="{{item.quiz_id}}" data-savelink="{{item.savelink}}" data-title="{{item.title}}" data-weblink="{{item.weblink}}" wx:for="{{list}}">
+        <view class="cover">
+            <image class="quizicon" src="http://uploads-admin.cdn.woquhudong.cn/{{item.img}}">
+                <image class="labelimage" mode="widthFix" src="{{item.label}}"></image>
+            </image>
+        </view>
+        <view class="diy-meta">
+            <view class="title mui-ellipsis">{{item.title}}</view>
+            <view class="count">{{item.view}}万人在测</view>
+            <view class="desc mui-ellipsis">{{item.desc}}</view>
+        </view>
+        <!-- <view class="playbtn">去测></view> -->
+        <view class="float_kefu_button" wx:if="{{item.kefu==1}}">
+            <button clsas="homekfbtn" openType="contact" sessionFrom="quiz_id_{{item.quiz_id}}">客服</button>
+        </view>
+    </view>
+</view>
+<include src="../common/alertbox.wxml"></include>

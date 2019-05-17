@@ -1,0 +1,21 @@
+<view class="index_wrap">
+    <image class="iw_bg" mode="widthFix" src="../../assets/tarot/index_bg.png"></image>
+    <image class="iw_left_bottom" mode="widthFix" src="../../assets/tarot/index_left_bottom.png"></image>
+    <view class="iw_content">
+        <view class="iw_line_wrap">
+            <text class="iw_line_1"></text>
+            <text class="iw_line_2"></text>
+            <text class="iw_line_3"></text>
+            <text class="iw_line_4"></text>
+        </view>
+        <view class="iw_rect"></view>
+        <view class="iw_core">
+            <text>请选着一个占卜内容</text>
+        </view>
+        <view bindtap="selectType" class="iw_tip iw_tip_aiqing" data-type="1">爱情</view>
+        <view bindtap="selectType" class="iw_tip iw_tip_shiye" data-type="2">事业</view>
+        <view bindtap="selectType" class="iw_tip iw_tip_caiyun" data-type="4">财运</view>
+        <view bindtap="selectType" class="iw_tip iw_tip_jiankang" data-type="3">健康</view>
+    </view>
+</view>
+

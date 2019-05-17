@@ -1,0 +1,390 @@
+page {
+    height: 100%;
+    width: 100%;
+}
+
+.t-cont {
+    height: 100%;
+    width: 100%;
+    background: url("http://r.itiexue.net/tiexue/wechatapp/suangua/dbg1.png") no-repeat;
+    background-size: 100%;
+}
+
+.t-gk {
+    text-align: center;
+    padding-top: 100rpx;
+    height: auto;
+    padding-bottom: 80rpx;
+}
+
+.t-gk {
+    text-align: center;
+    padding-top: 100rpx;
+    height: auto;
+    padding-bottom: 80rpx;
+}
+
+.shade {
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background: rgba(0,0,0,.8);
+    transition: opacity .5s;
+}
+
+.shade image {
+    margin-top: -30%;
+}
+
+.t-gk-k1 {
+    display: inline-block;
+    width: 230rpx;
+    position: relative;
+    height: 327rpx;
+}
+
+.t-gk-k1 image {
+    width: 230rpx;
+    height: 327rpx;
+}
+
+.gk1 {
+    position: relative;
+    z-index: 1;
+}
+
+.gk2 {
+    position: absolute;
+    top: 0;
+    opacity: 1;
+    z-index: 2;
+    left: 0;
+    animation: gk1 1.5s linear infinite alternate;
+}
+
+@-webkit-keyframes gk1 {
+    0% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes gk1 {
+    0% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.waggles {
+    animation: waggle 0.3s linear 2;
+}
+
+@-webkit-keyframes waggle {
+    0% {
+        margin-left: 0px;
+    }
+
+    25% {
+        margin-left: 25px;
+    }
+
+    50% {
+        margin-left: 0;
+    }
+
+    75% {
+        margin-left: -25px;
+    }
+
+    100% {
+        margin-left: 0;
+    }
+}
+
+@keyframes waggle {
+    0% {
+        margin-left: 0px;
+    }
+
+    25% {
+        margin-left: 25px;
+    }
+
+    50% {
+        margin-left: 0;
+    }
+
+    75% {
+        margin-left: -25px;
+    }
+
+    100% {
+        margin-left: 0;
+    }
+}
+
+.light {
+    position: absolute;
+    top: 2px;
+    width: 95%;
+    height: 313rpx;
+    margin-left: 4px;
+    border-radius: 148px 139px 179px 156px;
+    background: #f9e081;
+    animation: lightBg 1.5s linear infinite alternate;
+}
+
+@-webkit-keyframes lightBg {
+    from {
+        box-shadow: -5px -5px 40px #f7ebc1,-5px 5px 40px #f7ebc1,5px -5px 40px #f7ebc1,5px 5px 40px #f7ebc1;
+    }
+
+    to {
+        box-shadow: -20px -20px 50px #f9e081,-20px 20px 50px #f9e081,20px -20px 50px #f9e081,20px 20px 50px #f9e081;
+    }
+}
+
+@keyframes lightBg {
+    from {
+        box-shadow: -5px -5px 40px #f7ebc1,-5px 5px 40px #f7ebc1,5px -5px 40px #f7ebc1,5px 5px 40px #f7ebc1;
+    }
+
+    to {
+        box-shadow: -20px -20px 50px #f9e081,-20px 20px 50px #f9e081,20px -20px 50px #f9e081,20px 20px 50px #f9e081;
+    }
+}
+
+.tqBox {
+    display: -webkit-box;
+    height: 120rpx;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    width: 120rpx;
+    margin-top: -145rpx;
+}
+
+.tq {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 100%;
+    background-size: 100%;
+}
+
+.tq0 {
+    background-size: 100%;
+}
+
+.tqBox image {
+    width: 100%;
+    height: 100%;
+}
+
+.tqBox .tq-d1 {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.tqBox .tq-d2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.tqBox .tq-d3 {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.tqBoxFlash {
+    animation: tqmove .5s linear forwards;
+}
+
+@-webkit-keyframes tqmove {
+    from {
+        margin-top: -145rpx;
+        width: 120rpx;
+    }
+
+    to {
+        margin-top: 80rpx;
+        width: 500rpx;
+    }
+}
+
+@keyframes tqmove {
+    from {
+        margin-top: -145rpx;
+        width: 120rpx;
+    }
+
+    to {
+        margin-top: 80rpx;
+        width: 500rpx;
+    }
+}
+
+.t-list {
+    position: absolute;
+    bottom: 15%;
+    width: 100%;
+}
+
+.t-list-i {
+    width: 72%;
+    margin: 10rpx auto;
+    height: 44rpx;
+    line-height: 44rpx;
+    display: block;
+    font-size: 16px;
+}
+
+.t-list-i .t-list-i-d {
+    display: inline-block;
+    margin-left: 10rpx;
+    background: #f8cc86;
+    padding: 0 5rpx 0 20rpx;
+    width: 74%;
+    vertical-align: middle;
+    margin-top: -10rpx;
+}
+
+.t-list-i .t-list-i-d div {
+    display: block;
+    height: 100%;
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.t-list-i p {
+    width: 72%;
+    height: 16rpx;
+    display: inline-block;
+    position: relative;
+    top: -2rpx;
+}
+
+.t-list-i p span {
+    height: 100%;
+    background: #000;
+    display: inline-block;
+}
+
+.t-list-i p .gx {
+    width: 100%;
+}
+
+.t-list-i p .gx1 {
+    width: 49%;
+    float: left;
+}
+
+.t-list-i p .gx1::before {
+    content: '';
+    width: 49%;
+    margin-left: 2%;
+    height: 100%;
+    position: absolute;
+    background: #000;
+    top: 0;
+    right: 0;
+}
+
+.t-list-i .num {
+    display: inline-block;
+    width: 22rpx;
+    margin-left: 10rpx;
+}
+
+.pointer {
+    width: 0;
+    height: 0;
+    border: 18rpx solid transparent;
+    border-right: 18rpx solid #000;
+    position: absolute;
+    right: 15%;
+    bottom: 16rpx;
+    transition: all 0.5s;
+}
+
+.result {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: -webkit-box;
+    background: rgba(0,0,0,.6);
+    z-index: 10;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    -webkit-box-orient: vertical;
+    display: none;
+}
+
+.result .r-bg {
+    position: relative;
+    width: 619rpx;
+    height: 408rpx;
+    display: block;
+    background: url(http://r.itiexue.net/tiexue/wechatapp/suangua/juanz.png) no-repeat;
+    background-size: 100%;
+}
+
+.result img {
+    width: 100%;
+}
+
+.result .close {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    right: 5%;
+    top: 11%;
+}
+
+.result p {
+    position: absolute;
+    top: 37%;
+    padding: 0 8% 0 12%;
+    font-size: 18px;
+}
+
+.result .r-btn {
+    display: block;
+    width: 60%;
+    margin-top: 15px;
+    background: url(http://r.itiexue.net/tiexue/wechatapp/suangua/jiegua1.png) no-repeat;
+    background-size: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 32rpx;
+    letter-spacing: 1rpx;
+}

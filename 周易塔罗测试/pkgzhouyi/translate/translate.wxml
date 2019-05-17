@@ -1,0 +1,105 @@
+<view class="t-cont" style=" ">
+    <view catchtap="hideShade" class="shade" style="{{hideShare}}">
+        <image src="../assets/shake.png" style="{{shareStyle}}"></image>
+    </view>
+    <view class="t-gk">
+        <div catchtap="waggle" class="t-gk-k1 {{waggleClass}}">
+            <div class="light"></div>
+            <image class="gk1" src="../assets/guike.png"></image>
+            <image class="gk2" src="../assets/guike2.png"></image>
+        </div>
+        <div class="tqBox {{tqMove}}">
+            <div class="tq tq-d1">
+                <image src="{{tqImg1}}"></image>
+            </div>
+            <div class="tq tq-d2">
+                <image src="{{tqImg2}}"></image>
+            </div>
+            <div class="tq tq-d3">
+                <image src="{{tqImg3}}"></image>
+            </div>
+        </div>
+    </view>
+    <view class="t-list">
+        <div class="t-list-i">
+            <label>上爻</label>
+            <div class="t-list-i-d">
+                <div style="{{list[5].p}}">
+                    <p>
+                        <span class="{{list[5].span}}"></span>
+                    </p>
+                    <span class="num">{{list[5].num}}</span>
+                    <span>{{list[5].txt}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="t-list-i">
+            <label>五爻</label>
+            <div class="t-list-i-d">
+                <div style="{{list[4].p}}">
+                    <p>
+                        <span class="{{list[4].span}}"></span>
+                    </p>
+                    <span class="num">{{list[4].num}}</span>
+                    <span>{{list[4].txt}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="t-list-i">
+            <label>四爻</label>
+            <div class="t-list-i-d">
+                <div style="{{list[3].p}}">
+                    <p>
+                        <span class="{{list[3].span}}"></span>
+                    </p>
+                    <span class="num">{{list[3].num}}</span>
+                    <span>{{list[3].txt}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="t-list-i">
+            <label>三爻</label>
+            <div class="t-list-i-d">
+                <div style="{{list[2].p}}">
+                    <p>
+                        <span class="{{list[2].span}}"></span>
+                    </p>
+                    <span class="num">{{list[2].num}}</span>
+                    <span>{{list[2].txt}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="t-list-i">
+            <label>二爻</label>
+            <div class="t-list-i-d">
+                <div style="{{list[1].p}}">
+                    <p>
+                        <span class="{{list[1].span}}"></span>
+                    </p>
+                    <span class="num">{{list[1].num}}</span>
+                    <span>{{list[1].txt}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="t-list-i">
+            <label>初爻</label>
+            <div class="t-list-i-d">
+                <div style="{{list[0].p}}">
+                    <p>
+                        <span class="{{list[0].span}}"></span>
+                    </p>
+                    <span class="num">{{list[0].num}}</span>
+                    <span>{{list[0].txt}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="pointer" style="{{pointerStyle}}"></div>
+    </view>
+    <view class="result" style="{{resultStyle}}" wx:if="{{hide}}">
+        <div class="r-bg" style="">
+            <span catchtap="close" class="close"></span>
+            <p>千年来的文王八卦，神批推断，唯心诚者则灵。点击破解卦象。</p>
+        </div>
+        <button class="r-btn" openType="share" style="{{rBtnStyle}}">分享解卦</button>
+    </view>
+</view>

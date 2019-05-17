@@ -1,0 +1,234 @@
+<view class="savetipsbox" style="display: {{savetipstyle}}">
+    <image class="savetips" src="../assets/savetip.png"></image>
+</view>
+<view class="full_wrapper hasadbanner">
+    <view class="main">
+        <view class="load_mask" wx:if="{{loading}}">
+            <view class="loading_item_container">
+                <view class="loading_hint">正在进入测试</view>
+                <image class="loading_gif" mode="aspectFit" src="http://quce.cdn.woquhudong.cn/entry/img/v8/LoadingDots.gif"></image>
+            </view>
+        </view>
+        <view class="xb_pageCont xb_flex">
+            <scroll-view class="page_body xb_head_padding" scrollIntoView="{{scrollview}}" scrollTop="{{scrollTop}}" scrollWithAnimation="true" scrollY="true" style="height: {{scroll_height}};">
+                <block wx:for="{{content}}" wx:key="content">
+                    <view class="xb_conversation_item" id="index-{{item.domindex}}" wx:if="{{item.type==1}}">
+                        <view class="xb_conv_wrap_left">
+                            <image class="xb_avatar_left" mode="widthFix" src="../assets/basicprofile.png"></image>
+                            <view class="xb_tri_left"></view>
+                            <view class="xb_tri_left1"></view>
+                            <view class="xb_conv_left  ">{{item.text}}</view>
+                        </view>
+                    </view>
+                    <view class="xb_conversation_item" id="index-{{item.domindex}}" wx:if="{{item.type==2}}">
+                        <view class="xb_conv_wrap_right">
+                            <image class="xb_avatar_right" mode="widthFix" src="{{usericon}}"></image>
+                            <view class="xb_tri_right"></view>
+                            <view class="xb_tri_right1"></view>
+                            <view class="xb_conv_right">{{item.text}}</view>
+                        </view>
+                    </view>
+                    <view class="xb_conversation_item item-type-3" id="index-{{item.domindex}}" wx:if="{{item.type==3}}">
+                        <view class="xb_conv_wrap_left">
+                            <image class="xb_avatar_left" mode="widthFix" src="../assets/basicprofile.png"></image>
+                            <view class="xb_tri_left"></view>
+                            <view class="xb_tri_left1"></view>
+                            <view class="xb_conv_left  xb_conv_left_img img-longtap-fix">
+                                <image bindload="Imageload" class="xb_sendimg" data-index="{{item.domindex}}" mode="widthFix" src="http://uploads-admin.cdn.woquhudong.cn/{{item.src}}" style="width: 215px;"></image>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="xb_conversation_item item-type-4" id="index-{{item.domindex}}" wx:if="{{item.type==4}}">
+                        <view class="xb_conv_wrap_left">
+                            <image class="xb_avatar_left" mode="aspectFit" src="../assets/basicprofile.png"></image>
+                            <view class="xb_tri_left"></view>
+                            <view class="xb_tri_left1"></view>
+                            <view class="xb_conv_left  xb_conv_left_img img-longtap-fix">
+                                <view style="overflow: hidden;">
+                                    <image class="xb_sendimg resultimage" mode="widthFix" src="{{item.src}}" style="margin-bottom: -55px;"></image>
+                                    <image class="xb_sendimg_qrcode" mode="widthFix" src="http://quce.cdn.woquhudong.cn/entry/img/v8/wxappqrcode.png?v=1.3" style="display: none;"></image>
+                                    <image bindload="imageLoad" catchlongtap="longtaptj" catchtap="showImage" class="xb_sendimg_opcity longtap-img" data-src="{{item.src}}" mode="widthFix" src="{{item.src}}" style="width: 215px;"></image>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="xb_conversation_item" id="index-{{item.domindex}}" wx:if="{{item.type==5}}">
+                        <view class="xb_conv_wrap_left">
+                            <image class="xb_avatar_left" mode="widthFix" src="../assets/basicprofile.png"></image>
+                            <view class="xb_tri_left"></view>
+                            <view class="xb_tri_left1"></view>
+                            <view bindtap="showImage" class="xb_conv_left" data-src="http://uploads-admin.cdn.woquhudong.cn/{{item.src}}">{{item.text}}</view>
+                        </view>
+                    </view>
+                    <view class="xb_conversation_item item-type-3" id="index-{{item.domindex}}" wx:if="{{item.type==6}}">
+                        <view class="xb_conv_wrap_left">
+                            <image class="xb_avatar_left" mode="widthFix" src="../assets/basicprofile.png"></image>
+                            <view class="xb_tri_left"></view>
+                            <view class="xb_tri_left1"></view>
+                            <view class="xb_conv_left  xb_conv_left_img img-longtap-fix">
+                                <image class="xb_sendimg" mode="widthFix" src="http://uploads-admin.cdn.woquhudong.cn/{{item.src}}" style="width: 215px;"></image>
+                            </view>
+                        </view>
+                    </view>
+                    <view bindtap="jumptoshare" class="xb_conversation_item" id="index-{{item.domindex}}" wx:if="{{item.type==7}}">
+                        <view class="xb_conv_wrap_left">
+                            <image class="xb_avatar_left" mode="widthFix" src="../assets/basicprofile.png"></image>
+                            <view class="xb_tri_left"></view>
+                            <view class="xb_tri_left1"></view>
+                            <view class="xb_conv_left" style="color: #4380D1;">{{item.text}}</view>
+                        </view>
+                    </view>
+                    <view bindtap="audioPlay" class="xb_conversation_item " data-audioindex="{{item.domindex}}" data-src="https://ssl-uploads-admin.cdn.itwlw.com/{{item.src}}" id="index-{{item.domindex}}" wx:if="{{item.type==8}}">
+                        <view class="xb_conv_wrap_left">
+                            <image class="xb_avatar_left" mode="widthFix" src="../assets/basicprofile.png"></image>
+                            <view class="xb_tri_left"></view>
+                            <view class="xb_tri_left1"></view>
+                            <view class="xb_conv_left" style="color: #4380D1;">
+                                <view class="audio_image_box {{audio_status[item.domindex]}}">
+                                    <image class="audio_image_normal" mode="widthFix" src="../assets/01.png"></image>
+                                    <image class="audio_image_ani" mode="widthFix" src="../assets/02.gif"></image>
+                                </view>
+                            </view>
+                            <view class="reddot" style="display: {{reddot_status[item.domindex]}};"></view>
+                        </view>
+                    </view>
+                    <view class="xb_conversation_item " id="index-{{item.domindex}}" wx:if="{{item.type==9}}">
+                        <view class="xb_conv_wrap_left">
+                            <image class="xb_avatar_left" mode="widthFix" src="../assets/basicprofile.png"></image>
+                            <view class="xb_tri_left"></view>
+                            <view class="xb_tri_left1"></view>
+                            <view class="xb_conv_left  xb_conv_left_img imageArr_box">
+                                <view catchtap="showBigImage" class="imageArr_item" data-src="http://uploads-admin.cdn.woquhudong.cn/{{item.src}}" wx:for="{{item.srcArr}}" wx:key="imageArr">
+                                    <image class="imageArr_item_image" data-src="{{imageArr}}" mode="widthFix" src="http://uploads-admin.cdn.woquhudong.cn/{{item.src}}" style="width: 105px;">
+                                        <view class="imageArr_item_desc">{{item.desc}}</view>
+                                    </image>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view bindtap="jumptotext" class="xb_conversation_item" id="index-{{item.domindex}}" wx:if="{{item.type==10}}">
+                        <view class="xb_conv_wrap_left">
+                            <image class="xb_avatar_left" mode="widthFix" src="../assets/basicprofile.png"></image>
+                            <view class="xb_tri_left"></view>
+                            <view class="xb_tri_left1"></view>
+                            <view class="xb_conv_left" style="color: #4380D1;">{{item.text}}</view>
+                        </view>
+                    </view>
+                    <view class="xb_conversation_item" id="index-{{item.domindex}}" wx:if="{{item.type==11}}">
+                        <view class="question_indexes_box">
+                            <view class="question_indexes">第{{item.qNum}}题/共{{qlength}}题</view>
+                        </view>
+                        <view class="xb_conv_wrap_left" style="margin-bottom: 10px;" wx:if="{{item.hasquestion==1}}">
+                            <view class="xb_conv_wrap_left">
+                                <image class="xb_avatar_left" mode="widthFix" src="../assets/basicprofile.png"></image>
+                                <view class="xb_tri_left"></view>
+                                <view class="xb_tri_left1"></view>
+                                <view class="xb_conv_left  ">{{item.question}}</view>
+                            </view>
+                        </view>
+                        <view class="xb_conv_wrap_left" style="margin-bottom: 10px;" wx:if="{{item.hasimg==1}}">
+                            <image class="xb_avatar_left" mode="widthFix" src="../assets/basicprofile.png"></image>
+                            <view class="xb_tri_left"></view>
+                            <view class="xb_tri_left1"></view>
+                            <view class="xb_conv_left  xb_conv_left_img img-longtap-fix">
+                                <image bindload="Imageload" class="xb_sendimg" mode="widthFix" src="http://uploads-admin.cdn.woquhudong.cn/{{item.img}}" style="width: 215px;"></image>
+                            </view>
+                        </view>
+                        <view bindtap="audioPlay" class="xb_conv_wrap_left " data-audioindex="{{item.domindex}}" data-src="https://ssl-uploads-admin.cdn.itwlw.com/{{item.audio}}" style="margin-bottom: 10px;" wx:if="{{item.hasaudio==1}}">
+                            <view class="xb_conv_wrap_left">
+                                <image class="xb_avatar_left" mode="widthFix" src="../assets/basicprofile.png"></image>
+                                <view class="xb_tri_left"></view>
+                                <view class="xb_tri_left1"></view>
+                                <view class="xb_conv_left" style="color: #4380D1;">
+                                    <view class="audio_image_box {{audio_status[item.domindex]}}">
+                                        <image class="audio_image_normal" mode="widthFix" src="../assets/01.png"></image>
+                                        <image class="audio_image_ani" mode="widthFix" src="../assets/02.gif"></image>
+                                    </view>
+                                </view>
+                                <view class="reddot" style="display: {{reddot_status[item.domindex]}};"></view>
+                            </view>
+                        </view>
+                        <view class="question_options_box">
+                            <view class="question_options_container">
+                                <view class="question_options_image_box" wx:if="{{item.hasanswerimg==1}}">
+                                    <view catchtap="showBigImage" class="option_image_item" data-src="http://uploads-admin.cdn.woquhudong.cn/{{item.option_image}}" style="background-image: url(http://uploads-admin.cdn.woquhudong.cn/{{item.option_image}})" wx:for="{{item.imageArr}}" wx:key="imageArr">
+                                        <image mode="widthFix" src="http://quce.cdn.woquhudong.cn/entry/img/v10/unselect.png" style="display: block;width: 100%;opacity: 0;"></image>
+                                        <view class="options_key">{{item.option_key}}</view>
+                                    </view>
+                                </view>
+                                <view class="question_options_desc_box">
+                                    <view catchtap="checkOption" class="options_question_item {{obj['option_'+item.domindex+'_'+item.answerindex]}}" data-answerdesc="{{item.answerdesc}}" data-domindex="{{item.domindex}}" data-index="{{item.answerindex}}" data-status="{{obj['option_'+item.domindex]}}" data-value="{{item.value}}" wx:for="{{item.answerArr}}" wx:key="answerArr">
+                                        <view>{{item.answerdesc}}</view>
+                                        <image class="options_question_icon options_question_uncheck" mode="widthFix" src="http://quce.cdn.woquhudong.cn/entry/img/v10/unselect.png"></image>
+                                        <image class="options_question_icon options_question_select" mode="widthFix" src="http://quce.cdn.woquhudong.cn/entry/img/v10/select.png"></image>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="adbox" style="padding:0 52px;" wx:if="{{item.adbanner==1}}">
+                            <ad unitId="{{adbannerid}}"></ad>
+                        </view>
+                    </view>
+                </block>
+                <view style="height: 20px;"></view>
+            </scroll-view>
+        </view>
+    </view>
+    <view class="xb_btn_area {{btnboxstyle}}">
+        <block wx:for="{{btns}}" wx:key="btn">
+            <view class="xb_btn_container" wx:if="{{item.type==1}}">
+                <form bindreset="formReset" bindsubmit="formSubmit" bindtap="startGame" data-status="{{btnstatus}}" reportSubmit="true">
+                    <button class="start-btn btn_basic wechatGreen text_holder {{clickflag}}" formType="submit">开始</button>
+                </form>
+            </view>
+            <view class="xb_btn_container" wx:if="{{item.type==2}}">
+                <view bindtap="playAgain" class="btn_basic wechatGreen text_holder {{clickflag}}" data-status="{{btnstatus}}">再测一次</view>
+            </view>
+            <view class="xb_btn_container" wx:if="{{item.type==2}}">
+                <view bindtap="goHome" class="btn_basic wechatGreen text_holder">更多测试</view>
+            </view>
+            <view class="xb_btn_container" wx:if="{{item.type==3}}">
+                <view bindtap="selectBtn" class="btn_basic wechatGreen text_holder {{clickflag}}" data-key="{{item.key}}" data-qindex="{{qindex}}" data-status="{{btnstatus}}" data-value="{{item.value}}">{{item.key}}</view>
+            </view>
+            <view class="xb_btn_container" wx:if="{{item.type==4}}">
+                <button bindtap="jumptoshare" class="btn_basic wechatGreen text_holder {{clickflag}}">查看结果</button>
+            </view>
+            <view class="xb_btn_container" wx:if="{{item.type==5}}">
+                <button bindtap="jumptotext" class="btn_basic wechatGreen text_holder {{clickflag}}">查看结果</button>
+            </view>
+            <view class="xb_btn_container" wx:if="{{item.type==6}}">
+                <view bindtap="playAgain" class="btn_basic wechatGreen text_holder {{clickflag}}" data-status="{{btnstatus}}">再测一次</view>
+            </view>
+            <view class="xb_btn_container" wx:if="{{item.type==6}}">
+                <view bindtap="goHome" class="btn_basic wechatGreen text_holder">更多测试</view>
+            </view>
+            <view class="xb_btn_container" wx:if="{{item.type==7}}">
+                <button bindgetuserinfo="useUserInfo" class="btn_basic wechatGreen text_holder {{clickflag}}" openType="getUserInfo">立即分析结果</button>
+            </view>
+            <view class="xb_btn_container" wx:if="{{item.type==8}}">
+                <view bindtap="goHome" class="btn_basic wechatGreen text_holder">男</view>
+                <view bindtap="goHome" class="btn_basic wechatGreen text_holder">女</view>
+            </view>
+        </block>
+    </view>
+    <view style="position: relative; width: 100%; height: 0px;left: 0px; top: 0px; overflow: hidden;">
+        <canvas canvasId="firstCanvas" style="width: 640px; height: {{canvas_height}}px; position: absolute; left: 0px; top: 0px; z-index: -1;"></canvas>
+        <image bindload="preloadimg" src="{{preloaditem}}" style="position: absolute; left: 0px; top: 0px; z-index: -1;"></image>
+    </view>
+</view>
+<view class="fixbox_container" style="display: {{fixbox_container}};">
+    <view class="authorize_box">
+        <view class="authorize_title">提示</view>
+        <view class="authorize_splitline"></view>
+        <view class="authorize_imagebox">
+            <view class="authorize_text1">因测试结果需要调用图片生成接口</view>
+            <view class="authorize_text2">开启“保存到相册”后即可得到测试结果</view>
+            <view class="authorize_text3">
+                <image mode="widthFix" src="../assets/authorize.gif"></image>
+            </view>
+        </view>
+        <view class="authorize_splitline"></view>
+        <view bindtap="openseting" class="authorize_btn">去设置</view>
+    </view>
+</view>
+<audio bindended="audioend" id="myAudio" src="{{audio_src}}" style="display: none;"></audio>

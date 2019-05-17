@@ -1,0 +1,124 @@
+.mode_wrap {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.mw_bg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.mw_content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-46%);
+}
+
+.mw_content view {
+    position: relative;
+    width: 70vw;
+    height: 20vw;
+    color: #fff;
+    line-height: 20vw;
+    border-radius: 10vw;
+    background-color: rgba(27,23,27,.8);
+    margin-bottom: 10px;
+    font-size: 18px;
+    box-shadow: 0 2px 2px 0 rgba(255,255,255,.6) inset;
+    text-indent: 24vw;
+}
+
+.mw_content view:after {
+    content: '';
+    position: absolute;
+    width: 4vw;
+    height: 5vw;
+    right: 5vw;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url(https://img.d1xz.net/d/2018/08/5b73c1f9c371c.png);
+    background-size: 100%;
+}
+
+.mw_content view:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20vw;
+    height: 20vw;
+    background-size: 200%;
+    background-position: center;
+}
+
+.mw_content view:nth-child(1):before {
+    background-image: url(https://img.d1xz.net/d/2018/08/5b73c427132da.png);
+    background-size: 180%;
+}
+
+.mw_content view:nth-child(2):before {
+    background-image: url(https://img.d1xz.net/d/2018/08/5b73c490c3665.png);
+}
+
+.mw_content view:nth-child(3):before {
+    background-image: url(https://img.d1xz.net/d/2018/08/5b73c3293b5af.png);
+}
+
+.mw_content view:nth-child(4):before {
+    background-image: url(https://img.d1xz.net/d/2018/08/5b73c4b998b12.png);
+}
+
+.mw_content view:nth-child(5):before {
+    background-image: url(https://img.d1xz.net/d/2018/08/5b73c45df3147.png);
+    background-size: 180%;
+}
+
+.mw_content_anim view {
+    animation-name: animLeft;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
+    transform: translateX(200%);
+}
+
+@-webkit-keyframes animLeft {
+    0% {
+        transform: translateX(200%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes animLeft {
+    0% {
+        transform: translateX(200%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.mw_content_anim view:nth-child(1) {
+    animation-delay: .2s;
+}
+
+.mw_content_anim view:nth-child(2) {
+    animation-delay: .3s;
+}
+
+.mw_content_anim view:nth-child(3) {
+    animation-delay: .4s;
+}
+
+.mw_content_anim view:nth-child(4) {
+    animation-delay: .5s;
+}
+
+.mw_content_anim view:nth-child(5) {
+    animation-delay: .6s;
+}

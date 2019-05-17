@@ -1,0 +1,122 @@
+page {
+    padding-bottom: 44rpx;
+}
+
+.pic {
+    width: 679rpx;
+    height: 997rpx;
+    display: block;
+    margin: 23rpx auto 0;
+}
+
+.btn_box {
+    margin: 35rpx auto 0;
+    display: flex;
+    padding: 0 68rpx;
+    justify-content: space-between;
+}
+
+.btn_box button {
+    width: 284rpx;
+    height: 86rpx;
+    margin: 0;
+}
+
+.btn_box image {
+    width: 100%;
+    height: 100%;
+}
+
+.again {
+    width: 200rpx;
+    height: 45rpx;
+    margin: 59rpx auto 0;
+    display: block;
+}
+
+.list {
+    width: 657rpx;
+    border: 1rpx solid #c9c9c9;
+    margin: 20rpx auto 0;
+    border-radius: 16rpx;
+    overflow: hidden;
+}
+
+.title {
+    width: 657rpx;
+    height: 74rpx;
+    background: #b191fd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 29rpx;
+    font-weight: bold;
+    color: #fff;
+}
+
+.title image {
+    width: 37rpx;
+    height: 37rpx;
+    margin-right: 8rpx;
+    font-weight: bold;
+}
+
+.min_list {
+    width: 657rpx;
+    background: #f0f0f0;
+    padding-bottom: 27rpx;
+}
+
+.min_list navigator {
+    height: 150rpx;
+    display: flex;
+    border-bottom: 1rpx solid #e9e9e9;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 22rpx;
+}
+
+.min_pic {
+    width: 140rpx;
+    height: 96rpx;
+}
+
+.min_msg {
+    margin-left: 23rpx;
+}
+
+.min_msg view:nth-child(1) {
+    font-size: 26rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 336rpx;
+}
+
+.min_msg view:nth-child(2) {
+    font-size: 26rpx;
+    color: #595858;
+    margin-top: 14rpx;
+}
+
+.cs {
+    width: 95rpx;
+    height: 40rpx;
+    background-color: #b191fd;
+    box-shadow: 3rpx 4rpx 0rpx 0rpx #8566ce;
+    border-radius: 20rpx;
+    margin-left: auto;
+    font-size: 24rpx;
+    color: #fff;
+    text-align: center;
+    line-height: 40rpx;
+}
+
+button {
+    background: none;
+    padding: 0;
+}
+
+button::after {
+    border: 0;
+}

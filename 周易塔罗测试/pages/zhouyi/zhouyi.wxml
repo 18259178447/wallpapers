@@ -1,0 +1,8 @@
+<!--pages/zhouyi/zhouyi.wxml-->
+<view class="page" style="">
+    <view class="circleOut">
+        <view catchtouchend="touchend" catchtouchmove="touchmove" catchtouchstart="touchstart" class="circleIn" id="circleIn" style="-webkit-transition:transform {{taTime}};transition:transform {{taTime}}; -webkit-transform:rotate({{deg}}deg);transform:rotate({{deg}}deg); "></view>
+        <view catchtap="beginTest" class="arrow" style=""></view>
+    </view>
+    <view catchtap="beginTest" class="jiegua" style=""></view>
+</view>

@@ -1,0 +1,142 @@
+page {
+    background-color: #fff;
+}
+
+.result_wrap {
+    padding: 30rpx 0;
+}
+
+.rw_box {
+    margin-bottom: 80rpx;
+}
+
+.rw_card_tip {
+    margin: 40rpx;
+    font-weight: 700;
+}
+
+.rw_card_info {
+    position: relative;
+    margin: 0 auto;
+    padding-left: 40vw;
+    width: 36vw;
+}
+
+.rw_card_img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 32vw;
+    height: 60vw;
+}
+
+.rw_card_img_back {
+    transform: rotate(180deg);
+}
+
+.rw_card_info view {
+    /* height: 10vw;
+    line-height: 10vw; */
+    line-height: 1.8;
+    font-size: 32rpx;
+}
+
+.rw_card_name {
+    color: #333;
+    font-size: 36rpx;
+}
+
+.rw_card_ename {
+    color: #ababab;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.rw_card_pos {
+    color: #333;
+}
+
+.rw_card_text {
+    margin: 40rpx;
+    background-color: #fff;
+    border: 10px solid #ff0000;
+    border-image: url(http://img.d1xz.net/d/2018/08/5b742eb15ba79.png) 40 40 round;
+    display: block;
+}
+
+.rw_card_text view {
+    text-align: center;
+    font-size: 36rpx;
+    text-align: center;
+    margin-bottom: 10rpx;
+}
+
+.rw_card_text text {
+    font-size: 32rpx;
+}
+
+.result_btn {
+    padding: 20rpx 0 60rpx;
+    text-align: center;
+}
+
+.result_btn navigator {
+    width: 40%;
+    height: 12vw;
+    line-height: 12vw;
+    border-radius: 6vw;
+    background-color: rgba(27,23,27,.8);
+    font-size: 18px;
+    box-shadow: 0 2px 2px 0 rgba(255,255,255,.6) inset;
+    text-align: center;
+    color: #fff;
+    display: inline-block;
+}
+
+.m_loding_ball {
+    position: relative;
+    margin: 200rpx auto 0;
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 50%;
+    background: #7b4f9b;
+    animation: ballBeat 1s linear infinite;
+}
+
+@-webkit-keyframes ballBeat {
+    0%,100% {
+        animation-timing-function: cubic-bezier(0.45,0,0.9,0.55);
+    }
+
+    0% {
+        transform: translate(0,0);
+    }
+
+    50% {
+        transform: translate(0,80px);
+        animation-timing-function: cubic-bezier(0,0.45,0.55,0.9);
+    }
+
+    100% {
+        transform: translate(0,0);
+    }
+}
+
+@keyframes ballBeat {
+    0%,100% {
+        animation-timing-function: cubic-bezier(0.45,0,0.9,0.55);
+    }
+
+    0% {
+        transform: translate(0,0);
+    }
+
+    50% {
+        transform: translate(0,80px);
+        animation-timing-function: cubic-bezier(0,0.45,0.55,0.9);
+    }
+
+    100% {
+        transform: translate(0,0);
+    }
+}

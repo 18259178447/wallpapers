@@ -1,0 +1,139 @@
+page {
+    background: linear-gradient(#e2b1ff,#eac2f4,#f9e2e0);
+}
+
+.top_bg {
+    width: 750rpx;
+    height: 398rpx;
+    position: relative;
+}
+
+.top_bg image {
+    width: 100%;
+    height: 100%;
+}
+
+index_bg2 {
+    width: 100%;
+    height: 100%;
+}
+
+.index_bg2 {
+    width: 100%;
+    height: 228rpx;
+    position: fixed;
+    bottom: 0;
+}
+
+.num {
+    width: 382rpx;
+    height: 52rpx;
+    background-color: rgba(0,0,0,0.15);
+    border-radius: 6rpx;
+    font-size: 29rpx;
+    color: #fff;
+    text-align: center;
+    line-height: 52rpx;
+    margin: 20rpx auto 0;
+}
+
+.msg_box {
+    width: 675rpx;
+    height: 506rpx;
+    background-color: rgba(255,255,255,0.58);
+    box-shadow: 1rpx 8rpx 1rpx 0px rgba(83,26,218,0.48);
+    border-radius: 32rpx;
+    margin: 30rpx auto 0;
+    overflow: hidden;
+}
+
+.name {
+    display: flex;
+    align-items: center;
+    font-size: 32rpx;
+    margin-left: 61rpx;
+    color: #040404;
+    margin-top: 84rpx;
+}
+
+.name text {
+    font-weight: bold;
+}
+
+.name view {
+    width: 457rpx;
+    height: 60rpx;
+    background: rgba(255,255,255,0.5);
+    box-sizing: border-box;
+    margin-left: 8rpx;
+    padding-left: 22rpx;
+    border: solid 2rpx #9170dc;
+    background: #fff;
+}
+
+.name view input {
+    width: 100%;
+    height: 100%;
+    background: none;
+}
+
+radio {
+    border-radius: 50%;
+    width: 32rpx;
+    height: 32rpx;
+    margin-right: 10rpx;
+}
+
+radio .wx-radio-input {
+    border-radius: 50%;
+    width: 32rpx;
+    height: 32rpx;
+    border: none;
+}
+
+radio .wx-radio-input.wx-radio-input-checked::before {
+    border-radius: 50%;
+    width: 16rpx;
+    height: 16rpx;
+    font-size: 0rpx;
+    background-color: #bf5be5;
+    transform: translate(-50%,-50%) scale(1);
+}
+
+.sexy {
+    display: flex;
+    align-items: center;
+    font-size: 32rpx;
+    color: #040404;
+    font-weight: bold;
+    margin-left: 61rpx;
+    margin-top: 70rpx;
+}
+
+.sexy text {
+    margin-right: 10rpx;
+}
+
+.sexy label {
+    margin-right: 30rpx;
+}
+
+.sc_btn {
+    width: 365rpx;
+    height: 93rpx;
+    margin-top: 80rpx;
+}
+
+.sc_btn image {
+    width: 100%;
+    height: 100%;
+}
+
+button {
+    background: none;
+    padding: 0;
+}
+
+button::after {
+    border: 0;
+}

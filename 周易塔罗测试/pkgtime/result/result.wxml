@@ -1,0 +1,33 @@
+<view class="result">
+  <image class="pic" src="{{url}}"></image>
+  <view class="btn_box">
+    <button class="share" hoverClass="none" openType="share">
+      <image src="../assets/share.png"></image>
+    </button>
+    <button bindtap="save" class="save" hoverClass="none" openType="{{openType}}">
+      <image src="../assets/save.png"></image>
+    </button>
+  </view>
+  <image bindtap="back" class="again" src="../assets/again.png"></image>
+  <!-- <view style="margin:20rpx auto 0;width:657rpx;">
+        <ad unitId="adunit-fade232531714ac1"></ad>
+    </view> -->
+  <!-- <view class="list">
+    <view class="title">
+      <image src="../assets/zan.png"></image>推荐测试
+    </view>
+    <view class="min_list">
+      <navigator appId="{{item.appid}}" hoverClass="none" path="{{item.path}}" target="miniProgram" wx:for="{{popular}}">
+        <image class="min_pic" src="{{item.logo}}"></image>
+        <view class="min_msg">
+          <view>{{item.name}}</view>
+          <view>{{item.count}}人在测</view>
+        </view>
+        <view class="cs">测试</view>
+      </navigator>
+    </view>
+  </view> -->
+  <!-- <view style="margin:20rpx auto 0;width:657rpx;">
+        <ad unitId="adunit-d7fbc2b436270b31"></ad>
+    </view> -->
+</view>
