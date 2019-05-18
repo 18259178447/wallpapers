@@ -1,0 +1,24 @@
+<view class="container">
+    <image class="bgimg" src="/tc_card/resource/images/vioce.png"></image>
+    <text class="pageword">{{pageWord}}</text>
+    <button bindtap="changeWord" class="change">换一句</button>
+    <view class="dovoice">
+        <text class="times">00:{{second>=10?second:'0'+second}}</text>
+        <image bindtap="goVoice" class="todo" src="{{voiceImg}}"></image>
+        <text class="info">{{dotext}}</text>
+    </view>
+    <view class="resetlayout" wx:if="{{finish==2}}">
+        <view bindtap="resetVoice" class="resetbox">
+            <image src="/tc_card/resource/images/reset.png"></image>
+        </view>
+        <text class="btntext">重录</text>
+    </view>
+    <view class="demolayout" wx:if="{{finish==2}}">
+        <view bindtap="playVoice" class="demotbox {{played?'vcolor':''}}">
+            <image src="/tc_card/resource/images/stopplay.png" wx:if="{{played}}"></image>
+            <image src="/tc_card/resource/images/play.png" wx:else></image>
+        </view>
+        <text class="btntext" wx:if="{{played}}">停止</text>
+        <text class="btntext" wx:else>试听</text>
+    </view>
+</view>

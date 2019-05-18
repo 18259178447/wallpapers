@@ -1,0 +1,270 @@
+page {
+    font-size: 35rpx;
+    letter-spacing: 3rpx;
+}
+
+@-webkit-keyframes zhuan {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+button {
+    content: "";
+    border: 0px;
+    padding: 0;
+    margin: 0;
+    line-height: 20px;
+    background: none;
+    overflow: visible;
+    box-sizing: inherit;
+    border-radius: 0;
+}
+
+button::after {
+    border: none;
+}
+
+.textbox {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.textbox .showpic {
+    height: 700rpx;
+    padding: 20rpx;
+    overflow: hidden;
+}
+
+.textbox .showtext {
+    margin-top: 40%;
+    display: block;
+    font-size: 40rpx;
+    color: #fff;
+    line-height: 70rpx;
+    text-align: center;
+}
+
+.textbox .colorbox {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 20rpx 0 20rpx 0;
+    background-color: #fff;
+}
+
+.textbox .cbox {
+    display: inline-block;
+    margin-right: 20rpx;
+    background-color: #f3f3f3;
+    border: 1rpx solid #ccc;
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 100%;
+}
+
+.cbox.c1 {
+    background-color: #fff;
+}
+
+.cbox.c2 {
+    background-color: #ffdede;
+}
+
+.cbox.c3 {
+    background-color: #f7f3ce;
+}
+
+.cbox.c4 {
+    background-color: #c2faf1;
+}
+
+.cbox.c5 {
+    background-color: #c5ecbe;
+}
+
+.cbox.c6 {
+    background-color: #7de6ab;
+}
+
+.cbox.c7 {
+    background-color: #ffc236;
+}
+
+.cbox.c8 {
+    background-color: #4797b1;
+}
+
+.cbox.c9 {
+    background-color: #e1396c;
+}
+
+.cbox.c10 {
+    background-color: #c03;
+}
+
+.cbox.c11 {
+    background-color: #66c;
+}
+
+.cbox.c12 {
+    background-color: #630;
+}
+
+.cbox.c13 {
+    background-color: #966;
+}
+
+.cbox.c14 {
+    background-color: #1c2d37;
+}
+
+.cbox.active {
+    border-color: #969595;
+}
+
+.textinput {
+    display: flex;
+    background-color: #fff;
+    height: 80rpx;
+    padding: 20rpx;
+}
+
+.inputbox {
+    width: 75%;
+    height: 60rpx;
+    overflow: hidden;
+    font-size: 32rpx;
+    border-bottom: 1px solid #c7c7c7;
+}
+
+.textcolor {
+    color: #000;
+    letter-spacing: 5rpx;
+    margin-left: 20rpx;
+    font-size: 35rpx;
+    justify-content: flex-end;
+}
+
+.jiantou {
+    margin-left: 10rpx;
+    margin-top: 8rpx;
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.pushpic {
+    width: 80%;
+    height: 80rpx;
+    font-size: 35rpx;
+    text-align: center;
+    background-color: #1aac19;
+    letter-spacing: 2rpx;
+    color: #fff;
+    margin-top: 50rpx;
+    margin-bottom: 80rpx;
+    box-shadow: 1rpx 5rpx 15rpx #c7c7c7;
+}
+
+button.form_button {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    display: inline;
+    position: static;
+    border: 0;
+    padding-left: 0;
+    padding-right: 0;
+    border-radius: 0;
+    font-size: 0rpx;
+    color: transparent;
+}
+
+button.form_button::after {
+    content: '';
+    width: 0;
+    height: 0;
+    transform: scale(1);
+    display: none;
+    background-color: transparent;
+}
+
+.bgmusic {
+    position: fixed;
+    top: 30rpx;
+    right: 30rpx;
+    width: 70rpx;
+    height: 70rpx;
+    z-index: 999;
+}
+
+.bgmusic .img {
+    width: 100%;
+    height: 100%;
+}
+
+.login {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.loginbox {
+    width: 600rpx;
+    height: 400rpx;
+    background-color: #fff;
+    border-radius: 20rpx;
+    border-radius: 10rpx;
+    position: absolute;
+    top: 30%;
+    left: 75rpx;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.loginbtn {
+    width: 350rpx;
+    height: 90rpx;
+    background-color: #c03;
+    color: #fff;
+    line-height: 90rpx;
+    text-align: center;
+    border-radius: 20rpx;
+    font-size: 35rpx;
+    box-shadow: 0px 0px 10px #ffb5c5;
+    position: absoulte;
+    top: 70rpx;
+}
+
+.logindesc {
+    display: block;
+    font-size: 28rpx;
+    color: #9a9a9a;
+    margin-top: 150rpx;
+    margin-left: 20rpx;
+}
+
+.logintitle {
+    display: block;
+    margin: 30rpx;
+    letter-spacing: 5rpx;
+    font-size: 36rpx;
+}

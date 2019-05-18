@@ -1,0 +1,5 @@
+<template name="player">
+    <view bindtap="playmusiced" class="bgmusic">
+        <image class="img" src="{{musicimg}}"></image>
+    </view>
+</template>

@@ -1,0 +1,50 @@
+<view class="edbox">
+    <view class="sunbox">
+        <text class="nickname">修改头像</text>
+        <view bindtap="uploadimg" class="avatar">
+            <image src="{{avatar}}"></image>
+            <text class="edimg">修改</text>
+        </view>
+    </view>
+    <view class="sunbox">
+        <text class="lefttext">您的名字</text>
+        <input bindinput="bindKeyInput" class="inputboxs" placeholder="你输入您的名字" value="{{nickname}}"></input>
+    </view>
+    <text class="desc">您要送出的祝福语(60个字符以内)</text>
+    <textarea bindinput="bindKeyZf" class="edtextarea" placeholder="请输入祝福语" value="{{wenben}}"></textarea>
+    <view class="zhufubox">
+        <text class="nortext">在上面自己选择祝福语或</text>
+        <text bindtap="choosezf" class="touchtext">从列表选择祝福语</text>
+    </view>
+    <view class="llads" wx:if="{{llads}}">
+        <ad unitId="{{llads}}"></ad>
+    </view>
+    <text class="desc">添加语音祝福</text>
+    <view class="voice">
+        <view bindtap="voice" class="{{!voing||voing=='voiceing'?'voibox':'voiover'}}">
+            <image class="vlimg" src="/tc_card/resource/images/ic_audio_default.png" wx:if="{{!voing}}"></image>
+            <image class="vlimg" src="/tc_card/resource/images/ic_audio_stop.png" wx:if="{{voing=='voiceing'}}"></image>
+            <image class="vlimg" src="/tc_card/resource/images/ic_audio.png" wx:if="{{voing=='over'}}"></image>
+            <image class="vlimg" src="/tc_card/resource/images/ic_audio.png" wx:if="{{voing=='stop'}}"></image>
+            <image class="vlimg" src="/tc_card/resource/images/ic_audio_play.gif" wx:if="{{voing=='playing'}}"></image>
+        </view>
+        <view class="destext" wx:if="{{!voing}}">
+            <text>点击图标开始录音</text>
+            <text>录音最长 60 秒</text>
+        </view>
+        <view class="destext" wx:if="{{voing=='voiceing'}}">
+            <text>正在录音，点击图标完成录音</text>
+            <text>{{second}} 秒/60 秒</text>
+        </view>
+        <view class="destext" wx:if="{{voing=='over'||voing=='playing'||voing=='stop'}}">
+            <text>点击图标可播放</text>
+            <text>时长：{{second}} 秒</text>
+        </view>
+        <form bindsubmit="delvoice" reportSubmit="true" wx:if="{{voing=='over'||voing=='playing'||voing=='stop'}}">
+            <button class="delbtn" formType="submit">删除</button>
+        </form>
+    </view>
+    <form bindsubmit="postData" reportSubmit="true">
+        <button class="tosave" formType="submit">保存</button>
+    </form>
+</view>

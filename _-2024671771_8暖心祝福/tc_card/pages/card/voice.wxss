@@ -1,0 +1,144 @@
+.container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0rpx;
+    left: 0rpx;
+    overflow: hidden;
+}
+
+.bgimg {
+    width: 100%;
+    height: 900rpx;
+}
+
+.dovoice {
+    margin-top: 20rpx;
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+}
+
+.dovoice .times {
+    text-align: center;
+    font-size: 25rpx;
+    color: #d81e06;
+}
+
+.dovoice .todo {
+    width: 120rpx;
+    height: 120rpx;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+}
+
+.dovoice .info {
+    color: #d81e06;
+    font-size: 28rpx;
+    text-align: center;
+    letter-spacing: 5rpx;
+}
+
+.change {
+    position: absolute;
+    bottom: 250rpx;
+    right: 0rpx;
+    font-size: 25rpx;
+    color: #d81e06;
+    text-align: center;
+    line-height: 80rpx;
+    border-radius: 0rpx;
+    width: 150rpx;
+    height: 80rpx;
+    background-color: #FFF;
+    border: 1px solid #d81e06;
+    border-right: 0;
+    border-top-left-radius: 40rpx;
+    border-bottom-left-radius: 40rpx;
+}
+
+.change::after {
+    border: 0;
+}
+
+.pageword {
+    color: #d81e06;
+    text-align: left;
+    position: absolute;
+    top: 200rpx;
+    left: 130rpx;
+    width: 65%;
+    max-height: 500rpx;
+    overflow: hidden;
+    font-size: 30rpx;
+    line-height: 50rpx;
+    letter-spacing: 5rpx;
+    z-index: 5;
+}
+
+.resetlayout {
+    position: absolute;
+    display: flex;
+    flex-flow: column;
+    bottom: 70rpx;
+    left: 20%;
+    width: 80rpx;
+    height: 130rpx;
+}
+
+.btntext {
+    font-size: 23rpx;
+    margin-left: 20rpx;
+    color: #d81e06;
+    line-height: 50rpx;
+    letter-spacing: 5rpx;
+}
+
+.resetbox {
+    display: block;
+    text-align: center;
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 100%;
+    border: 1px solid #d81e06;
+}
+
+.resetbox image {
+    margin: 0 auto;
+    width: 35rpx;
+    height: 35rpx;
+    margin-top: 25rpx;
+}
+
+.demolayout {
+    position: absolute;
+    display: flex;
+    flex-flow: column;
+    bottom: 70rpx;
+    right: 20%;
+    width: 80rpx;
+    height: 130rpx;
+}
+
+.demotbox {
+    display: block;
+    text-align: center;
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 100%;
+    border: 1px solid #d81e06;
+}
+
+.vcolor {
+    border: 0;
+    background-color: #d81e06;
+}
+
+.demotbox image {
+    margin: 0 auto;
+    width: 40rpx;
+    height: 40rpx;
+    margin-top: 20rpx;
+}

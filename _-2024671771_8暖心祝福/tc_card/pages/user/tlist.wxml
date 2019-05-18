@@ -1,0 +1,10 @@
+<view class="pagebox">
+    <view class="list" wx:for="{{list}}" wx:for-item="items" wx:key="unique">
+        <view class="tbox">
+            <text class="title">申请提现 <text class="tmons">{{items.cost}}</text> 元</text>
+            <text class="times">{{items.addtime}}</text>
+        </view>
+        <view class="jine" wx:if="{{items.status>0}}">已提现</view>
+        <view class="jine" style="color:#CD5C5C" wx:else>审核中</view>
+    </view>
+</view>

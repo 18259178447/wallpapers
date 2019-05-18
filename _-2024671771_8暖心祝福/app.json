@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "tc_card/pages/index/index",
+    "tc_card/pages/cate/index",
+    "tc_card/pages/card/index",
+    "tc_card/pages/card/voice",
+    "tc_card/pages/card/card",
+    "tc_card/pages/web/index",
+    "tc_card/pages/msg/msg",
+    "tc_card/pages/user/index",
+    "tc_card/pages/user/sendlist",
+    "tc_card/pages/user/cash",
+    "tc_card/pages/user/details",
+    "tc_card/pages/user/tlist",
+    "tc_card/pages/pay/pay",
+    "tc_card/pages/card/edit",
+    "tc_card/pages/card/zflist",
+    "tc_card/pages/user/jubao"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "祝福贺卡",
+    "navigationBarBackgroundColor": "white",
+    "backgroundColor": "#f5f5f5"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#BA0624",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "tc_card/pages/index/index",
+        "text": "贺卡",
+        "iconPath": "tc_card/resource/images/card.png",
+        "selectedIconPath": "tc_card/resource/images/card_on.png"
+      },
+      {
+        "pagePath": "tc_card/pages/user/index",
+        "text": "我的",
+        "iconPath": "tc_card/resource/images/user.png",
+        "selectedIconPath": "tc_card/resource/images/user_on.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

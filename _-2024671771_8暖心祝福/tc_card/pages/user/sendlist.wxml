@@ -1,0 +1,8 @@
+<ad style="margin-bottom:20rpx;" unitId="{{llads}}" wx:if="{{llads}}"></ad>
+<view class="cardbox">
+    <view class="item" wx:for="{{list}}" wx:for-item="items" wx:key="unique">
+        <image bindtap="gotocard" data-id="{{items.id}}" data-index="{{index}}" src="{{skinurl}}{{items.smallthumb}}"></image>
+        <text class="cardname">{{items.title}}</text>
+        <text class="times">{{items.addtime}}</text>
+    </view>
+</view>

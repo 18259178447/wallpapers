@@ -1,0 +1,161 @@
+.pagebox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #EEEEEE;
+}
+
+.costbox {
+    position: absolute;
+    top: 7%;
+    background-color: #FFFFFF;
+    width: 80%;
+    padding: 5%;
+    padding-top: 80rpx;
+    height: 550rpx;
+    left: 5%;
+    border-radius: 20rpx;
+}
+
+.lay1 {
+    display: block;
+    text-align: left;
+    width: 100%;
+    height: 70rpx;
+    line-height: 70rpx;
+    font-size: 30rpx;
+    color: #4F4F4F;
+}
+
+.mons {
+    font-size: 35rpx;
+    color: #ff0000;
+    font-weight: bold;
+    margin-right: 10rpx;
+    margin-left: 10rpx;
+}
+
+.inputboxs {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 80rpx;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1rpx solid #4F4F4F;
+    margin-bottom: 35rpx;
+}
+
+.monico {
+    position: relative;
+    margin-top: 30rpx;
+    width: 45rpx;
+    height: 50rpx;
+}
+
+.inputmon {
+    position: relative;
+    display: block;
+    height: 50rpx;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    margin-top: 35rpx;
+    font-size: 30rpx;
+}
+
+.inputmon:after {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+.done {
+    margin-top: 25rpx;
+    border-radius: 20rpx;
+    width: 120rpx;
+    height: 45rpx;
+    line-height: 46rpx;
+    text-align: center;
+    font-size: 25rpx;
+    color: #FFFFFF;
+    background-color: #DB5943;
+}
+
+.mondesc {
+    display: block;
+    color: #A3A3A3;
+    width: 100%;
+    text-align: center;
+    font-size: 28rpx;
+    letter-spacing: 5rpx;
+}
+
+.btndons {
+    position: absolute;
+    bottom: 75rpx;
+    width: 80%;
+    height: 80rpx;
+    background-color: #DB5943;
+    text-align: center;
+    border: 0;
+    border-radius: 0;
+    border-radius: 10rpx;
+    line-height: 80rpx;
+    color: #FFFFFF;
+    margin-left: 5%;
+    letter-spacing: 15rpx;
+}
+
+.mingxi {
+    text-align: center;
+    color: #2983D8;
+    font-size: 28rpx;
+    letter-spacing: 5rpx;
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+}
+
+.infos {
+    position: absolute;
+    bottom: 30rpx;
+    font-size: 23rpx;
+    color: #9e9e9e;
+    left: 17%;
+}
+
+.jinnow {
+    position: absolute;
+    left: 20%;
+    width: 100%;
+    bottom: 170rpx;
+    font-size: 25rpx;
+}
+
+.fontc {
+    color: #ff0000;
+}
+
+.tsbox {
+    position: absolute;
+    top: 760rpx;
+    left: 30%;
+    width: 100%;
+    display: flex;
+    width: 100%;
+}
+
+.jubao {
+    display: block;
+    font-size: 30rpx;
+    text-align: right;
+    margin-top: 25rpx;
+    margin-right: 25rpx;
+    color: #9e9e9e;
+}

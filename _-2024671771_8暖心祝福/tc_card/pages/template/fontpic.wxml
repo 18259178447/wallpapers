@@ -1,0 +1,30 @@
+<template name="fontpic">
+    <view class="textbox">
+        <view class="showpic" style="background-color:{{bgcolor}};">
+            <text class="showtext" style="color:{{fontcolor}};">{{inputValue}}</text>
+        </view>
+        <scroll-view class="colorbox" scrollX="true">
+            <view bindtap="changeColor" class="cbox {{bgcolor=='#F3F3F3'?'active':''}}" data-color="#F3F3F3" data-coname="微信灰"></view>
+            <view bindtap="changeColor" class="cbox c1 {{bgcolor=='#FFFFFF'?'active':''}}" data-color="#FFFFFF" data-coname="纯白色"></view>
+            <view bindtap="changeColor" class="cbox c2 {{bgcolor=='#FFDEDE'?'active':''}}" data-color="#FFDEDE" data-coname="粉色"></view>
+            <view bindtap="changeColor" class="cbox c3 {{bgcolor=='#F7F3CE'?'active':''}}" data-color="#F7F3CE" data-coname="黄色"></view>
+            <view bindtap="changeColor" class="cbox c4 {{bgcolor=='#C2FAF1'?'active':''}}" data-color="#C2FAF1" data-coname="淡蓝色"></view>
+            <view bindtap="changeColor" class="cbox c5 {{bgcolor=='#C5ECBE'?'active':''}}" data-color="#C5ECBE" data-coname="青色"></view>
+            <view bindtap="changeColor" class="cbox c6 {{bgcolor=='#7DE6AB'?'active':''}}" data-color="#7DE6AB" data-coname="清新绿"></view>
+            <view bindtap="changeColor" class="cbox c7 {{bgcolor=='#FFC236'?'active':''}}" data-color="#FFC236" data-coname="橘色"></view>
+            <view bindtap="changeColor" class="cbox c8 {{bgcolor=='#4797B1'?'active':''}}" data-color="#4797B1" data-coname="深蓝色"></view>
+            <view bindtap="changeColor" class="cbox c9 {{bgcolor=='#FFC236'?'active':''}}" data-color="#E1396C" data-coname="桃红色"></view>
+            <view bindtap="changeColor" class="cbox c10 {{bgcolor=='#CC0033'?'active':''}}" data-color="#CC0033" data-coname="中国红"></view>
+            <view bindtap="changeColor" class="cbox c11 {{bgcolor=='#6666CC'?'active':''}}" data-color="#6666CC" data-coname="紫色"></view>
+            <view bindtap="changeColor" class="cbox c13 {{bgcolor=='#996666'?'active':''}}" data-color="#996666" data-coname="淡棕色"></view>
+            <view bindtap="changeColor" class="cbox c12 {{bgcolor=='#663300'?'active':''}}" data-color="#663300" data-coname="赭石色"></view>
+            <view bindtap="changeColor" class="cbox c14 {{bgcolor=='#1C2D37'?'active':''}}" data-color="#1C2D37" data-coname="烟雾黑"></view>
+        </scroll-view>
+        <view class="textinput">
+            <input bindinput="bindKeyInput" class="inputbox" maxlength="17" placeholder="请在此输入文字"></input>
+            <text bindtap="ChangeFontColor" class="textcolor">{{fontcolor=='#000'?'黑色':'白色'}}</text>
+            <image class="jiantou" src="/tc_card/resource/images/jiantou.png"></image>
+        </view>
+        <button bindtap="drawPic" class="pushpic">生成文字图片</button>
+    </view>
+</template>

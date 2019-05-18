@@ -1,0 +1,51 @@
+<official-account></official-account>
+<view class="cardlayout">
+    <view class="toplayout" wx:if="{{openmsg==1||openmsg==2}}">
+        <button class="hdtop" openType="contact">{{msgtext}}</button>
+    </view>
+    <swiper autoplay="{{autoplay}}" class="swiper" duration="{{duration}}" indicatorDots="{{indicatorDots}}" interval="{{interval}}" wx:if="{{ads.length>0}}">
+        <swiper-item bindtap="hdGoto" data-id="{{index}}" wx:if="{{item.ishot==1}}" wx:for="{{ads}}" wx:key="unique">
+            <image class="slide-image" src="{{skinurl}}{{item.thumb}}"></image>
+        </swiper-item>
+    </swiper>
+    <view class="llads" wx:if="{{llads}}">
+        <ad unitId="{{llads}}"></ad>
+    </view>
+    <form bindsubmit="formid" class="formid" reportSubmit="true">
+        <view class="lanmu" wx:if="{{ads.length>0}}">
+            <image class="recommend" src="{{tjpic?tjpic:'/tc_card/resource/images/remen.png'}}"></image>
+        </view>
+        <view class="cardbox" wx:if="{{ads.length>0}}">
+            <view bindtap="hdGoto" class="cardli" data-id="{{index}}" wx:if="{{item.ishot==0}}" wx:for="{{ads}}" wx:key="unique">
+                <image class="cardimg" src="{{skinurl}}{{item.thumb}}"></image>
+                <text class="cardtext">{{item.title}}</text>
+            </view>
+        </view>
+        <view class="lanmu">
+            <image class="llist" src="{{cypic?cypic:'/tc_card/resource/images/changyong.png'}}"></image>
+        </view>
+        <view class="cardbox">
+            <button catchtap="showCate" class="cardli" data-cid="{{items.id}}" formType="submit" hoverClass="none" wx:for="{{rcData}}" wx:for-item="items" wx:key="unique">
+                <image class="cardimg" src="{{skinurl}}{{items.thumb}}"></image>
+                <text class="cardtext">{{items.title}}</text>
+            </button>
+        </view>
+        <view class="lanmu">
+            <image class="llist" src="{{jrpic?jrpic:'/tc_card/resource/images/jieri.png'}}"></image>
+        </view>
+        <view class="cardbox">
+            <button catchtap="showCate" class="cardli" data-cid="{{items.id}}" formType="submit" hoverClass="none" wx:for="{{jrData}}" wx:for-item="items" wx:key="unique">
+                <image class="cardimg" src="{{skinurl}}{{items.thumb}}"></image>
+                <text class="cardtext">{{items.title}}</text>
+            </button>
+        </view>
+    </form>
+    <button class="hongbao" openType="contact" wx:if="{{openmsg==1||openmsg==3}}">
+        <image class="hongbaoimg" src="{{imgurl}}{{piaofu}}" wx:if="{{piaofu}}"></image>
+        <image class="hongbaoimg" src="/tc_card/resource/images/bao.png" wx:else></image>
+    </button>
+    <view class="llads" wx:if="{{llads}}">
+        <ad unitId="{{llads}}"></ad>
+    </view>
+    <view class="mingzi">-- {{spacename}} --</view>
+</view>

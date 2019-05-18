@@ -1,0 +1,25 @@
+<view class="paybox">
+    <view class="payTop">
+        <image class="avatar" src="{{avatar}}"></image>
+    </view>
+    <text class="nickname">{{nickname}}</text>
+    <text class="desc">{{paycon?paycon:'觉得不错，就打赏一下我吧！'}}</text>
+    <view class="paynumbox">
+        <text bindtap="dopay" class="monbox" data-num="{{items}}" wx:for="{{moneys}}" wx:for-item="items" wx:key="unique">{{items}}元</text>
+        <view bindtap="cusmter" class="otherbtn">其他金额</view>
+    </view>
+    <view bindtap="closealert" class="mask" wx:if="{{cusmter}}"></view>
+    <view class="alert" wx:if="{{cusmter}}">
+        <view class="top">
+            <text class="title">其他金额</text>
+            <image bindtap="closealert" class="closealert" src="../../resource/images/close.png"></image>
+        </view>
+        <view class="inputboxs">
+            <text class="desc">金额(元)</text>
+            <input bindinput="bindKeyInput" class="inputs" placeholder="可填写1-1000" type="digit"></input>
+        </view>
+        <button bindtap="dopay" class="gothis" type="button" wx:if="{{gopay}}">赞赏</button>
+        <button class="disabled" type="button" wx:else>赞赏</button>
+    </view>
+    <text class="footdesc">{{dstext}}</text>
+</view>

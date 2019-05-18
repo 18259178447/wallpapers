@@ -1,0 +1,99 @@
+<import src="/tc_card/pages/template/player.wxml"></import>
+<view class="container" style="width:{{cardWidth}}px;height:{{cardHeight}}px;">
+    <official-account class="guanzhu" wx:if="{{!action}}"></official-account>
+    <image class="bgimg" src="{{skinurl}}{{cardInfo.bigthumb}}"></image>
+    <text class="pageword" style="font-size:{{cardInfo.fontsize}}rpx;color:{{cardInfo.fontcolor}};width:{{cardInfo.width}}%;height:{{cardInfo.height}}%;top:{{cardInfo.ypos}}%;left:{{cardInfo.xpos}}%;">
+        <text class="word" style="{{word}};">{{pageWord}}</text>
+    </text>
+    <button bindgetuserinfo="updateUserInfo" class="piao" openType="getUserInfo" wx:if="{{!config.review&&ispay>0&&piao>0}}">
+        <image src="/tc_card/resource/images/shang.png" style="width:100%;height:100%;"></image>
+    </button>
+    <form bindsubmit="formSubmit" reportSubmit="true">
+        <view class="toolbox" wx:if="{{mods}}">
+            <form bindsubmit="yulan" reportSubmit="true">
+                <button class="backbtn" formType="submit">返回</button>
+            </form>
+            <form bindsubmit="dobtn" reportSubmit="true">
+                <button class="dobtn" formType="submit">送出</button>
+            </form>
+        </view>
+        <view class="toolbox" wx:if="{{!mods}}">
+            <button bindgetuserinfo="getUserInfo" class="backbtn" openType="getUserInfo" wx:if="{{login}}">转给朋友</button>
+            <button class="backbtn" formType="submit" openType="share" wx:else>转给朋友</button>
+            <view class="zhuangshi1">
+                <button bindgetuserinfo="updateUserInfo" class="dashang" openType="getUserInfo" wx:if="{{!config.review&&ispay>0}}">赏</button>
+            </view>
+            <button class="dobtn" formType="submit" openType="contact" wx:if="{{edbtn>0}}">制作贺卡</button>
+            <button catchtap="gohome" class="dobtn" formType="submit" wx:else>制作贺卡</button>
+        </view>
+    </form>
+    <view class="mask" wx:if="{{shared}}">
+        <view class="alert">
+            <image class="tops" src="/tc_card/resource/images/kuang.png"></image>
+            <text class="texts">您的心意已送达</text>
+            <image class="bottoms" src="/tc_card/resource/images/kuang.png"></image>
+            <text class="infos">还想为好友送上更多祝福</text>
+            <text class="infos2">点击下方按钮获取更多祝福</text>
+            <button class="qbtns" openType="contact" wx:if="{{sharebtn>0}}">{{shbitle?shbitle:'前往获取祝福'}}</button>
+            <button bindtap="gohome" class="qbtns" wx:else>{{shbitle?shbitle:'前往获取祝福'}}</button>
+        </view>
+        <image bindtap="closeAlert" class="botclose" src="/tc_card/resource/images/cha.png"></image>
+    </view>
+    <view class="xinfeng" style="{{bg2}}" wx:if="{{action}}">
+        <image class="bg" src="/tc_card/resource/images/bg.png"></image>
+        <image class="avatar" src="{{usercard.avatar}}"></image>
+        <text class="times">{{times}}</text>
+        <text class="nickname">{{usercard.nickname}}</text>
+        <text class="desc">发来了贺卡</text>
+    </view>
+    <view class="kbglayout">
+        <image class="kbg" src="{{skinurl}}{{cardInfo.bigthumb}}" style="width:{{cardWidth/2}}px;height:{{cardHeight/2}}px;{{bg1action}}" wx:if="{{action}}"></image>
+    </view>
+    <view class="fan1" style="{{fan1action}}" wx:if="{{action}}">
+        <image class="fanye" src="/tc_card/resource/images/ye1.png"></image>
+    </view>
+    <view class="fan2" style="{{fan2action}}" wx:if="{{action}}">
+        <image class="fanye" src="/tc_card/resource/images/ye2.png"></image>
+    </view>
+    <view bindtap="huoqi" class="zhang" style="{{huoqiaction}}" wx:if="{{action}}">
+        <image class="fanye" src="/tc_card/resource/images/open.gif"></image>
+    </view>
+    <view class="shengzi" style="{{shengaction}}" wx:if="{{action}}">
+        <image class="fanye" src="/tc_card/resource/images/shengzi.png"></image>
+    </view>
+    <view class="foot-share" wx:if="{{shareshow}}">
+        <view class="f-btnbox">
+            <button class="f-friebtn" openType="share">
+                <image class="f-friebtns" src="/tc_card/resource/images/share.jpg"></image>
+            </button>
+            <view bindtap="sharepic" class="f-pybtns">
+                <image class="f-friebtns" src="/tc_card/resource/images/pybtns.jpg"></image>
+            </view>
+        </view>
+        <view bindtap="exitShare" class="cancle">取消</view>
+    </view>
+    <view class="gb">
+        <canvas canvasId="myCanvas" class="code"></canvas>
+    </view>
+    <view class="mask" wx:if="{{okdoshare}}">
+        <view class="alertbox">
+            <view class="paddingbox">
+                <view class="imgbox1">
+                    <view class="imgbox2">
+                        <view class="imgbox3">
+                            <image class="okl" src="/tc_card/resource/images/okl.png"></image>
+                        </view>
+                    </view>
+                </view>
+                <text class="oksave">保存成功</text>
+                <text class="text1">海报已保存到你得系统相册</text>
+                <text class="text2">发朋友圈直接到相册选择</text>
+            </view>
+            <view bindtap="pybtndo" class="closealert">确认</view>
+        </view>
+    </view>
+    <template is="player" data="{{musicimg:musicimg}}"></template>
+</view>
+<view class="fixedad" wx:if="{{ishowad==1&&config.llads}}">
+    <ad unitId="{{config.llads}}"></ad>
+</view>

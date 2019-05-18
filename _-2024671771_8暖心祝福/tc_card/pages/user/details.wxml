@@ -1,0 +1,10 @@
+<view class="pagebox">
+    <view class="list" wx:for="{{list}}" wx:for-item="items" wx:key="unique">
+        <view class="tbox">
+            <text class="title">
+                <text style="color:#6495ED;padding-right:5rpx;">{{items.tnickname}}</text> 打赏了您</text>
+            <text class="times">{{items.addtime}}</text>
+        </view>
+        <view class="jine">+ {{items.cost}} 元</view>
+    </view>
+</view>

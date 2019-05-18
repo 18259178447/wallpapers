@@ -1,0 +1,124 @@
+.pagebox {
+    position: relative;
+    padding: 10rpx 30rpx 30rpx 30rpx;
+    overflow: hidden;
+}
+
+.llads {
+    position: fixed;
+    bottom: 30rpx;
+    left: 10rpx;
+    width: 730rpx;
+    overflow: hidden;
+}
+
+.headbox {
+    position: relative;
+    width: 100%;
+    height: 300rpx;
+    background: linear-gradient(100deg,#BA0624,#FC938D);
+    border-radius: 20rpx;
+    box-shadow: 0rpx 35rpx 30rpx #CCC;
+    margin-bottom: 80rpx;
+}
+
+.avatar {
+    position: absolute;
+    top: 30rpx;
+    left: 35%;
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 100%;
+    background-color: #FC9294;
+}
+
+.avatar1 {
+    position: absolute;
+    top: 15rpx;
+    left: 15rpx;
+    background-color: #ffa5a4;
+    width: 170rpx;
+    height: 170rpx;
+    border-radius: 100%;
+}
+
+.avatar2 {
+    position: absolute;
+    top: 10rpx;
+    left: 10rpx;
+    background-color: #FECDCF;
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 100%;
+}
+
+.img {
+    position: absolute;
+    top: 5rpx;
+    left: 5rpx;
+    width: 140rpx;
+    height: 140rpx;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.nickname {
+    position: absolute;
+    top: 240rpx;
+    width: 100%;
+    color: #FFF;
+    text-align: center;
+    letter-spacing: 5rpx;
+    font-size: 35rpx;
+}
+
+.nav {
+    display: flex;
+    padding: 30rpx;
+    border-radius: 10rpx;
+    box-shadow: 10rpx 10rpx 50rpx #FECDCF;
+    color: #887c8a;
+    margin-bottom: 30rpx;
+    font-size: 30rpx;
+    flex-flow: row;
+}
+
+.infomon {
+    flex: 1;
+}
+
+.col1 {
+    color: #FF6666;
+    padding-left: 5rpx;
+    padding-right: 5rpx;
+}
+
+.jianjiao {
+    justify-content: flex-end;
+}
+
+.navs {
+    flex: 1;
+}
+
+.tixian {
+    justify-content: flex-end;
+    color: #FF6666;
+}
+
+button {
+    content: "";
+    border: 0px;
+    padding: 0;
+    margin: 0;
+    line-height: 20px;
+    background: none;
+    overflow: visible;
+    box-sizing: inherit;
+    border-radius: 0;
+    text-align: left;
+}
+
+button::after {
+    border: none;
+}

@@ -1,0 +1,27 @@
+<view class="pagebox">
+    <view class="headbox">
+        <view class="avatar">
+            <view class="avatar1">
+                <view class="avatar2">
+                    <open-data class="img" type="userAvatarUrl"></open-data>
+                </view>
+            </view>
+        </view>
+        <open-data class="nickname" type="userNickName"></open-data>
+    </view>
+    <view bindtap="sendList" class="nav">
+        <view class="navs">我送出去的祝福</view>
+        <view class="jianjiao">💝</view>
+    </view>
+    <button bindgetuserinfo="updateUserInfo" class="nav" openType="getUserInfo" wx:if="{{config.ispay>0&&fee}}">
+        <view class="infomon">余额：<text class="col1">{{fee}}</text>元</view>
+        <view class="tixian">申请提现</view>
+    </button>
+    <button class="nav" openType="openSetting">
+        <view class="navs">系统设置</view>
+        <view class="jianjiao">🔐</view>
+    </button>
+</view>
+<view class="llads" wx:if="{{llads}}">
+    <ad unitId="{{llads}}"></ad>
+</view>

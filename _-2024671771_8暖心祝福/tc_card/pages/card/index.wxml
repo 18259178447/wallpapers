@@ -1,0 +1,38 @@
+<import src="/tc_card/pages/template/player.wxml"></import>
+<view class="container" style="width:{{cardWidth}}px;height:{{cardHeight}}px;">
+    <image class="bgimg" src="{{skinurl}}{{cardInfo.bigthumb}}"></image>
+    <text class="pageword" style="color:{{cardInfo.fontcolor}};width:{{cardInfo.width}}%;height:{{cardInfo.height}}%;top:{{cardInfo.ypos}}%;left:{{cardInfo.xpos}}%;" wx:if="{{review==2}}">
+        <text class="word">{{pageWord}}</text>
+    </text>
+    <view class="pageword" style="color:{{cardInfo.fontcolor}};width:{{cardInfo.width}}%;height:{{cardInfo.height}}%;top:{{cardInfo.ypos}}%;left:{{cardInfo.xpos}}%;" wx:else>
+        <text class="word">{{pageWord}}</text>
+    </view>
+    <view class="toolbox" wx:if="{{mods}}">
+        <form bindsubmit="goBack" reportSubmit="true">
+            <button class="backbtn" formType="submit">重新选择</button>
+        </form>
+        <form bindsubmit="toSave" reportSubmit="true" wx:if="{{!review&&!login}}">
+            <button class="dobtn" formType="submit">编辑贺卡</button>
+        </form>
+        <button bindgetuserinfo="updateUserInfo" class="dobtn" openType="getUserInfo" wx:if="{{!review&&login}}">编辑贺卡</button>
+    </view>
+    <picker-view bindchange="bindChange" class="pickerbox" indicatorClass="indicatorstyle" value="{{value}}" wx:if="{{pickShow}}">
+        <view class="ttbox">
+            <text bindtap="closePick" class="q1">取消</text>
+            <text bindtap="doSure" class="q2">确定</text>
+        </view>
+        <picker-view-column>
+            <view class="zhufuyubox" wx:for="{{textarr}}" wx:key="{{index}}">{{item}}</view>
+        </picker-view-column>
+    </picker-view>
+    <view class="mask" wx:if="{{editText}}">
+        <view class="writeword">
+            <textarea autoFocus bindinput="bindTextAreaBlur" class="textarea" placeholder="请输入祝福语" value="{{textareaCon}}"></textarea>
+            <view class="btnbox">
+                <view bindtap="tocolose" class="btnexit">取消</view>
+                <view bindtap="toSavetext" class="btnsure">确定</view>
+            </view>
+        </view>
+    </view>
+    <template is="player" data="{{musicimg:musicimg}}"></template>
+</view>

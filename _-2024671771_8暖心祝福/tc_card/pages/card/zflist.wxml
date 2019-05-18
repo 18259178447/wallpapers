@@ -1,0 +1,6 @@
+<view class="zfbox">
+    <view bindtap="choosezf" class="sunbox" data-zf="{{items}}" wx:for="{{textarr}}" wx:for-item="items" wx:key="unique">
+        <text class="zftext">{{items}}</text>
+        <image class="zfico" src="/tc_card/resource/images/ic_arrow_right.png"></image>
+    </view>
+</view>

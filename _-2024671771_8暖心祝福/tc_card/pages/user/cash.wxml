@@ -1,0 +1,21 @@
+<view class="pagebox">
+    <view class="costbox">
+        <text class="lay1">账户余额：<text class="mons">{{fee}}</text>元</text>
+        <text class="lay1">提现金额：</text>
+        <view class="inputboxs">
+            <image class="monico" src="../../resource/images/mon.png"></image>
+            <input bindinput="inputmon" class="inputmon" type="digit" value="{{nowmoney}}"></input>
+            <text bindtap="allmon" class="done">全部</text>
+        </view>
+        <text class="mondesc">最少提现{{leastmon}}元,平台收取{{service}}%服务费</text>
+        <text class="jinnow" wx:if="{{nowmoney&&shouxu}}">手续费 <text class="fontc">{{shouxu}}</text> 元，到账金额： <text class="fontc">{{tixian}}</text> 元</text>
+        <button bindtap="docash" class="btndons" wx:if="{{cashing}}">提现</button>
+        <button class="btndons" wx:else>提现</button>
+        <text class="infos">提现金额将在1-5个工作日打到您微信零钱当中</text>
+    </view>
+    <view class="tsbox">
+        <text bindtap="tslist" class="mingxi"> 提现记录 </text>
+        <text>|</text>
+        <text bindtap="yelist" class="mingxi"> 打赏明细 </text>
+    </view>
+</view>

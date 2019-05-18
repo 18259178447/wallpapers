@@ -1,0 +1,21 @@
+<form bindsubmit="formid" class="formid" reportSubmit="true">
+    <view class="cardbox">
+        <block wx:for="{{listData}}" wx:for-item="items" wx:key="index">
+            <button catchtap="showCard" class="cardli" data-id="{{items.id}}" formType="submit" hoverClass="none">
+                <image class="cardimg" src="{{skinurl}}{{items.smallthumb}}"></image>
+                <text class="cardtext">{{items.title}}</text>
+                <view class="fooclick" wx:if="{{items.click>0&&items.bogusclick<1}}">
+                    <image src="/tc_card/resource/images/hot.png"></image>
+                    <text>{{items.click}}</text>
+                </view>
+                <view class="fooclick" wx:elif="{{items.bogusclick>0}}">
+                    <image src="/tc_card/resource/images/hot.png"></image>
+                    <text>{{items.bogusclick}}</text>
+                </view>
+            </button>
+            <view class="adbox" wx:if="{{index==1}}">
+                <ad unitId="{{llads}}" wx:if="{{llads}}"></ad>
+            </view>
+        </block>
+    </view>
+</form>

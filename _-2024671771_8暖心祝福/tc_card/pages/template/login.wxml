@@ -1,0 +1,9 @@
+<template name="login">
+    <view class="login">
+        <view class="loginbox">
+            <text class="logintitle">微信授权</text>
+            <button bindgetuserinfo="updateUserInfo" class="loginbtn" openType="getUserInfo">微信登录</button>
+            <text class="logindesc">授权登录后才可以发送贺卡</text>
+        </view>
+    </view>
+</template>
