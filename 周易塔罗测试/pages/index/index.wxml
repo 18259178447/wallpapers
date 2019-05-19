@@ -24,6 +24,13 @@
             </image>
         </swiper-item>
     </swiper> -->
+    <view class='section diy-content-space'>
+        <view class="diy-content-padded">每日推荐</view>
+        <view class='day-list-box' bindtap='todayquiz'>
+        <view class='day-list-item' wx:for="{{days}}" wx:key="{{item.id}}" data-index="{{index}}">{{item.title}}</view>
+        </view>
+        
+    </view>
     <view class="section diy-content-space">
         <view class="diy-content-padded">精选测评
             <view bindtap="morecategory" class="diy-more" href="/index.php?s=/wetest/index/category">更多></view>

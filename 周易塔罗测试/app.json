@@ -75,5 +75,12 @@
       }
     ]
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "navigateToMiniProgramAppIdList": [
+    "wx5bfe2eea969f4cec"
+  ],
+  "usingComponents": {
+    "ad-fn": "/components/myAd/ad-fn/ad-fn",
+    "ladloop": "/components/myAd/ladloop/ladloop"
+  }
 }

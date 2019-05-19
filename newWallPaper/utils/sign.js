@@ -34,7 +34,7 @@ function signRequestHeader(params) {
  * @param params 请求参数字典
  * @return 签名后的参数字符串（String） 
  */
-function signRequestParams(params) {
+function signRequestParams(params,key) {
     
     //添加当前时间戳
     var queryParams = params;//Object.assign({}, params)
@@ -49,8 +49,7 @@ function signRequestParams(params) {
         outParams[sortkeys[i]] = queryParams[sortkeys[i]];
     }
     //生成签名 md5("a=a&b=b&c=c"+"签名key")
-
-    var signString = md5(queryParis.join('&').toLocaleLowerCase().concat(signKey));
+  var signString = md5(queryParis.join('&').toLocaleLowerCase().concat(key||signKey));
     //生成querySting
     // queryParis.push("SignatureMD5" + "=" + signString);
     outParams["SignatureMD5"] = signString;

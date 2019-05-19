@@ -1,5 +1,7 @@
 @import "/utils/base.wxss";
-
+page{
+  background: #181824;
+}
 button {
   padding: 0;
   margin: 0;

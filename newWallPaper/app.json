@@ -8,7 +8,9 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#181824",
+    "backgroundColor": "#181824",
+    "backgroundColorTop": "#181824",
+    "backgroundColorBottom": "#181824",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "white",
     "navigationStyle": "custom"
@@ -17,6 +19,7 @@
     "header-box": "/components/header/header-box/header-box",
     "footer-box": "/components/footer/footer-box/footer-box",
     "back-title": "/components/header/back-title/back-title",
+    "back-btn": "/components/back-btn/back-btn",
     "catetory-nav": "/components/header/catetory-nav/catetory-nav",
     "share-search": "/components/header/share-search/share-search",
     "image-list": "/components/image-list/image-list",
@@ -28,7 +31,10 @@
     {
       "root": "commonPkg",
       "pages": [
-        "subCategory/subCategory"
+        "pages/subCategory/subCategory",
+        "pages/album/album",
+        "pages/baseList/baseList",
+        "pages/albumDetail/albumDetail"
       ]
     }
   ],

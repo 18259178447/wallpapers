@@ -1,0 +1,6 @@
+<view class='page flex-c'>
+  <back-title header="{{header}}"></back-title>
+  <view class='page-list flex-c__1'>
+      <image-list id="image-list"></image-list>
+  </view>
+</view>

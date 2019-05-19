@@ -1,6 +1,7 @@
 // pages/catetory/catetory.js
+var listMinxin = require('../../utils/list-mixin');
 wx.Page({
-
+  mixins: [listMinxin],
   /**
    * 页面的初始数据
    */
@@ -12,12 +13,21 @@ wx.Page({
   onInit({ currentIndex = 0}){
     currentIndex = +currentIndex;
     wx.Tool.getCatetorys().then(categorys=>{
-      this.subCategorys = categorys.subCategorys;
-      this.setData({
-        mainCategorys: categorys.mainCategorys,
-        subCategory: categorys.subCategorys[currentIndex],
-        currentIndex
-      })
+      if (categorys.mainCategorys){
+        this.subCategorys = categorys.subCategorys;
+        this.setData({
+          mainCategorys: categorys.mainCategorys,
+          subCategory: categorys.subCategorys[currentIndex],
+          currentIndex
+        })
+      }else{
+        this.setData({
+          subCategory: categorys.subCategorys,
+          currentIndex
+        },()=>{
+          this.navChanges(currentIndex)
+        })
+      }
     })
   },
   navSwitch: function (e) {
@@ -28,4 +38,17 @@ wx.Page({
       subCategory: this.subCategorys[index]
     })
   },
+  initListComponent(index) {
+    this.selectComponent('#image-list' + index).init({
+      interfaceName: '',
+      data: {
+        cid: this.data.subCategory[index].id,
+        m: "yj_erha",
+        "do": "NavWallpaper",
+      }
+    })
+  },
+  __addShare(obj){
+    obj.path = `${this.route}?currentIndex=${this.data.currentIndex}`;
+  }
 })

@@ -264,3 +264,21 @@ wx._getStorageSync = function (key, reCount = 2) {
   }
   return '';
 }
+
+
+function checkTime(val,len){
+  return len === 2 && val < 10 ? '0' + val : val
+}
+
+Date.prototype.format = function(fmt = "YY-MM-DD hh:mm:ss"){
+  return fmt.replace(/([YMDhms])\1*/g,(a,b)=>{
+      switch(b){
+        case "Y": return this.getFullYear();
+        case "M": return checkTime(this.getMonth() + 1, a.length);
+        case "D": return checkTime(this.getDate(), a.length);
+        case "h": return checkTime(this.getHours(), a.length);
+        case "m": return checkTime(this.getMinutes(), a.length);
+        case "s": return checkTime(this.getSeconds(), a.length);
+      }
+  })
+}

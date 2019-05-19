@@ -1,0 +1,8 @@
+/* commonPkg/pages/albumDetail/albumDetail.wxss */
+.banner-image{
+  height: 398rpx;
+  width: 100%;
+}
+.banner-desc{
+  color: #fff;
+}

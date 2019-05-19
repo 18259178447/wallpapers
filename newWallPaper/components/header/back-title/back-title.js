@@ -13,9 +13,9 @@ Component({
         type:'fixed'
       }
     },
-    backType:{
+    skin:{
       type:String,
-      value: 'back-3'//back-1是带圆圈的 back-2不带圆圈黑色  back-3 不带圆圈白色
+      value: 'back'//
     }
   },
 
@@ -24,29 +24,9 @@ Component({
    */
   data: {
   },
-  ready() {
-    if (getCurrentPages().length === 1 && this.data.backType.indexOf('back') > -1){
-      this.setData({
-        backType: this.data.backType + '-home'
-      })
-    }
-  },
   /**
    * 组件的方法列表
    */
   methods: {
-    back(){
-      if (this.data.backType.indexOf('home') > -1){
-       return wx.switchTab({
-          url: '/pages/index/index',
-        })
-      }
-      if (this.data.backType.indexOf('search') > -1) {
-        return wx.navigateTo({
-          url: '/pages/search/search',
-        })
-      }
-      wx.navigateBack();
-    }
   }
 })

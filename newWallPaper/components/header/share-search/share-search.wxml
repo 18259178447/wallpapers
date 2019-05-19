@@ -1,5 +1,6 @@
 <view class="search">
-   <button class='search__share-btn' open-type="share" hover-class='none'></button>
+   <button class='search__share-btn' wx:if="{{!back}}" open-type="share" hover-class='none'></button>
+   <back-btn wx:else></back-btn>
    <view class='search__search-btn flex flex_h_center flex_v_center' bindtap='event' data-url="/pages/search/search">
       <view class='search__search-icon pen'></view>
       <text class='pen'>搜索壁纸</text>

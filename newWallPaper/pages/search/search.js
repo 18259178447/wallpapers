@@ -47,12 +47,25 @@ wx.Page({
   },
   searchInit() {//搜索初始化并 加载数据
     var word = this.data.searchKey;
-    this.resultList.init({
-      interfaceName: 'SearchList',
-      data: {
-        word
-      }
-    })
+    if(wx.safe){
+      this.resultList.init({
+        interfaceName: 'SearchList',
+        data: {
+          word
+        }
+      })
+    }else{
+      this.resultList.init({
+        interfaceName: '',
+        data: {
+          m: "yj_erha",
+          "do": "Wallpaper",
+          type:1,
+          keyword: word
+        }
+      })  
+    }
+
     //更新搜索记录
     var index = this.data.historyKeys.indexOf(word);
     this.data.historyKeys.unshift(index > -1 ? this.data.historyKeys.splice(index, 1)[0] : word);
@@ -97,4 +110,7 @@ wx.Page({
     }
     wx.navigateBack()
   },
+  __addShare(obj) {
+    obj.path = `${this.route}?word=${this.data.searchKey}`;
+  }
 })

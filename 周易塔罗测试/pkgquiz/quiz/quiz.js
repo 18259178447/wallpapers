@@ -251,7 +251,8 @@ function s(t) {
     qindex: t
   });
   var e = y[t], a = S.data.obj;
-  J = T.getNewQuestion(t, e, C, k, lt, I.globalData.adbannerstatus), 3 == lt && 1 == I.globalData.adbannerstatus ? (S.setData({
+  J = T.getNewQuestion(t, e, C, k, lt, I.globalData.adbannerstatus);
+  3 == lt && 1 == I.globalData.adbannerstatus ? (S.setData({
     adbannerid: I.globalData.adbannerid
   }), lt++ , C++ , P = "", O = O.concat(J), a["option_" + J.domindex] = !0, setTimeout(function () {
     S.setData({
@@ -289,7 +290,7 @@ function c(t) {
         break;
       }
       U = L -= 1, s(L);
-    }
+  } else 8 == k && (A = A.concat(t), b == F ? l() : (s(F), F += 1));
 }
 
 function r(t) {
@@ -834,8 +835,16 @@ Page({
           scrollview: "index-" + C
         }), c(e.value);
       }, 100);
+      
   },
-  useUserInfo: function (t) {
+  useUserInfo(e){
+    if(e.detail.userInfo){
+      this.selectComponent('#ad-fn').openAd(null, () => {
+        this._useUserInfo(e)
+      });
+    }
+  },
+  _useUserInfo: function (t) {
     var a = t.detail.userInfo;
     a && "disabled" != S.data.clickflag && (a.avatarUrl = t.detail.userInfo.avatarUrl.replace("/132", "/0"),
       S.setData({

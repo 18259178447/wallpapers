@@ -35,6 +35,9 @@
 .pea{
   pointer-events: auto;
 }
+.hidden{
+  overflow: hidden
+}
 
 
 .theme-bgcolor{

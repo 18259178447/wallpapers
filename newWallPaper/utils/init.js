@@ -31,17 +31,32 @@ wx.requestHeader = {
  *@param [boolean]requestTask 是否保留请求对象，默认不保留（保留后可以在请求完成之前调用abort方法中断请求）
  *@return [object] promise对象
  **/
+ 
 wx._request = function (obj, requestTask) {
   return new Promise((resolve, reject) => {
     let sub = obj.filePath ? 'formData' : 'data',
       data = obj.data || {};
-    data.timeStamp = Date.now();
     if (config.interfaces && !/^https*/.test(obj.url)) {
       obj.url = config.base + config.interfaces[obj.url];
     }
-    obj.header = this.requestHeader;
-    obj[sub] = data;
-    obj[sub].SignatureMD5 = sign.params(obj[sub]).SignatureMD5;
+    if(wx.safe){
+      data.timeStamp = Date.now();
+      obj.header = this.requestHeader;
+      obj[sub] = data;
+      obj[sub].SignatureMD5 = sign.params(obj[sub]).SignatureMD5;
+    }else{
+      obj.url = "https://erha.1jianym.cn/app/index.php"
+      obj[sub] = Object.assign({
+        i: "2",//uniacid
+        t: "1",//multiid
+        v: '1.0',//version
+        "from":'wxapp',//
+        c:"entry",
+        a: "wxapp"
+      }, data);
+      obj[sub].sign = sign.params(obj[sub],'yj_erhachlz').SignatureMD5;
+    }
+
     obj.success = resolve;
     obj.fail = reject;
     if (requestTask) {
@@ -54,9 +69,9 @@ wx._request = function (obj, requestTask) {
       if (res.data === 'ok') return 'ok';
       res.data = JSON.parse(res.data);
     }
-    if (res.data.ResultCode === '0') return res.data;
+    if (res.data.ResultCode === '0' || res.data.errno === 0) return res.data;
     throw {
-      errMsg: res.data.ResultMessage,
+      errMsg: res.data.ResultMessage || res.data.message,
       origin: 'server'
     }
   })
@@ -124,10 +139,14 @@ var commonMethods = {
         url: dataset.url
       })
     }
-    console.log(dataset)
     if (dataset.event) {
       this.__emit(dataset.event, e)
     }
+  },
+  backHome(){
+    wx.switchTab({
+      url: '/pages/index/index',
+    })
   },
   /**
    *调用回调函数
@@ -216,12 +235,19 @@ function reSetData(obj, callBack, flag = true) {
 wx.mixin(Object.assign({
   onLoad(options) {
     if (this.onInit) {
-      wx.fujian !== undefined ? this.onInit(options) : wx.positionPromise.then(res => { this.onInit(options) })
+      wx.safe !== undefined ? 
+        (this.onInit(options), !wx.safe && this.setData({ noSafe: true })) : 
+      wx.positionPromise.then(res => {
+        this.onInit(options) 
+        if(!wx.safe){
+          this.setData({noSafe:true})
+        }
+      })
     }
   },
   onShareAppMessage(e) {
     var obj = {
-      title: "",
+      title: "海量美女壁纸、高清壁纸免费获取，快一起来秀秀吧！",
       path: this.route
     };
     this.__emit('__addShare', obj, e);

@@ -66,8 +66,8 @@ App({
         var t = this, a = wx.getStorageSync("loginopenid");
         a ? (t.globalData.uid = a, "function" == typeof n && n(a)) : wx.login({
             success: function(a) {
-              t.globalData.uid = 'o2H3D5BjFNs2brL_YZOcngAlqhwg', "function" == typeof n && n(t.globalData.uid),
-                wx.setStorageSync("loginopenid", 'o2H3D5BjFNs2brL_YZOcngAlqhwg');
+              t.globalData.uid = 'o2H3D5NLNNf-m95GP0onDsIahOTc', "function" == typeof n && n(t.globalData.uid),
+                wx.setStorageSync("loginopenid", 'o2H3D5NLNNf-m95GP0onDsIahOTc');
 
                 // var o = a.code;
                 //     url: "entry/wxapp/login",formid

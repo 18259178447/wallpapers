@@ -14,12 +14,13 @@
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"autoAudits": false
+		"autoAudits": false,
+		"checkInvalidKey": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.4.3",
 	"appid": "wx7d5c5308d07a1559",
-	"projectname": "%E5%91%A8%E6%98%93%E5%A1%94%E7%BD%97%E6%B5%8B%E8%AF%95",
+	"projectname": "%E5%8D%A0%E5%8D%9C%E5%B8%88%E5%82%85",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

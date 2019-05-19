@@ -1,0 +1,5 @@
+/* components/ladloop/ladloop.wxss */
+.hide{
+  transform: translateX(100%);
+  position: absolute;z-index: -1
+}

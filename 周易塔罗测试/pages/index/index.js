@@ -20,6 +20,14 @@ Page({
     home_bottom_navbox: "none",
     shownormalpage: !1
   },
+  todayquiz(e){
+    var index = e.target.dataset.index;
+    if(index === undefined) return;
+    var { title, quiz_id} = this.data.days[index];
+    wx.navigateTo({
+      url: `/pkgquiz/quiz/quiz?id=${quiz_id}&title=${title}src=14`,
+    })
+  },
   playgame: function (t) {
     var n = t.currentTarget.dataset.clicktype, i = t.currentTarget.dataset.quiz_id;
      a.setData({
@@ -102,23 +110,24 @@ Page({
       });
   },
   initPageData: function () {
-    wx.request({
-      url: e.globalData.host + "/App/index/getWxAppBanners",
-      header: {
-        "content-type": "application/x-www-form-urlencoded"
-      },
-      method: "POST",
-      data: {
-        env: e.globalData.env,
-        ver: e.globalData.ver,
-        appid: e.globalData.appid
-      },
-      success: function (e) {
-        a.setData({
-          banners: e.data
-        });
-      }
-    }), wx.request({
+    // wx.request({
+    //   url: e.globalData.host + "/App/index/getWxAppBanners",
+    //   header: {
+    //     "content-type": "application/x-www-form-urlencoded"
+    //   },
+    //   method: "POST",
+    //   data: {
+    //     env: e.globalData.env,
+    //     ver: e.globalData.ver,
+    //     appid: e.globalData.appid
+    //   },
+    //   success: function (e) {
+    //     a.setData({
+    //       banners: e.data
+    //     });
+    //   }
+    // }),
+     wx.request({
       url: e.globalData.host + "/App/index/getRecommend",
       header: {
         "content-type": "application/x-www-form-urlencoded"
@@ -151,7 +160,24 @@ Page({
           list: i
         }), n++;
       }
-    }), wx.hideLoading(), this.checkDailydata();
+      }), wx.hideLoading(), wx.request({
+        url: e.globalData.host + "/App/Index/getDailyQuiz",
+        header: {
+          "content-type": "application/x-www-form-urlencoded"
+        },
+        method: "POST",
+        data: {
+          env: e.globalData.env,
+          ver: e.globalData.ver
+        },
+        success: function (e) {
+          if (e.data && e.data.list && e.data.list.length){
+            a.setData({
+              days: e.data.list
+            })
+          }
+        }
+      });
   },
   onReady: function () { },
   onShow: function () { },

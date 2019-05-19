@@ -1,3 +1,13 @@
+.day-list-box{
+padding: 0 12px;
+margin-top: 20rpx;
+}
+.day-list-item{
+  font-size: 32rpx;
+  line-height: 58rpx;
+  color: #ff7585;
+  text-decoration: underline
+}
 .page-section-title {
     padding: 0;
 }

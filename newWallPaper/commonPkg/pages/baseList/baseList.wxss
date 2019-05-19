@@ -1,0 +1,2 @@
+/* commonPkg/pages/baseList/baseList.wxss */
+.page-list{overflow: hidden}

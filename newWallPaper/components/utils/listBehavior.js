@@ -88,16 +88,26 @@ module.exports = Behavior({
       if (this.isLoading) return;
       this.isLoading = !0;
       return wx._request({
-        data: Object.assign({
+        data: Object.assign( wx.safe ? {
           pageindex: this.pageIndex,
           pagesize: this.pageSize || 20
-        }, this.params),
+        } : {page:this.pageIndex + 1}, this.params),
         url: this.interfaceName
       }).then((res) => {
-          var __data = res.Data;
-          var obj = {};
-          this.isLoading = !1;
-          this.hasNext = __data === null ? !0 : (__data.hasNext || __data.HasNext);
+        var obj = {};
+        this.isLoading = !1;
+          if (wx.safe) {
+            var __data = res.Data;
+            this.hasNext = __data === null ? !0 : (__data.hasNext || __data.HasNext);
+          }else{
+            __data = {
+              DataList: res.data || []
+            };
+            if(!this.every){
+              this.every = __data.DataList.length;
+            }
+            this.hasNext = __data.DataList.length >= this.every
+          }
           this.pageIndex++;
           if (!this.hasNext) {
             obj.LoadingText = ''
@@ -121,11 +131,12 @@ module.exports = Behavior({
         });
     },
     __dealWithData(data, obj) {
-      obj.dataList = this.data.dataList.concat(data.DataList || []);
-      obj.dataList = filter.dones(obj.dataList);
-      if (obj.dataList.length === 0) (obj.listStatus = 'reject')
+      data = this.correctData ? this.correctData(data, obj) : (data.DataList || []);
+      var len = this.data.dataList.length + data.length;
+      Object.assign(obj, getDataConcatObj(this.data.dataList, filter.dones(data, this.filterFn || 'wallpaper')));
+      if (len === 0) (obj.listStatus = 'reject')
       else{
-        obj.dataList.length < 6 && (obj.LoadingText = '');
+        len < 6 && (obj.LoadingText = '');
         this.data.listStatus !== 'resolve' && (obj.listStatus = 'resolve')
       }
       this.setData(obj)
@@ -137,3 +148,14 @@ module.exports = Behavior({
     }
   }
 })
+
+
+function getDataConcatObj(sourceArr,targetArr,key = 'dataList'){
+   if(!targetArr || !targetArr.length) return {};
+  var sourceLen = sourceArr.length;
+  var obj = {};
+  targetArr.forEach((item,index)=>{
+    obj[`${key}[${sourceLen + index}]`] = item;
+  })
+  return obj;
+}

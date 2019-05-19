@@ -5,8 +5,10 @@ module.exports = {
     WallpaperList:'List/WallpaperList',
     OriginalList:'List/OriginalList',
     AlbumList:'List/AlbumList',
+    AlbumContent:'List/AlbumContent',
     SearchList:'List/SearchList',
     Categorys:'List/Categorys',
+    CategoryContent:'List/CategoryContent',
 
   }
 }

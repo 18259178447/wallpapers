@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "ladloop": "/myAd/ladloop/ladloop",
+    "lad": "/myAd/lad/lad"
+  }
+}
+
+
+<ladloop count="2"></ladloop>
+<lad id="lad"></lad>

@@ -122,6 +122,8 @@ radio .wx-radio-input.wx-radio-input-checked::before {
     width: 365rpx;
     height: 93rpx;
     margin-top: 80rpx;
+    position: relative;
+    z-index: 2
 }
 
 .sc_btn image {

@@ -1,3 +1,4 @@
+<ad-fn id="ad-fn" viewTip="点击广告后查看分析" tip="恭喜，请继续吧！"></ad-fn>
 <view class="select_wrap">
     <image class="sw_bg" mode="widthFix" src="../assets/select_bg.png"></image>
     <image class="sw_card_num" mode="widthFix" src="../assets/select_card_{{selectCardTotal}}.png"></image>

@@ -92,35 +92,37 @@ module.exports = {
         for (var t in e) e[t].img && (n = n.concat([ e[t].img ]));
         return n;
     },
-    getNewQuestion: function(e, n, t, a, i, r) {
-        var o = {
-            type: 11,
-            hasquestion: 0,
-            hasimg: 0,
-            hasaudio: 0,
-            hasanswerimg: 0,
-            domindex: ++t,
-            qNum: e + 1,
-            imageArr: [],
-            answerArr: [],
-            adbanner: 0
-        };
-        if (n.question && (o.hasquestion = 1, o.question = n.question), n.img && (o.hasimg = 1, 
-        o.img = n.img), n.audio && (o.hasaudio = 1, o.audio = n.audio), 3 == i && 1 == r && (o.adbanner = 1), 
-        n.answer) for (var s in n.answer) {
-            n.answer[s].img && (o.hasanswerimg = 1, o.imageArr.push({
-                option_image: n.answer[s].img,
-                option_key: s
-            }));
-            var d = n.answer[s], m = s + ". " + n.answer[s].title;
-            1 == a ? d = s.toUpperCase() : 2 == a ? d = d.weight : 3 == a && (d = d.next), o.answerArr.push({
-                answerdesc: m,
-                value: d,
-                answerindex: s,
-                btnstatus: !0,
-                domindex: t
-            });
-        }
-        return o;
-    }
+  getNewQuestion: function (e, n, t, a, i, r) {
+  
+    var o = {
+      type: 11,
+      hasquestion: 0,
+      hasimg: 0,
+      hasaudio: 0,
+      hasanswerimg: 0,
+      domindex: ++t,
+      qNum: e + 1,
+      imageArr: [],
+      answerArr: [],
+      adbanner: 0
+    };
+    if (n.question && (o.hasquestion = 1, o.question = n.question), n.img && (o.hasimg = 1,
+      o.img = n.img), n.audio && (o.hasaudio = 1, o.audio = n.audio), 3 == i && 1 == r && (o.adbanner = 1),
+      n.answer) for (var s in n.answer) {
+        n.answer[s].img && (o.hasanswerimg = 1, o.imageArr.push({
+          option_image: n.answer[s].img,
+          option_key: s
+        }));
+        var d = n.answer[s], m = s + ". " + n.answer[s].title;
+        1 == a ? d = s.toUpperCase() : 2 == a ? d = d.weight : 3 == a ? d = d.next : 8 == a && (d = s.toUpperCase()),
+          o.answerArr.push({
+            answerdesc: m,
+            value: d,
+            answerindex: s,
+            btnstatus: !0,
+            domindex: t
+          });
+      }
+    return o;
+  }
 };

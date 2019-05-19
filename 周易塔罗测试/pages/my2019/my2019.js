@@ -28,11 +28,18 @@ Page({
       sexy: t.detail.value
     });
   },
-  draw: function (e) {
+  draw(e){
+    if (e.detail.userInfo) {
+      this.selectComponent('#ad-fn').openAd(null, () => {
+        this._draw(e)
+      });
+    }
+  },
+  _draw: function (e) {
     if ("" != this.data.name) {
       var a = this;
       "getUserInfo:fail auth deny" != e.detail.errMsg ? (wx.showLoading({
-        title: "结果生成中"
+        title: "分析中,多等一等啦"
       }), wx.request({
         url: "https://app.unjs.com/app_phpv2/tuodanceshi/wjs/?",
         data: {

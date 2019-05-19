@@ -6,17 +6,29 @@ module.exports = {
     return []
   },
   wallpaper(item) {
-    return {
+    return wx.safe ? {
       Image: item.Image,
       ThumbImage: item.ThumbImage,
       id: item.PicInfoID
+    }:{
+        Image: item.thumb,
+        ThumbImage: item.thumb,
+        id: item.id      
     }
   },
   album(item){
+    if(wx.safe){
+      return {
+        AlbumName: item.AlbumName,
+        ThumbImage: item.ImgUrl,
+        id: item.AlbumID
+      }
+    }
+    if(item.appid) return {};
     return {
-      AlbumName: item.AlbumName,
-      ThumbImage: item.ImgUrl,
-      id: item.AlbumID
+      AlbumName: item.advname,
+      ThumbImage: item.thumb,
+      id: /id=(\d+)\b/.test(item.link) && +RegExp.$1
     }
   }
 }

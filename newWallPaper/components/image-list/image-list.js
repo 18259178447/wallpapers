@@ -15,7 +15,13 @@ Component({
   data: {
     isFull
   },
-
+  ready(){
+    if(!wx.safe){
+      this.setData({
+        noSafe:true
+      })
+    }
+  },
   /**
    * 组件的方法列表
    */

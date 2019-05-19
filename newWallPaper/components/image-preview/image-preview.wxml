@@ -1,7 +1,7 @@
 <swiper duration="300" class="preview" bindchange="changeHandle" circular="{{circular}}" current="{{current}}">
   <swiper-item class="preview-swiper-item" wx:for="{{imgs}}" wx:key="{{item.id}}">
-      <image class='preview-thumbnail' src='{{item.ThumbImage}}'>
-        <image class='preview-high-definition' src='{{item.Image}}'></image>
+      <image mode='aspectFill' class='preview-thumbnail' src='{{item.ThumbImage}}'>
+        <image mode='aspectFill' class='preview-high-definition' src='{{item.Image}}'></image>
       </image>
   </swiper-item>
 </swiper>

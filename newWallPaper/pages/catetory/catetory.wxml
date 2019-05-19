@@ -1,10 +1,8 @@
-<view class='page flex-c theme-bgcolor'>
+<view class='page flex-c theme-bgcolor' wx:if="{{!noSafe}}">
   <header-box capsule>
     <share-search></share-search>
   </header-box>
-  <view class='catetory-body flex-c__1 flex'>
-
-
+  <view class='catetory-body flex-c__1 flex' >
     <view class='left-nav' bindtap='event'>
       <scroll-view scroll-y class='left-nav__scroll full-height'>
         <view wx:for="{{mainCategorys}}" wx:key="{{item.CategoryID}}" class='left-nav__item {{index === currentIndex ? "left-nav__item_on" : ""}}' data-index="{{index}}" data-event="navSwitch">{{item.CategoryTitle}}</view>
@@ -15,7 +13,7 @@
     <view class="right-content flex__1">
       <scroll-view scroll-y class='right-content__scroll full-height'>
         <view class='sub-catetory' bindtap='event'>
-          <view class='sub-catetory__item' wx:for="{{subCategory}}" wx:key="{{item.SubID}}" data-url="/commonPkg/subCategory/subCategory?id={{item.id}}&index={{index}}">
+          <view class='sub-catetory__item' wx:for="{{subCategory}}" wx:key="{{item.SubID}}" data-url="/commonPkg/pages/subCategory/subCategory?id={{item.id}}&label={{item.SubName}}">
             <image mode='aspectFill' class='sub-catetory__item-image default' src='{{item.IconUrl}}'></image>
             <text class='sub-catetory__item-name line-e'>{{item.SubName}}</text>
           </view>
@@ -26,8 +24,23 @@
         <view class="height20"></view>
       </scroll-view>
     </view>
-
-
-
   </view>
+
+</view>
+
+
+<view class='page flex-c theme-bgcolor' wx:else>
+  <header-box capsule wx:if="{{subCategory.length}}">
+    <share-search></share-search>
+    <catetory-nav navArr="{{subCategory}}" current="{{currentIndex}}" bindchange="navChanges"></catetory-nav>
+  </header-box>
+  <view class='hidden flex-c__1'>
+    <swiper duration="{{200}}" class="page-swiper full-height" current="{{currentIndex}}" bindchange="navChanges">
+      <swiper-item wx:for="{{subCategory}}" wx:key="{{item.id}}">
+        <image-list id="image-list{{index}}">
+        </image-list>
+      </swiper-item>
+    </swiper>
+  </view>
+
 </view>

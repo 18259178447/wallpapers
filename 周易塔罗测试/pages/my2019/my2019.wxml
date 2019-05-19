@@ -1,3 +1,4 @@
+<ad-fn id="ad-fn" viewTip="点击广告后开始测试" tip="恭喜，请继续测试吧！"></ad-fn>
 <view>
     <view class="top_bg">
         <image class="index_bg1" src="../../assets/my2019/index_bg1.png"></image>

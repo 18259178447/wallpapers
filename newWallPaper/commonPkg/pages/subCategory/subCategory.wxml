@@ -1,0 +1,14 @@
+<view class="page flex-c">
+  <header-box capsule wx:if="{{navArr.length}}">
+    <share-search back></share-search>
+    <catetory-nav navArr="{{navArr}}" current="{{currentIndex}}" bindchange="navChanges"></catetory-nav>
+  </header-box>
+  <view class='hidden flex-c__1'>
+    <swiper duration="{{200}}" class="page-swiper full-height" current="{{currentIndex}}" bindchange="navChanges">
+      <swiper-item wx:for="{{navArr}}" wx:key="{{item.id}}">
+        <image-list id="image-list{{index}}">
+        </image-list>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>

@@ -87,7 +87,14 @@ Page({
       });
     }, 100);
   },
-  toResult: function () {
+  toResult(){
+    this.selectComponent('#ad-fn').openAd(null, () => {
+      this._toResult()
+    },()=>{
+      this._toResult()
+    });
+  },
+  _toResult: function () {
     var t = this;
     if (t.data.selectCard.length < t.data.selectCardTotal) wx.showModal({
       title: "提示",
