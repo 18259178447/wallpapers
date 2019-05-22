@@ -107,6 +107,14 @@ class Tool {
       return wx.safe = false;
     })
   }
+  downloadImage(url){
+    url = url.replace(/https?/, 'https');
+    return wx.promiseApi('downloadFile',{url}).then(res=>{
+      return wx.promiseApi("saveImageToPhotosAlbum", {
+        filePath: res.tempFilePath
+      })
+    })
+  }
 }
 
 wx.Tool = new Tool();

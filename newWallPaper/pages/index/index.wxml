@@ -20,7 +20,7 @@
             <view class='module__body'>
               <scroll-x innerSwiper="208rpx">
                 <view class='module__image-box flex' bindtap='event'>
-                  <image wx:for="{{albums}}" wx:key="{{item.id}}" data-url="commonPkg/pages/albumDetail/albumDetail?id={{item.id}}" class='module__image-item defalut module__image-item_size_354x188' src='{{item.ThumbImage}}'></image>
+                  <image wx:for="{{albums}}" wx:key="{{item.id}}" data-url="commonPkg/pages/albumDetail/albumDetail?id={{item.id}}" class='module__image-item default module__image-item_size_354x188' src='{{item.ThumbImage}}'></image>
                 </view>
               </scroll-x>
             </view>
@@ -35,7 +35,7 @@
             <view class='module__body'>
               <scroll-x innerSwiper="518rpx">
                 <view class='module__image-box flex'>
-                  <image wx:for="{{origins}}" wx:key="{{item.id}}" class='module__image-item defalut module__image-item_size_280x498' src='{{item.ThumbImage}}' data-index="{{index}}" bindtap="previewHandle"></image>
+                  <image wx:for="{{origins}}" wx:key="{{item.id}}" class='module__image-item default module__image-item_size_280x498' src='{{item.ThumbImage}}' data-index="{{index}}" bindtap="previewHandle"></image>
                 </view>
               </scroll-x>
             </view>

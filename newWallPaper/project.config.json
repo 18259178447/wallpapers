@@ -40,7 +40,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 5,
+			"current": 7,
 			"list": [
 				{
 					"id": -1,
@@ -81,6 +81,21 @@
 					"id": -1,
 					"name": "子分类",
 					"pathName": "commonPkg/pages/subCategory/subCategory",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "预览",
+					"pathName": "pages/preview/preview",
+					"query": "safe=1&wallpaper=%7B%22Image%22%3A%22http%3A%2F%2Ffx1.313515.com%2Fc532e8bfbdb042e9a8c6967ed2578bd1.jpg%22%2C%22ThumbImage%22%3A%22http%3A%2F%2Ffx1.313515.com%2Fc532e8bfbdb042e9a8c6967ed2578bd1.jpg%3FimageMogr2%2Fauto-orient%2Fthumbnail%2F!300x533r%22%2C%22id%22%3A717577%7D",
 					"scene": null
 				}
 			]

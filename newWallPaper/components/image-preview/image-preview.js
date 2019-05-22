@@ -18,13 +18,14 @@ Component({
     current:0,
     circular:true
   },
-
+  detached(){
+    this.page = null;
+  },
   /**
    * 组件的方法列表
    */
   methods: {
     init(param){
-      console.log(param)
       var { index=0,page } = param;
       var obj = {}, 
           current = index % 3,
@@ -51,7 +52,7 @@ Component({
       this.currentIndex = current;
       this.dataIndex = index;
       this.page = page;
-      
+      return this; 
     },
     changeHandle(e){
       var currentIndex = e.detail.current,
@@ -68,7 +69,7 @@ Component({
       if (dataIndex === len) dataIndex = 0;
       this.currentIndex = currentIndex;
       this.dataIndex = dataIndex;
-      wx.showLoading({ title: '请稍候...', mask: true });
+      wx.showLoading({ title: '加载中...', mask: true });
       if (dataIndex === 0 && page.hasNext) {
         obj.circular = false;
         setTimeout(()=>{

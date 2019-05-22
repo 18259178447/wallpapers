@@ -7,14 +7,17 @@
 
   <block wx:else>
     <view class="wallpaper-box flex flex_h_sb flex_wrap" bindtap='previewHandle'>
-      <image mode='aspectFill' wx:for="{{dataList}}" wx:key="{{item.id}}" src='{{item.ThumbImage}}' data-index="{{index}}" class='wallpaper-box__image defalut {{isFull && !noSafe ? "wallpaper-box__image_x" : ""}}'></image>
+      <image mode='aspectFill' wx:for="{{dataList}}" wx:key="{{item.id}}" src='{{item.ThumbImage}}' data-index="{{index}}" class='wallpaper-box__image default {{isFull && !noSafe ? "wallpaper-box__image_x" : ""}}'></image>
     </view>
     <view class='loadingText'>{{LoadingText}}</view>
   </block>
 
   <footer-box wx:if="{{placeholdFooter}}" placehold="{{placeholdFooter}}"></footer-box>
 </scroll-view>
-<!-- <suspension hide="{{isHideBackTop}}" bindback="backTop" placehold="{{placeholdFooter}}"></suspension> -->
+
+<suspension wx:if="{{!isHideBackTop}}" placehold="{{placeholdFooter}}">
+  <mini-icon type="back-top" bindtap='backTop'></mini-icon>
+</suspension>
 
 
 

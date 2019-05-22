@@ -6,6 +6,9 @@ module.exports = {
     return []
   },
   wallpaper(item) {
+    //http://filebzx01.313515.com
+    //http://filebzx002.313515.com 
+    //http://fx1.313515.com
     return wx.safe ? {
       Image: item.Image,
       ThumbImage: item.ThumbImage,

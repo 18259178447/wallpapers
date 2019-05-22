@@ -20,6 +20,7 @@
     "footer-box": "/components/footer/footer-box/footer-box",
     "back-title": "/components/header/back-title/back-title",
     "back-btn": "/components/back-btn/back-btn",
+    "suspension": "/components/suspension/suspension",
     "catetory-nav": "/components/header/catetory-nav/catetory-nav",
     "share-search": "/components/header/share-search/share-search",
     "image-list": "/components/image-list/image-list",

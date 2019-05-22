@@ -77,7 +77,8 @@
   },
   "sitemapLocation": "sitemap.json",
   "navigateToMiniProgramAppIdList": [
-    "wx5bfe2eea969f4cec"
+    "wx5bfe2eea969f4cec",
+    "wx2d3f209d87668933"
   ],
   "usingComponents": {
     "ad-fn": "/components/myAd/ad-fn/ad-fn",

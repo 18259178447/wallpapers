@@ -43,6 +43,7 @@ wx.Page({
     })
   },
   selectLabel(e) {
+    if (e.target.dataset.word === undefined) return
     this.confirmHandle(e.target.dataset.word)
   },
   searchInit() {//搜索初始化并 加载数据

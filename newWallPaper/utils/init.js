@@ -9,6 +9,7 @@ try {
   config = {}
 }
 wx.windowWidth = sysInfo.windowWidth
+wx.windowHeight = sysInfo.windowHeight
 //添加请求头
 wx.requestHeader = {
   deviceInfo: sign.header({

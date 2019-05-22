@@ -1,0 +1,3 @@
+<footer-box _class="fixed">
+  <slot></slot>
+</footer-box>

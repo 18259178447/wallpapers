@@ -74,9 +74,9 @@ module.exports = Behavior({
       this.scrollThrottle(e);
     },
     scrollThrottle: wx.throttle(function (e) {
-      var scrollTop = e.detail.scrollTop, obj = {};
-      // var _isHideBackTop = !(scrollTop > 800 && deltaY > 0 && scrollTop + wx.windowHeight < scrollHeight);
-      var _isHideBackTop = scrollTop < 1200;
+      var { scrollTop, scrollHeight, deltaY} = e.detail, obj = {};
+      var _isHideBackTop = !(scrollTop > 800 && deltaY > 0 && scrollTop + wx.windowHeight < scrollHeight);
+      // var _isHideBackTop = scrollTop < 1200;
       if (_isHideBackTop !== this.data.isHideBackTop) {//用于判断是否需要隐藏返回顶部按钮
         obj.isHideBackTop = _isHideBackTop;
       }

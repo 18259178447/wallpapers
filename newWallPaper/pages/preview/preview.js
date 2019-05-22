@@ -5,36 +5,89 @@ wx.Page({
    * 页面的初始数据
    */
   data: {
-
-  },
-  onInit(){
-    this.selectComponent('#image-preview').init(wx.previewObj)
-    wx.previewObj = null;
-    return;
-    var data = [{ "PicInfoID": 704493, "Title": "暗蓝色系风景 森林中的微光拼接壁纸8", "ThumbImage": "http://shoppic.gao7.com/9f9a127f6079430bbe8108131d79c452.jpg?imageMogr2/auto-orient/thumbnail/!300x533r", "Image": "http://shoppic.gao7.com/9f9a127f6079430bbe8108131d79c452.jpg", "VideoUrl": "", "PriceType": 0, "Labels": "风景建筑,摄影,夜景,自然风景", "Source": "网友上传", "AuthorID": 2646776, "AuthorName": "枪蹦狗友", "AuthorAvatar": "http://resources.gao7.com/edm/udb/75.png", "IsUserUpload": 0, "LockType": 0 }, { "PicInfoID": 704487, "Title": "暗蓝色系风景 森林中的微光拼接壁纸2", "ThumbImage": "http://shoppic.gao7.com/d6cd55fcb8c246479e2d4418e9ec1709.jpg?imageMogr2/auto-orient/thumbnail/!300x533r", "Image": "http://shoppic.gao7.com/d6cd55fcb8c246479e2d4418e9ec1709.jpg", "VideoUrl": "", "PriceType": 0, "Labels": "风景建筑,摄影,夜景,自然风景", "Source": "网友上传", "AuthorID": 2646776, "AuthorName": "枪蹦狗友", "AuthorAvatar": "http://resources.gao7.com/edm/udb/75.png", "IsUserUpload": 0, "LockType": 0 }];
-    var count = 0;
-    for (var i = 0; i < 3; i++) {
-      data = data.concat(data)
+    isBtnsEnter:false,//
+    isBtnsHidden:true,//
+    isSwitchBtnShow:true,//
+    isReSetting:false,
+    header: {
+      title: '',
+      backgroundColor: 'transparent',
+      type: 'fixed'
     }
-
-    this.selectComponent('#image-preview').init({
-      index: 0,
-      page: {
-        dataCaches: data,
-        hasNext: true,
-        getData() {
-          count++;
-          if (count === 3) {
-            this.hasNext = false;
-          }
-          for (var i = 0; i < 3; i++) {
-            data = data.concat(data)
-          }
-          this.dataCaches.concat(data)
-          return Promise.resolve(data)
-        }
-
-      }
+  },
+  onUnload(){
+    this.previewCom = null;
+  },
+  onInit({ safe, wallpaper }){
+    if (safe && wx.safe != !!+safe) return this.backHome();
+    this.previewCom = this.selectComponent('#image-preview');
+    if(wallpaper){
+      wallpaper = JSON.parse(decodeURIComponent(wallpaper));
+      this.previewCom.init({
+        page: {
+          data:{
+            dataList:[wallpaper]
+          },
+          hasNext:false
+        },
+        index:0
+      })
+    }else{
+      this.previewCom.init(wx.previewObj)
+      wx.previewObj = null;
+    }
+    wx.promiseApi('getSetting').then(res=>{
+      if (res.authSetting["scope.writePhotosAlbum"] === false) {
+        this.setData({
+          isReSetting: true
+        })
+      }     
     })
+  },
+
+  dayHandle(){
+    wx.msg("此功能暂未开放,敬请期待!")
+  },
+  collectHandle(){
+    wx.msg("此功能暂未开放,敬请期待!")
+  },
+  downloadHandle(){
+    var { Image } = this.previewCom.data.imgs[this.previewCom.currentIndex];
+    wx.showLoading({title: '下载中,请稍后...',mask: !0});
+    wx.Tool.downloadImage(Image).then(res=>{
+      wx.msg("下载成功!");
+    }).catch(e => {
+      wx.hideLoading();
+      if (e.errMsg === "saveImageToPhotosAlbum:fail auth deny") {
+        this.setData({ isReSetting : true})
+       return wx.showModal({title: '下载失败',content: '需要授权后才可下载'})
+      }
+      wx.showModal({title: '下载失败',content: '请到我的页面联系管理员！',})
+    })
+  },
+  reSettingHandle(e){
+    var authSetting = e.detail.authSetting;
+    if (authSetting['scope.writePhotosAlbum']){
+      this.setData({ isReSetting: false })
+      wx.showModal({ title: '授权成功', content: '请重新下载吧！' })
+    }else{
+      wx.showModal({ title: '授权失败', content: '需要授权后才可下载壁纸哦' })
+    }
+  },
+
+  toggleBtnsHandle(){
+    this.setData({
+      isBtnsHidden: !this.data.isBtnsHidden
+    },()=>{
+      this.setData({
+        isBtnsEnter: !this.data.isBtnsEnter
+      })
+    })
+  },
+  __addShare(obj){
+    obj.title = "送你一张壁纸，快来和我一起换上吧！";
+    var item = this.previewCom.data.imgs[this.previewCom.currentIndex]
+    obj.path = `${this.route}?safe=${wx.safe ? 1 : 0}&wallpaper=${encodeURIComponent(JSON.stringify(item))}`;
   }
 })
+

@@ -13,7 +13,7 @@ wx.Page({
    * 生命周期函数--监听页面加载
    */
   onInit: function ({ id = 39280,safe}) {
-    if (safe && wx.safe != safe) return this.backHome();
+    if (safe && wx.safe != !!+safe) return this.backHome();
 
     if(wx.safe){
       this.selectComponent('#image-list').init({

@@ -86,7 +86,7 @@ function getMiniData(_type){
       return {
         appid: 'wx5bfe2eea969f4cec',
         title: '手机壁纸秀秀',
-        image: "https://wx.qlogo.cn/mmhead/Q3auHgzwzM5VEwGPrZsIVic1SAXqevEjTYvxackthZgIjnYibibqrupWQ/0",
+        image: "https://wx.qlogo.cn/mmhead/Q3auHgzwzM5VEwGPrZsIVic1SAXqevEjTibqQzHFSLyTtqPUqKc2libKw/0",
         desc: "海量壁纸分享平台。手机壁纸、动漫壁纸、美女壁纸、潮流壁纸、风景壁纸、清新壁纸应有尽有，让您的手机秀翻天"
       }
       break;

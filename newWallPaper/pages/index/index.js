@@ -94,5 +94,21 @@ wx.Page({
       })
     }
 
+  },
+  previewHandle(e){
+    var index = e.target.dataset.index;
+    if (index === undefined) return;
+    wx.previewObj = {
+      page: {
+        data:{
+          dataList: this.data.origins
+        },
+        hasNext:false
+      },
+      index
+    }
+    wx.navigateTo({
+      url: '/pages/preview/preview',
+    })
   }
 })

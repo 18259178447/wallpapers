@@ -1,2 +1,9 @@
-<!--pages/my/my.wxml-->
-<text>pages/my/my.wxml</text>
+<header-box>
+  <view class='my-title' bindlongpress='test'>我的</view>
+  <view class='my-btns'>
+      <button open-type='feedback' hover-class='none' class='my-btns__item my-btns__item_feedback'>意见反馈</button>
+      <button open-type='contact' hover-class='none' class='my-btns__item my-btns__item_contact'>联系我们</button>
+  </view>
+
+  <view style="height:300rpx" bindlongpress='open'></view>
+</header-box>

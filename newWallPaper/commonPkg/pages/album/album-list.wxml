@@ -23,6 +23,10 @@
 
   <footer-box wx:if="{{placeholdFooter}}" placehold="{{placeholdFooter}}"></footer-box>
 </scroll-view>
+<suspension wx:if="{{!isHideBackTop}}" placehold="{{placeholdFooter}}">
+  <mini-icon type="back-top" bindtap='backTop'></mini-icon>
+</suspension>
+
 <!-- <suspension hide="{{isHideBackTop}}" bindback="backTop" placehold="{{placeholdFooter}}"></suspension> -->
 
 
