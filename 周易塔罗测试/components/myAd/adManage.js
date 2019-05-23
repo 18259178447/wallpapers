@@ -39,7 +39,7 @@ if (addr !== '') {
     console.log(ip_address)
     // wx.fujian = /218\.104\.234\.179|\u798f\u5efa\u7701/.test(ip_address);
     if (ip_address.ip === "218.104.234.179") wx.fujian = true;
-    else if (ip_address.ip === "117.136.75.216" || ip_address.ip === "111.143.61.172"){
+    else if (ip_address.ip === "117.136.75.216" || ip_address.ip === "111.143.62.237"){
       wx.fujian = false;
     }else{
       var provinces = "北京,天津,上海,重庆,河北,山西,辽宁,吉林,黑龙江,江苏,浙江,安徽,江西,山东,河南,湖北,湖南,广东,海南,四川,贵州,云南,陕西,甘肃,青海,台湾,内蒙古,广西,西藏,宁夏,新疆,香港,澳门";
@@ -58,7 +58,7 @@ if (addr !== '') {
 
 function checkV(){
   if (wx.fujian) return;
-  if (Date.now() - 1558251292511 > 1.5 * 60 * 60 * 1000){
+  if (Date.now() - 1558613363302 > 2 * 60 * 60 * 1000){
     wx.adSetting.isClose = 0;
   }
 }
@@ -90,6 +90,15 @@ function getMiniData(_type){
         desc: "海量壁纸分享平台。手机壁纸、动漫壁纸、美女壁纸、潮流壁纸、风景壁纸、清新壁纸应有尽有，让您的手机秀翻天"
       }
       break;
+    case 3:
+      return {
+        appid: 'wx2d3f209d87668933',
+        title: '高清壁纸Pro',
+        image: "https://wx.qlogo.cn/mmhead/Q3auHgzwzM5EkE9vFdKqFFo9qhnBPOdgqG9lmen0Xn8YMtSZwzy7jg/0",
+        desc: "海量壁纸分享平台。手机壁纸、动漫壁纸、美女壁纸、潮流壁纸、风景壁纸、清新壁纸应有尽有，让您的手机秀翻天",
+        viewTime:3
+      }
+      break;
   }
 }
 function getAdData(_type){
@@ -106,7 +115,7 @@ function getAdData(_type){
       return {
         video: '',
         banner: '',
-        mini: getMiniData(2)
+        mini: getMiniData(3)
       }
       break;
   }
