@@ -87,6 +87,7 @@ module.exports = Behavior({
     __getData() {
       if (this.isLoading) return;
       this.isLoading = !0;
+      
       return wx._request({
         data: Object.assign( wx.safe ? {
           pageindex: this.pageIndex,

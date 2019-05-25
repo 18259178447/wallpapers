@@ -34,7 +34,6 @@
       "root": "commonPkg",
       "pages": [
         "pages/subCategory/subCategory",
-        "pages/album/album",
         "pages/baseList/baseList",
         "pages/albumDetail/albumDetail"
       ]

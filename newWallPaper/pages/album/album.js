@@ -29,13 +29,13 @@ wx.Page({
     currentIndex = +currentIndex;
     wx.Tool.getCatetorys().then(categorys => {
       this.setData({
-        navArr: categorys.mainCategorys.map(item=>{
-           return {
-             title: item.CategoryTitle,
-             id:item.CategoryID,
-             image:item.Image
-           }
-        }),
+        navArr: [{ title: "最新", id: 0 }].concat(categorys.mainCategorys.map(item => {
+          return {
+            title: item.CategoryTitle,
+            id: item.CategoryID,
+            image: item.Image
+          }
+        })),
         currentIndex
       },()=>{
         this.navChanges(currentIndex)
