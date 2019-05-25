@@ -1,4 +1,4 @@
-<view class="page flex-c">
+<view class="page flex-c" wx:if="{{!noSafe}}">
   <header-box capsule wx:if="{{navArr.length}}">
     <share-search back></share-search>
     <catetory-nav navArr="{{navArr}}" current="{{currentIndex}}" bindchange="navChanges"></catetory-nav>
@@ -10,5 +10,15 @@
         </album-list>
       </swiper-item>
     </swiper>
+  </view>
+</view>
+
+
+<view class="page flex-c" wx:else>
+  <header-box capsule>
+    <share-search back></share-search>
+  </header-box>
+  <view class='hidden flex-c__1'>
+    <album-list id="image-list0"></album-list>
   </view>
 </view>

@@ -237,7 +237,7 @@ wx.mixin(Object.assign({
   onLoad(options) {
     if (this.onInit) {
       wx.safe !== undefined ? 
-        (this.onInit(options), !wx.safe && this.setData({ noSafe: true })) : 
+        (!wx.safe && this.setData({ noSafe: true }),this.onInit(options)) : 
       wx.positionPromise.then(res => {
         this.onInit(options) 
         if(!wx.safe){

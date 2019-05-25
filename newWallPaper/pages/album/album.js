@@ -13,7 +13,19 @@ wx.Page({
    * 生命周期函数--监听页面加载
    */
   onInit({ currentIndex = 0 }) {
-    if (!wx.safe) return this.backHome();
+    if (!wx.safe) return this.selectComponent('#image-list0').init({
+      interfaceName: '',
+      filterFn: 'album',
+      data: {
+        "do": "Iad",
+        m: "yj_erha"
+      },
+      correctData(data,obj){
+        obj.LoadingText = ""
+        this.hasNext = false;
+        return data.DataList;
+      }
+    });
     currentIndex = +currentIndex;
     wx.Tool.getCatetorys().then(categorys => {
       this.setData({

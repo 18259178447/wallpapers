@@ -132,8 +132,10 @@ module.exports = Behavior({
     },
     __dealWithData(data, obj) {
       data = this.correctData ? this.correctData(data, obj) : (data.DataList || []);
+      
       var len = this.data.dataList.length + data.length;
       Object.assign(obj, getDataConcatObj(this.data.dataList, filter.dones(data, this.filterFn || 'wallpaper')));
+      
       if (len === 0) (obj.listStatus = 'reject')
       else{
         len < 6 && (obj.LoadingText = '');
