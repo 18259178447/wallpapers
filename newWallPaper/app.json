@@ -4,6 +4,7 @@
     "pages/preview/preview",
     "pages/search/search",
     "pages/catetory/catetory",
+    "pages/album/album",
     "pages/my/my"
   ],
   "window": {
@@ -50,6 +51,12 @@
         "text": "首页",
         "iconPath": "tabbar/home.png",
         "selectedIconPath": "tabbar/home-on.png"
+      },
+      {
+        "pagePath": "pages/album/album",
+        "text": "专辑",
+        "iconPath": "tabbar/album.png",
+        "selectedIconPath": "tabbar/album-on.png"
       },
       {
         "pagePath": "pages/catetory/catetory",

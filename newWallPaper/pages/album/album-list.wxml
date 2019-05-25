@@ -1,0 +1,29 @@
+<scroll-view class='list-scroll-view full-height' scroll-y enable-back-to-top scroll-top="{{scrollTop}}" bindscroll="onPageScroll_" bindscrolltolower="onReachBottom_" lower-threshold="150" throttle="{{true}}">
+  <header-box wx:if="{{placeholdHeader}}" placehold="{{placeholdHeader}}"></header-box>
+  
+  <slot></slot>
+
+  <page-screen wx:if="{{listStatus !== 'resolve'}}" status="{{listStatus}}"></page-screen>
+
+  <block wx:else>
+    <view class="album-list" bindtap='event'>
+      <view class='album-list__item flex' wx:for="{{dataList}}" wx:key="{{item.id}}" data-url="/commonPkg/pages/albumDetail/albumDetail?id={{item.id}}">
+          <view class='album-list__left pen'>
+              <view class='album-list__level'>{{index < 9 ? "0" : ""}}{{index + 1}}</view>
+              <view class='album-list__vol'>Vol</view>
+          </view>
+          <view class='album-list__right flex__1 pen'>
+              <image mode='aspectFill' class='album-list__image' src='{{item.ThumbImage}}'></image>
+              <view class='album-list__title'>{{item.AlbumName}}</view>
+          </view>      
+      </view>
+    </view> 
+    <view class='loadingText'>{{LoadingText}}</view>
+  </block>
+
+  <footer-box wx:if="{{placeholdFooter}}" placehold="{{placeholdFooter}}"></footer-box>
+</scroll-view>
+<!-- <suspension hide="{{isHideBackTop}}" bindback="backTop" placehold="{{placeholdFooter}}"></suspension> -->
+
+
+

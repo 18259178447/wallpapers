@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "album-list": "./album-list"
+  }
+}
