@@ -16,7 +16,7 @@ wx.adInitPromise = new Promise((res, rej) => {
   return wx.request({
     url: 'https://waiguamall.gao7.com/WeChat/Init',
     data:{
-      ver:2
+      ver:3
     },
     success: res,
     fail: rej

@@ -37,9 +37,22 @@ Component({
   },
   pageLifetimes: {
     show() {
-      if (!this.data.isHide && wx.AdLimit(this.data.name).remainCount > 0) {
+      if (!this.data.isHide && this.startTime) {
+        var viewTime = Date.now() - this.startTime;
+        if (this.data.adType === 2){
+          let isUnlock = viewTime / 1000 > wx.adData.mini.viewTime;
+          if(isUnlock){
+            wx.AdLimit(this.data.name).remainCount++;;
+          }else{
+          return  wx.showModal({
+              title: '提示',
+              content: `需要体验${wx.adData.mini.viewTime}秒哦`,
+            })
+          }
+        }
+        this.startTime = 0;
         this.callback ? this.callback() : this.adSuccess()
-        this.closeAd()
+        this.closeAd(1)
       }
     }
   },
@@ -65,7 +78,7 @@ Component({
           isHide: false,
           adType: 1
         })
-      } else if (this.loaded[1] && !this.miniClick) {
+      } else if (this.loaded[1]) {
         let obj = {
           isHide: false,
           adType: 2
@@ -105,6 +118,7 @@ Component({
       console.log('错误了banner')
     },
     adClick(e) {
+      this.startTime = Date.now();
       wx.AdLimit(this.data.name).remainCount++;
     },
     adMiniClick() {
@@ -112,8 +126,8 @@ Component({
       wx.navigateToMiniProgram({
         appId: this.data.mini.appid,
         success() {
-          _this.miniClick = true;
-          wx.AdLimit(_this.data.name).remainCount++;
+          _this.startTime = Date.now();
+          
         }
       })
     },

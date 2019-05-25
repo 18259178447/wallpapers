@@ -102,6 +102,7 @@ class Tool {
         return item.CategoryTitle === '清新可爱';
       })){
         data.unshift(data.splice(index,1)[0])
+        subCategorys.unshift(subCategorys.splice(index,1)[0])
       }
       categorys = {
         mainCategorys: data,

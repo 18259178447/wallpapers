@@ -1,5 +1,7 @@
 <image-preview id="image-preview" bindtap="toggleBtnsHandle"></image-preview>
 <back-title header="{{header}}" skin="back2"></back-title>
+<view class='daily-signature'></view>
+
 
 <view class="footer-btns pen">
     <view class='btns flex flex_h_sa pea {{isBtnsEnter ? "btns_enter" : ""}}' hidden='{{isBtnsHidden}}' bindtap='event'>

@@ -3,7 +3,7 @@
 
 /* 弹窗广告流量主 */
 
-.p-ad{
+.ad{
   position: fixed;
   top: 0;
   left: 0;
@@ -13,42 +13,93 @@
   overflow: hidden;
   pointer-events: none;
 }
-
-.p-ad-bg{
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-.p-ad-box{
+.ad__box{
   width: 100%;
   height: 100%;
   pointer-events: auto;
 }
-.p-ad-box.hide{
+.ad__box_hide{
   transform: translate(100%,0);
-  
 }
-
-/* .p-ad-mask{
-  background-color: rgba(0, 0, 0, 0.4);
+.ad__bg{
   width: 100%;
   height: 100%;
-} */
-.p-ad-content{
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.ad__body{
   background: #FFFFFF;
   border-radius: 12rpx;
-  width: 700rpx;
+  max-width: 700rpx;
   padding: 30rpx 20rpx;
   box-sizing: border-box;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-60%)
+  transform: translate(-50%,-60%);
 }
-.p-ad-content.chaping{
-  width: 490rpx;
-  padding: 40rpx 20rpx 30rpx;
+.ad__close-btn{
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+  width: 38rpx;
+  height: 38rpx;
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgdmlld0JveD0iMCAwIDMwIDMwIj48cGF0aCBmaWxsPSIjOUI5QjlCIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNS4yODQgMTMuODdMMjguMDEyIDEuMTQyYTEgMSAwIDEgMSAxLjQxNCAxLjQxNUwxNi42OTggMTUuMjg0bDEyLjcyOCAxMi43MjhhMSAxIDAgMSAxLTEuNDE0IDEuNDE1TDE1LjI4NCAxNi42OTkgMi41NTYgMjkuNDI3YTEgMSAwIDEgMS0xLjQxNC0xLjQxNUwxMy44NyAxNS4yODQgMS4xNDIgMi41NTdhMSAxIDAgMCAxIDEuNDE0LTEuNDE1TDE1LjI4NCAxMy44N3oiLz48L3N2Zz4=) center center no-repeat;
+  background-size: 38rpx;
+
 }
+
+
+.wx-ad__title{
+  font-size: 38rpx;
+  color: #4C4C4C;
+  text-align: center;
+  font-weight: bold;
+  line-height: 53rpx;
+  margin-bottom: 30rpx;
+}
+
+
+.mini-ad__image{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 10rpx;
+  margin: 0 auto;
+  display: block;
+}
+.mini-ad__title{
+  font-size: 38rpx;
+  color: #4C4C4C;
+  text-align: center;
+  font-weight: bold;
+  line-height: 53rpx;
+  margin: 20rpx 0 30rpx 0
+}
+.mini-ad__explain{
+  font-size: 30rpx;
+  text-align: center;
+  /* color: #4C4C4C; */
+  line-height: 42rpx;
+}
+
+.mini-ad__explain_skin_blue{
+  color: rgb(250, 25, 25);
+}
+.mini-ad__btn{
+  width: 540rpx;
+  height: 88rpx;
+  border-radius: 10rpx;
+  line-height: 88rpx;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  font-size: 32rpx;
+  background-color: rgb(250, 25, 25);
+  margin-top: 40rpx;
+}
+
+
+
 .p-ad-content .ad-title{
   font-size: 32rpx;
   color: #6A7883;
@@ -148,44 +199,4 @@
 .p-other-ad-view.my .word view:last-child{
   margin-right: 20rpx;
 }
-
-
-/* 
-.p-ad-view .p-ad-btn{
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%,-50%);
-  width: 430rpx;
-  height: 71rpx;
-  background: rgba(35,158,254,0.8);
-  border-radius: 35.5rpx;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  pointer-events: none;
-  z-index: 2
-}
-.p-ad-content.chaping .p-ad-view .p-ad-btn{
-  width: 380rpx;
-}
-
-.p-ad-view .p-ad-btn image{
-  width: 21.4rpx;
-  height: 25rpx;
-}
-.p-ad-content >image{
-  width: 30rpx;
-  height: 30rpx;
-  position: absolute;
-  right: -5rpx;
-  top: -5rpx;
-  padding: 20rpx;
-}
-.p-ad-view .p-ad-btn text{
-  font-size: 28rpx;
-  color: #FFFFFF;
-  display: block;
-  margin-left: 20rpx;
-} */
 
