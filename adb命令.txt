@@ -3,14 +3,17 @@ su
 chmod -R 777 /data/data/com.tencent.mm/MicroMsg
 adb pull /data/data/com.tencent.mm/MicroMsg/59144b2b8c0ee552813251c7c924c26b/appbrand/pkg F:\game
 
-adb pull /data/data/com.tencent.mm/MicroMsg/51d09c0f34ee438663e17cb0f31aa9de/appbrand/pkg F:\game
+adb pull /data/data/com.tencent.mm/MicroMsg/51d09c0f34ee438663e17cb0f31aa9de/appbrand/pkg F:\aaawxapp
 
 adb pull /data/data/com.tencent.mm/MicroMsg/ F:\game
 node wuWxapkg.js -d ./src/最强弹一弹.wxapkg
-node wuWxapkg.js  -d ./src2/_796483806_1.wxapkg
+node wuWxapkg.js  -d ./src/_796483806_1.wxapkg
 
-node wuWxapkg.js -s=./src2/_796483806_1 ./src2/_1123949441_246.wxapkg
+node wuWxapkg.js -s=./src/_796483806_1 ./src/_1123949441_246.wxapkg
+node wuWxapkg.js -s=./src/_796483806_1  ./src/_-1707846188_1.wxapkg 
 
+./bingo.sh src/_796483806_1.wxapkg
+./bingo.sh src/_-1707846188_1.wxapkg -s=../_796483806_1
 https://image.baidu.com/search/acjson?tn=resultjson_com&ipn=rj&fp=result&queryWord=头像&ie=utf-8&word=头像&istype=2&pn=30&rn=30
 _1449064531_9六六六消除
 _1586378482_33俄罗斯方块Online

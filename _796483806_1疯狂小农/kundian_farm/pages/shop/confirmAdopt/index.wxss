@@ -1,0 +1,141 @@
+@import "../../../../__wuBaseWxss__/1.wxss";
+
+page {
+    background: #f4f4f4;
+    font-size: 30rpx;
+}
+
+.adopt-list {
+    width: 100%;
+    height: 200rpx;
+    background: white;
+    padding-top: 20rpx;
+    border-bottom: 1rpx solid #f4f4f4;
+    border-top: 1rpx solid #f4f4f4;
+}
+
+.adopt-list .li-left {
+    width: 24%;
+    height: 180rpx;
+    float: left;
+    margin-left: 5%;
+}
+
+.adopt-list .li-left image {
+    width: 100%;
+    height: 100%;
+}
+
+.adopt-list .li-right {
+    width: 61%;
+    height: 100%;
+    margin-left: 5%;
+    float: left;
+}
+
+.adopt-list .li-right .adopt-name {
+    display: block;
+    margin-bottom: 20rpx;
+}
+
+.adopt-list .li-right .spec {
+    color: gray;
+    font-size: 26rpx;
+    margin-bottom: 10rpx;
+}
+
+.adopt-list .li-right .li-right-desc {
+    width: 100%;
+    height: 50rpx;
+    margin-top: 20rpx;
+}
+
+.adopt-list .li-right .price {
+    color: red;
+}
+
+.adopt-list .li-right .count {
+    color: gray;
+    float: right;
+}
+
+.desc {
+    width: 90%;
+    padding: 10rpx 5% 10rpx 5%;
+    background: white;
+    border-bottom: 1rpx solid #f4f4f4;
+    color: gray;
+    font-size: 28rpx;
+    min-height: 80rpx;
+}
+
+.line-h {
+    line-height: 80rpx;
+}
+
+.desc .iconSmall {
+    float: right;
+}
+
+.desc .keyong {
+    color: red;
+    float: right;
+    margin-right: 20rpx;
+}
+
+.coupon-title {
+    position: relative;
+    top: -5rpx;
+    margin-left: 10rpx;
+}
+
+.footer {
+    width: 100%;
+    height: 100rpx;
+    position: fixed;
+    bottom: 0;
+    background: white;
+    line-height: 100rpx;
+}
+
+.footer .left {
+    width: 70%;
+    height: 100%;
+    padding-left: 5%;
+    float: left;
+}
+
+.footer .right {
+    text-align: center;
+    float: left;
+    margin-top: 10px;
+}
+
+.user_container {
+    width: 100%;
+    margin-top: 20rpx;
+    background-color: #fff;
+}
+
+.borderbottom {
+    box-sizing: border-box;
+}
+
+.borderbottom:not(:last-child) {
+    border-bottom: 1rpx solid #eee;
+}
+
+.rule-book {
+    color: #3f88bf;
+    text-decoration: underline;
+}
+
+.title {
+    width: 200rpx;
+    margin-left: 14rpx;
+}
+
+.auth-btn {
+    width: 170rpx;
+    font-size: 23rpx;
+}

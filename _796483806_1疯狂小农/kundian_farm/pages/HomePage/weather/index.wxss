@@ -1,0 +1,726 @@
+@import "../../../../__wuBaseWxss__/1.wxss";
+
+page {
+    background: #f8f8f8;
+}
+
+.start-up {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 666;
+}
+
+.view_current {
+    vertical-align: middle;
+    position: relative;
+}
+
+.view_top {
+    position: absolute;
+    top: 60rpx;
+    left: 36rpx;
+    right: 36rpx;
+    bottom: 0;
+    color: #fff;
+}
+
+.weahter-box {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    width: 100%;
+}
+
+.wh-desc {
+    position: absolute;
+    top: 92%;
+    transform: translateY(-50%);
+    text-align: center;
+    width: 100%;
+    font-size: 30rpx;
+}
+
+.view_top .tx_address {
+    font-size: 30rpx;
+    font-weight: bold;
+    padding: 10rpx 0rpx;
+}
+
+.view_top .tx_center {
+    margin-top: 50rpx;
+    display: flex;
+    font-size: 24rpx;
+    justify-content: space-between;
+}
+
+.view_top .tx_center .weather-aqi {
+    padding: 10rpx 20rpx;
+    background: rgba(0,0,0,0.2);
+    border-radius: 8rpx;
+}
+
+.view_top .tx_center .weahter-timer {
+    padding-top: 16rpx;
+}
+
+.view_top .weather-other {
+    font-size: 28rpx;
+    text-align: center;
+}
+
+.weather-other>image {
+    margin-left: 20rpx;
+    margin-right: 16rpx;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -5rpx;
+}
+
+.weather-other .tel {
+    width: 20rpx;
+    height: 28rpx;
+    margin-right: 10rpx;
+}
+
+.weather-other .wind {
+    width: 25rpx;
+    height: 25rpx;
+}
+
+.weather-other .him {
+    width: 20rpx;
+    height: 26rpx;
+    margin-right: 10rpx;
+}
+
+.weather-feedback {
+    display: inline;
+    position: relative;
+    padding: 12rpx 28rpx;
+    background: rgba(0,0,0,0.2);
+    border-radius: 8rpx;
+    font-size: 28rpx;
+}
+
+.view_top .radar {
+    position: absolute;
+    right: 0rpx;
+    bottom: 36rpx;
+    width: 70rpx;
+    height: 70rpx;
+}
+
+.view_current>.view_bg {
+    width: 100%;
+    display: block;
+}
+
+.add-my-miniapp {
+    position: absolute;
+    right: 36rpx;
+    top: 22rpx;
+    padding: 12rpx 20rpx;
+    font-size: 24rpx;
+    color: #fff;
+    background: rgba(0,0,0,0.15);
+    border-radius: 8rpx;
+}
+
+.tips-up {
+    position: absolute;
+    top: -21rpx;
+    right: 90rpx;
+    width: 0;
+    height: 0;
+    border-top: 8rpx solid transparent;
+    border-left: 8px solid transparent;
+    border-bottom: 8px solid rgba(0,0,0,0.15);
+    border-right: 8px solid transparent;
+}
+
+.weather-ter-box {
+    position: relative;
+}
+
+.weather-ter {
+    padding-left: 50rpx;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.weather-ter .tel {
+    font-size: 164rpx;
+}
+
+.weather-ter .tel-des {
+    position: absolute;
+    bottom: 30rpx;
+    right: -10rpx;
+    font-size: 32rpx;
+}
+
+.view_minutely {
+    align-items: center;
+    padding: 12rpx 12rpx;
+    text-align: center;
+    background-color: #fff;
+    margin-top: 0rpx;
+    overflow-x: hidden;
+}
+
+#view_next {
+    padding-top: 1rpx;
+    padding-bottom: 100rpx;
+    background-color: #f8f8f8;
+}
+
+.view_today {
+    margin-top: 40rpx;
+    margin-bottom: 40rpx;
+    padding: 10rpx 2rpx;
+    background-color: #fff;
+}
+
+.view_hourly {
+    padding: 20rpx 0rpx;
+    text-align: center;
+    background-color: #fff;
+}
+
+.view_daily {
+    margin-top: 40rpx;
+    padding: 20rpx 2rpx;
+    background-color: #fff;
+}
+
+.view_life_index {
+    margin-top: 40rpx;
+    width: 99.5%;
+    overflow: hidden;
+    padding: 0rpx 0rpx;
+}
+
+.view_ad {
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 40rpx;
+    padding-bottom: 40rpx;
+    background-color: #f2f2f2;
+}
+
+.view_mid_ad {
+    width: 92%;
+    margin: 0 auto;
+}
+
+.ad {
+    width: 100%!important;
+    margin: 0 auto;
+}
+
+#canvas-minutely {
+    width: 100%;
+    height: 276rpx;
+    padding: 2rpx 2rpx;
+    margin: 0 auto;
+    z-index: 99;
+}
+
+#canvas-hourly {
+    width: 100%;
+    height: 276rpx;
+}
+
+#location_img {
+    position: absolute;
+    vertical-align: middle;
+    height: 30rpx;
+    width: 30rpx;
+    padding: 0rpx 4rpx 0rpx 8rpx;
+}
+
+.view_aqi {
+    padding: 36rpx 2rpx 30rpx 2rpx;
+    background-color: #fff;
+    display: inline-block;
+}
+
+#aqi_line {
+    display: inline-block;
+    margin: 0rpx 10rpx;
+    height: 72rpx;
+    width: 1px;
+    background-color: #e6e6e6;
+}
+
+.hourly_time {
+    color: #aaa;
+    font-size: 24rpx;
+}
+
+.hourly_time_bold {
+    color: #333;
+    font-size: 25rpx;
+}
+
+#hourly_scroll {
+    margin-top: 30rpx;
+    height: 100%;
+    width: 100%;
+    white-space: nowrap;
+    overflow: scroll;
+}
+
+.aqi_item {
+    display: inline-block;
+    width: 20%;
+}
+
+.aqi_value {
+    display: block;
+    color: #333;
+    font-size: 36rpx;
+}
+
+.aqi_name {
+    color: #aaa;
+    font-size: 24rpx;
+}
+
+#daily_scroll {
+    height: 100%;
+    width: 100%;
+    white-space: nowrap;
+    overflow: scroll;
+}
+
+#today_scroll {
+    height: 100%;
+    width: 100%;
+    white-space: nowrap;
+    overflow: scroll;
+}
+
+.today_list {
+    position: relative;
+    display: inline-block;
+    width: 50%;
+    color: #333;
+    font-size: 26rpx;
+    height: 140rpx;
+    text-align: center;
+}
+
+.today_day {
+    position: absolute;
+    font-size: 30rpx;
+    left: 36rpx;
+    top: 18rpx;
+}
+
+.today_temp {
+    position: absolute;
+    font-size: 30rpx;
+    right: 22rpx;
+    top: 20rpx;
+}
+
+.today_skyicon {
+    position: absolute;
+    right: 22rpx;
+    bottom: 20rpx;
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.today_skydesc {
+    position: absolute;
+    font-size: 28rpx;
+    left: 36rpx;
+    bottom: 20rpx;
+}
+
+.today_line {
+    position: absolute;
+    right: 0rpx;
+    top: 14rpx;
+    height: 118rpx;
+    width: 1rpx;
+    background-color: #D8D8D8;
+}
+
+.hourly_list {
+    display: inline-block;
+    width: 16.66%;
+    color: #333;
+    font-size: 26rpx;
+    height: 100%;
+    text-align: center;
+}
+
+#daily_list {
+    display: inline-block;
+    overflow: scroll;
+    width: 20%;
+    color: #333;
+    font-size: 26rpx;
+    height: 100%;
+    text-align: center;
+}
+
+.item {
+    display: block;
+    text-align: center;
+}
+
+#daily_aqi_text {
+    font-size: 26rpx;
+    padding: 4rpx 30rpx;
+    vertical-align: center;
+    border-radius: 10rpx;
+}
+
+.today_aqi .daily_aqi_text {
+    color: #fff;
+    font-size: 20rpx;
+    padding-top: 2px;
+    vertical-align: center;
+}
+
+.today_aqi {
+    position: absolute;
+    font-size: 20rpx;
+    left: 110rpx;
+    top: 24rpx;
+    width: 50rpx;
+    height: 30rpx;
+    border-radius: 4rpx;
+    text-align: center;
+    vertical-align: center;
+}
+
+.aqi_fresh {
+    color: #35c7d1;
+}
+
+.today_aqi.aqi_fresh {
+    background-color: #35c7d1;
+}
+
+.aqi_good {
+    color: #5ebb8d;
+}
+
+.today_aqi.aqi_good {
+    background-color: #5ebb8d;
+}
+
+.aqi_light {
+    color: #8bc500;
+}
+
+.today_aqi.aqi_light {
+    background-color: #8bc500;
+}
+
+.aqi_med {
+    color: #e29b12;
+}
+
+.today_aqi.aqi_med {
+    background-color: #e29b12;
+}
+
+.aqi_heavy {
+    color: #e06641;
+}
+
+.today_aqi.aqi_heavy {
+    background-color: #e06641;
+}
+
+#daily_aqi_item {
+    margin: auto;
+    font-size: 28rpx;
+}
+
+#daily_skyicon {
+    width: 56rpx;
+    height: 56rpx;
+    margin: auto;
+}
+
+.avg_aqi {
+    font-size: 20rpx;
+}
+
+.life_item {
+    background-color: white;
+    display: inline-block;
+    flex-direction: row;
+    justify-content: center;
+    width: 25%;
+    border: 1rpx solid #eee;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 16rpx 2rpx;
+}
+
+.life_item_icon {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0 auto;
+    height: 60rpx;
+    max-width: 50rpx;
+}
+
+.life_img {
+    display: block;
+    width: 60rpx;
+    height: 22px;
+    margin: 20rpx auto;
+}
+
+.life_desc {
+    display: block;
+    margin-top: 8rpx;
+    color: #333;
+    font-size: 28rpx;
+}
+
+.life_name {
+    color: #aaa;
+    font-size: 24rpx;
+}
+
+.wind {
+    font-size: 24rpx;
+    display: block;
+    height: 36rpx;
+}
+
+.top {
+    text-align: center;
+}
+
+#address {
+    color: #fff;
+    font-size: 30rpx;
+    padding: 24rpx 50rpx 0rpx 50rpx;
+}
+
+#tx_address {
+    text-align: center;
+    background: rgba(0,0,0,0.15);
+    border-radius: 20rpx;
+    padding: 10rpx 20rpx 10rpx 54rpx;
+}
+
+.tx_address {
+    display: flex;
+}
+
+.tx_address>image {
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 10rpx;
+    vertical-align: center;
+    padding: 6rpx 0rpx;
+}
+
+.tx_address>text {
+    vertical-align: center;
+}
+
+#temperature {
+    margin-top: 170rpx;
+    vertical-align: middle;
+}
+
+#temp_text {
+    color: #fff;
+    margin-left: 40rpx;
+    font-size: 164rpx;
+}
+
+#summary {
+    color: #fff;
+    margin-top: 40rpx;
+    font-size: 32rpx;
+    text-align: center;
+}
+
+#desc_minutely {
+    display: inline-block;
+    position: relative;
+    color: #333333;
+    font-size: 30rpx;
+    width: 100%;
+    background-image: linear-gradient(-270deg,#FFFFFF 2%,#ECF6EE 51%,#FFFFFF 100%);
+    padding: 50rpx 0rpx;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.desc_minutely_text {
+    font-size: 30rpx;
+    color: #333333;
+    vertical-align: middle;
+    text-align: center;
+    word-wrap: break-word;
+    width: 300px;
+    margin: 0 auto;
+}
+
+#arrow_image {
+    position: absolute;
+    right: 56rpx;
+    bottom: 48rpx;
+    width: 30rpx;
+    height: 42rpx;
+}
+
+#desc_hourly {
+    color: #333333;
+    font-size: 28rpx;
+    margin: 2rpx 0rpx;
+}
+
+#aqi_image {
+    width: 32rpx;
+    height: 32rpx;
+    padding: 0rpx 12rpx 0rpx 0rpx;
+    vertical-align: middle;
+}
+
+#aqi_bg_image {
+    width: 560rpx;
+    height: 540rpx;
+}
+
+#aqi {
+    text-align: center;
+    color: #fff;
+    font-size: 32rpx;
+    padding: 8rpx 20rpx;
+    margin-top: 40rpx;
+    border-radius: 20rpx;
+    vertical-align: middle;
+}
+
+.air_indexes {
+    padding: 20rpx 0;
+}
+
+.air_item {
+    display: inline-block;
+    position: relative;
+    flex-direction: row;
+    justify-content: center;
+    width: 186rpx;
+    height: 106rpx;
+    overflow: hidden;
+}
+
+.air_value {
+    display: block;
+    margin-top: 12rpx;
+    font-size: 28rpx;
+    color: #333333;
+    text-align: center;
+}
+
+.air_name {
+    display: block;
+    margin-top: 10rpx;
+    font-size: 24rpx;
+    color: #999999;
+    text-align: center;
+}
+
+.air_right_line {
+    position: absolute;
+    bottom: 20rpx;
+    right: 186rpx;
+    width: 1rpx;
+    height: 210rpx;
+    background-color: #D8D8D8;
+}
+
+.air_left_line {
+    position: absolute;
+    bottom: 20rpx;
+    left: 186rpx;
+    width: 1rpx;
+    height: 210rpx;
+    background-color: #D8D8D8;
+}
+
+.air_bottom_line {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 186.6rpx;
+    height: 2rpx;
+    background-color: #D8D8D8;
+}
+
+.summary {
+    margin-top: 50rpx;
+    background-color: rgba(0,0,0,0.5);
+    padding: 18rpx;
+    color: #eee;
+    font-size: 30rpx;
+    line-height: 50rpx;
+}
+
+.top {
+    vertical-align: middle;
+}
+
+.bottom-bar {
+    position: relative;
+    margin-top: 40rpx;
+}
+
+.bottom-text {
+    position: absolute;
+    display: inline-block;
+    margin: 0 auto;
+    font-size: 24rpx;
+    color: #AAAAAA;
+    border: none;
+    padding: 0px;
+}
+
+.bottom-text::after {
+    border: none;
+}
+
+.bottom-text image {
+    vertical-align: middle;
+    padding: 0rpx 16rpx 0rpx 0rpx;
+}
+
+.feedback-view {
+    left: 200rpx;
+}
+
+.feedback-view image {
+    width: 25rpx;
+    height: 28rpx;
+}
+
+.contact-view {
+    right: 200rpx;
+}
+
+.contact-view image {
+    width: 30rpx;
+    height: 28rpx;
+}

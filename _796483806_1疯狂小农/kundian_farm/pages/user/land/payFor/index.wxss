@@ -1,0 +1,100 @@
+@import "../../../../../__wuBaseWxss__/1.wxss";
+
+page {
+    background-color: #f4f4f4;
+}
+
+.user_container view {
+    height: 100rpx;
+    line-height: 100rpx;
+}
+
+.user_container input {
+    height: 100rpx;
+    line-height: 100rpx;
+}
+
+.radioBtn {
+    margin-left: 20rpx;
+    transform: scale(0.8);
+}
+
+.footer {
+    border-top: 1rpx solid #f4f4f4;
+    height: 100rpx;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+}
+
+.payFor {
+    width: 250rpx;
+    font-size: 32rpx;
+    letter-spacing: 3rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    background-color: #fc8535;
+    color: #fff;
+    text-align: center;
+}
+
+.borderbottom {
+    box-sizing: border-box;
+}
+
+.borderbottom:not(:last-child) {
+    border-bottom: 1rpx solid #eee;
+}
+
+.user_container {
+    width: 100%;
+    margin-top: 20rpx;
+    background-color: #fff;
+}
+
+.pick-w {
+    width: 95%;
+    z-index: 600;
+    margin-left: 5%;
+}
+
+.sel-pick {
+    position: relative;
+    left: -40rpx;
+}
+
+.title {
+    width: 25%;
+    margin-left: 27rpx;
+}
+
+.rule-book {
+    color: #3f88bf;
+    text-decoration: underline;
+}
+
+.new-tag {
+    position: relative;
+    top: -6rpx;
+    margin-left: 30rpx;
+}
+
+.auth-btn {
+    padding: 0;
+    width: 170rpx;
+    font-size: 23rpx;
+    background: #09bb07;
+    color: white;
+    position: relative;
+    top: 16%;
+    border-radius: 100rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    border: none;
+}
+
+button::after {
+    border: none;
+}

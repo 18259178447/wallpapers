@@ -1,0 +1,7 @@
+{
+    "enablePullDownRefresh": true,
+    "navigationBarTitleText": "个人中心",
+    "usingComponents": {
+        "tarbar": "/components/tarbar/tarbar"
+    }
+}

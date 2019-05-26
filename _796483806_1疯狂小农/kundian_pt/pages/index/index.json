@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "拼团",
+    "navigationBarTextStyle": "black",
+    "usingComponents": {
+        "tarbar": "/components/tarbar/tarbar"
+    }
+}

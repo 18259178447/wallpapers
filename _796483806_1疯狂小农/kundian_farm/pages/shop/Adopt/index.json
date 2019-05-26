@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "认养",
+    "usingComponents": {
+        "tarbar": "/components/tarbar/tarbar"
+    }
+}

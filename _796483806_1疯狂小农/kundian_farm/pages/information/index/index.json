@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "articleItem": "/components/articleItem/articleItem",
+        "videoItem": "/components/videoItem/videoItem"
+    },
+    "navigationBarTitleText": "资讯"
+}
