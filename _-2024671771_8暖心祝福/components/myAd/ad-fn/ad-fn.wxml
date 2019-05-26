@@ -1,0 +1,23 @@
+<!--components/lad/lad.wxml-->
+<view class='p-ad'>
+  <view class='p-ad-box {{isHide ? "hide" : ""}}'>
+    <!-- <view class='p-ad-bg'></view> -->
+    <view class='p-ad-bg' catchtap='closeAd'></view>
+    <view class='p-ad-content'>
+      <text class='ad-title'>{{viewTip}}</text>
+      <view class='p-ad-view xmad_title' capture-bind:tap='adClick' wx:if="{{adType === 1}}">
+        <ad unit-id="{{banner}}" bindload="adLoad" binderror="adError" wx:if="{{adIndex === 0}}"></ad>
+      </view>
+      <view class='p-other-ad-view my' wx:elif="{{adType === 2 && mini}}" bindtap='adMiniClick'>
+        <view class='word'>
+            <view>{{mini.title}}</view>
+            <view>{{mini.desc}}</view>
+        </view>
+        <image src='{{mini.image}}'></image>
+        <view class='adTip'>广告</view>
+      </view>
+
+      <image src="https://minibizhi.313515.com/BiZhiStatic/preview-p-ad-close.svg" catchtap='closeAd' />
+    </view>
+  </view>
+</view>

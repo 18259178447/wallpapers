@@ -3,7 +3,7 @@ var backgroundAudioManager = wx.getBackgroundAudioManager();
 App({
     onLaunch: function() {},
     onShow: function() {},
-    onHide: function() {},
+  onHide: function () { }, 
     onError: function(a) {
         console.log(a);
     },
@@ -66,8 +66,8 @@ App({
         var t = this, a = wx.getStorageSync("loginopenid");
         a ? (t.globalData.uid = a, "function" == typeof n && n(a)) : wx.login({
             success: function(a) {
-              t.globalData.uid = 'o2H3D5NLNNf-m95GP0onDsIahOTc', "function" == typeof n && n(t.globalData.uid),
-                wx.setStorageSync("loginopenid", 'o2H3D5NLNNf-m95GP0onDsIahOTc');
+              t.globalData.uid = '12o2H3D5NLNNf-m95GP0onDsIahOTc', "function" == typeof n && n(t.globalData.uid),
+                wx.setStorageSync("loginopenid", '12o2H3D5NLNNf-m95GP0onDsIahOTc');
 
                 // var o = a.code;
                 //     url: "entry/wxapp/login",formid

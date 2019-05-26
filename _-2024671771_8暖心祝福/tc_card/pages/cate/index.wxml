@@ -1,3 +1,4 @@
+<ladloop count="0"></ladloop>
 <form bindsubmit="formid" class="formid" reportSubmit="true">
     <view class="cardbox">
         <block wx:for="{{listData}}" wx:for-item="items" wx:key="index">
@@ -13,9 +14,11 @@
                     <text>{{items.bogusclick}}</text>
                 </view>
             </button>
-            <view class="adbox" wx:if="{{index==1}}">
+            
+            <!-- <view class="adbox" wx:if="{{index==1}}">
                 <ad unitId="{{llads}}" wx:if="{{llads}}"></ad>
-            </view>
+            </view> -->
         </block>
+        
     </view>
 </form>

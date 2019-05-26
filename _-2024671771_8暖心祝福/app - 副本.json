@@ -27,8 +27,25 @@
     "ad-fn": "/components/myAd/ad-fn/ad-fn",
     "ladloop": "/components/myAd/ladloop/ladloop"
   },
-  "navigateToMiniProgramAppIdList": [
-    "wx7d5c5308d07a1559"
-  ],
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#BA0624",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "tc_card/pages/index/index",
+        "text": "贺卡",
+        "iconPath": "tc_card/resource/images/card.png",
+        "selectedIconPath": "tc_card/resource/images/card_on.png"
+      },
+      {
+        "pagePath": "tc_card/pages/user/index",
+        "text": "我的",
+        "iconPath": "tc_card/resource/images/user.png",
+        "selectedIconPath": "tc_card/resource/images/user_on.png"
+      }
+    ]
+  },
   "sitemapLocation": "sitemap.json"
 }

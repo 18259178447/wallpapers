@@ -1,6 +1,7 @@
 var listMinxin = require('../../utils/list-mixin');
 var filter = require('../../components/utils/filter.js');
 var diff = require('../../utils/diff.js').default;
+// wx2d3f209d87668933   wx5bfe2eea969f4cec
 wx.Page({
   mixins: [listMinxin],
   data: {

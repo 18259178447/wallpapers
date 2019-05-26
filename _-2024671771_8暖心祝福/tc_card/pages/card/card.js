@@ -14,6 +14,7 @@ Page({
         musicimg: "../../resource/images/music.png"
     },
     onLoad: function(t) {
+      wx.hideShareMenu()
         var e = decodeURIComponent(t.scene), n = this;
         wx.getSystemInfo({
             success: function(a) {
@@ -210,8 +211,14 @@ Page({
     lalal: function() {
         this.data.scene;
     },
-    dobtn: function(a) {
-        app.upForm(a.detail.formId), this.setData({
+    dobtn(){
+      this.selectComponent('#lad').openAd('', ()=>{
+        this._dobtn()
+      });
+    },
+    _dobtn: function(a) {
+
+        this.setData({
             shareshow: 1
         });
     },
@@ -314,9 +321,9 @@ Page({
         });
     },
     gohome: function(a) {
-        innerAudioContext.pause(), wx.switchTab({
-            url: "/tc_card/pages/index/index"
-        });
+        innerAudioContext.pause(), wx.navigateTo({
+          url: '/tc_card/pages/index/index',
+        })
     },
     updateUserInfo: function(a) {
         var t = this;

@@ -1,13 +1,13 @@
 <import src="/tc_card/pages/template/player.wxml"></import>
 <view class="container" style="width:{{cardWidth}}px;height:{{cardHeight}}px;">
-    <official-account class="guanzhu" wx:if="{{!action}}"></official-account>
+    <!-- <official-account class="guanzhu" wx:if="{{!action}}"></official-account> -->
     <image class="bgimg" src="{{skinurl}}{{cardInfo.bigthumb}}"></image>
     <text class="pageword" style="font-size:{{cardInfo.fontsize}}rpx;color:{{cardInfo.fontcolor}};width:{{cardInfo.width}}%;height:{{cardInfo.height}}%;top:{{cardInfo.ypos}}%;left:{{cardInfo.xpos}}%;">
         <text class="word" style="{{word}};">{{pageWord}}</text>
     </text>
-    <button bindgetuserinfo="updateUserInfo" class="piao" openType="getUserInfo" wx:if="{{!config.review&&ispay>0&&piao>0}}">
+    <!-- <button bindgetuserinfo="updateUserInfo" class="piao" openType="getUserInfo" wx:if="{{!config.review&&ispay>0&&piao>0}}">
         <image src="/tc_card/resource/images/shang.png" style="width:100%;height:100%;"></image>
-    </button>
+    </button> -->
     <form bindsubmit="formSubmit" reportSubmit="true">
         <view class="toolbox" wx:if="{{mods}}">
             <form bindsubmit="yulan" reportSubmit="true">
@@ -21,7 +21,7 @@
             <button bindgetuserinfo="getUserInfo" class="backbtn" openType="getUserInfo" wx:if="{{login}}">转给朋友</button>
             <button class="backbtn" formType="submit" openType="share" wx:else>转给朋友</button>
             <view class="zhuangshi1">
-                <button bindgetuserinfo="updateUserInfo" class="dashang" openType="getUserInfo" wx:if="{{!config.review&&ispay>0}}">赏</button>
+                <!-- <button bindgetuserinfo="updateUserInfo" class="dashang" openType="getUserInfo" wx:if="{{!config.review&&ispay>0}}">赏</button> -->
             </view>
             <button class="dobtn" formType="submit" openType="contact" wx:if="{{edbtn>0}}">制作贺卡</button>
             <button catchtap="gohome" class="dobtn" formType="submit" wx:else>制作贺卡</button>
@@ -94,6 +94,9 @@
     </view>
     <template is="player" data="{{musicimg:musicimg}}"></template>
 </view>
-<view class="fixedad" wx:if="{{ishowad==1&&config.llads}}">
+<!-- <view class="fixedad" wx:if="{{ishowad==1}}">
     <ad unitId="{{config.llads}}"></ad>
-</view>
+    <ladloop count="0"></ladloop>
+</view> -->
+
+<ad-fn id="lad"></ad-fn>

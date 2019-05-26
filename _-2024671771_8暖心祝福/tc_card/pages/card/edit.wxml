@@ -16,9 +16,10 @@
         <text class="nortext">在上面自己选择祝福语或</text>
         <text bindtap="choosezf" class="touchtext">从列表选择祝福语</text>
     </view>
-    <view class="llads" wx:if="{{llads}}">
+    <ladloop count="0"></ladloop>
+    <!-- <view class="llads" wx:if="{{llads}}">
         <ad unitId="{{llads}}"></ad>
-    </view>
+    </view> -->
     <text class="desc">添加语音祝福</text>
     <view class="voice">
         <view bindtap="voice" class="{{!voing||voing=='voiceing'?'voibox':'voiover'}}">

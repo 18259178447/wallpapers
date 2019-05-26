@@ -1,0 +1,191 @@
+/* components/myAd/ad-fn/ad-fn.wxss */
+/* components/lad/lad.wxss */
+
+/* 弹窗广告流量主 */
+
+.p-ad{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.p-ad-bg{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.p-ad-box{
+  width: 100%;
+  height: 100%;
+  pointer-events: auto;
+}
+.p-ad-box.hide{
+  transform: translate(100%,0);
+  
+}
+
+/* .p-ad-mask{
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+} */
+.p-ad-content{
+  background: #FFFFFF;
+  border-radius: 12rpx;
+  width: 700rpx;
+  padding: 30rpx 20rpx;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-60%)
+}
+.p-ad-content.chaping{
+  width: 490rpx;
+  padding: 40rpx 20rpx 30rpx;
+}
+.p-ad-content .ad-title{
+  font-size: 32rpx;
+  color: #6A7883;
+  text-align: center;
+  line-height: 46rpx;
+  display: block;
+}
+.p-ad-content .ad-title.my{
+  color: #000;
+  font-weight: bold;
+}
+
+
+.p-ad-view{
+  margin-top: 40rpx;
+  min-height: 100rpx;
+  position: relative
+}
+
+.p-ad-view image{
+  width: 100%;
+  height: auto;
+}
+.p-ad-content.chaping .p-ad-view{
+  width: 95%;
+  margin: 30rpx auto 0
+}
+.p-ad-content >image{
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  right: -5rpx;
+  top: -5rpx;
+  padding: 20rpx;
+}
+
+.p-other-ad-view{
+  display: flex;
+  padding-top: 40rpx;
+  align-items: center;
+}
+.p-other-ad-view.my{
+  margin-top: 40rpx;
+  border: 1rpx solid #f1f1f1;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  position: relative
+}
+.p-other-ad-view image{
+  display: block;
+  height: 200rpx;
+  width: 200rpx;
+  pointer-events: none;
+  /* border-radius: 50%; */
+}
+.p-other-ad-view.my .adTip{
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 24rpx;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 0 10rpx;
+  line-height: 28rpx;
+  pointer-events: none;
+}
+.p-other-ad-view .word{
+  margin-left: 20rpx;
+  /* padding-top: 20rpx; */
+  flex: 1;
+  pointer-events: none;
+  
+}
+.p-other-ad-view.my .word{
+  margin-left: 0;
+  
+}
+
+
+.p-other-ad-view .word view:first-child{
+  font-size:32rpx;
+  font-weight: bold;
+  
+}
+.p-other-ad-view.my .word view:first-child{
+  text-align: center;
+  margin-right: 20rpx;
+}
+
+
+.p-other-ad-view .word view:last-child{
+  font-size:28rpx;
+  color: #6A7883;
+  margin-top: 20rpx;
+}
+
+.p-other-ad-view.my .word view:last-child{
+  margin-right: 20rpx;
+}
+
+
+/* 
+.p-ad-view .p-ad-btn{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 430rpx;
+  height: 71rpx;
+  background: rgba(35,158,254,0.8);
+  border-radius: 35.5rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  z-index: 2
+}
+.p-ad-content.chaping .p-ad-view .p-ad-btn{
+  width: 380rpx;
+}
+
+.p-ad-view .p-ad-btn image{
+  width: 21.4rpx;
+  height: 25rpx;
+}
+.p-ad-content >image{
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  right: -5rpx;
+  top: -5rpx;
+  padding: 20rpx;
+}
+.p-ad-view .p-ad-btn text{
+  font-size: 28rpx;
+  color: #FFFFFF;
+  display: block;
+  margin-left: 20rpx;
+} */
+
