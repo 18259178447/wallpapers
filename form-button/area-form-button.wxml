@@ -1,0 +1,9 @@
+<view class='placehold-container' style='min-height:{{minHeight}};height:{{height}}'>
+  <form class='form-box' bindsubmit="formSubmit" report-submit-timeout="1000" report-submit>
+    <button formType="submit" class='form-submit-btn' hover-class='none'>
+      <view class='_class content'>
+        <slot></slot>
+      </view>
+    </button>
+  </form>
+</view>
