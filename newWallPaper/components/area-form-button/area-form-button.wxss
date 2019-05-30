@@ -1,0 +1,14 @@
+/* components/form-button/area-form-button.wxss */
+.form-box,.form-submit-btn{
+  height: 0;
+  display: block;
+  overflow:visible;
+}
+.form-submit-btn{
+  line-height: 1.3333333333;
+  font-size: 39.5rpx;                                                                                                     
+}
+.form-submit-btn::after{
+  border: none;
+  height: 0;
+}

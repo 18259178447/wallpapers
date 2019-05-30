@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "area-form-button":"/components/area-form-button/area-form-button"
   },
   "navigationBarTitleText":"壁纸精选"
 }

@@ -10,6 +10,12 @@
   <swiper duration="{{200}}" class="page-swiper full-height" current="{{currentIndex}}" bindchange="navChanges">
     <swiper-item wx:for="{{navArr}}" wx:key="{{item.id}}">
       <image-list id="image-list{{index}}" placeholdHeader="154rpx">
+      </image-list>
+    </swiper-item>
+  </swiper>
+</view>
+
+
         <!-- <block wx:if="{{index === 0}}">
           <view class='module' wx:if="{{albums.length}}">
             <view class='module__header flex flex_v_center'>
@@ -46,8 +52,3 @@
             <view class='module__title'>今日精选</view>
           </view>
         </block> -->
-
-      </image-list>
-    </swiper-item>
-  </swiper>
-</view>

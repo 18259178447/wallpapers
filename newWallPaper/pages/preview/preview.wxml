@@ -1,5 +1,13 @@
-<image-preview id="image-preview" bindchange="changeHandle" bindtap="toggleBtnsHandle"></image-preview>
+<image-preview 
+  id="image-preview" 
+  bindchange="changeHandle" 
+  bindtap="toggleBtnsHandle"
+>
+</image-preview>
 <back-title header="{{header}}" skin="back2"></back-title>
+
+
+
 <view class='daily-signature'></view>
 
 
