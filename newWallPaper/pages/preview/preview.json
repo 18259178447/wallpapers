@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "image-preview": "/components/image-preview/image-preview"
-  }
+  },
+  "navigationBarTitleText": "壁纸大图"
 }

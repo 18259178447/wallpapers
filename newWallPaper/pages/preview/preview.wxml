@@ -1,4 +1,4 @@
-<image-preview id="image-preview" bindtap="toggleBtnsHandle"></image-preview>
+<image-preview id="image-preview" bindchange="changeHandle" bindtap="toggleBtnsHandle"></image-preview>
 <back-title header="{{header}}" skin="back2"></back-title>
 <view class='daily-signature'></view>
 
@@ -10,7 +10,7 @@
             <view class='btns___name pen'>首页</view>
         </view>  
         <view class='btns__item' data-event="collectHandle">
-            <mini-icon class='pen' type='collect'></mini-icon>
+            <mini-icon class='pen' type='{{isImageCollect ? "collect-on" : "collect"}}'></mini-icon>
             <view class='btns___name pen'>收藏</view>
         </view>    
         <view class='btns__item btns__download' data-event="downloadHandle">

@@ -48,6 +48,7 @@ Component({
         }
       }
       obj.imgs = _imgs.map(item => parse(item));
+      this.triggerEvent("change", obj.imgs[current])
       this.setData(obj);
       this.currentIndex = current;
       this.dataIndex = index;
@@ -63,6 +64,7 @@ Component({
         obj = {},
         isLoadMore = false,
         direct = currentIndex - preCurrentIndex;
+        this.triggerEvent("change",this.data.imgs[currentIndex])
       direct = direct === 1 || direct === -2 ? 1 : -1;
       dataIndex += direct;
       if (dataIndex === -1) dataIndex = len - 1;

@@ -13,7 +13,8 @@ wx.Page({
       title: '',
       backgroundColor: 'transparent',
       type: 'fixed'
-    }
+    },
+    isImageCollect:false
   },
   onUnload(){
     this.previewCom = null;
@@ -44,17 +45,31 @@ wx.Page({
       }     
     })
   },
-
+  changeHandle(e){
+    this.currentImage = e.detail;
+    var isImageCollect = wx.Tool.checkImageIsCollect(e.detail.id);
+    if (isImageCollect !== this.data.isImageCollect){
+      this.setData({
+        isImageCollect
+      })
+    }
+  },
   dayHandle(){
     wx.msg("此功能暂未开放,敬请期待!")
   },
   collectHandle(){
-    wx.msg("此功能暂未开放,敬请期待!")
+    wx.Tool.collectImage(this.currentImage).then(res=>{
+      this.setData({
+        isImageCollect:res
+      })
+      wx.msg(res ? "收藏成功" : "取消收藏成功")
+    })
+    // wx.msg("此功能暂未开放,敬请期待!")
   },
   downloadHandle(){
-    var { Image } = this.previewCom.data.imgs[this.previewCom.currentIndex];
+    var imageItem = this.previewCom.data.imgs[this.previewCom.currentIndex];
     wx.showLoading({title: '下载中,请稍后...',mask: !0});
-    wx.Tool.downloadImage(Image).then(res=>{
+    wx.Tool.downloadImage(imageItem).then(res=>{
       wx.msg("下载成功!");
     }).catch(e => {
       wx.hideLoading();

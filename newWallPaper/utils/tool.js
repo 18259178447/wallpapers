@@ -1,5 +1,4 @@
 class Tool {
-  downloadData = {};
   constructor() {
   }
   getCatetorys(){
@@ -107,13 +106,72 @@ class Tool {
       return wx.safe = false;
     })
   }
-  downloadImage(url){
-    url = url.replace(/https?/, 'https');
+  downloadImage(imageItem){
+    var url = imageItem.Image.replace(/https?/, 'https');
     return wx.promiseApi('downloadFile',{url}).then(res=>{
       return wx.promiseApi("saveImageToPhotosAlbum", {
         filePath: res.tempFilePath
       })
+    }).then(res=>{
+      (this.downloadData = this.downloadData || []).unshift(imageItem);
+      return res;
     })
+  }
+  collectImage(imageItem){
+    var { id } = imageItem;
+    var index = this.checkImageIsCollect(id,true);
+    if(index > -1){
+      this.collectData.splice(index,1);
+    }else{
+      this.collectData.unshift(imageItem);
+    }
+    this.collectChange = true
+    return Promise.resolve(index > -1 ? 0 : 1)
+  }
+  checkImageIsCollect(id,flag){
+    var collectData = (this.collectData || (this.collectData = wx._getStorageSync("collectData") || []));
+    var index = -1;
+    collectData.some((item,_index) => {
+      if (id === item.id) return index = _index, true
+    })
+    return flag ? index : index > -1;
+  }
+  saveData(){
+    this.saveCollect();
+    this.saveDownload();
+  }
+  saveCollect(fn){
+    if (this.collectData && this.collectChange) {
+      wx._setStorage({
+        key: 'collectData',
+        data: this.collectData,
+      })
+      this.collectChange = false;
+      fn && fn(this.collectData)
+    }else if(fn){
+      fn(this.collectData || (this.collectData = wx._getStorageSync("collectData") || []))
+    }
+  }
+  saveDownload(fn){
+    if (this.downloadData && this.downloadData.length) {
+      let oldDownloadData = wx._getStorageSync("downloadData") || [];
+      let idsObj = {};
+      let newDownloadData = [];
+      this.downloadData.concat(oldDownloadData).forEach(item => {
+        if (!idsObj[item.id]) {
+          idsObj[item.id] = 1;
+          newDownloadData.push(item)
+        }
+      })
+      this.downloadData = [];
+      wx._setStorage({
+        key: 'downloadData',
+        data: newDownloadData.slice(0, 400),
+      })
+      fn && fn(newDownloadData)
+    }else if(fn){
+      fn && fn(wx._getStorageSync("downloadData") || [])
+    }
   }
 }
 

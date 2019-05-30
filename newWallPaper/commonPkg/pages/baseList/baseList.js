@@ -15,7 +15,74 @@ function getPage(name){
         })
       }
     }
-
+    break;
+    case 'download':
+    return {
+      data:{
+        "header.title":"我的下载"
+      },
+      _onLoad(options,obj){
+        this.setData(obj);
+        wx.Tool.saveDownload((downloadData)=>{
+          this.selectComponent('#image-list').init({
+            downloadData: downloadData.slice(0),
+            filterFn:"empty",
+            __getData() {
+              var data = this.downloadData;
+              var start = this.pageIndex * (this.pageSize || 20);
+              var end = (++this.pageIndex) * (this.pageSize || 20);
+              data = data.slice(start,end);
+              this.hasNext = data.length;
+              var obj = {};
+              if (!this.hasNext) {
+                obj.LoadingText = ''
+              }
+              data = {
+                DataList:data
+              }
+              this.__dealWithData(data, obj);
+            }
+          })
+        });
+      }
+    }
+    break;
+    case 'collect':
+    return {
+      data:{
+        "header.title":"我的收藏"
+      },
+      _onLoad(options,obj){
+        this.isload = true;
+        this.setData(obj);
+        this.loadData();
+      },
+      onShow(){
+        if (!this.isload) return;
+        this.loadData();
+      },
+      loadData(){
+        wx.Tool.saveCollect(() => { })
+        this.selectComponent('#image-list').init({
+          filterFn: "empty",
+          __getData() {
+            var data = wx.Tool.collectData;
+            var start = this.pageIndex * (this.pageSize || 20);
+            var end = (++this.pageIndex) * (this.pageSize || 20);
+            data = data.slice(start, end);
+            this.hasNext = data.length;
+            var obj = {};
+            if (!this.hasNext) {
+              obj.LoadingText = ''
+            }
+            data = {
+              DataList: data
+            }
+            this.__dealWithData(data, obj);
+          }
+        })
+      }
+    }
     break;
   }
 }

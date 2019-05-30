@@ -1,5 +1,6 @@
 module.exports = {
   dones(data, name ="wallpaper") {
+    if(name === "empty") return data;
     if(data && data.length > 0){
       return data.map(item => this[name](item))
     } 

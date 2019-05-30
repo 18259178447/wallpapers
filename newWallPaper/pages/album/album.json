@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "album-list": "./album-list"
-  }
+  },
+  "navigationBarTitleText": "壁纸专辑"
 }

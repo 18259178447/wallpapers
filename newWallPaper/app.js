@@ -5,4 +5,7 @@ App({
   onLaunch: function (options) {
     wx.positionPromise = wx.Tool.addrPromise();
   },
+  onHide(){
+    wx.Tool.saveData();
+  }
 })

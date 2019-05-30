@@ -1,6 +1,6 @@
 <view class="page flex-c" wx:if="{{!noSafe}}">
   <header-box capsule wx:if="{{navArr.length}}">
-    <share-search back></share-search>
+    <share-search></share-search>
     <catetory-nav navArr="{{navArr}}" current="{{currentIndex}}" bindchange="navChanges"></catetory-nav>
   </header-box>
   <view class='hidden flex-c__1'>
@@ -16,7 +16,7 @@
 
 <view class="page flex-c" wx:else>
   <header-box capsule>
-    <share-search back></share-search>
+    <share-search></share-search>
   </header-box>
   <view class='hidden flex-c__1'>
     <album-list id="image-list0"></album-list>
