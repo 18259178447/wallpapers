@@ -4,7 +4,7 @@
   bindtap="toggleBtnsHandle"
 >
 </image-preview>
-<back-title header="{{header}}" skin="back2"></back-title>
+<back-title wx:if="{{!isBtnsHidden}}" header="{{header}}" skin="back2"></back-title>
 
 
 
@@ -12,7 +12,8 @@
 
 
 <view class="footer-btns pen">
-    <view class='btns flex flex_h_sa pea {{isBtnsEnter ? "btns_enter" : ""}}' hidden='{{isBtnsHidden}}' bindtap='event'>
+  <view class='footer-wrap pea {{isBtnsHidden ? "footer-wrap_hide" : "footer-wrap_show"}}'>
+    <area-form-button height="100rpx" _class='btns flex flex_h_sa' bindtap='event'>
         <view class='btns__item' data-event="backHome">
             <mini-icon class='pen' type='home'></mini-icon>
             <view class='btns___name pen'>首页</view>
@@ -34,9 +35,12 @@
             <mini-icon class='pen' type='day'></mini-icon>
             <view class='btns___name pen'>日签</view>
         </view>
-    </view>
-    <view class='footer-btns__switch-outer pea' bindtap='toggleBtnsHandle'>
+    </area-form-button>
+    <footer-box></footer-box>
+  </view>
+
+    <!-- <view class='footer-btns__switch-outer pea' bindtap='toggleBtnsHandle'>
         <view class='footer-btns__switch-inner'></view>
-    </view>
+    </view> -->
 </view>
 

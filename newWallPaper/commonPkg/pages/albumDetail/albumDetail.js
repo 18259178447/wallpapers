@@ -7,7 +7,8 @@ wx.Page({
   data: {
     header:{
       type:"fixed"
-    }
+    },
+    banner:null
   },
   /**
    * 生命周期函数--监听页面加载
@@ -28,7 +29,8 @@ wx.Page({
               banner: {
                 desc: item.Desc,
                 ImgUrl: item.ImgUrl,
-                id: item.AlbumID
+                id: item.AlbumID,
+                count: item.ImgCount
               },
               "header.title": item.AlbumName
             })
@@ -62,6 +64,36 @@ wx.Page({
       })
     }
    
+  },
+  send(){
+    if (!wx.__my || !wx.safe) return;
+    var { id, count, desc} = this.data.banner;
+    wx.cloud.callFunction({
+      // 要调用的云函数名称
+      name: 'message',
+      // 传递给云函数的event参数
+      data: {
+        "type":"1",
+        page:"commonPkg/pages/albumDetail/albumDetail?id=" + id,
+        data:{
+          keyword1:{
+            value:this.data.header.title
+          },
+          keyword2:{
+            value: count
+          },
+          keyword3:{
+            value: desc
+          },
+        }
+      }
+    }).then(res => {
+      console.log(res)
+      // output: res.result === 3
+    }).catch(err => {
+      console.log(err)
+      // handle error
+    })
   },
   __addShare(obj){
     var { ImgUrl, id } = this.data.banner;

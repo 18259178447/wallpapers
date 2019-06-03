@@ -1,4 +1,4 @@
-<view class='placehold-container' style='height:{{height}}'>
+<view class='placehold-container' style='height:{{height}}' wx:if="{{isCollect}}">
   <form class='form-box' bindsubmit="formSubmit" report-submit-timeout="1000" report-submit>
     <button formType="submit" class='form-submit-btn' hover-class='none'>
       <view class='_class content'>
@@ -6,4 +6,7 @@
       </view>
     </button>
   </form>
+</view>
+<view class='_class content' wx:else>
+  <slot></slot>
 </view>

@@ -1,0 +1,7 @@
+<view class='container'>
+  <header-box placehold></header-box>
+  <view bindtap='switchHandle'>切换审核版本</view>
+
+
+
+</view>

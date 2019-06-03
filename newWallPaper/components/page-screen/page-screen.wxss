@@ -14,7 +14,14 @@
   background-size: cover;
 }
 
-.page-screen__no-data{
+.page-screen__no-data-image{
   width: 556rpx;
   height: 488rpx;
+}
+
+.page-screen__no-data-word{
+  font-size: 38rpx;
+  color: #a7a7b3;
+  text-align: center;
+  margin-top: 30rpx;
 }

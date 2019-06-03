@@ -19,3 +19,5 @@
   </view>
   <view style="height:300rpx" bindlongpress='open'></view>
 </header-box>
+
+<view class='switch-verify' bindtap='event' data-url="commonPkg/pages/manage/manage" wx:if="{{manage}}">管理者</view>

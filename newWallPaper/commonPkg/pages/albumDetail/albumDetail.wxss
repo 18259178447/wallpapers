@@ -4,5 +4,9 @@
   width: 100%;
 }
 .banner-desc{
-  color: #fff;
+  color: #a7a7b3;
+  font-size: 32rpx;
+  padding: 27.5rpx;
+  /* background: #3a3a46; */
+  /* margin-bottom: 27.5rpx; */
 }

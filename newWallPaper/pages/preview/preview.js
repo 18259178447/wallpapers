@@ -6,7 +6,7 @@ wx.Page({
    */
   data: {
     isBtnsEnter:false,//
-    isBtnsHidden:true,//
+    isBtnsHidden:false,//
     isSwitchBtnShow:true,//
     isReSetting:false,
     header: {

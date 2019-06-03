@@ -1,0 +1,6 @@
+**/*.
+bower.json
+webpack.config.js
+newWallPaperCloud/node_modules
+examples
+test

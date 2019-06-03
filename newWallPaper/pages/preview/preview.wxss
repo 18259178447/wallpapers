@@ -5,7 +5,19 @@
   left: 0;
   right: 0;
   bottom: 0;
-  padding-bottom: 80rpx;
+  overflow: hidden;
+  /* padding-bottom: 80rpx; */
+}
+.footer-wrap{
+  background: rgba(0,0,0,0.5);
+}
+.footer-wrap_hide{
+  transform: translate3d(0,100%,0);
+  transition: all .3s;
+}
+.footer-wrap_show{
+    transform: translate3d(0,0,0);
+  transition: all .3s;
 }
 
 .footer-btns__switch-outer{
@@ -29,9 +41,9 @@
 
 .btns{
   padding: 0 40rpx;
-  margin-bottom: 50rpx;
-  opacity: 0;
-  
+  height: 100rpx;
+  /* margin-bottom: 50rpx; */
+  /* opacity: 0; */
 }
 .btns_enter{
   opacity: 1;
@@ -41,13 +53,13 @@
 .btns__item{
   width: 100rpx;
   height: 100rpx;
-  background: rgba(0,0,0,0.5);
-  border-radius: 50%;
+  /* background: rgba(0,0,0,0.5); */
+  /* border-radius: 50%; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0 40rpx rgba(255, 255, 255, 0.3)
+  /* box-shadow: 0 0 40rpx rgba(255, 255, 255, 0.3) */
 }
 .btns___name{
   color: #fff;

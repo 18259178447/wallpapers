@@ -1,9 +1,9 @@
 <view class='page'>
   <back-title header="{{header}}"></back-title>
   <image-list id="image-list" placeholdHeader>
-    <!-- <view class='banner'>
-        <image class='banner-image' src='{{banner.ThumbImage}}'></image>
+    <view class='banner' wx:if="{{!noSafe && banner}}">
+        <image class='banner-image' src='{{banner.ImgUrl}}' bindlongpress="send"></image>
         <view class='banner-desc'>{{banner.desc}}</view>
-    </view> -->
+    </view>
   </image-list>
 </view>

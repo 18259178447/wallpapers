@@ -1,0 +1,4 @@
+/* commonPkg/pages/manage/manage.wxss */
+.container{
+  color: #fff;
+}

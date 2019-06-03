@@ -7,3 +7,43 @@
 .page{
    background: #181824
 }
+
+
+.add-tip{
+  position: fixed;
+  top: 20rpx;
+  right: 20rpx;
+  left: 300rpx;
+  z-index: 999;
+}
+.add-tip__content{
+  padding: 20rpx;
+  background: rgba(255, 255, 255, .8);
+  border-radius: 8rpx;
+}
+
+.add-tip__word{
+  font-size: 32rpx;
+  margin-top: -20rpx;
+}
+
+.add-tip__btn{
+  align-self: flex-end;
+  font-size: 26rpx;
+  padding: 10rpx;
+  border-radius: 6rpx;
+  background-color: #eacd34;
+  color: #fff;
+  margin-top: 15rpx;
+}
+
+.add-tip__triggle{
+  border:20rpx solid transparent;
+  width: 0;
+  height: 0;
+  border-bottom-color: rgba(255, 255, 255, .8);
+  transform: translateY(-100%);
+  margin-top: -20rpx;
+  align-self: flex-end;
+  margin-right: 70rpx;
+}

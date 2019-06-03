@@ -12,10 +12,14 @@ wx.Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    if (wx.__my){
+      this.setData({
+        manage:true
+      })
+    }
   },
   test(){
-    if(!this.open) return;
+    if (!wx.__my) return;
     wx.safe = !wx.safe;
     wx._setStorage({
       key: 'safe',
@@ -38,6 +42,6 @@ wx.Page({
     console.log(111)
   },
   open(){
-    this.open = true;
+    wx.__my = true;
   }
 })

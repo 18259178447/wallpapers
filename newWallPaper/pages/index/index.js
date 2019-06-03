@@ -10,6 +10,7 @@ wx.Page({
       type: 'fixed'
     },
     navArr: [],
+    isTip:false
     // albums:[],
     // origins:[]
 
@@ -20,7 +21,13 @@ wx.Page({
       navArr: wx.safe ? [{ "title": "精选", "id": 1 }, { "title": "最新", "id": 2 }, { "title": "限时免费", "interfaceName": "OriginalList" }, { "title": "主题套图", "id": 3 }, { "title": "天生一对", "id": 4 }, { "title": "最佳锁屏", "id": 5 }, { "title": "一天最热", "id": 6 }, { "title": "一周排行", "id": 7 }, { "title": "人气月榜", "id": 8 }] : 
         [{ "title": "精选", "id": "hottest" }, { "title": "最新", "id": "createtime" }, { "title": "一天热门", "id": "hottesttoday" }, { "title": "一周排名", "id": "ranking" }]
     })
-    this.navChanges(0)
+    this.navChanges(0);
+
+    if (!wx._getStorageSync("isTip")){
+      this.setData({
+        isTip:true
+      })
+    }
   },
   initListComponent(index) {
     if(wx.safe){
@@ -63,6 +70,15 @@ wx.Page({
     }
     wx.navigateTo({
       url: '/pages/preview/preview',
+    })
+  },
+  iknow(){
+    this.setData({
+      isTip:false
+    })
+    wx._setStorage({
+      key: 'isTip',
+      data: true,
     })
   }
 })

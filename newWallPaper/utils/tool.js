@@ -69,7 +69,6 @@ class Tool {
       return categorys;
     })
   }
-  
   addrPromise(){
     var safe = wx.getStorageSync('safe')
     if (safe !== '') {

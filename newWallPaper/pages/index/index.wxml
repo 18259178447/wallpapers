@@ -15,8 +15,19 @@
   </swiper>
 </view>
 
+<view class='add-tip pen' wx:if="{{isTip}}">
+  <header-box placehold _class="pen"></header-box>
+  <view class='add-tip__content flex-c'>
+    <view class='add-tip__triggle'></view>
+    <view class='add-tip__word'>
+      添加到我的小程序，微信首页下拉就可找到我了噢~
+    </view>
+    <view class='add-tip__btn pea' bindtap='iknow'>我知道了</view>
+  </view>
+</view>
 
-        <!-- <block wx:if="{{index === 0}}">
+
+<!-- <block wx:if="{{index === 0}}">
           <view class='module' wx:if="{{albums.length}}">
             <view class='module__header flex flex_v_center'>
               <view class='module__icon'></view>

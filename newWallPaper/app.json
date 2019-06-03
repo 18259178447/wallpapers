@@ -29,16 +29,32 @@
     "scroll-x": "/components/scroll-x/scroll-x",
     "mini-icon": "/components/mini-icon/mini-icon"
   },
+  "cloud": true,
   "subPackages": [
     {
       "root": "commonPkg",
       "pages": [
         "pages/subCategory/subCategory",
         "pages/baseList/baseList",
-        "pages/albumDetail/albumDetail"
+        "pages/albumDetail/albumDetail",
+        "pages/manage/manage"
       ]
     }
   ],
+  "preloadRule": {
+    "pages/index/index": {
+      "network": "all",
+      "packages": [
+        "commonPkg"
+      ]
+    },
+    "pages/preview/preview": {
+      "network": "all",
+      "packages": [
+        "commonPkg"
+      ]
+    }
+  },
   "sitemapLocation": "sitemap.json",
   "tabBar": {
     "backgroundColor": "#181824",
