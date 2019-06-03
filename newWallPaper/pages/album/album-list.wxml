@@ -7,16 +7,24 @@
 
   <block wx:else>
     <view class="album-list" bindtap='event'>
-      <view class='album-list__item flex' wx:for="{{dataList}}" wx:key="{{item.id}}" data-url="/commonPkg/pages/albumDetail/albumDetail?id={{item.id}}">
-          <view class='album-list__left pen'>
-              <view class='album-list__level'>{{index < 9 ? "0" : ""}}{{index + 1}}</view>
-              <view class='album-list__vol'>Vol</view>
-          </view>
-          <view class='album-list__right flex__1 pen'>
-              <image mode='aspectFill' class='album-list__image' src='{{item.ThumbImage}}'></image>
-              <view class='album-list__title'>{{item.AlbumName}}</view>
-          </view>      
+      <view class='ad-box'>
+        <my-ad style="width:100%" ></my-ad>
       </view>
+      
+      <block wx:for="{{dataList}}" wx:key="{{item.id}}">
+        <view 
+        class='album-list__item flex' 
+        data-url="/commonPkg/pages/albumDetail/albumDetail?id={{item.id}}">
+            <view class='album-list__left pen'>
+                <view class='album-list__level'>{{index < 9 ? "0" : ""}}{{index + 1}}</view>
+                <view class='album-list__vol'>Vol</view>
+            </view>
+            <view class='album-list__right flex__1 pen'>
+                <image mode='aspectFill' class='album-list__image' src='{{item.ThumbImage}}'></image>
+                <view class='album-list__title'>{{item.AlbumName}}</view>
+            </view>      
+        </view>
+      </block>
     </view> 
     <view class='loadingText'>{{LoadingText}}</view>
   </block>

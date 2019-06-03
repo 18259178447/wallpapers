@@ -91,7 +91,7 @@ module.exports = Behavior({
       return wx._request({
         data: Object.assign( wx.safe ? {
           pageindex: this.pageIndex,
-          pagesize: this.pageSize || 20
+          pagesize: this.pageSize || 16
         } : {page:this.pageIndex + 1}, this.params),
         url: this.interfaceName
       }).then((res) => {

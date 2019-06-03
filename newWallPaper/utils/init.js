@@ -187,7 +187,8 @@ wx.Page = function (obj) {
 }
 
 wx.Component = function (obj) {
-  Object.assign(obj.methods || {}, commonMethods)
+  Object.assign(obj.data || (obj.data = {}), commonMethods.data)
+  Object.assign(obj.methods || (obj.methods = {}), commonMethods);
   if (obj.computed && wx.isEmpty(obj.computed)) delete obj.computed;
   if (obj.computed) {
     obj.data.computed = obj.computed
@@ -201,6 +202,7 @@ wx.Component = function (obj) {
       }
     })
   }
+  delete obj.methods.data;
   Component(obj);
 }
 

@@ -1,11 +1,5 @@
 var config = require("./config.js");
-var envs = {
-  "awx2d3f209d87668933": {
-    dev: "dev-ltqye",
-    prod:"prod-n4ws2"
-  }
-}
-var env = envs[config.appid][config.env];
+var env = config[config.use];
 
 wx.cloud.init({ env });
 

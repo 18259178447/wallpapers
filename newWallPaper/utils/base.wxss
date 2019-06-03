@@ -47,3 +47,8 @@
 .theme-yellow{
   color: #eacd34;
 }
+
+.ad-box{
+  padding: 27.5rpx 27.5rpx 0;
+  overflow: hidden;
+}

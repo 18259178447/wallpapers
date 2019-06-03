@@ -1,0 +1,15 @@
+/* components/my-ad/my-ad.wxss */
+
+.my-ad{
+  width: 100%;
+  margin-bottom: 27.5rpx;
+  min-height: 200rpx;
+  overflow: hidden;
+  background:#3a3a46 url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0iI2ZmZiI+CiAgPHBhdGggb3BhY2l0eT0iLjUiIGQ9Ik0xNiAwYTE2IDE2IDAgMCAwIDAgMzIgMTYgMTYgMCAwIDAgMC0zMm0wIDRhMTIgMTIgMCAwIDEgMCAyNCAxMiAxMiAwIDAgMSAwLTI0IiBmaWxsPSIjY2NjIi8+CiAgPHBhdGggZD0iTTE2IDBhMTYgMTYgMCAwIDEgMTYgMTZoLTRBMTIgMTIgMCAwIDAgMTYgNHoiPgogICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIGZyb209IjAgMTYgMTYiIHRvPSIzNjAgMTYgMTYiIGR1cj0iMC44cyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz4KICA8L3BhdGg+Cjwvc3ZnPgo=) center center no-repeat;
+  background-size:60rpx 60rpx;
+}
+
+.my-ad__default{
+  width: 100%;
+  height: 200rpx;
+}

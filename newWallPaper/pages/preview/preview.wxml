@@ -4,9 +4,15 @@
   bindtap="toggleBtnsHandle"
 >
 </image-preview>
+<view style='margin-top:20rpx'>
+  <my-ad style="width:100%;"></my-ad>
+</view>
+
+
+
 <back-title wx:if="{{!isBtnsHidden}}" header="{{header}}" skin="back2"></back-title>
 
-
+<footer-box placehold="100rpx"></footer-box>
 
 <view class='daily-signature'></view>
 

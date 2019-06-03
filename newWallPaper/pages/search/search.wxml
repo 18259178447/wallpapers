@@ -33,6 +33,11 @@
      </view>
   </view>
 
+  <view class='ad-box'>
+    <my-ad style="width:100%"></my-ad>
+  </view>
+ 
+
   <view class='search-result theme-bgcolor' hidden='{{!showResult}}'>
     <image-list id="image-list" placeholdHeader="84rpx">
   
