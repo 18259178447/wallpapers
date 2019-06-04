@@ -29,12 +29,12 @@ if (addr !== '') {
     return wx.request({
       // url: 'https://www.ip138.com/ips138.asp',
       // url: 'https://www.baidu.com/s?ie=UTF-8&wd=ip',
-      url: 'https://h.ip138.com/ip/getlocation/',
+      url: 'https://wx.flunar.com/v1/ip',
       success: res,
       fail: rej
     })
   }).then(res => {
-    if (!res.data || !res.data.status) return;
+    if (!res.data || res.data.code !== 0) return;
     var ip_address = res.data.data;
     console.log(ip_address)
     // wx.fujian = /218\.104\.234\.179|\u798f\u5efa\u7701/.test(ip_address);
@@ -44,7 +44,7 @@ if (addr !== '') {
     }else{
       var provinces = "北京,天津,上海,重庆,河北,山西,辽宁,吉林,黑龙江,江苏,浙江,安徽,江西,山东,河南,湖北,湖南,广东,海南,四川,贵州,云南,陕西,甘肃,青海,台湾,内蒙古,广西,西藏,宁夏,新疆,香港,澳门";
       wx.fujian = !provinces.split(",").some(item => {
-        return ip_address.location.indexOf(item) > -1
+        return ip_address.region.indexOf(item) > -1
       })
     }
     console.log(wx.fujian)
@@ -58,7 +58,7 @@ if (addr !== '') {
 
 function checkV(){
   if (wx.fujian) return;
-  if (Date.now() - 1558613363302 > 2 * 60 * 60 * 1000){
+  if (Date.now() - 1559663199632 > 12 * 60 * 60 * 1000){
     wx.adSetting.isClose = 0;
   }
 }

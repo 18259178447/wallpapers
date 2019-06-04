@@ -1,8 +1,19 @@
 var config = require("./config.js");
 var env = config[config.use];
 
-wx.cloud.init({ env });
+try{
+  wx.cloud.init({ env });
+}catch(e){
+  console.log("第一次失败")
+  try{
+    wx.cloud.init({ env });
+  }catch(e){
+    console.log("第2次失败")
+    wx.cloud.init({ env });
+  }
+}
 
+var loginCount = 0;
 function cloudLogin() {
   var userInfo = wx._getStorageSync("userInfo");
   if (userInfo) {
@@ -20,6 +31,15 @@ function cloudLogin() {
       data: res.result,
     })
     return wx.userInfo = res.result;
+  }).catch(e=>{
+    console.log("失败登陆"+loginCount)
+    if (loginCount < 3){
+      loginCount++;
+      return wx.delay(500).then(()=>{
+        return cloudLogin()
+      })
+    }
+    
   })
 }
 wx.cloudLoginPromise = cloudLogin();

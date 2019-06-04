@@ -12,6 +12,7 @@ async function createCollection(){
   var day = d.getDate();
   d.setDate(day + 1);
   var name = `formid__${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+  console.log(d.getDate())
   try{
     let result = await db.createCollection(name);
     await db.collection('tables').add({

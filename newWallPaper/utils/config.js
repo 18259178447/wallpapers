@@ -1,5 +1,5 @@
 // 配置文件
-var qudaoIndex = 1;
+var qudaoIndex = 0;
 var qudao = [
   {
     name: "高清壁纸Pro",
@@ -9,7 +9,7 @@ var qudao = [
     prod: "prod-n4ws2",
     use: "dev"
   },
-  {
+  {// qianmeng_xcx01@163.com  qmxcx001
     name: "超清壁纸精选",
     adid: "adunit-923e33e5e984b835",
     appid: "wxd3fab7dc660d0a6f",
@@ -20,9 +20,7 @@ var qudao = [
 ]
 
 module.exports = Object.assign({
-  appid: "awx2d3f209d87668933",//prod-n4ws2
-  env: "dev",
-  base: "https://minibizhi.313515.com/",//基本域名
+  base: qudaoIndex === 0 ? "https://minibizhi.313515.com/" : "https://www.dreamcometrue.top/",//基本域名
   interfaces: {//接口
     WallpaperList: 'List/WallpaperList',
     OriginalList: 'List/OriginalList',
@@ -34,4 +32,5 @@ module.exports = Object.assign({
   }
 }, qudao[qudaoIndex]);
 
+wx.qudaoIndex = qudaoIndex;
 qudao = null;

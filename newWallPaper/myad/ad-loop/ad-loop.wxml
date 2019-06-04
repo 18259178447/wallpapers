@@ -1,0 +1,1 @@
+<ad wx:if="{{adid && index === 0}}" unit-id="{{adid}}" binderror="adError"></ad>

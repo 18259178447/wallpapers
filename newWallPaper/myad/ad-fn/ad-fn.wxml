@@ -1,0 +1,39 @@
+<!--components/lad/lad.wxml-->
+<view class='ad'>
+  <view class='ad__box {{isHide ? "ad__box_hide" : ""}}'>
+    <view class='ad__bg' catchtap='closeAd'></view>
+    <view class='ad__body'>
+
+      <view class='ad__close-btn' catchtap='closeAd'></view>
+
+      <view class='wx-ad' wx:if="{{adType === 1}}">
+        <view class='wx-ad__title'>点击广告后{{mini.title}}</view>
+        <view class='wx-ad__view' capture-bind:tap='adClick'>
+          <ad 
+            unit-id="{{banner}}" 
+            bindload="adLoad" 
+            binderror="adError" 
+            wx:if="{{adIndex === 0}}">
+          </ad>
+        </view>
+      </view>
+
+
+
+      <view class='mini-ad' wx:elif="{{adType === 2 && mini}}" bindtap='adMiniClick'>
+          <image class='mini-ad__image' src='{{mini.image}}'></image>
+          <view class='mini-ad__title'>{{mini.title}}</view>
+          <view class='mini-ad__explain mini-ad__explain_skin_blue'>
+            <text>体验“{{mini.title}}”</text>
+            <text wx:if="{{mini.viewTime}}">{{mini.viewTime}}秒</text>
+            <text>后</text>
+          </view>
+          <view class='mini-ad__explain'>{{viewTip}}</view>
+          <view class='mini-ad__btn'>立即体验</view>
+      </view>
+
+    </view>
+  </view>
+</view>
+
+

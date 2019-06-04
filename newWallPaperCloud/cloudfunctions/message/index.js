@@ -31,6 +31,7 @@ exports.main = async (event, context) => {
     return "获取总集合失败"
   }
   var total;
+  console.log("当前使用:", table.name)
   try{
     total = await db.collection(table.name).count();
     total = total.total;
@@ -51,7 +52,7 @@ exports.main = async (event, context) => {
     for(let j = 0; j < result.length; j++){
       let item = result[j];
       let isExpire = item.expire - new Date() > 0;
-      if (isExpire){
+      if (true){
         try{
           let sendResult = await cloud.openapi.templateMessage.send(Object.assign(event,{
             touser: item._id,
