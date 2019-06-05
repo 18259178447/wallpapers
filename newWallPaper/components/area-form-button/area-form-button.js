@@ -14,9 +14,7 @@ Component({
    * 组件的初始数据
    */
   ready() {
-    if(wx.todayAction("collect-formid").count()){
-      this.noCollect();
-    }
+    this.check();
   },
   /**
    * 组件的方法列表
@@ -26,18 +24,16 @@ Component({
       if(!wx.safe){
         return console.log("nosafe")
       }
-      if (wx.todayAction("collect-formid").count()) {
-        return this.noCollect();
-      }
       if (
         e.detail.formId
         && e.detail.formId.indexOf("requestFormId:fail") === -1 
         && e.detail.formId.indexOf("the formId is a mock one") === -1
         && wx.userInfo && wx.userInfo.openid
         ){
-        wx.$('formid__' + new Date().format("Y-M-D"))
-        .doc(wx.userInfo.openid)
-        .set({ 
+        // wx.$('formid__' + new Date().format("Y-M-D"))
+        // .doc(wx.userInfo.openid)
+        wx.$('formids')
+        .add({ 
           data: {
             // openid: wx.userInfo.openid,
             formid: e.detail.formId,
@@ -47,15 +43,17 @@ Component({
           }
         })
         .then(res=>{
-          this.noCollect();
           wx.todayAction("collect-formid").done();
+          this.check();
           }).catch(e => console.log(e))
       }
     },
-    noCollect(){
-      this.setData({
-        isCollect: false
-      });
+    check(){
+      if (wx.todayAction("collect-formid").count() > 1){
+        this.setData({
+          isCollect: false
+        });
+      }
     }
   }
 })

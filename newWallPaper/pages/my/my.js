@@ -26,7 +26,7 @@ wx.Page({
       data: wx.safe,
     })
     wx._setStorage({
-      key: 'categorys',
+      key: 'categorysV2',
       data: '',
     })
 

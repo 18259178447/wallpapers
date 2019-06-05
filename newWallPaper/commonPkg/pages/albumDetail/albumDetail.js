@@ -1,5 +1,5 @@
 // commonPkg/pages/albumDetail/albumDetail.js
-
+var config = require("../../../utils/config.js")
 wx.Page({
   /**
    * 页面的初始数据
@@ -79,7 +79,7 @@ wx.Page({
       name: 'message',
       // 传递给云函数的event参数
       data: {
-        "type":"1",
+        templateId: config.tpl["1"],
         page:"commonPkg/pages/albumDetail/albumDetail?id=" + id,
         data:{
           keyword1:{
