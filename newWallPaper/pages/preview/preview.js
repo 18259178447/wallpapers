@@ -17,11 +17,13 @@ wx.Page({
     isImageCollect:false
   },
   onUnload(){
-    this.previewCom = null;
+    this.adCom = this.previewCom = null;
   },
   onInit({ safe, wallpaper }){
+    
     if (safe && wx.safe != !!+safe) return this.backHome();
     this.previewCom = this.selectComponent('#image-preview');
+    this.adCom = this.selectComponent('#ad-fn');
     if(wallpaper){
       wallpaper = JSON.parse(decodeURIComponent(wallpaper));
       this.previewCom.init({
@@ -34,7 +36,20 @@ wx.Page({
         index:0
       })
     }else{
-      this.previewCom.init(wx.previewObj)
+      if(wx.safe){
+        this.previewCom.init(wx.previewObj)
+      }else{
+        this.previewCom.init({
+          page: {
+            data: {
+              dataList: [wx.previewObj.page.data.dataList[wx.previewObj.index]]
+            },
+            hasNext: false
+          },
+          index: 0
+        })
+      }
+     
       wx.previewObj = null;
     }
     wx.promiseApi('getSetting').then(res=>{
@@ -68,6 +83,15 @@ wx.Page({
   },
   downloadHandle(){
     var imageItem = this.previewCom.data.imgs[this.previewCom.currentIndex];
+    if (wx.safe){
+      this.selectComponent('#ad-fn').openAd(imageItem.id, () => {
+        this._downloadHandle(imageItem)
+      })
+    }else{
+      this._downloadHandle(imageItem)
+    }
+  },
+  _downloadHandle(imageItem){
     wx.showLoading({title: '下载中,请稍后...',mask: !0});
     wx.Tool.downloadImage(imageItem).then(res=>{
       wx.msg("下载成功!");

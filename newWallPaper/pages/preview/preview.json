@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "image-preview": "/components/image-preview/image-preview",
+    "ad-fn": "/myad/ad-fn/ad-fn",
     "area-form-button": "/components/area-form-button/area-form-button"
   },
   "navigationBarTitleText": "壁纸大图"

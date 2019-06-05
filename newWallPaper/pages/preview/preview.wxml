@@ -8,7 +8,7 @@
   <my-ad style="width:100%;"></my-ad>
 </view>
 
-
+<ad-fn id="ad-fn"></ad-fn>
 
 <back-title wx:if="{{!isBtnsHidden}}" header="{{header}}" skin="back2"></back-title>
 

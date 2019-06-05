@@ -7,7 +7,8 @@
       <view class='ad__close-btn' catchtap='closeAd'></view>
 
       <view class='wx-ad' wx:if="{{adType === 1}}">
-        <view class='wx-ad__title'>点击广告后{{mini.title}}</view>
+        <view class='wx-ad__title'>体验广告后</view>
+        <view class='wx-ad__explain'>{{viewTip}}</view>
         <view class='wx-ad__view' capture-bind:tap='adClick'>
           <ad 
             unit-id="{{banner}}" 
@@ -15,7 +16,9 @@
             binderror="adError" 
             wx:if="{{adIndex === 0}}">
           </ad>
+          <view class='wx-ad__view-mask'></view>
         </view>
+        <view class='wx-ad__explain2'>注：提供免费服务需要服务器资源，望理解，非常感谢！</view>
       </view>
 
 

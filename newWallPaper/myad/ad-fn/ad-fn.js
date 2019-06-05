@@ -1,6 +1,6 @@
 // components/myAd/ad-fn/ad-fn.js
 require('../adManage.js')
-var adData = require("../data.js");
+var {adData} = require("../config.js");
 Component({
   /**
    * 组件的属性列表
@@ -12,7 +12,7 @@ Component({
     },
     viewTip: {
       type: String,
-      value: '点击广告后下载壁纸'
+      value: '就可以下载壁纸啦'
     },
     tip: {
       type: String,
@@ -40,19 +40,23 @@ Component({
       if (!this.data.isHide && this.startTime) {
         var viewTime = Date.now() - this.startTime;
         if (this.data.adType === 2){
-          let isUnlock = viewTime / 1000 > adData.mini.viewTime;
+          let isUnlock = viewTime / 1000 > this.data.mini.viewTime;
           if(isUnlock){
-            wx.AdLimit(this.data.name).remainCount++;;
+            wx.todayAction(this.data.name).next();
+            this.loaded[2] = adData.minis && adData.minis.length ? true : false;
+            this.setData({
+              mini:null
+            })
           }else{
           return  wx.showModal({
               title: '提示',
-              content: `需要体验${adData.mini.viewTime}秒哦`,
+              content: `需要体验${this.data.mini.viewTime}秒哦`,
             })
           }
         }
         this.startTime = 0;
         this.callback ? this.callback() : this.adSuccess()
-        this.closeAd(1)
+        this.closeAd()
       }
     }
   },
@@ -60,34 +64,35 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    checkUnlock(key) {
-      var adLimit = wx.AdLimit(this.data.name);
-      if (wx.adSetting.isClose !== 0) return false;
-      var isLimit = key ? adLimit.isLimitByKey(key) : adLimit.isLimit;
-      if (!isLimit) return false
-      return false;
-    },
     openAd(key, next, success) {
+
+      var action = wx.todayAction(this.data.name);
       // this.callback = callback;
-      var adLimit = wx.AdLimit(this.data.name);
-      if (wx.adSetting.isClose !== 0) return next();
-      var isLimit = key ? adLimit.isLimitByKey(key) : adLimit.isLimit;
-      if (!isLimit) return next(), this.reportAd(key);
-      if (this.loaded[0]) {
+      // var adLimit = wx.AdLimit(this.data.name);
+      if (wx.isVerify) return next();
+      var actionSuccess = action.done(key);
+      // var isLimit = key ? adLimit.isLimitByKey(key) : adLimit.isLimit;
+      //可以做此次动作,没有碰到断点
+      if (actionSuccess) return next();
+
+      if (this.loaded[0]) {//banner广告有的话
         this.setData({
           isHide: false,
           adType: 1
         })
-      } else if (this.loaded[1]) {
+      } else if (this.loaded[1]) {//留给小盟广告
+
+      } else if (this.loaded[2]){
         let obj = {
           isHide: false,
           adType: 2
         }
         if (!this.data.mini) {
-          obj.mini = wx.adData.mini;
+          obj.mini = adData.minis.pop();
         }
-        this.setData(obj)
-      } else {
+        this.setData(obj)        
+      }
+      else {
         next();
         success = null;
       }
@@ -95,18 +100,19 @@ Component({
     },
 
     init() {
-      if (wx.adSetting.isClose) return;
-      var adLimit = wx.AdLimit(this.data.name, wx.adSetting.threshold, wx.adSetting.every);
+      if (wx.isVerify) return;
+      var action = wx.todayAction(this.data.name);
+      action.setBreakPoint([1,2,4]);
+      // var adLimit = wx.AdLimit(this.data.name, wx.adSetting.threshold, wx.adSetting.every);
       this.loaded = [];
-      var adData = wx.adData;
       if (adData.banner) {
         this.setData({
           banner: adData.banner,
           adType: 1
         })
       }
-      if (adData.mini) {
-        this.loaded[1] = true;
+      if (adData.minis && adData.minis.length){
+        this.loaded[2] = true; 
       }
     },
     adLoad() {
@@ -119,7 +125,8 @@ Component({
     },
     adClick(e) {
       this.startTime = Date.now();
-      wx.AdLimit(this.data.name).remainCount++;
+      // wx.AdLimit(this.data.name).remainCount++;
+      wx.todayAction(this.data.name).next()
     },
     adMiniClick() {
       var _this = this;
@@ -127,7 +134,6 @@ Component({
         appId: this.data.mini.appid,
         success() {
           _this.startTime = Date.now();
-          
         }
       })
     },
@@ -141,11 +147,6 @@ Component({
           adIndex: 0
         })
       });
-      if (flag !== 1) {
-        if (wx.AdLimit(this.data.name).remainCount > 0) {
-          this.adSuccess()
-        }
-      }
     },
     adSuccess() {
       wx.showModal({
@@ -160,13 +161,6 @@ Component({
         content: '操作失败',
         showCancel: false,
       });
-    },
-    reportAd(key) {
-      if (wx.adSetting.isClose) return;
-      var adLimit = wx.AdLimit(this.data.name);
-      // if (adLimit.remainCount > 0) {
-      key ? adLimit.countByKey(key) : (adLimit.currentCount++);
-      // }
-    },
+    }
   }
 })

@@ -10,7 +10,8 @@ class TodayAction{
       actionInfo = {
         date: TodayAction.today,
         keys:{},//action下子动作标识
-        count:0//今天名为action的动作次数
+        count:0,//今天名为action的动作次数
+        next:false
       }
     }
     this.action = action;
@@ -22,14 +23,14 @@ class TodayAction{
     this.breakPoint = breakPoint;
   }
   done(key){
-    var { keys,count } = this.actionInfo;
+    var { keys,count,next } = this.actionInfo;
     count++;//这次是第几次动作
     //如果有key并且动作已经做过了，动作成功，但不记录此动作次数
     if (key && keys[key]) return true;
     if (this.breakPoint.indexOf(count) > -1){
       //如果在断点里面， 有授权next，授权去了，继续往下走，否则动作失败
-      if(this.canNext){
-        this.canNext = false;
+      if (next){
+        this.actionInfo.next = false;
       }else{
         return false;
       }
@@ -37,6 +38,7 @@ class TodayAction{
     if(key) keys[key] = true;//如果有key,保存key
     this.actionInfo.count = count;
     this.update = true;
+    if (next && !this.actionInfo.next) this.save();
     return true;
   }
   count(key){
@@ -44,7 +46,9 @@ class TodayAction{
     return this.actionInfo.count;
   }
   next(){
-    this.canNext = true;
+    this.actionInfo.next =  true;
+    this.update = true;
+    this.save()
   }
   save(){
     if(!this.update) return;
@@ -66,3 +70,13 @@ wx.saveAllActions = function(){
     allActions[key].save()
   }
 }
+
+/*
+创建动作为download的动作实例
+var downloadAction = wx.todayAction("download")
+
+断点，表示再数组里的第几次动作停止，直到调用next后才可以继续增加动作次数
+downloadAction.setBreakPoint([1,2,5])
+
+
+*/

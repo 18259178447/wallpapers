@@ -30,7 +30,7 @@
 .ad__body{
   background: #FFFFFF;
   border-radius: 12rpx;
-  max-width: 700rpx;
+  max-width: 730rpx;
   padding: 30rpx 20rpx;
   box-sizing: border-box;
   position: absolute;
@@ -48,18 +48,36 @@
   background-size: 38rpx;
 
 }
-
-
+.wx-ad__view{
+  position: relative;
+}
+.wx-ad__view-mask{
+  position: absolute;
+  width: 120rpx;
+  height: 50rpx;
+  left: 0;
+  top: 0;
+}
 .wx-ad__title{
   font-size: 38rpx;
   color: #4C4C4C;
   text-align: center;
   font-weight: bold;
   line-height: 53rpx;
-  margin-bottom: 30rpx;
+  margin-bottom: 10rpx;
 }
-
-
+.wx-ad__explain{
+  font-size: 28rpx;
+  margin-bottom: 30rpx;
+  color: rgb(250, 25, 25);
+  text-align: center;
+}
+.wx-ad__explain2{
+    font-size: 20rpx;
+  color: rgb(250, 25, 25);
+  text-align: center;
+  margin-top: 15rpx;
+}
 .mini-ad__image{
   width: 120rpx;
   height: 120rpx;
@@ -97,106 +115,3 @@
   background-color: rgb(250, 25, 25);
   margin-top: 40rpx;
 }
-
-
-
-.p-ad-content .ad-title{
-  font-size: 32rpx;
-  color: #6A7883;
-  text-align: center;
-  line-height: 46rpx;
-  display: block;
-}
-.p-ad-content .ad-title.my{
-  color: #000;
-  font-weight: bold;
-}
-
-
-.p-ad-view{
-  margin-top: 40rpx;
-  min-height: 100rpx;
-  position: relative
-}
-
-.p-ad-view image{
-  width: 100%;
-  height: auto;
-}
-.p-ad-content.chaping .p-ad-view{
-  width: 95%;
-  margin: 30rpx auto 0
-}
-.p-ad-content >image{
-  width: 30rpx;
-  height: 30rpx;
-  position: absolute;
-  right: -5rpx;
-  top: -5rpx;
-  padding: 20rpx;
-}
-
-.p-other-ad-view{
-  display: flex;
-  padding-top: 40rpx;
-  align-items: center;
-}
-.p-other-ad-view.my{
-  margin-top: 40rpx;
-  border: 1rpx solid #f1f1f1;
-  border-radius: 10rpx;
-  padding: 20rpx;
-  position: relative
-}
-.p-other-ad-view image{
-  display: block;
-  height: 200rpx;
-  width: 200rpx;
-  pointer-events: none;
-  /* border-radius: 50%; */
-}
-.p-other-ad-view.my .adTip{
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 24rpx;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.3);
-  padding: 0 10rpx;
-  line-height: 28rpx;
-  pointer-events: none;
-}
-.p-other-ad-view .word{
-  margin-left: 20rpx;
-  /* padding-top: 20rpx; */
-  flex: 1;
-  pointer-events: none;
-  
-}
-.p-other-ad-view.my .word{
-  margin-left: 0;
-  
-}
-
-
-.p-other-ad-view .word view:first-child{
-  font-size:32rpx;
-  font-weight: bold;
-  
-}
-.p-other-ad-view.my .word view:first-child{
-  text-align: center;
-  margin-right: 20rpx;
-}
-
-
-.p-other-ad-view .word view:last-child{
-  font-size:28rpx;
-  color: #6A7883;
-  margin-top: 20rpx;
-}
-
-.p-other-ad-view.my .word view:last-child{
-  margin-right: 20rpx;
-}
-

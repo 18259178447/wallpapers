@@ -67,7 +67,13 @@ wx.Page({
   },
   send(){
     if (!wx.__my || !wx.safe) return;
+    if(wx.sended) return wx.msg("进入已经发送过了")
+
     var { id, count, desc} = this.data.banner;
+    wx.showLoading({
+      title: '正在发送中。。。',
+      mask:true
+    })
     wx.cloud.callFunction({
       // 要调用的云函数名称
       name: 'message',
@@ -88,10 +94,12 @@ wx.Page({
         }
       }
     }).then(res => {
+      wx.msg("发送成功")
+      wx.sended  = true;
       console.log(res)
       // output: res.result === 3
     }).catch(err => {
-      console.log(err)
+      wx.msg("发送失败")
       // handle error
     })
   },

@@ -1,7 +1,7 @@
 var config = require("./config.js")
-var ver = wx._getStorageSync("ver") || 0;
+var ver = wx._getStorageSync("verv2") || 0;
 
-wx.isVerify = ver === config.ver;
+wx.isVerify = ver !== config.ver;
 
 if(wx.isVerify){//如果审
   wx.adInitPromise = wx.positionPromise.then(res=>{
@@ -9,17 +9,17 @@ if(wx.isVerify){//如果审
       wx.isVerify = config.ver === res.data.ver;
       if (!wx.isVerify) {
         wx._setStorage({
-          key: 'ver',
-          data: res.data.ver,
+          key: 'verv2',
+          data: config.ver,
         })
       }
-      console.log("isVerify",wx.isVerify)
+      console.log("线上ver", res.data.ver, "config-ver", config.ver, "isVerify=" +wx.isVerify )
       return wx.isVerify
     }).catch(e => {
       console.log(11, e)
     })
   })
 }else{
-  console.log("isVerify", wx.isVerify)
+  console.log("缓存ver", ver, "config-ver", config.ver, "isVerify=" + wx.isVerify)
   wx.adInitPromise = Promise.resolve(wx.isVerify)
 }

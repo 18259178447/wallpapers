@@ -1,31 +1,38 @@
 <!-- <image-list></image-list> -->
 <!-- <header-box placehold="144rpx"></header-box> -->
 
-<header-box fixed capsule _class="theme-bgcolor" wx:if="{{navArr.length}}">
+
+
+<header-box fixed capsule _class="theme-bgcolor">
   <share-search></share-search>
-  <catetory-nav navArr="{{navArr}}" current="{{currentIndex}}" bindchange="navChanges"></catetory-nav>
+  <catetory-nav navArr="{{navArr}}" wx:if="{{navArr.length}}" current="{{currentIndex}}" bindchange="navChanges"></catetory-nav>
 </header-box>
 
-<view class='page'>
-  <swiper duration="{{200}}" class="page-swiper full-height" current="{{currentIndex}}" bindchange="navChanges">
-    <swiper-item wx:for="{{navArr}}" wx:key="{{item.id}}">
-      <image-list id="image-list{{index}}" placeholdHeader="154rpx">
-      </image-list>
-    </swiper-item>
-  </swiper>
+<view style='padding-top:10vh' wx:if="{{!navArr.length}}">
+  <page-screen status="pending"></page-screen>
 </view>
 
-<view class='add-tip pen' wx:if="{{isTip}}">
-  <header-box placehold _class="pen"></header-box>
-  <view class='add-tip__content flex-c'>
-    <view class='add-tip__triggle'></view>
-    <view class='add-tip__word'>
-      添加到我的小程序，微信首页下拉就可找到我了噢~
-    </view>
-    <view class='add-tip__btn pea' bindtap='iknow'>我知道了</view>
+<block wx:else>
+  <view class='page'>
+    <swiper duration="{{200}}" class="page-swiper full-height" current="{{currentIndex}}" bindchange="navChanges">
+      <swiper-item wx:for="{{navArr}}" wx:key="{{item.id}}">
+        <image-list id="image-list{{index}}" placeholdHeader="154rpx">
+        </image-list>
+      </swiper-item>
+    </swiper>
   </view>
-</view>
 
+  <view class='add-tip pen' wx:if="{{isTip}}">
+    <header-box placehold _class="pen"></header-box>
+    <view class='add-tip__content flex-c'>
+      <view class='add-tip__triggle'></view>
+      <view class='add-tip__word'>
+        添加到我的小程序，微信首页下拉就可找到我了噢~
+      </view>
+      <view class='add-tip__btn pea' bindtap='iknow'>我知道了</view>
+    </view>
+  </view>
+</block>
 
 <!-- <block wx:if="{{index === 0}}">
           <view class='module' wx:if="{{albums.length}}">
