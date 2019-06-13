@@ -1,5 +1,5 @@
 // components/myAd/ad-fn/ad-fn.js
-require('../adManage.js')
+var adManage = require('../adManage.js')
 var {adData} = require("../config.js");
 Component({
   /**
@@ -56,7 +56,7 @@ Component({
         }
         this.startTime = 0;
         this.callback ? this.callback() : this.adSuccess()
-        this.closeAd()
+        this.closeAd(1)
       }
     }
   },
@@ -102,7 +102,7 @@ Component({
     init() {
       if (wx.isVerify) return;
       var action = wx.todayAction(this.data.name);
-      action.setBreakPoint([1,2,4]);
+      action.setBreakPoint([1,2,3]);
       // var adLimit = wx.AdLimit(this.data.name, wx.adSetting.threshold, wx.adSetting.every);
       this.loaded = [];
       if (adData.banner) {
@@ -118,12 +118,16 @@ Component({
     adLoad() {
       console.log('加载了banner')
       this.loaded[0] = true;
+      adManage.loadHandle()
     },
     adError() {
       this.loaded[0] = false;
       console.log('错误了banner')
+      adManage.errorHandle()
+      adManage.error = true;
     },
     adClick(e) {
+      adManage.clickHandle(0)
       this.startTime = Date.now();
       // wx.AdLimit(this.data.name).remainCount++;
       wx.todayAction(this.data.name).next()
@@ -139,14 +143,21 @@ Component({
     },
     closeAd(flag) {
       this.callback = null;
-      this.setData({
-        isHide: true,
-        adIndex: 1
-      }, () => {
+      if(flag === 1){
         this.setData({
-          adIndex: 0
-        })
-      });
+          isHide: true,
+          adIndex: 1
+        }, () => {
+          this.setData({
+            adIndex: 0
+          })
+        });
+      }else{
+        this.setData({
+          isHide: true,
+        })     
+      }
+ 
     },
     adSuccess() {
       wx.showModal({

@@ -2,7 +2,7 @@ var {minis} = require("./miniData.js")
 var qudao = {
   "wx2d3f209d87668933": {
     name: "高清壁纸Pro",
-    ver:2,
+    ver:4,
     adData:{
       banner: 'adunit-84f6d48d83a20427',
       ald: "",

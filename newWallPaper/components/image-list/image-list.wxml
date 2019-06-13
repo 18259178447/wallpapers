@@ -6,9 +6,9 @@
 
   <block wx:else>
     <view class="wallpaper-box flex flex_h_sb flex_wrap" bindtap='previewHandle'>
-      <my-ad style="width:100%"></my-ad>
+      <!-- <my-ad style="width:100%"></my-ad> -->
       <block wx:for="{{dataList}}" wx:key="{{item.id}}">
-        <my-ad style="width:100%" wx:if="{{ index % 16 === 12}}"></my-ad>
+        <my-ad style="width:100%" wx:if="{{ index % 16 === 0}}"></my-ad>
         <image mode='aspectFill' 
           src='{{item.ThumbImage}}' 
           data-index="{{index}}" 

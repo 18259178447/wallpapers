@@ -1,0 +1,78 @@
+/* pages/first-screen/first-screen.wxss */
+@import "../../utils/base.wxss";
+.swiper-box{
+  height: 100vh;
+}
+.every-bg{
+  align-items: flex-end;
+  overflow: hidden;
+  height: 100%;
+  justify-content: center;
+}
+.every-bg__img{
+  height: 1500rpx;
+  width: 100%;
+}
+
+.every-body{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.every-body__word{
+  width: 682rpx;
+  height: 130rpx;
+  margin: 100rpx auto 0;
+  display: block;
+}
+
+.every-body__bottom{
+  width: 340rpx;
+  height: 48rpx;
+  position: absolute;
+  bottom: 100rpx;
+  left: 50%;
+  transform: translateX(-50%)
+}
+
+
+.inner-swiper{
+  width: 614rpx;
+  height: 427rpx;
+  margin: 60rpx 0 0 86rpx;
+  position: relative;
+}
+.inner-swiper__mask{
+  width: 723rpx;
+  height: 464rpx;
+  position: absolute;
+  top: -20rpx;
+  left: -71rpx;
+}
+.inner-swiper__view,.inner-swiper__img{
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+.btns{
+  margin-top: 60rpx
+}
+.btns__item{
+  width: 223rpx;
+  height: 137rpx;
+}
+.btns__item_login{
+  margin-left: 70rpx;
+}
+
+.every-bg__img_full{
+  height: 774rpx;
+}
+
+.every-bg__img_no-full{
+  height: 774rpx;
+  transform: translateY(25%)
+}

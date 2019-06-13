@@ -1,0 +1,42 @@
+/* components/header/catetory-nav/catetory-nav.wxss */
+@import "/utils/base.wxss";
+
+.catetory-nav-scroll_wrapper{
+   height: 74rpx;
+   position: relative;
+   overflow: hidden;
+   width: 100vw;
+   border-bottom: 2rpx solid #292835;
+   box-sizing: border-box;
+}
+.catetory-nav-scroll__inner{
+  white-space:nowrap;
+  height:100%;
+  /* padding:0 27.5rpx; */
+  display:inline-block;
+  font-size: 0;
+}
+
+
+.catetory-nav{
+  height:74rpx;
+}
+.catetory-nav__item{
+  font-size:32rpx;
+  color:#898995;
+  padding: 0 10rpx;
+  margin: 0 17.5rpx;
+  /* margin-left:44rpx; */
+  line-height:68rpx;
+  position:relative;
+  border-bottom: 6rpx solid transparent
+}
+/* .catetory-nav__item:first-child{
+  margin-left:17.5rpx;
+} */
+
+.catetory-nav__item_active{
+  color: #e8ebf2;
+  font-weight:600;
+  border-color: #f3ca30;
+}

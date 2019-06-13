@@ -1,0 +1,40 @@
+@import "/css_blocks/ellipsis.wxss";
+@import "/css_blocks/flex.wxss";
+@import "/css_blocks/loading-text.wxss";
+
+/* 多行省略 */
+
+.mul-e {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* 单行省略 */
+
+.line-e {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.height-100vh,.page{
+  height: 100vh;
+}
+.full-height{
+  height: 100%;
+}
+.default{
+  background-color: #3a3a46;
+}
+.pen{
+  pointer-events: none;
+}
+.pea{
+  pointer-events: auto;
+}
+.hidden{
+  overflow: hidden
+}

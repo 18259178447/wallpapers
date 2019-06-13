@@ -37,6 +37,7 @@ wx.Page({
       })
     }else{
       if(wx.safe){
+        if (!wx.previewObj) return wx.msg("")
         this.previewCom.init(wx.previewObj)
       }else{
         this.previewCom.init({
@@ -122,6 +123,14 @@ wx.Page({
         isBtnsEnter: !this.data.isBtnsEnter
       })
     })
+  },
+  back(){
+    if (getCurrentPages().length === 1){
+     return wx.switchTab({
+        url: '/pages/index/index',
+      })
+    }
+    wx.navigateBack()
   },
   __addShare(obj){
     obj.title = "送你一张壁纸，快来和我一起换上吧！";

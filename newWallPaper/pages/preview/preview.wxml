@@ -10,7 +10,19 @@
 
 <ad-fn id="ad-fn"></ad-fn>
 
-<back-title wx:if="{{!isBtnsHidden}}" header="{{header}}" skin="back2"></back-title>
+<header-box fixed wx:if="{{!isBtnsHidden}}">
+  <area-form-button height="74rpx" bindclick="back" flag>
+    <view class='preview-back'></view>
+  </area-form-button>
+</header-box>
+<!-- <view class='header-top'>
+  <header-box ></header-box>
+  <area-form-button height="74rpx" bindtap='event'>
+    <view data-event='back' class='preview-back'></view>
+  </area-form-button>
+</view> -->
+<!-- 
+<back-title wx:if="{{!isBtnsHidden}}" header="{{header}}" skin="back2"></back-title> -->
 
 <footer-box placehold="100rpx"></footer-box>
 

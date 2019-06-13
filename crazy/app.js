@@ -1,3 +1,4 @@
+require('utils/init');
 App({
 
   /**

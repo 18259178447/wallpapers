@@ -1,0 +1,6 @@
+/* components/scroll-x/scroll-x.wxss */
+.scroll-x__inner{
+  white-space:nowrap;
+  display:inline-block;
+  font-size:0;
+}

@@ -1,5 +1,5 @@
 <view class='placehold-container' style='height:{{height}}' wx:if="{{isCollect}}">
-  <form class='form-box' bindsubmit="formSubmit" report-submit-timeout="1000" report-submit>
+  <form class='form-box' bindsubmit="formSubmit" report-submit-timeout="500" report-submit>
     <button formType="submit" class='form-submit-btn' hover-class='none'>
       <view class='_class content'>
         <slot></slot>
@@ -7,6 +7,6 @@
     </button>
   </form>
 </view>
-<view class='_class content' wx:else>
+<view class='_class content' wx:else bindtap='click'>
   <slot></slot>
 </view>

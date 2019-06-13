@@ -1,0 +1,39 @@
+<swiper class='swiper-box' duration="{{200}}" bindchange="swiperChange" indicator-dots indicator-color="#b4b4b5" indicator-active-color="red" current='4'>
+  <swiper-item wx:for="{{4}}" wx:key="{{index}}">
+
+
+
+    <view class="every-bg flex">
+      <image class='every-bg__img' style='{{width ? "width:"+width+"px;height:100%;" : ""}}' src='/assets/first-screen-bg{{index}}.jpg'></image>
+    </view>
+    <view class='every-body'>
+      <header-box placehold></header-box>
+      <image src='/assets/first-screen-word{{index}}.png' class='every-body__word'></image>
+      <image src='/assets/first-screen-bottom-word.png' class='every-body__bottom'></image>
+    </view>
+
+
+  </swiper-item>
+  <swiper-item>
+
+    <view class="every-bg flex">
+      <image class='every-bg__img {{width ? "every-bg__img_full" : "every-bg__img_no-full"}}' src='/assets/first-screen-bg4.jpg'></image>
+    </view>
+    <view class='every-body'>
+      <back-title header="{{header}}"></back-title>
+      <view class='inner-swiper'>
+        <swiper class='inner-swiper__view' duration="{{200}}">
+            <swiper-item>
+                <image class="inner-swiper__img" src='http://www.cnr.cn/xjfw/btfw/2011btfw/jkwh/jkwt/20160516/W020160516492035673595.jpg'></image>
+            </swiper-item>
+        </swiper>
+        <image src='/assets/first-screen-window.png' class='inner-swiper__mask'></image>
+      </view>
+      <view class='btns flex flex_h_center'>
+         <image class='btns__item btns__item_enter' src='/assets/first-screen-btn0.png'></image>
+         <image class='btns__item btns__item_login' src='/assets/first-screen-btn1.png'></image>
+      </view>
+    </view>
+
+  </swiper-item>
+</swiper>

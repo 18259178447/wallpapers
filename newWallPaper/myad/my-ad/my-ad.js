@@ -1,5 +1,6 @@
 // components/my-ad/my-ad.js
-var config = require("../../utils/config.js");
+var config = require("../config.js");
+var adManage = require("../adManage.js")
 var zhanbuIndex = 0;
 var zhanbu = [
   {
@@ -35,28 +36,45 @@ Component({
    * 组件的初始数据
    */
   data: {
-    adid:config.adid,
-    mini:null,
+    adid: "",
+    mini:null
   },
-  ready(){
+  attached(){
+    if (adManage.error || !adManage.isad){
+      this.changeOther()
+    }else{
+      this.setData({
+        adid: config.adData.banner
+      })
+    }
   },
   /**
    * 组件的方法列表
    */
   methods: {
     errorHandle(e){
-      console.log(e)
-      // zhanbuIndex
-      if(wx.safe){
+      adManage.errorHandle()
+      adManage.error = true;
+      this.changeOther();
+    },
+    changeOther(){
+      if (wx.safe) {
         this.setData({
           mini: zhanbu[zhanbuIndex % zhanbu.length],
-        })
-      }else{
-        this.setData({
           adid:""
+        })
+      } else {
+        this.setData({
+          adid: ""
         })
       }
       zhanbuIndex++;
+    },
+    loadHandle(e){
+      adManage.loadHandle()
+    },
+    adClick(e) {
+      adManage.clickHandle(1);
     },
     toMini(){
       wx.navigateToMiniProgram({

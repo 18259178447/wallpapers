@@ -67,35 +67,68 @@ wx.Page({
   },
   send(){
     if (!wx.__my || !wx.safe) return;
-    if(wx.sended) return wx.msg("进入已经发送过了")
-
-    var { id, count, desc} = this.data.banner;
+    if(wx.sended) return wx.msg("进入已经发送过了");
     wx.showLoading({
-      title: '正在发送中。。。',
-      mask:true
+      title: `正在获取formid`,
+      mask: true
+    });
+    return wx.cloud.callFunction({
+      name: 'formidMark',
+      data: {}
+    }).then(res=>{
+      var send = res.result;
+      if(send){
+        this.total = send;
+        this.sendedCount = 0;
+        this.sendAjax();
+        console.log("总共获得"+send);
+
+      }else{
+        this.send();
+      }
+    }).catch(e=>{
+      wx.showModal({
+        title: '提示',
+        content: '获取formid数据失败，请重新尝试',
+      })
     })
+  },
+  sendAjax(){
+    var { id, count, desc } = this.data.banner;
+    wx.showLoading({
+      title: `${this.sendedCount}/${this.total}`,
+      mask: true
+    });
     wx.cloud.callFunction({
       // 要调用的云函数名称
       name: 'message',
       // 传递给云函数的event参数
       data: {
         templateId: config.tpl["1"],
-        page:"commonPkg/pages/albumDetail/albumDetail?id=" + id,
-        data:{
-          keyword1:{
-            value:this.data.header.title
+        page: "commonPkg/pages/albumDetail/albumDetail?id=" + id,
+        data: {
+          keyword1: {
+            value: this.data.header.title
           },
-          keyword2:{
+          keyword2: {
             value: count
           },
-          keyword3:{
+          keyword3: {
             value: desc
-          },
+          }
         }
       }
     }).then(res => {
-      wx.msg("发送成功")
-      wx.sended  = true;
+      var { send, hasNext} = res.result;
+      this.sendedCount += send;
+      if(hasNext){
+        this.sendAjax()
+      }else{
+        setTimeout(()=>{
+          wx.msg("发送成功")
+        },500)
+      }
+      wx.sended = true;
       console.log(res)
       // output: res.result === 3
     }).catch(err => {
@@ -110,3 +143,5 @@ wx.Page({
     obj.imageUrl = ImgUrl;
   }
 })
+
+

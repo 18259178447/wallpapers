@@ -1,0 +1,6 @@
+<view class='_class header-box {{fixed ? "fixed" : ""}} {{adapterClass}}'>
+    <view class='status-bar' style='height:{{statusBarHeight}}px'></view>
+    <view class='body-class body {{capsule ? "capsule" : ""}}' style='{{placehold === true ? "height:74rpx" : (placehold ? "height:" + placehold : "")}}'>
+      <slot></slot>
+    </view>
+</view>

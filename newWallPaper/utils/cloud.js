@@ -42,7 +42,7 @@ function cloudLogin() {
     
   })
 }
-wx.cloudLoginPromise = cloudLogin();
+// wx.cloudLoginPromise = cloudLogin();
 
 wx.$ = function (collection){
   if (!this.db) this.db = wx.cloud.database();

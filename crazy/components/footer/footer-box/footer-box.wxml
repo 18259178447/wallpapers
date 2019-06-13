@@ -1,0 +1,3 @@
+<view class="_class footer-box {{isFull ? 'full' : ''}}" style='{{placehold ? "height:"+placehold : ""}}'>
+  <slot></slot>
+</view>

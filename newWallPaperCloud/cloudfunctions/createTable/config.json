@@ -3,7 +3,7 @@
     {
       "name": "createTable",
       "type": "timer",
-      "config": "0 29 7 * * * *"
+      "config": "0 1 0 * * * *"
     }
   ]
 }

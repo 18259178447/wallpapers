@@ -1,0 +1,2 @@
+/* components/image-list/image-list.wxss */
+@import "/utils/base.wxss";

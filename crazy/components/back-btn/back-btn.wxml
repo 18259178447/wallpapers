@@ -1,0 +1,1 @@
+<mini-icon bindtap='back' type="{{skin}}"></mini-icon>

@@ -1,0 +1,15 @@
+<swiper wx:if="{{innerSwiper}}" style="height:{{innerSwiper}}">
+  <swiper-item>
+    <scroll-view class='scroll-x' scroll-x>
+      <view class='scroll-x__inner'>
+        <slot></slot>
+      </view>
+    </scroll-view>
+  </swiper-item>
+</swiper>
+
+<scroll-view class='scroll-x' scroll-x wx:else>
+  <view class='scroll-x__inner'>
+    <slot></slot>
+  </view>
+</scroll-view>

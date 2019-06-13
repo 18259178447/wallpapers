@@ -1,0 +1,19 @@
+<view class='list-view'>
+  <header-box wx:if="{{placeholdHeader}}" placehold="{{placeholdHeader}}"></header-box>
+  <slot></slot>
+
+  <page-screen wx:if="{{listStatus !== 'resolve'}}" status="{{listStatus}}"></page-screen>
+
+  <block wx:else>
+    <view class="view-box flex flex_h_sb flex_wrap" bindtap='previewHandle'>
+
+    </view>
+    <view class='loadingText'>{{LoadingText}}</view>
+  </block>
+
+  <footer-box wx:if="{{placeholdFooter}}" placehold="{{placeholdFooter}}"></footer-box>
+</view>
+
+<suspension wx:if="{{!isHideBackTop}}" placehold="{{placeholdFooter}}">
+  <mini-icon type="back-top" bindtap='backTop'></mini-icon>
+</suspension>

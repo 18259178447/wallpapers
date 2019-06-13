@@ -1,0 +1,6 @@
+.loadingText{
+  text-align:center;
+  font-size:24rpx;
+  padding:10rpx 0 30rpx 0;
+  color:#e7e7f1;
+}

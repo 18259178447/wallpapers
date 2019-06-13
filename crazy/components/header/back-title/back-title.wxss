@@ -1,0 +1,36 @@
+/* components/header/back-title/back-title.wxss */
+.fixed{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99
+}
+.back-title-box{
+  height: 74rpx;
+  position: relative;
+}
+
+.back-title-box .title{
+  font-size:36rpx;
+  text-align:center;
+  /* font-weight:bold; */
+  line-height:74rpx;
+  padding: 0 100rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.header-btn{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+.back-btn{
+  padding-left: 16rpx;
+  width: 80rpx;
+}

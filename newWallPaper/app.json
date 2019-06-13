@@ -21,7 +21,7 @@
     "footer-box": "/components/footer/footer-box/footer-box",
     "back-title": "/components/header/back-title/back-title",
     "back-btn": "/components/back-btn/back-btn",
-    "my-ad": "/components/my-ad/my-ad",
+    "my-ad": "/myad/my-ad/my-ad",
     "suspension": "/components/suspension/suspension",
     "catetory-nav": "/components/header/catetory-nav/catetory-nav",
     "share-search": "/components/header/share-search/share-search",
@@ -42,20 +42,6 @@
       ]
     }
   ],
-  "preloadRule": {
-    "pages/index/index": {
-      "network": "all",
-      "packages": [
-        "commonPkg"
-      ]
-    },
-    "pages/preview/preview": {
-      "network": "all",
-      "packages": [
-        "commonPkg"
-      ]
-    }
-  },
   "sitemapLocation": "sitemap.json",
   "tabBar": {
     "backgroundColor": "#181824",
