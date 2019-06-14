@@ -1,0 +1,8 @@
+<back-title fixed>监控直播</back-title>
+<header-box placehold></header-box>
+
+<view class='page'>
+  <live-list id="list-id"></live-list>
+</view>
+
+

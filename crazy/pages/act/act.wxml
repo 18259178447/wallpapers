@@ -1,0 +1,3 @@
+<!--pages/act/act.wxml-->
+<text>pages/act/act.wxml</text>
+<tab-bar selected="2"></tab-bar>

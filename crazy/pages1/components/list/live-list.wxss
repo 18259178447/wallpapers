@@ -1,0 +1,43 @@
+/* pages1/components/list/live-list.wxss */
+@import "/utils/base.wxss";
+
+.list{
+  padding: 36rpx;
+}
+.list-item{
+  margin-bottom: 16rpx;
+}
+.list-item__content{
+  height: 352rpx;
+  position: relative;
+  border-radius: 40rpx;
+  background-color: #d7e8e5;
+}
+.list-item__logo{
+  position: absolute;
+  width: 104rpx;
+  height: 60rpx;
+  right: 54rpx;
+  top: 28rpx;
+}
+.list-item__video-btn{
+  position: absolute;
+  height: 117rpx;
+  width: 117rpx;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.list-item__title{
+  height: 46rpx;
+  font-size: 22rpx;
+  color: #272636;
+  padding-left: 32rpx;
+  line-height: 46rpx;
+}
+
+.list-item__title_white{
+  font-size: 30rpx;
+  color: #fff;
+}

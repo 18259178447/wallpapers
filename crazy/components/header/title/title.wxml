@@ -1,0 +1,5 @@
+<header-box fixed="{{fixed}}">
+  <view class='title'>
+      <slot></slot>
+  </view>
+</header-box>

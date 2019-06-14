@@ -1,1 +1,8 @@
-<view class="test">我姐夫东方红晚饭后</view>
+<title fixed>疯狂</title>
+<header-box placehold></header-box>
+
+<index-list id="list-id"></index-list>
+
+
+
+<!-- <tab-bar></tab-bar> -->

@@ -6,3 +6,8 @@
   font-style: normal;
 }
 
+.page{
+  background-color: #61a397;
+  border-top-left-radius: 40rpx;
+  border-top-right-radius: 40rpx; 
+}

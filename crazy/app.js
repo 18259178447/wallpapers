@@ -1,4 +1,5 @@
 require('utils/init');
+wx.hideTabBar()
 App({
 
   /**

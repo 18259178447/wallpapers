@@ -1,0 +1,80 @@
+/* pages/my/my.wxss */
+@import "../../utils/base.wxss";
+.user{
+  padding-left: 60rpx;
+  margin-top: 30rpx;
+}
+
+.user__avatar-bg{
+  width: 182rpx;
+  height: 196rpx;
+}
+
+.user_avatar{
+  width: 132rpx;
+  height: 132rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: -166rpx;
+  margin-left: 28rpx;
+}
+
+.user__right{
+  font-size: 38rpx;
+  color: #61a397;
+  margin-left: 37rpx;
+  padding-top: 20rpx;
+}
+
+
+.order-btn{
+  margin-top: 60rpx;
+}
+.order-btn__item{
+  width: 662rpx;
+  margin: 30rpx 0 0 80rpx;
+}
+.order-btn__bg{
+  height: 136rpx;
+}
+
+.order-btn__title{
+  height: 136rpx;
+  margin-top: -136rpx;
+  line-height: 124rpx;
+  text-align: center;
+  font-size: 42rpx;
+  color: #fff;
+  padding-right: 60rpx;
+}
+
+.nav-btn{
+  padding-left: 56rpx;
+  padding-top: 55rpx;
+  margin-top: 62rpx;
+}
+.nav-btn__bg{
+  width: 695rpx;
+  height: 481rpx;
+}
+
+.nav-btn__content{
+  margin-top: -566rpx;
+  font-size: 46rpx;
+  color: #61a397;
+  line-height: 1;
+  text-align: center;
+}
+
+.nav-btn__item{
+  margin-top: 58rpx;
+}
+.nav-btn__item_land{
+  margin-top: 55rpx;
+}
+.nav-btn__item_url{
+  margin-top: 64rpx;
+}
+.nav-btn__item_about{
+  margin-top: 66rpx;
+}

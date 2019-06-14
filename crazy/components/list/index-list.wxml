@@ -1,0 +1,48 @@
+<view class='list-view'>
+  <header-box wx:if="{{placeholdHeader}}" placehold="{{placeholdHeader}}"></header-box>
+  <slot></slot>
+
+  <page-screen wx:if="{{listStatus !== 'resolve'}}" status="{{listStatus}}"></page-screen>
+
+  <block wx:else>
+    <view class="list">
+        <view class='list-item'>
+            <view class='list-item__top'>
+                <image class='list-item__img' src='http://www.cnr.cn/xjfw/btfw/2011btfw/jkwh/jkwt/20160516/W020160516492035673595.jpg'></image>
+                <view class='list-item__triangle list-item__triangle_left-top'></view>
+                <view class='list-item__triangle list-item__triangle_right-top'></view>
+                <view class='list-item__triangle list-item__triangle_left-bottom'></view>
+                <view class='list-item__triangle list-item__triangle_right-bottom'></view>
+                <image class='list-item__mask' src='/assets/index-mask.png'></image>
+                <view class='list-item__await'>敬请期待...</view>
+            </view>
+            <view class='list-item__bottom flex flex_h_center flex_v_center'>
+                <view class='list-item__pointer flex'>
+                  <image class='list-item__pointer-img' src="/assets/index-pointer.png"></image>
+                </view>
+                
+                <view class='list-item__btn'>
+                  <image class='list-item__btn-bg' src='/assets/index-btn-bg.png'></image>
+                  <view class='list-item__btn-text list-item__btn-text_skin_gray'>土地认领</view>
+                </view>
+                
+                <view class='list-item__jiankong flex flex_v_center'>
+                  <image class='list-item__jiankong-img' src='/assets/video-icon.png'></image>
+                  <view class='list-item__jiankong-word'>
+                    <view>24小时</view>
+                    <view >全程监控</view>
+                  </view>
+                </view>
+                
+            </view>
+        </view>
+    </view>
+    <view class='loadingText'>{{LoadingText}}</view>
+  </block>
+
+  <footer-box wx:if="{{placeholdFooter}}" placehold="{{placeholdFooter}}"></footer-box>
+</view>
+
+<!-- <suspension wx:if="{{!isHideBackTop}}" placehold="{{placeholdFooter}}">
+  <mini-icon type="back-top" bindtap='backTop'></mini-icon>
+</suspension> -->

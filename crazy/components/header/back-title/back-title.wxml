@@ -1,11 +1,5 @@
-<view class="_class {{header.type}}" style='{{header.backgroundColor ? "background-color:" + header.backgroundColor : ""}}'>
-  <header-box>
-    <view class='back-title-box'>
-      <view class='title' wx:if="{{header.title}}">{{header.title}}</view>
-      <view class='header-btn' wx:if="{{!header.noback}}">
-        <back-btn skin="{{skin}}"></back-btn>
-      </view>
-    </view>
-    <slot></slot>
-  </header-box>
-</view>
+<header-box fixed="{{fixed}}" _class="back-title-bgcolor" body-class="back-title">
+  <view class='back-title__btn' bindtap='backHandle' wx:if="{{!hideback}}"></view>
+  <view class='back-title__placehold' wx:else></view>
+  <view class='back-title__title'><slot></slot></view>
+</header-box>

@@ -17,7 +17,7 @@ module.exports = Behavior({
   },
   data: {
     dataList: [],
-    listStatus: 'pending', //pending/reslove/reject 
+    listStatus: 'resolve', //pending/reslove/reject 
     scrollTop: 0,
     isHideBackTop:true,
     LoadingText: loadingTipText.loading,

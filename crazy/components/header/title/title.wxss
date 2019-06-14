@@ -1,0 +1,9 @@
+/* components/header/title/title.wxss */
+
+.title{
+  font-size:36rpx;
+  text-align:center;
+  /* font-weight:bold; */
+  line-height:74rpx;
+  height: 74rpx;
+}

@@ -5,19 +5,8 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    header:{
-      type:Object,
-      value:{
-        title:'',
-        backgroundColor:'',
-        type:'fixed',
-        noback:true
-      }
-    },
-    skin:{
-      type:String,
-      value: 'back'//
-    }
+    fixed: Boolean,
+    hideback:Boolean
   },
 
   /**
@@ -29,5 +18,14 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    backHandle(){
+      if(getCurrentPages().length > 1){
+        wx.navigateBack()
+      }else{
+        wx.reLaunch({
+          url: '/pages/index/index',
+        })
+      }
+    }
   }
 })

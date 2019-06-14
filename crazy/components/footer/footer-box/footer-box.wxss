@@ -1,3 +1,4 @@
-.full{
-  padding-bottom: 46rpx;
+.footer-box{
+  /* padding-bottom: 46rpx; */
+  padding-bottom: env(safe-area-inset-bottom);
 }
