@@ -102,7 +102,7 @@ Component({
     init() {
       if (wx.isVerify) return;
       var action = wx.todayAction(this.data.name);
-      action.setBreakPoint([1,2,3]);
+      action.setBreakPoint([1,2,3,4]);
       // var adLimit = wx.AdLimit(this.data.name, wx.adSetting.threshold, wx.adSetting.every);
       this.loaded = [];
       if (adData.banner) {

@@ -40,7 +40,7 @@ Component({
     mini:null
   },
   attached(){
-    if (adManage.error || !adManage.isad){
+    if (adManage.error){
       this.changeOther()
     }else{
       this.setData({
@@ -60,7 +60,7 @@ Component({
     changeOther(){
       if (wx.safe) {
         this.setData({
-          mini: zhanbu[zhanbuIndex % zhanbu.length],
+          mini: zhanbu[zhanbuIndex % zhanbu.length] || null,
           adid:""
         })
       } else {

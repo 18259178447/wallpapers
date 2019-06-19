@@ -2,20 +2,20 @@ var {minis} = require("./miniData.js")
 var qudao = {
   "wx2d3f209d87668933": {
     name: "高清壁纸Pro",
-    ver:4,
+    ver:5,
     adData:{
       banner: 'adunit-84f6d48d83a20427',
       ald: "",
-      minis: [0]
+      minis: []
     }
   },
   "wxd3fab7dc660d0a6f": {// qianmeng_xcx01@163.com  qmxcx001
     name: "超清壁纸精选",
-    ver:2,
+    ver:3,
     adData:{
       ald: "",
       banner: 'adunit-923e33e5e984b835',
-      minis: [0]
+      minis: []
     }
   }
 }

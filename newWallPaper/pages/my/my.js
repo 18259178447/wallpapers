@@ -1,4 +1,5 @@
 // pages/my/my.js
+var config = require("../../utils/config.js");
 wx.Page({
 
   /**
@@ -18,11 +19,25 @@ wx.Page({
       })
     }
   },
-  test(){
+  clicktest(){
     if (!wx.__my) return;
+    this.clickcount++;
+    if (this.clickcount > 2){
+      this._switch();
+    }
+  },
+
+  test(e){
+    if (!wx.__my) return;
+    if (config.appid === "wx2d3f209d87668933"){
+      return;
+    }
+    this._switch();
+  },
+  _switch(){
     wx.safe = !wx.safe;
     wx._setStorage({
-      key: 'safe',
+      key: 'safev2',
       data: wx.safe,
     })
     wx._setStorage({
@@ -33,15 +48,15 @@ wx.Page({
     wx.promiseApi("showModal", {
       title: '切换至',
       content: wx.safe + "",
-    }).then(res=>{
+    }).then(res => {
       wx.reLaunch({
         url: '/pages/index/index'
       })
     })
-
-    console.log(111)
   },
+
   open(){
     wx.__my = true;
+    this.clickcount = 0;
   }
 })
