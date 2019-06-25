@@ -1,0 +1,14 @@
+<view class='top'>
+  <header-box></header-box>
+  <view class='explain'>播种订单将在下单的第二天，由疯狂小农
+为你种下；
+管护订单请在备注栏写下预期执行日期</view>
+<view class='explain__color_yellow'>菜地那么大，疯狂小农非常忙，如有怠慢，请见谅</view>
+</view>
+
+<view class='title'>支付成功啦！</view>
+
+<view class='btns flex flex_h_center'>
+  <view class='btns__item'>去看看我的地</view>
+  <view class='btns__item btns__item_back'>返回首页</view>
+</view>

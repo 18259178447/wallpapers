@@ -1,1 +1,68 @@
+<back-title _class="title_bgcolor" fixed hideback>土地认领</back-title>
+<header-box placehold></header-box>
+
+<view class='banner'>
+  <image class='banner-bg' src='/assets/land-banner.jpg'></image>
+</view>
+<view class='land-select flex flex_h_center flex_v_center'>
+  <view class='land-select__item land-select__item_a flex flex_v_center' bindtap='selectChange' data-index="{{0}}" data-type="land">
+    <view class='select-btn__circle-outer'>
+      <view class='select-btn__circle-inner' wx:if="{{landIndex === 0}}"></view>
+    </view>
+    <image class='land-select__area-name' src='/assets/land-a.png'></image>
+  </view>
+  <view class='land-select__item land-select__item_b flex flex_v_center' bindtap='selectChange' data-index="{{1}}" data-type="land">
+    <view class='select-btn__circle-outer'>
+      <view class='select-btn__circle-inner' wx:if="{{landIndex === 1}}"></view>
+    </view>
+    <image class='land-select__area-name' src='/assets/land-b.png'></image>
+  </view>
+</view>
+
+<view class='area-select flex flex_h_center flex_wrap' wx:for="{{LandData}}" wx:key="{{index}}" wx:if="{{landIndex === index}}">
+  <view class='area-select__item' wx:for="{{item.Areas}}" wx:key="{{index}}" bindtap='selectChange' data-index="{{index}}" data-type="area">
+    <image src='{{item.ImageUrl}}' class='area-select__image'></image>
+    <view class='area-select__bottom flex flex_v_center flex_h_center'>
+      <view class='select-btn__circle-outer'>
+        <view class='select-btn__circle-inner' wx:if="{{areaIndex === index}}"></view>
+      </view>
+      <view class='area-select__val'>{{item.Size}}㎡</view>
+    </view>
+  </view>
+</view>
+
+
+<view class='other'>
+  <picker bindchange="rentChange" value="{{index}}" range="{{rentMonth}}">
+    <view class='other__item rent-time flex flex_v_center'>
+      <view class='other__name flex__1'>租地时间</view>
+      <view class='other__selected-time'>{{rentMonth[rentIndex]}}</view>
+      <view class='other__pointer'></view>
+
+    </view>
+  </picker>
+  <button class='other__item tel flex flex_v_center' open-type="getPhoneNumber" hover-class='none' bindgetphonenumber="getTel">
+    <view class='other__name flex__1 {{tel ? "" : "other__name_gray"}}' >{{tel || "输入手机号"}}</view>
+    <view class='change-tel' wx:if="{{tel}}">更换手机号</view>
+  </button>
+</view>
+
+<view class='xieyi'>我已阅读并同意<text>农场协议</text></view>
+
+<view class='text-img'>
+
+  <image mode='widthFix' wx:for="{{DownImageUrl}}" wx:key="{{index}}" src='{{item}}' class='text-img__item'></image>
+
+</view>
+
+
+<footer-box _class='pay-nav flex flex_v_center'>
+  <view class='pay-nav__pirce flex__1'><text>￥</text>{{price}}</view>
+  <view class='pay-nav__btn' bindtap='pay'>去支付</view>
+</footer-box>
+
+
+<footer-box placehold="232rpx;"></footer-box>
+
+
 <tab-bar selected="1"></tab-bar>

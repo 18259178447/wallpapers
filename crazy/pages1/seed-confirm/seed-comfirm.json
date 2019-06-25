@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "seed-cart-list": "../components/list/seed-cart-list"
+  }
+}

@@ -1,0 +1,57 @@
+/* pages1/components/list/order-land-list.wxss */
+@import "/utils/base.wxss";
+.list-title{
+  font-size: 36rpx;
+  color: #ecefe8;
+  padding-left: 68rpx;
+  line-height: 58rpx;
+  padding-top: 14rpx;
+}
+
+
+.list{
+  padding: 0 56rpx;
+}
+
+.list-item{
+  background-color: #ecefe8;
+  border-radius: 16rpx;
+  width: 302rpx;
+  padding-bottom: 6rpx;
+  margin-bottom: 32rpx;
+  overflow: hidden;
+}
+.list-item__img{
+  width: 100%;
+  height: 238rpx;
+  display: block;
+}
+.list-item__center{
+  color: #61a397;
+  padding: 0 18rpx;
+}
+.list-item__name{
+  font-size: 36rpx;
+
+}
+
+.list-item__price{
+  font-size: 18rpx;
+}
+.list-item__price_val{
+  font-size: 28rpx;
+  
+}
+
+
+.list-item__growth-cycle{
+  font-size: 20rpx;
+  color: #858686;
+  line-height: 24rpx;
+  padding-left: 12rpx;
+  letter-spacing: -3rpx;
+}
+
+.list-item__bottom{
+  padding-right: 10rpx;
+}

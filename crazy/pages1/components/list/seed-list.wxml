@@ -1,0 +1,28 @@
+<view class='list-view'>
+  <header-box wx:if="{{placeholdHeader}}" placehold="{{placeholdHeader}}"></header-box>
+  <slot></slot>
+
+  <page-screen wx:if="{{listStatus !== 'resolve'}}" status="{{listStatus}}"></page-screen>
+
+  <block wx:else>
+    <view class='list-title'>蔬菜种子</view>
+    <view class="list flex flex_wrap flex_h_sb">
+      <view class='list-item' wx:for="{{4}}">
+        <view class='list-item__top'>
+          <image class='list-item__img' src='http://www.cnr.cn/xjfw/btfw/2011btfw/jkwh/jkwt/20160516/W020160516492035673595.jpg'></image>
+        </view>
+        <view class='list-item__center flex flex_v_center flex_h_sb'>
+          <view class='list-item__name'>上海青</view>
+          <view class='list-item__price'><text class='list-item__price_val'>5.00</text>元/㎡</view>
+        </view>
+        <view class='list-item__bottom flex flex_v_center flex_h_sb'>
+          <view class='list-item__growth-cycle'>生长周期：30天--40天</view>
+          <num class='list-item__num'></num>
+        </view>
+      </view>
+    </view>
+    <view class='loadingText'>{{LoadingText}}</view>
+  </block>
+
+  <footer-box wx:if="{{placeholdFooter}}" placehold="{{placeholdFooter}}"></footer-box>
+</view>

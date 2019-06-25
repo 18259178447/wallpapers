@@ -1,0 +1,82 @@
+/* pages1/components/list/order-act-list.wxss */
+@import "/utils/base.wxss";
+.list{
+  padding:42rpx;
+}
+.list-item{
+  border-radius: 25rpx;
+  background-color: #cae0dd;
+  padding: 10rpx 0 20rpx;
+
+}
+.list-item__top{
+  font-size: 27rpx;
+  color: #5e616d;
+  line-height: 56rpx;
+}
+.list-item__text{
+  padding-left: 26rpx;
+}
+.list-item__status{
+  font-size: 32rpx;
+  padding-left: 48rpx;
+}
+
+.list-item__center{
+  border-top: 2rpx solid #9cc6be;
+  border-bottom: 2rpx solid #9cc6be;
+  padding: 35rpx 50rpx 10rpx;
+}
+
+
+
+.goods-item{
+  padding: 15rpx 0;
+}
+.goods-item__img{
+  width: 126rpx;
+  height: 126rpx;
+}
+.goods-item__title{
+  font-size: 28rpx;
+  color: #5e616d;
+  padding-left: 38rpx;
+  padding-right: 20rpx;
+}
+.goods-item__num{
+  font-size: 28rpx;
+  color: #5e616d;
+}
+
+
+.goods-num-price{
+  font-size: 28rpx;
+  color: #5e616d;
+  text-align: right;
+
+}
+
+.goods-num-price__val{
+  color: #e5340b;
+  font-size: 40rpx;
+}
+
+.list-btn{
+  justify-content: flex-end;
+  margin-top: 24rpx;
+}
+.list-btn__item{
+  width: 167rpx;
+  height: 51rpx;
+  border: 1rpx solid #61a397;
+  color: #61a397;
+  text-align: center;
+  line-height: 51rpx;
+  font-size: 32rpx;
+}
+.list-btn__item_delete{
+  margin-right: 16rpx;
+}
+.list-btn__item_re{
+  margin-right: 24rpx;
+}

@@ -1,0 +1,44 @@
+<back-title fixed>收货地址</back-title>
+<header-box placehold></header-box>
+
+<view class='page'>
+
+  <view class='select-box'>
+    <view class='select-item'>
+      <image class='select-item__bg' src='../assets/adress-select-bg.png'></image>
+      <view class='select-item__body flex flex_v_center'>
+        <view class='selet-item__left selet-item__circle'></view>
+        <view class='selet-item__title'>市区自提（每周二或周五）</view>
+      </view>
+      <view class='select-item__explain select-item__explain_pl50'>地址：福州市台江区富力中心B2-2527
+电话：18906921091（提前1小时预约）</view>
+    </view>
+    <view class='select-item select-item_delivery'>
+      <image class='select-item__bg' src='../assets/adress-select-bg.png'></image>
+      <view class='select-item__body flex flex_v_center'>
+        <view class='selet-item__left selet-item__circle-on'></view>
+        <view class='selet-item__title'>市区达达配送(费用自理）</view>
+      </view>
+      <view class='select-item__delivery flex flex_v_center'>
+        <image class='select-item__delivery-warm' src='../assets/adress-warm.png'></image>
+        <view class='select-item__explain'>达达配送起始地址为：台江区富力中心
+<text>配送费用到付。</text></view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class='address'>
+    收货地址：
+  </view>
+  <view class='address-tip'>地址仅限福州5区范围以内，超出的位置，详询客服</view>
+
+
+  <button class='client flex flex_v_center flex_h_center'>
+      <image class='client__icon' src='../assets/adress-client.png'></image>
+      <view class='client__text'>在线客服咨询</view>
+  </button>
+
+  <view class='save-adress'>保存收货信息</view>
+
+</view>

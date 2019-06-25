@@ -1,0 +1,32 @@
+<back-title _class="title_bgcolor">土地续费</back-title>
+
+<view class='my-land'>
+  <view class='my-land__title'>我的地块</view>
+  <view class='my-land__content flex flex_v_center'>
+    <image class='my-land__img'></image>
+    <view class='my-land__info'>
+      <view>土地编号：A336001</view>
+      <view>土地面积：5㎡</view>
+      <view>已播种：2㎡</view>
+      <view>未播种：3㎡</view>
+      <view>到期时间：2019-6-1</view>
+    </view>
+  </view>
+</view>
+
+
+<view class='other'>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{rentMonth}}">
+    <view class='other__item rent-time flex flex_v_center'>
+      <view class='other__name flex__1'>租地时间</view>
+      <view class='other__selected-time'>一个月</view>
+      <view class='other__pointer'></view>
+    </view>
+  </picker>
+</view>
+<view class='xieyi'>我已阅读并同意<text>农场协议</text></view>
+
+<footer-box _class='pay-nav flex flex_v_center'>
+  <view class='pay-nav__pirce flex__1'><text>￥</text>159</view>
+  <view class='pay-nav__btn'>去支付</view>
+</footer-box>

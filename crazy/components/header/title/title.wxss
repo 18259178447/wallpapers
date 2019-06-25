@@ -6,4 +6,9 @@
   /* font-weight:bold; */
   line-height:74rpx;
   height: 74rpx;
+  font-family: "none"
+}
+
+.back-title-bgcolor{
+ background: #fff
 }

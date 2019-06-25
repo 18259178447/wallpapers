@@ -2,6 +2,10 @@ module.exports = {
    data:{
      currentIndex:0
    },
+   onPullDownRefresh(){
+     this.listid = this.listid || this.selectComponent('#list-id');
+     this.listid.flesh()
+   },
   navChanges(e) {//多列表轮播
     var index = typeof e === 'number' ? e : e.detail.current;
     if ((this.listLoaded || (this.listLoaded = []))[index]) {

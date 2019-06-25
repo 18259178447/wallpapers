@@ -1,0 +1,19 @@
+<!-- <view class="_class num-container {{'type' + type}}">
+  <button type="default" disabled="{{value === 1}}" hover-class="button-hover" class='minus' bindtap='changeHandle' data-num="{{-1}}"></button>
+  <input type="number" maxlength="4" class='flex1' value='{{value}}' bindinput="inputHandle" bindblur="blurHandle"></input>
+  <button type="default" disabled="{{value === max}}" hover-class="button-hover" class='plus' bindtap='changeHandle' data-num="{{1}}"></button>
+</view> -->
+
+
+
+<view class="num num_skin_one" wx:if="{{type === 1}}">
+  <view wx:if="{{value > 0}}" class='num__btn num__btn_minus' bindtap='changeHandle' data-num="{{-1}}"><text>-</text></view>
+  <view wx:if="{{value > 0}}" class='num__value'>{{value}}</view>
+  <view class='num__btn num__btn_plus' bindtap='changeHandle' data-num="{{1}}"><text>+</text></view>
+</view>
+
+<view class="num num_skin_two" wx:elif="{{type === 2}}">
+  <view  class='num__btn num__btn_minus' bindtap='changeHandle' data-num="{{-1}}"><text>-</text></view>
+  <view  class='num__value'>{{value}}</view>
+  <view class='num__btn num__btn_plus' bindtap='changeHandle' data-num="{{1}}"><text>+</text></view>
+</view>

@@ -1,0 +1,8 @@
+<back-title fixed>确认订单</back-title>
+<header-box placehold></header-box>
+
+<view class='page'>
+  <seed-cart-list id="list-id"></seed-cart-list>
+</view>
+
+

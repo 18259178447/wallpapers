@@ -1,0 +1,51 @@
+<back-title fixed>我要报名</back-title>
+<header-box placehold></header-box>
+
+
+<view class='act-img'>
+
+
+
+</view>
+
+
+<view class='act-content'>
+  动内容+行程安排+费用标准+温馨提示
+
+
+</view>
+
+
+
+<form bindsubmit="formSubmit" class='input-view'>
+  <view class='input-view__item'>
+    <input class='input-view__name' name="name" placeholder='输入姓名' placeholder-style='color:#61a397'></input>
+  </view>
+  <view class='input-view__item'>
+    <input class='input-view__tel' name="tel" placeholder='输入联系方式' placeholder-style='color:#61a397'></input>
+  </view>
+  <view class='input-view__item'>
+    <input class='input-view__childs-age' name="age" placeholder='' placeholder-style='color:#61a397' bindinput='inputHandle' data-name="age"></input>
+    <view class='input-view__placeholder' wx:if="{{!age}}">孩子年龄<text>(如果2个以上，以逗号隔开)</text></view>
+  </view>
+  
+
+  <view class='input-view__item flex flex_v_center flex_h_center'>
+    <view class='person-name'>孩子</view>
+    <view class='person-price'>138元/人</view>
+    <num class='person__num' value="1"></num>
+  </view>
+  <view class='input-view__item flex flex_v_center flex_h_center'>
+    <view class='person-name'>大人</view>
+    <view class='person-price'>138元/人</view>
+    <num class='person__num' value="1"></num>
+  </view>
+
+
+
+  <button form-type="submit" class='input-view__submit'><text>支付报名费</text> <text>￥</text>236元</button>
+</form>
+<view class='contact-box flex flex_h_center'>
+    <button class='contact' open-type="contact" hover-class='none'>在线客服</button>
+</view>
+

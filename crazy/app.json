@@ -25,13 +25,27 @@
     "page-screen": "/components/page-screen/page-screen",
     "scroll-x": "/components/scroll-x/scroll-x",
     "mini-icon": "/components/mini-icon/mini-icon",
+    "num": "/components/num/num",
     "tab-bar": "/components/tab-bar/tab-bar"
   },
   "subPackages": [
     {
       "root": "pages1",
       "pages": [
-        "live/live"
+        "live/live",
+        "order-act/order-act",
+        "order-land/order-land",
+        "seed/seed",
+        "act-enroll/act-enroll",
+        "act-subscribe/act-subscribe",
+        "about-us/about-us",
+        "adress/adress",
+        "my-act/my-act",
+        "my-land/my-land",
+        "seed-confirm/seed-comfirm",
+        "seed-pay-success/seed-pay-success",
+        "land-pay-sucess/land-pay-sucess",
+        "land-renewals/land-renewals"
       ]
     }
   ],

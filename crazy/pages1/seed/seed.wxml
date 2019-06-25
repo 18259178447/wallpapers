@@ -1,0 +1,42 @@
+<back-title fixed>播种管护</back-title>
+<header-box placehold></header-box>
+
+<view class='page'>
+  <seed-list id="list-id"></seed-list>
+</view>
+
+<view class='placehold'></view>
+<view class='fixed-footer'>
+    <view class='fixed-footer__explain'>温馨提示
+1、每个种子最低种植面积 1 平方
+2、生长周期根据天气情况有所变动
+3、全程自然生长，不进行人工除害
+4、有可能遇到鸟、虫等小动物觅食，产量减少
+5、其他没有想到的自然灾害
+6、如果地里全军覆没，我们会免费补一次种子</view>
+  <view class='btns'>
+    <image class='btns-bg' src='../assets/seed-btns.png'></image>
+    <view class='btns-view flex'>
+      <view class='btns-item flex__1'></view>
+      <view class='btns-item flex__1'></view>
+      <view class='btns-item flex__1'></view>
+      <view class='btns-item flex__1'></view>
+    </view>
+  </view>
+
+  <view class='buy-btns flex flex_v_center'>
+     <view class='buy-btns__hoop'>
+        <image class='buy-btns__hoop-img' src='../assets/seed-hoop.png'></image>
+        <view class='buy-btns__hoop-num'>3</view>
+     </view>
+    <view class='buy-btns__hoop-word'>我的篮筐</view>
+    
+    <view class='buy-btns__service flex flex_v_center'>
+      <image class='buy-btns__service-img' src='../assets/seed-tel.png'></image>
+      <view class='buy-btns__service-word'>在线客服</view>
+    </view>
+    <view class='buy-btns__seleced'>选好了</view>
+  </view>
+
+  <footer-box></footer-box>
+</view>

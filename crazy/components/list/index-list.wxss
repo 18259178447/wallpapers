@@ -4,7 +4,9 @@
 .list{
   padding: 0 30rpx;
 }
-
+.list-item{
+  margin-bottom: 54rpx;
+}
 .list-item__top{
   position: relative;
 }

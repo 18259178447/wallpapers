@@ -1,0 +1,7 @@
+<back-title fixed>活动报名订单</back-title>
+<header-box placehold></header-box>
+
+<view class='page'>
+  <order-act-list id="list-id"></order-act-list>
+</view>
+

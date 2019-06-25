@@ -1,0 +1,27 @@
+<view class='list-view'>
+  <header-box wx:if="{{placeholdHeader}}" placehold="{{placeholdHeader}}"></header-box>
+  <slot></slot>
+
+  <page-screen wx:if="{{listStatus !== 'resolve'}}" status="{{listStatus}}"></page-screen>
+
+  <block wx:else>
+    <view class="list">
+        <view class='list-item' wx:for="{{dataList}}" wx:key="{{index}}">
+           <view class='list-item__top'>
+              <image src='{{item.ImageUrl}}' class='list-item__img' mode='widthFix'></image>
+           </view>
+           <view class='list-item__bottom'>
+               <image src='/assets/act-btn-bg.png' class='list-item__btn-bg'></image>
+               <view class='list-item__btn {{item.Status ===3 ? "list-item__btn_gray" : ""}}'>{{item.Status === 3 ? "已结束" : item.type === 0 ? "会员农场预约" : "主题活动报名"}}</view>
+           </view>
+        </view>
+    </view>
+    <view class='loadingText'>{{LoadingText}}</view>
+  </block>
+
+  <footer-box wx:if="{{placeholdFooter}}" placehold="{{placeholdFooter}}"></footer-box>
+</view>
+
+<!-- <suspension wx:if="{{!isHideBackTop}}" placehold="{{placeholdFooter}}">
+  <mini-icon type="back-top" bindtap='backTop'></mini-icon>
+</suspension> -->

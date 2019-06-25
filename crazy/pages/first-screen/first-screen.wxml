@@ -20,7 +20,7 @@
       <image class='every-bg__img {{width ? "every-bg__img_full" : "every-bg__img_no-full"}}' src='/assets/first-screen-bg4.jpg'></image>
     </view>
     <view class='every-body'>
-      <back-title header="{{header}}"></back-title>
+      <back-title header="{{header}}">疯狂小农</back-title>
       <view class='inner-swiper'>
         <swiper class='inner-swiper__view' duration="{{200}}">
             <swiper-item>

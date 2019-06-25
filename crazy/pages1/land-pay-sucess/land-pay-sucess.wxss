@@ -1,0 +1,22 @@
+/* pages1/live/live.wxss */
+@import "/utils/base.wxss";
+.content{
+  height: 100vh;
+  box-sizing: border-box;
+  padding-top: 40rpx;
+}
+
+.content__bg{
+  width: 100%;
+  height: 1017rpx;
+}
+
+.btns{
+  height: 260rpx;
+  width: 380rpx;
+  margin: -250rpx auto 0;
+}
+
+.btns__item{
+  height: 130rpx;
+}

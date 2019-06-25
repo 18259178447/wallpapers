@@ -1,0 +1,49 @@
+/* pages1/components/list/seed-cart-list.wxss */
+@import "/utils/base.wxss";
+
+.list{
+  padding:70rpx 12rpx 0;
+}
+.list-item{
+  border-radius: 16rpx;
+  background: #d6e7e4;
+  padding: 0 40rpx 0 30rpx;
+}
+.list-item__left{
+  width: 41rpx;
+  height: 42rpx;
+  box-sizing: border-box;
+  border: 4rpx solid #61a397;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+
+.list-item__center{
+  width: 240rpx;
+  height: 220rpx;
+  background: red;
+  margin-right: 20rpx;
+}
+.list-item__title{
+  font-size: 44rpx;
+  color: #61a397;
+
+}
+
+.list-item__area{
+  font-size:28rpx;
+  color:#475764;
+  background-color: #cdd9d7;
+  padding: 0 10rpx;
+  line-height: 32rpx;
+  display: inline-block;
+  margin: 12rpx 0;
+}
+
+.list-item__price{
+  font-size: 42rpx;
+  color: #d45541;
+}
+.list-item__price text{
+  font-size: 25rpx;
+}

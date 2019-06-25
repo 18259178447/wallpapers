@@ -17,7 +17,7 @@ module.exports = Behavior({
   },
   data: {
     dataList: [],
-    listStatus: 'resolve', //pending/reslove/reject 
+    listStatus: 'pending', //pending/reslove/reject 
     scrollTop: 0,
     isHideBackTop:true,
     LoadingText: loadingTipText.loading,
@@ -73,6 +73,20 @@ module.exports = Behavior({
       }
       this.scrollThrottle(e);
     },
+    flesh(){
+      if (this.data.dataList.length === 0 && this.data.listStatus === 'pending') return;
+      wx.showLoading({
+        title: '正在加载',
+        mask:true
+      })
+      this.reset();
+      this.__loadedMore().then(res=>{
+        return wx.delay(500)
+      }).then(res=>{
+        wx.stopPullDownRefresh();
+        wx.hideLoading()
+      });
+    },
     scrollThrottle: wx.throttle(function (e) {
       var { scrollTop, scrollHeight, deltaY} = e.detail, obj = {};
       var _isHideBackTop = !(scrollTop > 800 && deltaY > 0 && scrollTop + wx.windowHeight < scrollHeight);
@@ -87,28 +101,17 @@ module.exports = Behavior({
     __getData() {
       if (this.isLoading) return;
       this.isLoading = !0;
-      
       return wx._request({
-        data: Object.assign( wx.safe ? {
+        data: Object.assign({
           pageindex: this.pageIndex,
-          pagesize: this.pageSize || 16
-        } : {page:this.pageIndex + 1}, this.params),
+          pagesize: this.pageSize || 4
+        }, this.params),
         url: this.interfaceName
       }).then((res) => {
         var obj = {};
         this.isLoading = !1;
-          if (wx.safe) {
-            var __data = res.Data;
-            this.hasNext = __data === null ? !0 : (__data.hasNext || __data.HasNext);
-          }else{
-            __data = {
-              DataList: res.data || []
-            };
-            if(!this.every){
-              this.every = __data.DataList.length;
-            }
-            this.hasNext = __data.DataList.length >= this.every
-          }
+          var __data = res.Data;
+          this.hasNext = __data === null ? !0 : (__data.hasNext || __data.HasNext);
           this.pageIndex++;
           if (!this.hasNext) {
             obj.LoadingText = ''
@@ -121,26 +124,18 @@ module.exports = Behavior({
           var errMsg = e.errMsg;
           if (errMsg.indexOf('fail ssl') > -1 || errMsg === "request:fail abort") return;
           if (errMsg.indexOf('createRequestTask:fail:interrupted') > -1) return this.__loadedMore();
-
         });
     },
     __dealWithData(data, obj) {
       data = this.correctData ? this.correctData(data, obj) : (data.DataList || []);
-      
       var len = this.data.dataList.length + data.length;
-      Object.assign(obj, getDataConcatObj(this.data.dataList, filter.dones(data, this.filterFn || 'wallpaper')));
-      
+      Object.assign(obj, getDataConcatObj(this.data.dataList, filter.dones(data, this.filterFn)));
       if (len === 0) (obj.listStatus = 'reject')
       else{
-        len < 6 && (obj.LoadingText = '');
+        len < 3 && (obj.LoadingText = '');
         this.data.listStatus !== 'resolve' && (obj.listStatus = 'resolve')
       }
       this.setData(obj)
-    },
-    backTop(){
-      this.setData({
-        scrollTop: this.data.scrollTop + 0.01
-      })
     }
   }
 })

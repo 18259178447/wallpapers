@@ -1,0 +1,37 @@
+/* pages1/land-renewals/land-renewals.wxss */
+@import "/utils/base.wxss";
+@import "../../pages/renling/renling.wxss";
+.pay-nav{
+  bottom: 0
+}
+
+.my-land{
+  padding: 0 24rpx;
+  margin-top: 65rpx;
+}
+
+.my-land__title{
+  font-size: 41rpx;
+  color: #8dbbb3;
+  margin-left: 40rpx;
+}
+
+.my-land__content{
+  background: #8dbbb3;
+  border-radius: 24rpx;
+  overflow: hidden;
+}
+
+.my-land__img{
+  height: 252rpx;
+  width: 300rpx;
+  background-color: red;
+  display: block;
+}
+
+.my-land__info{
+  font-size: 28rpx;
+  color: #5e616d;
+  line-height: 34rpx;
+  margin-left: 50rpx;
+}

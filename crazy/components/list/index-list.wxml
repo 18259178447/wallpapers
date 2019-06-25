@@ -6,29 +6,30 @@
 
   <block wx:else>
     <view class="list">
-        <view class='list-item'>
+        <view class='list-item' wx:for="{{dataList}}" wx:key="{{index}}">
             <view class='list-item__top'>
-                <image class='list-item__img' src='http://www.cnr.cn/xjfw/btfw/2011btfw/jkwh/jkwt/20160516/W020160516492035673595.jpg'></image>
+                <image class='list-item__img' src='{{item.ImageUrl}}'></image>
                 <view class='list-item__triangle list-item__triangle_left-top'></view>
                 <view class='list-item__triangle list-item__triangle_right-top'></view>
                 <view class='list-item__triangle list-item__triangle_left-bottom'></view>
                 <view class='list-item__triangle list-item__triangle_right-bottom'></view>
                 <image class='list-item__mask' src='/assets/index-mask.png'></image>
-                <view class='list-item__await'>敬请期待...</view>
+                <view class='list-item__await' wx:if="{{item.Status === 1}}">敬请期待...</view>
             </view>
             <view class='list-item__bottom flex flex_h_center flex_v_center'>
                 <view class='list-item__pointer flex'>
                   <image class='list-item__pointer-img' src="/assets/index-pointer.png"></image>
                 </view>
-                
                 <view class='list-item__btn'>
                   <image class='list-item__btn-bg' src='/assets/index-btn-bg.png'></image>
-                  <view class='list-item__btn-text list-item__btn-text_skin_gray'>土地认领</view>
+                  <view class='list-item__btn-text {{ item.Status === 1 ? "list-item__btn-text_skin_gray" : ""}}'>
+                    {{item.Type == 1 ? "土地认领" : item.Type == 2 ? "活动报名" : "动物认养"}}
+                  </view>
                 </view>
                 
                 <view class='list-item__jiankong flex flex_v_center'>
-                  <image class='list-item__jiankong-img' src='/assets/video-icon.png'></image>
-                  <view class='list-item__jiankong-word'>
+                  <image wx:if="{{item.Type == 1}}" class='list-item__jiankong-img' src='/assets/video-icon.png'></image>
+                  <view wx:if="{{item.Type == 1}}" class='list-item__jiankong-word'>
                     <view>24小时</view>
                     <view >全程监控</view>
                   </view>

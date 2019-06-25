@@ -1,0 +1,2 @@
+/* pages1/components/list/order-land-list.wxss */
+@import "./order-act-list.wxss";

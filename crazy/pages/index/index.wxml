@@ -1,8 +1,8 @@
 <title fixed>疯狂</title>
-<header-box placehold></header-box>
-
-<index-list id="list-id"></index-list>
 
 
+<index-list id="list-id" placeholdHeader="104rpx" placeholdFooter="122rpx"></index-list>
 
-<!-- <tab-bar></tab-bar> -->
+
+
+<tab-bar></tab-bar>
