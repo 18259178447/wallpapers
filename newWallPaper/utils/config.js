@@ -24,6 +24,17 @@ var qudao = {
     tpl: {
       "1": "X4hXoa2LPLr2IhiBFgi7HcurgRmgPrVqdcshuJB_53I",//最新壁纸专辑提醒
     }
+  },
+  "1109376964": {// qianmeng_xcx01@163.com  qmxcx001
+    base: "https://dreamcometrue.top/",
+    name: "高清壁纸精选",
+    adid: "",
+    appid: "1109376964",
+    dev: "",
+    prod: "",
+    use: "",
+    tpl: {
+    }
   }
 }
 

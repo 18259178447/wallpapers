@@ -5,7 +5,6 @@ wx.isVerify = ver !== config.ver;
 
 if(wx.isVerify){//如果审
   wx.adInitPromise = wx.positionPromise.then(res=>{
-    
     return wx.$("init").doc("abc").get().then(res => {
       wx.isVerify = config.ver === res.data.ver;
       if (!wx.isVerify) {

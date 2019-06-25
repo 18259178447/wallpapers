@@ -2,44 +2,43 @@
 const cloud = require('wx-server-sdk');
 cloud.init();
 const db = cloud.database();
+const _ = db.command
 const MAX_LIMIT = 100;
 var date;
 
 // 云函数入口函数
 exports.main = async(event, context) => {
   date = format("YY-MM-DD");
-  console.log(date)
-  getadClickData();
-  getadLoadData();
-  return getadErrorData()
+  var error = await getadErrorData();
+  var load = await getadLoadData();
+  var click = await getadClickData();
+  var data = {
+    date,
+    error,
+    load,
+    click
+  }
+  await db.collection('stat').add({
+    data
+  })
+  return data
 }
 async function getadClickData(){
+  var adclickCount = await db.collection('adclicks').count();
   try{
-    var count = await db.collection('adclicks').where({
-      date: date
-    }).count();
-    await db.collection('stat').add({
-      data: {
-        count,
-        date: date,
-        type: "click"
-      }
-    })
     await db.collection('adclicks').where({
-      date: date
+      _openid: _.neq("openid")
     }).remove()
   }catch(e){
-    console.log("点击数据失败")
+    console.log("点击数据失败",e)
   }
-
+  return adclickCount
 }
 
 async function getadErrorData() {
-  var collection = db.collection('aderrors').where({
-    date: date
-  }).orderBy('_openid', 'asc');
+  var collection = db.collection('aderrors').orderBy('_openid', 'asc');
   var result = await getAll(collection);
-  console.log("总共" + result.length + "数量")
+  console.log("aderrors总共" + result.length + "数量")
   var count25 = 0;
   var count20 = 0;
   var count10 = 0;
@@ -56,35 +55,23 @@ async function getadErrorData() {
     allCount++;
   }
   try {
-    await db.collection('stat').add({
-      data: {
-        allCount,
-        count25,
-        count20,
-        count10,
-        date: date,
-        type:"error"
-      }
-    })
-
-    try {
-      await db.collection('aderrors').where({
-        date: date
-      }).remove()
-    } catch (e) {
-      console.log("删除失败")
-    }
+    await db.collection('aderrors').where({
+      _openid: _.neq("openid")
+    }).remove()
   } catch (e) {
-    console.log("添加失败")
+    console.log("errors删除失败",e)
   }
-
+  return {
+    allCount,
+    count25,
+    count20,
+    count10,
+  }
 }
 async function getadLoadData() {
-  var collection = db.collection('adloads').where({
-    date: date
-  }).orderBy('_openid', 'asc');
+  var collection = db.collection('adloads').orderBy('_openid', 'asc');
   var result = await getAll(collection)
-  console.log("总共" + result.length + "数量")
+  console.log("adloads总共" + result.length + "数量")
   var currentOpenid = result[0];
   var exposure = 1;
   var count25 = 0;
@@ -108,27 +95,20 @@ async function getadLoadData() {
     exposure = 1;
     currentOpenid = item._openid;
   }
-  try {
-    await db.collection('stat').add({
-      data: {
-        allCount,
-        count25,
-        count20,
-        count10,
-        date: date,
-        type:"load"
-      }
-    })
 
-  } catch (e) {
-    console.log("添加失败")
-  }
   try {
-    db.collection('adloads').where({
-      date: date
+    await db.collection('adloads').where({
+      _openid: _.neq("openid")
     }).remove()
   } catch (e) {
     console.log("删除失败")
+  }
+  return {
+    len: result.length,
+    allCount,
+    count25,
+    count20,
+    count10
   }
 }
 
@@ -176,7 +156,7 @@ function checkTime(val, len) {
 }
 function format(fmt = "YY-MM-DD hh:mm:ss") {
   var date = new Date();
-  date.setDate(date.getDate() - 1);
+  // date.setDate(date.getDate() + 1);
   return fmt.replace(/([YMDhms])\1*/g, (a, b) => {
     switch (b) {
       case "Y": return date.getFullYear();

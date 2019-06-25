@@ -10,18 +10,28 @@
 		"minified": true,
 		"newFeature": true,
 		"autoAudits": false,
-		"checkInvalidKey": true
+		"checkInvalidKey": true,
+		"remoteDebugLogEnable": false,
+		"sourcemapDisabled": true,
+		"nodeModules": true,
+		"uglifyFileName": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.7.1",
 	"appid": "wx2d3f209d87668933",
-	"projectname": "%E5%A3%81%E7%BA%B8%E7%A7%80%E7%A7%80",
+	"projectname": "qq%E5%A3%81%E7%BA%B8%E7%B2%BE%E9%80%89",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
 	"isGameTourist": false,
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
+	"qqappid": "1109376964",
+	"scripts": {
+		"beforeCompile": "",
+		"beforePreview": "",
+		"beforeUpload": ""
+	},
 	"condition": {
 		"search": {
 			"current": -1,

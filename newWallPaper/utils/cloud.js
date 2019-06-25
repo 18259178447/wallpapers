@@ -1,17 +1,19 @@
 var config = require("./config.js");
 var env = config[config.use];
-
-try{
-  wx.cloud.init({ env });
-}catch(e){
-  console.log("第一次失败")
-  try{
+if(env){
+  try {
     wx.cloud.init({ env });
-  }catch(e){
-    console.log("第2次失败")
-    wx.cloud.init({ env });
+  } catch (e) {
+    console.log("第一次失败")
+    try {
+      wx.cloud.init({ env });
+    } catch (e) {
+      console.log("第2次失败")
+      wx.cloud.init({ env });
+    }
   }
 }
+
 
 var loginCount = 0;
 function cloudLogin() {
@@ -45,6 +47,25 @@ function cloudLogin() {
 // wx.cloudLoginPromise = cloudLogin();
 
 wx.$ = function (collection){
+  if(!env) return {
+    doc(){
+      return this;
+    },
+    get(){
+      return Promise.resolve({
+        data:{
+          ver:3
+        }
+      })
+    },
+    add(){
+      return Promise.resolve({
+        data: {
+        }
+      })
+    }
+  }
+
   if (!this.db) this.db = wx.cloud.database();
   return this.db.collection(collection);
 }

@@ -8,8 +8,10 @@ try {
 } catch (e) {
   config = {}
 }
-wx.windowWidth = sysInfo.windowWidth
-wx.windowHeight = sysInfo.windowHeight
+wx.windowWidth = sysInfo.windowWidth;
+wx.windowHeight = sysInfo.windowHeight;
+
+var qq = sysInfo.AppPlatform;
 //添加请求头
 wx.requestHeader = {
   deviceInfo: sign.header({
@@ -46,7 +48,8 @@ wx._request = function (obj, requestTask) {
       obj[sub] = data;
       obj[sub].SignatureMD5 = sign.params(obj[sub]).SignatureMD5;
     }else{
-      obj.url = "https://erha.1jianym.cn/app/index.php"
+      obj.url = qq ? "https://dreamcometrue.top/app/index.php" : "https://erha.1jianym.cn/app/index.php"
+      // obj.url = "https://dreamcometrue.top/app/index.php"
       obj[sub] = Object.assign({
         i: "2",//uniacid
         t: "1",//multiid

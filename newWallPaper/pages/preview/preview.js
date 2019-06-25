@@ -85,6 +85,7 @@ wx.Page({
   downloadHandle(){
     var imageItem = this.previewCom.data.imgs[this.previewCom.currentIndex];
     if (wx.safe){
+      console.log(imageItem)
       this.selectComponent('#ad-fn').openAd(imageItem.id, () => {
         this._downloadHandle(imageItem)
       })
@@ -93,16 +94,36 @@ wx.Page({
     }
   },
   _downloadHandle(imageItem){
+    // return wx.previewImage({
+    //   urls: [imageItem.Image],
+    //   current: imageItem.Image
+    // })
     wx.showLoading({title: '下载中,请稍后...',mask: !0});
     wx.Tool.downloadImage(imageItem).then(res=>{
       wx.msg("下载成功!");
     }).catch(e => {
+      console.log(e)
       wx.hideLoading();
       if (e.errMsg === "saveImageToPhotosAlbum:fail auth deny") {
         this.setData({ isReSetting : true})
        return wx.showModal({title: '下载失败',content: '需要授权后才可下载'})
       }
-      wx.showModal({title: '下载失败',content: '请到我的页面联系管理员！',})
+      wx.promiseApi("showModal", {
+        title: '提示', content: '此图片需要长按保存噢！必要时请到我的页面联系管理员！',
+      }).then(res => {
+        wx.previewImage({
+          urls: [imageItem.Image],
+          current: imageItem.Image
+        })
+      })
+      wx.$("feedback").add({
+        data: {
+          wenti: e,
+          sys:wx._getSystemInfoSync(),
+          image: imageItem
+        }
+      })
+      // wx.showModal({title: '下载失败',content: '请到我的页面联系管理员！',})
     })
   },
   reSettingHandle(e){
