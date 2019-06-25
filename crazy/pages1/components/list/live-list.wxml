@@ -1,0 +1,27 @@
+<view class='list-view'>
+  <header-box wx:if="{{placeholdHeader}}" placehold="{{placeholdHeader}}"></header-box>
+  <slot></slot>
+
+  <page-screen wx:if="{{listStatus !== 'resolve'}}" status="{{listStatus}}"></page-screen>
+
+  <block wx:else>
+    <view class="list">
+        <view class='list-item'>
+            <view class='list-item__content'>
+                <image class='list-item__logo' src='../../assets/live-logo.png'></image>
+                <image class='list-item__video-btn' src='../../assets/live-video-btn.png'></image>
+            </view>
+            <view class='list-item__title'>
+                农场<text class='list-item__title_white'>A区</text>24小时监控直播                
+            </view>
+        </view>
+    </view>
+    <view class='loadingText'>{{LoadingText}}</view>
+  </block>
+
+  <footer-box wx:if="{{placeholdFooter}}" placehold="{{placeholdFooter}}"></footer-box>
+</view>
+
+<!-- <suspension wx:if="{{!isHideBackTop}}" placehold="{{placeholdFooter}}">
+  <mini-icon type="back-top" bindtap='backTop'></mini-icon>
+</suspension> -->

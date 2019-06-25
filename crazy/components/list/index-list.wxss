@@ -1,0 +1,118 @@
+/* components/list/index-list.wxss */
+@import "/utils/base.wxss";
+
+.list{
+  padding: 0 30rpx;
+}
+.list-item{
+  margin-bottom: 54rpx;
+}
+.list-item__top{
+  position: relative;
+}
+.list-item__img{
+  width: 100%;
+  height: 382rpx;
+
+}
+
+.list-item__mask{
+  position: absolute;
+  width: 723rpx;
+  height: 434rpx;
+  top: -26rpx;
+  left: -16rpx;
+}
+.list-item__await{
+  color:rgba(255, 255, 255, 0.8);
+  font-size: 73rpx;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 40rpx;
+  text-align: center;
+  padding-left: 20rpx;
+}
+
+.list-item__triangle{
+  height: 0;
+  width: 0;
+  border-style: solid;
+  position: absolute;
+}
+.list-item__triangle_left-top{
+  border-width: 11rpx 12rpx;
+  border-color: #fff transparent transparent #fff;
+  left: 0;
+  top: 0;
+}
+.list-item__triangle_right-top{
+  border-width: 11rpx 12rpx;
+  border-color: #fff #fff transparent transparent;
+  right: 0;
+  top: 0;
+}
+.list-item__triangle_left-bottom{
+  border-width: 20rpx 18rpx;
+  border-color:transparent transparent #fff #fff;
+  left: 0;
+  bottom: 0;
+}
+
+.list-item__triangle_right-bottom{
+  border-width: 15rpx 14rpx;
+  border-color:transparent #fff #fff transparent;
+  right: 0;
+  bottom: 0;
+}
+
+.list-item__pointer{
+  width: 180rpx;
+  justify-content: flex-end
+}
+.list-item__pointer-img{
+  width: 116rpx;
+  height: 110rpx;
+  margin-top: 40rpx;
+  margin-right: 8rpx;
+}
+
+
+.list-item__btn{
+  width: 247rpx;
+  height: 134rpx;
+  overflow: hidden;
+}
+.list-item__btn-bg{
+  width: 100%;
+  height: 100%;
+}
+.list-item__btn-text{
+  width: 100%;
+  height: 100%;
+  margin-top: -134rpx;
+  line-height: 124rpx;
+  text-align: center;
+  color: #61a397;
+  box-sizing: border-box;
+  padding-right: 45rpx;
+  font-weight: bold;
+  font-size: 47rpx;
+}
+.list-item__btn-text_skin_gray{
+  color: #85908e;
+}
+.list-item__jiankong{
+  padding-left: 36rpx;
+  width: 180rpx;
+  box-sizing: border-box;
+}
+.list-item__jiankong-img{
+  width: 41rpx;
+  height: 49rpx;
+}
+
+.list-item__jiankong-word{
+  font-size: 22rpx;
+  text-align: center;
+}

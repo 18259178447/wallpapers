@@ -1,0 +1,54 @@
+<back-title fixed>我要报名</back-title>
+<header-box placehold></header-box>
+
+
+<view class='act-img'>
+
+
+
+</view>
+
+
+<view class='act-content'>
+  动内容+行程安排+费用标准+温馨提示
+
+
+</view>
+
+
+
+<form bindsubmit="formSubmit" class='input-view'>
+  <view class='input-view__item'>
+    <input class='input-view__name' name="name" placeholder='输入姓名' placeholder-style='color:#61a397'></input>
+  </view>
+  <view class='input-view__item'>
+    <input class='input-view__tel' name="tel" placeholder='输入联系方式' placeholder-style='color:#61a397'></input>
+  </view>
+  <view class='input-view__item'>
+    <picker mode="date" value="{{date}}" start="{{start}}"  bindchange="bindDateChange">
+      <view class='input-view__date'>{{date}}</view>
+    </picker>
+    <view class='input-view__placeholder' wx:if="{{!date}}">预约日期<text>（建议避开周末，人少舒适）</text></view>
+  </view>
+  <view class='input-view__item'>
+    <input class='input-view__person-count' name="personCount" placeholder='' placeholder-style='color:#61a397' bindinput='inputHandle' data-name="personCount"></input>
+    <view class='input-view__placeholder' wx:if="{{!personCount}}">预计人数<text>（几大几小）</text></view>
+  </view>
+
+  <view class='input-view__item'>
+    <input class='input-view__childs-age' name="remarks" placeholder='' placeholder-style='color:#61a397' bindinput='inputHandle' data-name="remarks"></input>
+    <view class='input-view__placeholder' wx:if="{{!remarks}}">备注信息<text>（如需预定鸡鸭，提前备注）</text></view>
+  </view>
+
+  <radio-group class="radio-group" bindchange="radioChange">
+    <label class="radio" wx:for="{{items}}">
+      <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+    </label>
+  </radio-group>
+
+  <button form-type="submit" class='input-view__submit'><text>支付报名费</text> <text>￥</text>236元</button>
+</form>
+<view class='contact-box flex flex_h_center'>
+    <button class='contact' open-type="contact" hover-class='none'>在线客服</button>
+</view>
+

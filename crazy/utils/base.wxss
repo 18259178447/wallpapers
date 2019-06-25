@@ -2,6 +2,9 @@
 @import "/css_blocks/flex.wxss";
 @import "/css_blocks/loading-text.wxss";
 
+page{
+  font-family: danchun
+}
 /* 多行省略 */
 
 .mul-e {
@@ -20,12 +23,10 @@
   white-space: nowrap;
 }
 
-.height-100vh,.page{
-  height: 100vh;
+.page{
+  min-height: 100vh;
 }
-.full-height{
-  height: 100%;
-}
+
 .default{
   background-color: #3a3a46;
 }

@@ -1,9 +1,9 @@
 <view class='page-screen'>
 
-  <view class='page-screen__loading' wx:if="{{status === 'pending'}}"></view>
+  <view class='page-screen__loading' wx:if="{{status === 'pending'}}">加载中...</view>
 
   <view class='page-screen__no-data' wx:else>
-    <image src='./empty.png' class='page-screen__no-data-image'></image>
+    <!-- <image src='./empty.png' class='page-screen__no-data-image'></image> -->
     <view class='page-screen__no-data-word'>空空如也~</view>
   </view>
 

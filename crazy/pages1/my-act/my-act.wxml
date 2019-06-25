@@ -1,0 +1,24 @@
+<back-title fixed>我的活动</back-title>
+<header-box placehold></header-box>
+
+<view class='page'>
+  <view class='module'>
+    <view class='module__title'>农场预约</view>
+    <view class='module__body'>
+      <view class='module__item flex flex_v_center' wx:for="{{3}}">
+        <image class='module__image' src=''></image>
+        <view class='module__words'>
+          <view>预约日期：2019-6-12</view>
+          <view>预计人数：5大3小</view>
+          <view>用餐方式：自助柴火灶</view>
+          <view>备注：预定一只鸡</view>
+          <view>到场时间：上午10:00</view>
+        </view>
+      </view>
+
+
+    </view>
+  </view>
+
+
+</view>

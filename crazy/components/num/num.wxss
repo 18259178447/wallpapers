@@ -1,0 +1,40 @@
+.num{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.num__btn{
+  width: 34rpx;
+  height: 34rpx;
+  border-radius: 50%;
+  box-sizing: border-box;
+  font-size: 37rpx;
+  line-height: 1;
+  overflow: hidden;
+  text-align: left
+}
+.num__btn text{
+  display: block;
+  transform: translate(5rpx,-7rpx);
+  pointer-events: none;
+}
+
+.num__btn_minus{
+  border: 2rpx solid #61a397;
+  color: #61a397;
+}
+.num__btn_plus{
+  background-color: #61a397;
+  color: #fff;
+}
+
+
+.num__value{
+  font-size: 32rpx;
+  color: #858686;
+  padding:0 4rpx;
+  font-family: "nomal";
+  line-height: 34rpx;
+}

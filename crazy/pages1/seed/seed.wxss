@@ -1,0 +1,92 @@
+/* pages1/seed/seed.wxss */
+@import "/utils/base.wxss";
+
+.placehold{
+  height: 580rpx;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.fixed-footer{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  padding: 10rpx 0;
+}
+
+.fixed-footer__explain{
+  white-space: pre-wrap;
+  padding-left: 93rpx;
+  font-size: 30rpx;
+}
+.btns{
+  margin: 10rpx 0 36rpx;
+}
+
+.btns-bg{
+  width: 600rpx;
+  height: 116rpx;
+  display: block;
+  margin: 0 auto;
+}
+
+.btns-view{
+  height: 116rpx;
+  margin-top: -116rpx;
+  padding: 0 56rpx;
+}
+
+.btns-item{
+
+}
+
+
+.buy-btns{
+  color: #61a397;
+}
+.buy-btns__hoop{
+  position: relative;
+  margin-left: 32rpx;
+}
+.buy-btns__hoop-img{
+  width: 102rpx;
+  height: 95rpx;
+}
+.buy-btns__hoop-num{
+  position: absolute;
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 50%;
+  background-color: #61a397;
+  top: 0;
+  left: 50%;
+  text-align: center;
+  line-height: 48rpx;
+  transform: translateX(-50%);
+  color: #fff;
+}
+.buy-btns__hoop-word{
+  font-size: 32rpx;
+}
+
+.buy-btns__service-img{
+  width: 51rpx;
+  height: 50rpx;
+  margin-left: 35rpx;
+}
+.buy-btns__service-word{
+  font-size: 26rpx;
+}
+
+.buy-btns__seleced{
+  width: 238rpx;
+  height: 64rpx;
+  border-radius: 32rpx;
+  background-color: #61a397;
+  color: #fff;
+  text-align: center;
+  line-height: 64rpx;
+  font-size: 55rpx;
+  margin-left: 20rpx;
+}

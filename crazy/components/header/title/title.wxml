@@ -1,0 +1,5 @@
+<header-box fixed="{{fixed}}" _class="back-title-bgcolor">
+  <view class='title'>
+      <slot></slot>
+  </view>
+</header-box>

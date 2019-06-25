@@ -1,0 +1,7 @@
+/* pages1/act-subscribe/act-subscribe.wxss */
+@import "../act-enroll/act-enroll.wxss";
+
+.input-view__date{
+  height: 72rpx;
+  line-height: 72rpx;
+}

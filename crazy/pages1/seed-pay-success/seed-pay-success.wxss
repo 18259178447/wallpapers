@@ -1,0 +1,43 @@
+
+/* pages1/live/live.wxss */
+@import "/utils/base.wxss";
+.top{
+  background: #61a397;
+  padding: 100rpx 0 50rpx 0;
+}
+
+.explain{
+  padding-left: 80rpx;
+  color: #fff;
+  font-size: 36rpx;
+  white-space: pre-wrap;
+  line-height: 46rpx;
+}
+
+.explain__color_yellow{
+  color: #b8f384;
+  font-size: 32rpx;
+  text-align: center;
+  font-family: "none";
+  margin-top: 20rpx;
+}
+
+.title{
+  font-size: 72rpx;
+  color: #ea5b45;
+  text-align: center;
+  line-height: 192rpx;
+}
+
+.btns__item{
+  text-align: center;
+  background: #394b59;
+  border-radius: 24rpx;
+  line-height: 100rpx;
+  color: #fff;
+  width: 252rpx;
+}
+
+.btns__item_back{
+  margin-left: 40rpx;
+}

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "act-list": "/components/list/act-list"
+  },
+  "enablePullDownRefresh": true
+}

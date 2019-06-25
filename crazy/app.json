@@ -1,7 +1,10 @@
 {
   "pages": [
     "pages/first-screen/first-screen",
-    "pages/index/index"
+    "pages/index/index",
+    "pages/renling/renling",
+    "pages/act/act",
+    "pages/my/my"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -13,6 +16,7 @@
   "usingComponents": {
     "header-box": "/components/header/header-box/header-box",
     "footer-box": "/components/footer/footer-box/footer-box",
+    "title": "/components/header/title/title",
     "back-title": "/components/header/back-title/back-title",
     "back-btn": "/components/back-btn/back-btn",
     "suspension": "/components/suspension/suspension",
@@ -20,7 +24,30 @@
     "image-list": "/components/image-list/image-list",
     "page-screen": "/components/page-screen/page-screen",
     "scroll-x": "/components/scroll-x/scroll-x",
-    "mini-icon": "/components/mini-icon/mini-icon"
+    "mini-icon": "/components/mini-icon/mini-icon",
+    "num": "/components/num/num",
+    "tab-bar": "/components/tab-bar/tab-bar"
   },
+  "subPackages": [
+    {
+      "root": "pages1",
+      "pages": [
+        "live/live",
+        "order-act/order-act",
+        "order-land/order-land",
+        "seed/seed",
+        "act-enroll/act-enroll",
+        "act-subscribe/act-subscribe",
+        "about-us/about-us",
+        "adress/adress",
+        "my-act/my-act",
+        "my-land/my-land",
+        "seed-confirm/seed-comfirm",
+        "seed-pay-success/seed-pay-success",
+        "land-pay-sucess/land-pay-sucess",
+        "land-renewals/land-renewals"
+      ]
+    }
+  ],
   "sitemapLocation": "sitemap.json"
 }

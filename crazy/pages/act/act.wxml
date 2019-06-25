@@ -1,0 +1,6 @@
+<back-title _class="title_bgcolor" fixed hideback>活动报名</back-title>
+
+<act-list id="list-id" placeholdHeader="104rpx" placeholdFooter="80rpx"></act-list>
+
+
+<tab-bar selected="2"></tab-bar>

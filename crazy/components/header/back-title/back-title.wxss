@@ -1,36 +1,25 @@
-/* components/header/back-title/back-title.wxss */
-.fixed{
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 99
-}
-.back-title-box{
-  height: 74rpx;
-  position: relative;
-}
-
-.back-title-box .title{
-  font-size:36rpx;
-  text-align:center;
-  /* font-weight:bold; */
-  line-height:74rpx;
-  padding: 0 100rpx;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.header-btn{
-  position: absolute;
+.back-title{
   display: flex;
-  align-items: center;
-  left: 0;
-  top: 0;
-  bottom: 0;
 }
-.back-btn{
-  padding-left: 16rpx;
-  width: 80rpx;
+.back-title-bgcolor{
+  background-color: #fff;
+}
+.back-title__btn{
+  width: 70rpx;
+  height: 74rpx;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAqCAMAAACA0lvfAAAAbFBMVEX///8AAAAFBQXp6enk5ORERET5+fn09PTg4ODw8PCQkJCMjIxdXV07Ozva2tqXl5eIiIh1dXVMTEz7+/vs7Oyenp6ampp6enpubm5jY2NAQEA2NjbT09OUlJR9fX1xcXFYWFhVVVUyMjIUFBRwLZQhAAAAqElEQVQoz5XPWQ6DMAxF0dgQCJAyBGjCVGi7/z12AX6WSj6Prp5i8/er4o44USdxGvhqJQ+0FALLk69cti/ysq0S+0xo0dO7lHqyd6gNhdREi9wtawoVvMLJtiELWz/JKxq2+GLwh56tky282MRvaKUaSw1QkwXGbknzGvkEXe/zVev5gL5SB3cedCje4R1+3undRkrPms/KDvYPzyPa2bhF/R4hm3E0P4ISB5nQHob6AAAAAElFTkSuQmCC) center center no-repeat;
+  background-size: 22rpx 42rpx;
+  margin-left: 30rpx;
+}
+
+.back-title__title{
+  font-size: 41rpx;
+  line-height: 74rpx;
+  font-weight: bold;
+  color: #4f4f4f
+}
+
+
+.back-title__placehold{
+  width: 72rpx;
 }

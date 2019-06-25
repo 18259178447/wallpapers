@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "index-list": "/components/list/index-list"
+  },
+  "enablePullDownRefresh":true
 }

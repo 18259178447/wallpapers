@@ -1,0 +1,45 @@
+<view class='list-view'>
+  <header-box wx:if="{{placeholdHeader}}" placehold="{{placeholdHeader}}"></header-box>
+  <slot></slot>
+
+  <page-screen wx:if="{{listStatus !== 'resolve'}}" status="{{listStatus}}"></page-screen>
+
+  <block wx:else>
+    <view class="list">
+      <view class='list-item'>
+
+        <view class='list-item__top'>
+          <text class='list-item__text list-item__status'>订单已完成</text>
+          <text class='list-item__text list-item__date'>2019-5-3</text>
+          <text class='list-item__text list-item__time'>11:53</text>
+        </view>
+        <view class='list-item__center'>
+            <view class='goods'>
+              <view class='goods-item flex'>
+                  <image class='goods-item__img' src='http://www.cnr.cn/xjfw/btfw/2011btfw/jkwh/jkwt/20160516/W020160516492035673595.jpg'></image>
+                  <view class='goods-item__title flex__1'>端午节DIY活动端午节DIY活动端午节DIY活动</view>
+                  <view class='goods-item__num'>X3</view>
+              </view>
+              <view class='goods-item flex'>
+                  <image class='goods-item__img' src='http://www.cnr.cn/xjfw/btfw/2011btfw/jkwh/jkwt/20160516/W020160516492035673595.jpg'></image>
+                  <view class='goods-item__title flex__1'>端午节DIY活动端午节DIY活动端午节DIY活动</view>
+                  <view class='goods-item__num'>X3</view>
+              </view>
+            </view>
+            <view class='goods-num-price'>
+              <text>共3份，实付</text>
+              <text class='goods-num-price__val'>468</text>
+            </view>
+        </view>
+
+        <view class='list-btn list-item__bottom flex'>
+            <view class='list-btn__item list-btn__item_delete'>删除订单</view>
+            <view class='list-btn__item list-btn__item_re'>再来一单</view>
+        </view>
+      </view>
+    </view>
+    <view class='loadingText'>{{LoadingText}}</view>
+  </block>
+
+  <footer-box wx:if="{{placeholdFooter}}" placehold="{{placeholdFooter}}"></footer-box>
+</view>

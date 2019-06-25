@@ -12,7 +12,24 @@ wx.windowHeight = sysInfo.windowHeight
 
 
 wx._request = function(obj) {
-  return wx.promiseApi("request",obj);
+  if (config.interfaces && !/^https*/.test(obj.url)) {
+    obj.url = config.base + config.interfaces[obj.url];
+  }
+  obj.header ={
+    "User-Agent1":"OpenID=" + wx.openid || ""
+  };
+  return wx.promiseApi("request", obj).then((res) => {
+    // this.requestTask = null;
+    if (typeof res.data === 'string') {
+      if (res.data === 'ok') return 'ok';
+      res.data = JSON.parse(res.data);
+    }
+    if (res.data.ResultCode === '0') return res.data;
+    throw {
+      errMsg: res.data.ResultMessage,
+      origin: 'server'
+    }
+  });
 }
 
 //合并mixins
@@ -176,7 +193,9 @@ function reSetData(obj, callBack, flag = true) {
 
 wx.mixin(Object.assign({
   onLoad(options) {
-
+    if (this.onLogin) {
+      wx.openid ? this.onLogin(options) : wx.loginPromise.then(res => { this.onLogin(options) })
+    }
   },
   onShareAppMessage(e) {
     var obj = {

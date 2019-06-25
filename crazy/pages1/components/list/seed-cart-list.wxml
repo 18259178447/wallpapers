@@ -1,0 +1,30 @@
+<view class='list-view'>
+  <header-box wx:if="{{placeholdHeader}}" placehold="{{placeholdHeader}}"></header-box>
+  <slot></slot>
+
+  <page-screen wx:if="{{listStatus !== 'resolve'}}" status="{{listStatus}}"></page-screen>
+
+  <block wx:else>
+    <view class="list">
+      <view class='list-item flex flex_v_center'>
+          <view class='list-item__left'>
+          
+          
+          </view>
+          <image class='list-item__center' src=''></image>
+          <view class='list-item__right flex__1'>
+              <view class='list-item__title'>上海青种子</view>
+              <view class='list-item__area'>1份/㎡</view>
+              <view class='list-item__price-num flex flex_v_center flex_h_sb'>
+                  <view class='list-item__price'><text>￥</text>5.00</view>
+                  <num class='list-item__num' type="2"></num>
+              </view>
+          
+          </view>
+      </view>
+    </view>
+    <view class='loadingText'>{{LoadingText}}</view>
+  </block>
+
+  <footer-box wx:if="{{placeholdFooter}}" placehold="{{placeholdFooter}}"></footer-box>
+</view>

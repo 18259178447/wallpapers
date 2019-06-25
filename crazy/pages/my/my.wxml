@@ -1,0 +1,43 @@
+<!--pages/my/my.wxml-->
+<back-title fixed hideback>个人中心</back-title>
+<header-box placehold></header-box>
+
+<view class='user flex flex_v_center'>
+    <view class='user__left'>
+      <image class='user__avatar-bg' src='/assets/my-avatar-bg.png'></image>
+      <view class='user_avatar'>
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+    </view>
+    <view class='user__right'>
+      <view class='user__nickName'>fejwpjfewp</view>
+      <view class='user__tel'>182****8447</view>
+    </view>
+</view>
+
+<view class='order-btn'>
+  <view class='order-btn__item'>
+    <image class='order-btn__bg' src='/assets/my-order-bg.png'></image>
+    <view class='order-btn__title'>土地认领订单</view>
+  </view>
+  <view class='order-btn__item'>
+    <image class='order-btn__bg' src='/assets/my-order-bg.png'></image>
+    <view class='order-btn__title'>活动报名订单</view>
+  </view>
+</view>
+
+
+<view class='nav-btn'>
+  <image class='nav-btn__bg' src='/assets/my-nav-bg.png'></image>
+  <view class='nav-btn__content'>
+    <view class='nav-btn__item nav-btn__item_land'>我的地块</view>
+    <view class='nav-btn__item nav-btn__item_act'>我的活动</view>
+    <view class='nav-btn__item nav-btn__item_address'>收货地址</view>
+    <view class='nav-btn__item nav-btn__item_url'>在线地址</view>
+    <view class='nav-btn__item nav-btn__item_about'>关于我们</view>
+  </view>
+</view>
+
+<footer-box placehold="200rpx"></footer-box>
+
+<tab-bar selected="3"></tab-bar>

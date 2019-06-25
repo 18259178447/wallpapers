@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "seed-list": "../components/list/seed-list"
+  }
+}

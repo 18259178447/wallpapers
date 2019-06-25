@@ -1,0 +1,13 @@
+<view class="container">
+  
+
+  <view class='content flex-c flex_h_center flex_v_center'>
+    <title fixed>疯狂小农</title>
+    <image class='content__bg' src='../assets/seed-pay-success.png'></image>
+    <view class='btns' bindtap='event'>
+      <view class='btns__item' data-url="/pages1/seed/seed" data-method="redirectTo"></view>
+      <view class='btns__item' data-url="/pages/index/index" data-method="redirectTo"></view>
+    </view>
+  </view>
+
+</view>

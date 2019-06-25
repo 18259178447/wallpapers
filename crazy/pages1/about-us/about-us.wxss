@@ -1,0 +1,10 @@
+/* pages1/live/live.wxss */
+@import "/utils/base.wxss";
+
+.word{
+  white-space: pre-wrap;
+  padding: 72rpx;
+  font-size: 32rpx;
+  line-height: 36rpx;
+  color: #fff;
+}

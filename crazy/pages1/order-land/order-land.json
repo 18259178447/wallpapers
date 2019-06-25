@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "order-land-list": "../components/list/order-land-list"
+  }
+}

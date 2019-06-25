@@ -1,0 +1,31 @@
+/* pages1/live/live.wxss */
+@import "/utils/base.wxss";
+
+.module{
+  padding: 50rpx;
+}
+.module__title{
+  font-size: 41rpx;
+  color: #fff;
+  line-height: 64rpx;
+}
+.module__item{
+  border-radius: 18rpx;
+  background-color: #b5d0cb;
+  overflow: hidden;
+  margin-bottom: 14rpx;
+}
+.module__image{
+  width: 286rpx;
+  height: 286rpx;
+  margin-right: 23rpx;
+  background: red;
+  display: block;
+}
+
+.module__words{
+  font-size: 30rpx;
+  color: #5e616d;
+  padding-right: 20rpx;
+  line-height: 46rpx;
+}
