@@ -10,7 +10,8 @@ wx.Page({
       type: 'fixed'
     },
     navArr: [],
-    isTip:false
+    isTip:false,
+    isQQ: wx.isQQ
     // albums:[],
     // origins:[]
 

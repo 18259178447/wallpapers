@@ -1,0 +1,73 @@
+<image class="bg" mode="widthFix" src="/images/matchbg.jpg"></image>
+<view class="relation" wx:if="{{type==1}}">
+    <view style="margin-top:20rpx;">
+        <view class="avatar">
+            <image mode="widthFix" src="{{pair.user_headimg}}"></image>
+        </view>
+        <view style="margin-top:20rpx">{{pair.user_nickname}}</view>
+    </view>
+    <view class="center">
+        <view style="margin-bottom:30rpx">{{pair.z_user_nickname}}</view>
+        <view class="avatar">
+            <image mode="widthFix" src="{{pair.z_user_headimg}}"></image>
+        </view>
+    </view>
+    <view style="margin-top:20rpx;">
+        <view class="avatar">
+            <image mode="widthFix" src="{{pair.p_user_headimg}}"></image>
+        </view>
+        <view style="margin-top:20rpx">{{pair.p_user_nickname}}</view>
+    </view>
+    <image class="one" mode="widthFix" src="/images/starline.png"></image>
+</view>
+<view class="relation" style="padding:100rpx 10rpx 0" wx:if="{{type==2}}">
+    <view>
+        <view class="avatar">
+            <image mode="widthFix" src="{{pair.user_headimg}}"></image>
+        </view>
+        <view style="margin:20rpx auto 0;width:200rpx;">{{pair.user_nickname}}</view>
+    </view>
+    <view></view>
+    <view>
+        <view class="avatar">
+            <image mode="widthFix" src="{{pair.p_user_headimg}}"></image>
+        </view>
+        <view style="margin:20rpx auto 0;width:200rpx;">{{pair.p_user_nickname}}</view>
+    </view>
+</view>
+<view class="content">
+    <view class="etop">
+        <view class="left">
+            <view>{{info.card_name}}</view>
+            <image mode="widthFix" src="{{info.card_pic}}"></image>
+        </view>
+        <view class="center" style="text-align:center">
+            <image class="qmd" mode="widthFix" src="https://weitaluo.xingpei360.com/Public/Api/mp3/qmd{{info.qmd_val}}.png"></image>
+            <view>
+                <view class="dixian">{{info.qmd_val}}
+          <view></view>
+                </view>
+            </view>
+        </view>
+        <view class="right">
+            <view>{{info.p_card_name}}</view>
+            <image mode="widthFix" src="{{info.p_card_pic}}"></image>
+        </view>
+    </view>
+    <view class="explain">
+    {{info.qmd_infos_c}}
+  </view>
+</view>
+<view class="button">
+    <view bindtap="metoo" wx:if="{{type==1}}">我也要玩</view>
+    <view bindtap="getShare">炫耀结果</view>
+</view>
+<view bindtap="hiddens" class="bgs" data-id="0" wx:if="{{down}}">
+    <view class="danimg" data-id="1">
+        <image class="bbb" mode="widthFix" src="{{img}}"></image>
+        <view class="ibottom">
+            <button openType="share">转发</button>
+            <button catchtap="saves">保存图片</button>
+        </view>
+    </view>
+</view>

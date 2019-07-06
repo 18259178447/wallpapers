@@ -1,0 +1,35 @@
+<view class="container">
+    <view class="bar solid-bottom mt-sm">
+        <view class="ml-sm">
+            <text class="iconfont icon-titles success-text"></text>
+            <text class="text-lg ml-xs">小程序开放关联公众号啦！</text>
+        </view>
+    </view>
+    <view class="doc-main">
+        <view class="flex doc-box p-df flex-direction text-left">
+            <view class="danger-text">有公众号?可以马上关联小程序。</view>
+            <view class="mt-sm">请您按照以下步骤操作：</view>
+            <view class="mt-sm">1、小程序管理 - 点击添加</view>
+            <view class="mt-sm">2、关联小程序</view>
+            <view class="mt-sm">3、输入小程序APPID：{{AppId}}</view>
+            <view class="mt-sm">4、提交申请后，我们会很快通过，并关联成功</view>
+            <view class="mt-sm">
+                <button bindtap="copyappid" class="success btn navigator-hover">点击复制APPID</button>
+            </view>
+            <view class="mt-sm"> 如有疑问可以联系"牛大大"微信 (*^▽^*)</view>
+            <view class="mt-sm">
+                <button bindtap="copywx" class="danger btn button-hover">点击复制微信号</button>
+            </view>
+        </view>
+    </view>
+    <ad unitId="{{unitid}}" wx:if="{{unitid}}"></ad>
+    <view class="bar solid-bottom mt-sm">
+        <view class="ml-sm">
+            <text class="iconfont icon-titles success-text"></text>
+            <text class="text-lg ml-xs">长按图片可以保存公众号二维码</text>
+        </view>
+    </view>
+    <view class="doc-main">
+        <image bindlongtap="saveImage" mode="widthFix" src="{{canvasImg}}" style="width:710rpx;"></image>
+    </view>
+</view>

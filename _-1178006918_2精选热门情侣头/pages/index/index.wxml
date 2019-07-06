@@ -1,0 +1,110 @@
+<view class="common-box">
+    <view class="banner_box">
+        <swiper autoplay circular bindchange="handleChange" class="banner_box_swiper" indicatorActiveColor="#fff" nextMargin="56rpx" previousMargin="56rpx">
+            <swiper-item bindtap="jumpTypes" class="item" data-title="{{item.title}}" data-zid="{{item.zid}}" wx:for="{{imgUrls}}" wx:key="{{index}}">
+                <image class="itemImg {{currentIndex==index?'active':''}}" src="{{item.url}}"></image>
+            </swiper-item>
+        </swiper>
+    </view>
+    <view class="f navs">
+        <scroll-view scrollX bindscrolltolower="scrolltolower" bindscrolltoupper="scrolltoupper" class="navs_view">
+            <view bindtap="openTypes" class="navs_item {{index==showType?'active':''}}" data-id="{{item.id}}" data-index="{{index}}" wx:for="{{navs}}" wx:key="{{index}}">
+        {{item.label}}
+      </view>
+        </scroll-view>
+    </view>
+    <view class="f {{showType==index?'':'none'}}" data-index="{{index}}" wx:for="{{navsData}}" wx:key="{{index}}">
+        <view class="title title_hot" wx:if="{{index>0}}">
+      {{item.label}}
+    </view>
+        <block wx:if="{{index==0}}">
+            <view class="title title_hot">
+        热门专题
+      </view>
+            <view class="tangram">
+                <view class="t_top">
+                    <view bindtap="jumpTypes" class="t_top_l" data-title="{{imgUrls2[0].title}}" data-zid="{{imgUrls2[0].zid}}">
+                        <image lazyLoad src="{{imgUrls2[0].url}}"></image>
+                        <span>{{imgUrls2[0].title}}</span>
+                    </view>
+                    <view class="t_top_r">
+                        <view class="innerbox">
+                            <view bindtap="jumpTypes" class="t_t_r_item2" data-title="{{imgUrls2[1].title}}" data-zid="{{imgUrls2[1].zid}}">
+                                <image lazyLoad src="{{imgUrls2[1].url}}"></image>
+                                <span>{{imgUrls2[1].title}}</span>
+                            </view>
+                            <view bindtap="jumpTypes" class="t_t_r_item" data-title="{{imgUrls2[2].title}}" data-zid="{{imgUrls2[2].zid}}">
+                                <image lazyLoad src="{{imgUrls2[2].url}}"></image>
+                                <span>{{imgUrls2[2].title}}</span>
+                            </view>
+                        </view>
+                        <view class="innerbox">
+                            <view bindtap="jumpTypes" class="t_t_r_item" data-title="{{imgUrls2[3].title}}" data-zid="{{imgUrls2[3].zid}}">
+                                <image lazyLoad src="{{imgUrls2[3].url}}"></image>
+                                <span>{{imgUrls2[3].title}}</span>
+                            </view>
+                            <view bindtap="jumpTypes" class="t_t_r_item2" data-title="{{imgUrls2[4].title}}" data-zid="{{imgUrls2[4].zid}}">
+                                <image lazyLoad src="{{imgUrls2[4].url}}"></image>
+                                <span>{{imgUrls2[4].title}}</span>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="t_bottom {{imgUrls4.length==3?'first':''}}" wx:if="{{imgUrls3.length==3}}">
+                    <view bindtap="jumpTypes" class="t_bottom_item" data-title="{{item.title}}" data-zid="{{item.zid}}" wx:for="{{imgUrls3}}" wx:key="{{index}}">
+                        <image lazyLoad src="{{item.url}}"></image>
+                        <span>{{item.title}}</span>
+                    </view>
+                </view>
+                <view class="t_bottom" wx:if="{{imgUrls4.length==3}}">
+                    <view bindtap="jumpTypes" class="t_bottom_item" data-title="{{item.title}}" data-zid="{{item.zid}}" wx:for="{{imgUrls4}}" wx:key="{{index}}">
+                        <image lazyLoad src="{{item.url}}"></image>
+                        <span>{{item.title}}</span>
+                    </view>
+                </view>
+            </view>
+            <view class="title title_love">
+        猜你喜欢
+      </view>
+        </block>
+        <view class="list">
+            <view bindtap="jumpImg" data-iid="{{item2.id}}" wx:for="{{item.list}}" wx:for-index="idx" wx:for-item="item2" wx:key="{{idx}}">
+                <view class="l_item">
+                    <image lazyLoad mode="widthFix" src="{{item2.pic_left_url}}"></image>
+                </view>
+                <view class="l_item">
+                    <image lazyLoad mode="widthFix" src="{{item2.pic_right_url}}"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="no_more" wx:if="{{isFinish}}">
+    没啦，偶是有底线的~~
+  </view>
+    <view class="bottom-btns">
+        <view catchtap="backTop" class="btn-box">
+            <image src="{{cdn}}/index.png"></image>
+      首页
+    </view>
+        <view bindtap="jumptomine" class="btn-box" wx:if="{{formDate}}">
+            <image src="{{cdn}}/mine_gray.png"></image>
+      我的
+    </view>
+        <form bindsubmit="getFormID" class="btn-box" reportSubmit="true" wx:else>
+            <button class="spec_button" formType="submit">
+                <image src="{{cdn}}/mine_gray.png"></image>
+        我的
+      </button>
+        </form>
+    </view>
+    <view catchtap="backTop" class="rocket" wx:if="{{showRocket}}">
+        <image src="{{cdn}}/rocket.png"></image>
+    </view>
+</view>
+<view class="pop_box" wx:if="{{showLogin}}">
+    <view bindtap="close_pop" class="black"></view>
+    <view class="inner_box">
+        <image class="logo" src="{{cdn}}/logo.png"></image>
+        <button bindgetuserinfo="getUserInfo" openType="getUserInfo" wx:if="{{canIUse}}"> 请登录 </button>
+    </view>
+</view>

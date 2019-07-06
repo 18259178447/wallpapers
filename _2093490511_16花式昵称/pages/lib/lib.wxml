@@ -1,0 +1,33 @@
+<view class="type_list flex_start">
+    <view bindtap="subListTo" class="type_wrap {{id==24?'cur':''}}" id="24">
+        <text>全部模板</text>
+    </view>
+    <view bindtap="subListTo" class="type_wrap {{id==item.id?'cur':''}}" data-index="{{index}}" id="{{item.id}}" wx:for="{{navlist}}" wx:key="item">
+        <text>{{item.catname}}</text>
+    </view>
+</view>
+<view class="section">
+    <ad unitId="{{unitid}}" wx:if="{{unitid}}"></ad>
+    <view class="mt-sm">
+        <text class="iconfont icon-title success-text"></text> 热门模板
+    </view>
+    <view class="ended-list mt-sm" wx:for="{{datalist}}" wx:key="idx">
+        <view bindtap="copyTitle" class="ended-list-item" data-index="{{item.nicklist}}">
+            <view class="ended-list-text">
+                <text class="hero_name">{{item.nicklist}}</text>
+                <view class="new_tag" wx:if="{{item.isNew}}">new</view>
+            </view>
+            <view class="ended-list-icon">
+                <text class="iconfont icon-copy">复制</text>
+            </view>
+        </view>
+    </view>
+    <view class="loading-more {{loading?'cur':''}} mb-xl">
+        <view class="no-more">
+            <text class="iconfont icon-info"></text> 还在更新，尽情期待！
+      </view>
+        <view class="loading-ing">
+            <text class="iconfont icon-loading iconfont-spin"></text> 加载中...
+      </view>
+    </view>
+</view>

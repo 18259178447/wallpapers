@@ -1,0 +1,24 @@
+<view style="position:relative;margin-top:20rpx">
+    <image class="bg" mode="widthFix" src="/images/allbg.png"></image>
+    <swiper autoplay="false" circular="true" interval="2000" nextMargin="470rpx" previousMargin="70rpx">
+        <swiper-item bindtap="jieshi" data-id="{{item.card_id}}" wx:for="{{da}}" wx:key="a">
+            <image mode="widthFix" src="{{item.card_pic}}"></image>
+        </swiper-item>
+    </swiper>
+</view>
+<view class="title">
+    <view>
+        <image class="ab_left" mode="widthFix" src="../../images/xing.png"></image>
+    大阿尔卡纳牌
+    <image class="ab_right" mode="widthFix" src="../../images/xing.png"></image>
+    </view>
+</view>
+<view class="content">
+    <scroll-view scrollY="true">
+        <view class="nei">
+            <view bindtap="jieshi" class="items" data-id="{{item.card_id}}" wx:for="{{cards}}" wx:key="a">
+                <image mode="widthFix" src="{{item.card_pic}}"></image>
+            </view>
+        </view>
+    </scroll-view>
+</view>

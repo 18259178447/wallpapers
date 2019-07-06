@@ -1,0 +1,272 @@
+page {
+    background: #0b0126;
+    color: white;
+}
+
+.bg {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: -1;
+}
+
+.relation {
+    display: flex;
+    text-align: center;
+    font-size: 30rpx;
+    padding: 250rpx 30rpx 0;
+    position: relative;
+}
+
+.relation>view {
+    flex: 1;
+}
+
+.avatar {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.relation>.center {
+    margin-top: -230rpx;
+    flex: 2;
+}
+
+.one {
+    width: 430rpx;
+    position: absolute;
+    top: 155rpx;
+    left: 161rpx;
+}
+
+.starleft {
+    width: 80rpx;
+    position: absolute;
+    left: 197rpx;
+    top: 275rpx;
+}
+
+.starright {
+    width: 80rpx;
+    position: absolute;
+    right: 197rpx;
+    top: 275rpx;
+}
+
+.guanxi {
+    text-align: center;
+    margin-top: 80rpx;
+}
+
+.explain {
+    font-size: 30rpx;
+    padding: 0 65rpx;
+    line-height: 50rpx;
+    letter-spacing: 4rpx;
+    margin-top: 40rpx;
+}
+
+.explain .left image {
+    width: 140rpx;
+    margin-right: 50rpx;
+}
+
+.explain .right {
+    text-align: right;
+    flex-direction: row-reverse;
+}
+
+.explain .right image {
+    width: 140rpx;
+}
+
+.explain>view {
+    display: flex;
+    margin-bottom: 40rpx;
+    height: 256rpx;
+    overflow: hidden;
+}
+
+.explain .name {
+    color: #8b8ff0;
+    margin-top: -10rpx;
+}
+
+.button {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 20rpx;
+    margin-top: 100rpx;
+}
+
+.button view {
+    width: 300rpx;
+    text-align: center;
+    padding: 20rpx 0;
+    border-radius: 65rpx;
+    background: #643ef3;
+    font-size: 32rpx;
+}
+
+.bgs {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999;
+    background: rgba(0,0,0,.3);
+}
+
+.danimg {
+    border-radius: 20rpx;
+    width: 550rpx;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 50%;
+    height: 979rpx;
+    transform: translateX(-50%) translateY(-50%);
+    animation: down2 1.7s forwards;
+}
+
+.danimg .bbb {
+    width: 100%;
+}
+
+.danimg .bb {
+    width: 38%;
+    animation: scales 0.7s infinite;
+}
+
+.bgs .xia {
+    width: 100%;
+    position: absolute;
+    bottom: 24rpx;
+    display: flex;
+    justify-content: space-around;
+    background: white;
+    height: 117rpx;
+    padding-top: 20rpx;
+}
+
+@-webkit-keyframes down2 {
+    0% {
+        webkit-transform: translate(-50%,-100%);
+        transform: translate(-50%,-100%);
+        top: 0;
+    }
+
+    50% {
+        webkit-transform: translate(-50%,-25%);
+        transform: translate(-50%,-25%);
+        top: 50%;
+    }
+
+    75% {
+        webkit-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+        top: 50%;
+    }
+
+    100% {
+        webkit-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+        top: 50%;
+    }
+}
+
+@keyframes down2 {
+    0% {
+        webkit-transform: translate(-50%,-100%);
+        transform: translate(-50%,-100%);
+        top: 0;
+    }
+
+    50% {
+        webkit-transform: translate(-50%,-25%);
+        transform: translate(-50%,-25%);
+        top: 50%;
+    }
+
+    75% {
+        webkit-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+        top: 50%;
+    }
+
+    100% {
+        webkit-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+        top: 50%;
+    }
+}
+
+.danimg .lianjie {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 99999999999;
+}
+
+.danimg .bbbb {
+    width: 38%;
+    animation: scales 0.7s infinite;
+}
+
+.danimg .bbbb image {
+    width: 100%;
+}
+
+@-webkit-keyframes scales {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes scales {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.ibottom {
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -1rpx;
+    padding: 55rpx 0;
+    background: #20163b;
+    width: 100%;
+}
+
+.ibottom>button {
+    width: 40%;
+    font-size: 30rpx;
+    background: #140b26;
+    color: white;
+    animation: big 0.5s infinite;
+}

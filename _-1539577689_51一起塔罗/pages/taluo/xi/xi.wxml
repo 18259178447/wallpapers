@@ -1,0 +1,460 @@
+<view style="position: absolute;top:0;width:100%;z-index:-100;height:100%">
+    <image class="bg" mode="widthFix" src="../../../images/xi.jpg" style="{{cur!=3?'z-index:-900':'z-index:-10000'}}"></image>
+    <image class="bg" mode="widthFix" src="https://weitaluo.xingpei360.com/Public/Api/mp3/12281.png" style="{{cur==3?'z-index:-900':'z-index:-10000'}}"></image>
+    <image class="liu" hidden="{{cur>=3}}" mode="widthFix" src="../../../images/liu.png"></image>
+    <image class="zhen" hidden="{{cur>=3}}" mode="widthFix" src="../../../images/zhen.png"></image>
+    <view class="first0" hidden="{{!status[0]}}">
+        <view class="shili">
+            <image mode="widthFix" src="/images/l1.png" style="width:100%"></image>
+        </view>
+        <view wx:if="{{cate_id=='1'}}">塔罗牌拥有神奇的力量，只要你愿意相信，这种力量就会显示出来。请紧跟塔罗牌的脚步，在充满魔力的世界里，探寻你心中想要的真。在开始洗牌之前，请在心中默念你要问的问题。</view>
+        <view wx:if="{{cate_id=='6'}}">闭上眼睛，放空自己的大脑，集中精神，现在宁神冥想问题，必须保持诚信，当你准备好请点击下一步开始一起塔罗。</view>
+        <view wx:if="{{cate_id=='4'}}">洗牌前，必须集中注意力，排除内心的杂念，闭眼冥想问题，问题须清晰明确，切记不可反复挑选，当你准备好请点击下一步开始一起塔罗。</view>
+        <view wx:if="{{cate_id=='5'}}">现在将要开始进行洗牌，集中精神，闭上眼睛，顺从自己的意志，倾听你内在的声音，开始默念自己的问题，当你准备好请点击下一步开始一起塔罗。</view>
+    </view>
+    <view class="first" wx:if="{{status[1]}}">
+        <view hidden="{{xipai1!=1}}" style="position: relative;height:200rpx">
+            <view class="zhuan" style="animation: zhuan 3s linear {{0+0.2*index}}s;z-index:{{3-index}}" wx:for="{{[1,2,3]}}">
+                <image class="nei" mode="widthFix" src="/images/pai.png"></image>
+            </view>
+            <view class="zhuan" style="animation: zhuan1 3s linear {{0.1+0.2*index}}s;z-index:{{2-index}}" wx:for="{{[1,2,3,4,5]}}">
+                <image class="nei" mode="widthFix" src="/images/pai.png"></image>
+            </view>
+            <view class="zhuan" style="animation: zhuan2 3s linear {{0.1+0.2*index}}s;z-index:{{1-index}}" wx:for="{{[1,2,3,4,5,6,7]}}">
+                <image class="nei" mode="widthFix" src="/images/pai.png"></image>
+            </view>
+            <view class="zhuan" style="animation: zhuan3 3s linear {{0.1+0.1*index}}s;z-index:{{0-index}}" wx:for="{{[1,2,3,4,5,6,7,8,9]}}">
+                <image class="nei" mode="widthFix" src="/images/pai.png"></image>
+            </view>
+        </view>
+        <view hidden="{{xipai1!=2}}" style="position: relative;height:200rpx">
+            <image class="xipai" src="/images/pai.png" style="{{item.dong?'transform:rotate('+-360/36*index-90+'deg);left:'+item.left+'rpx;top:'+item.top+'rpx':''}};z-index:{{78-index}};{{item.dong?'transition:all 0.05s '+item.timeout+'s':'transition:all 0.05s '+0.05*index+'s'}};" wx:for="{{xipai}}"></image>
+        </view>
+        <view hidden="{{xipai1!=3}}" style="position: relative;height:200rpx">
+            <image class="xipai" src="/images/pai.png" style="{{dong?'transform:rotate('+-360/36*index-450+'deg);left:'+item.left+'rpx;top:'+item.top+'rpx':''}};z-index:{{78-index}};transition: all 0.6s {{item.timeout}}s" wx:for="{{xipai}}"></image>
+        </view>
+        <view class="show" style="animation:shows 0.5s linear 4s forwards">
+      塔罗牌已经洗好。切牌也是重要的一步，请想象你的问题，然后按下一步开始切牌。
+    </view>
+    </view>
+    <view class="first" wx:if="{{status[2]}}">
+        <view style="position: relative;height:200rpx">
+            <view class="left" style="animation: step1 2s linear forwards;z-index:3">
+                <image mode="widthFix" src="/images/pai.png"></image>
+            </view>
+            <view class="left" style="animation: step2 2s linear forwards;z-index:1">
+                <image mode="widthFix" src="/images/pai.png"></image>
+            </view>
+            <view class="left" style="animation: step3 2s linear forwards;z-index:2">
+                <image mode="widthFix" src="/images/pai.png"></image>
+            </view>
+        </view>
+        <view class="show" style="animation:shows 0.5s linear 2s forwards">
+      洗牌和切牌都已经顺利完成，下面进入关键性的一步————抽牌，请从塔罗牌中选出您的牌阵所需的牌。抽牌的时候，请摒弃杂念，不要过多犹豫，相信第一感觉，点击“下一步”开始抽牌      </view>
+    </view>
+    <view class="first1" hidden="{{!status[3]}}">
+        <view class="paizh" hidden="{{fapai!=1}}">
+            <view>
+                <image bindtap="select" class="{{status1[index].state?status1[index].move:''}}" data-id="{{1+index}}" src="/images/pai.png" style="z-index:{{26-index}};{{!status1[index].state?'top:0rpx;left:'+item.left+40+'rpx;transition:all 1.6s '+0.01*index+'s;':'animation:hide 1s forwards 1s;transition:all 1s;'}};" wx:for="{{a}}"></image>
+                <image bindtap="select" class="paic {{status1[26+index].state?status1[26+index].move:''}}" data-id="{{27+index}}" src="/images/pai.png" style="z-index:{{52-index}};{{!status1[26+index].state?'left:'+item.left+23+'rpx;transition:all 1.6s '+0.05+0.01*index+'s;':'animation:hide 1s forwards 1s;transition:all 1.0s;'}};" wx:for="{{a}}"></image>
+                <image bindtap="select" class="paib {{status1[52+index].state?status1[52+index].move:''}}" data-id="{{53+index}}" src="/images/pai.png" style="z-index:{{78-index}};{{!status1[52+index].state?'left:'+item.left-6+'rpx;transition:all 1.6s '+0.1+0.01*index+'s;':'animation:hide 1s forwards 1s;transition:all 1.0s;'}};" wx:for="{{a}}"></image>
+            </view>
+        </view>
+        <view class="paizh fapai2" hidden="{{fapai!=2}}">
+            <image bindtap="select" class="{{status1[index].state?status1[index].move:''}}" data-id="{{1+index}}" src="/images/pai.png" style="{{!status1[index].state?'transform:rotate('+item.deg+'deg);left:'+item.left+'rpx;top:'+item.top+'rpx;transition:all 0.02s '+0.05*index+'s;':'animation:hide 1s forwards 1s;transition:all 1.0s'}};z-index:{{index}};" wx:for="{{b}}"></image>
+        </view>
+        <view class="paixuan">
+            <view catchtap="showMe" class="{{paizhen.zhuclass+index+1}}" data-id="{{index}}" wx:for="{{paizhen.count}}">
+                <view style="{{show[index]?'opacity:1':'opacity:0'}};transition:all 0.2s 1s">
+                    <image class="zheng" src="/images/pai.png" wx:if="{{!zhuan[index]}}"></image>
+                    <image class="fan" src="{{result[index].card_pic}}" style="{{result[index].zhengni==1?'transform:rotate(180deg)':''}}" wx:else></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="zhongjian" wx:if="{{cur==3}}">
+        <view wx:if="{{zhangpai}}">
+            <image mode="widthFix" src="/images/kuang.png"></image>
+            <view class="">{{paizhen.cate_id=='4'?'请选择一张主牌，再抽三张牌':'请选择'+paizhen.count+'张牌'}}</view>
+        </view>
+    </view>
+    <view class="atip" hidden="{{!status[3]}}">
+        <view wx:if="{{zhangpai}}">
+      点击单张查看牌面解释
+    </view>
+    </view>
+    <view class="bottoms" wx:if="{{cur<3}}">
+        <view bindtap="next" class="next">下一步</view>
+    </view>
+    <view class="pg_bottom" hidden="{{cur!=3}}" style="opacity:1">
+        <image class="idi" mode="widthFix" src="/images/pgbottom.png"></image>
+        <view bindtap="kanjie">
+            <image class="qiu" mode="widthFix" src="/images/qiu.png"></image>
+            <image class="star" src="{{'/images/star'+star_count+'.png'}}" style="{{star_hide?'opacity: 0.4;':'opacity: 1;'}}"></image>
+            <view class="jiepai">解牌</view>
+        </view>
+    </view>
+</view>
+<view class="resultPage" hidden="{{outAnimation}}" style="{{showResult?'opacity:0':'opacity:1'}};transition:all 1s">
+    <image class="bg" mode="widthFix" src="https://weitaluo.xingpei360.com/Public/Api/mp3/12282.jpg"></image>
+    <view style="position:relative;padding-bottom:75rpx">
+        <image mode="widthFix" src="/images/top.png" style="width:100%"></image>
+        <view class="resulttop">
+            <image class="avatar" src="{{info.avatarUrl}}"></image>
+            <view>{{info.nickName}}</view>
+        </view>
+        <view class="topkuang1">
+            <image mode="widthFix" src="/images/kuang2.png"></image>
+            <view>
+                <view>{{star}}</view>
+                <view>{{date}}</view>
+                <view>东经:{{location.longitude}} 北纬:{{location.latitude}}</view>
+            </view>
+        </view>
+        <view class="topkuang">
+            <image mode="widthFix" src="/images/kuang1.png"></image>
+            <view>{{cate_id=='6'?'今日抽到的牌':title}}</view>
+        </view>
+        <view class="tip">点击单张查看牌面解释</view>
+        <view class="content" wx:if="{{paixing=='AQS'}}">
+            <view class="pai">
+                <view data-id="{{index}}" wx:if="{{index<4}}" wx:for="{{result}}">
+                    <view style="position: relative;height:360rpx">
+                        <image catchtap="showMe1" data-index="{{index}}" mode="widthFix" src="{{item.card_pic}}" style="position:absolute;left:0;{{item.zhengni==1?'transform:rotate(180deg)':''}}"></image>
+                    </view>
+                    <view>{{item.card_name}}<view style="color:white">({{item.zhengni==1?'逆':'正'}})</view>
+                    </view>
+                </view>
+            </view>
+            <view class="pai">
+                <view data-id="4">
+                    <view style="position: relative;height:360rpx">
+                        <image catchtap="showMe1" data-index="4" mode="widthFix" src="{{result[4].card_pic}}" style="position:absolute;left:0;{{item.zhengni==1?'transform:rotate(180deg)':''}}"></image>
+                    </view>
+                    <view>{{result[4].card_name}}<view style="color:white">({{result[4].zhengni==1?'逆':'正'}})</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="content" wx:if="{{paixing=='JZT'}}">
+            <view class="pai">
+                <view wx:if="{{index==0}}" wx:for="{{result}}">
+                    <view style="position: relative;height:360rpx">
+                        <image catchtap="showMe1" data-index="0" mode="widthFix" src="{{item.card_pic}}" style="position:absolute;z-index:999;left:0;{{result[0].zhengni==1?'transform:rotate(180deg)':''}}"></image>
+                    </view>
+                    <view style="font-size:25rpx;margin-bottom:20rpx;">{{item.card_name}}<view>({{item.zhengni==1?'逆':'正'}})</view>
+                    </view>
+                </view>
+            </view>
+            <view class="pai">
+                <view data-id="{{index}}" wx:if="{{index!=0}}" wx:for="{{result}}">
+                    <view style="position: relative;height:360rpx">
+                        <image catchtap="showMe1" data-index="{{index}}" mode="widthFix" src="{{item.card_pic}}" style="position:absolute;left:0;{{item.zhengni==1?'transform:rotate(180deg)':''}}"></image>
+                    </view>
+                    <view>{{item.card_name}}<view style="color:white">({{item.zhengni==1?'逆':'正'}})</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="content" wx:if="{{paixing=='SJL'||paixing=='SIX'}}">
+            <view class="pai">
+                <view data-id="{{index}}" wx:for="{{result}}">
+                    <view style="position: relative;height:360rpx">
+                        <image catchtap="showMe1" data-index="{{index}}" mode="widthFix" src="{{item.card_pic}}" style="position:absolute;left:0;{{item.zhengni==1?'transform:rotate(180deg)':''}}"></image>
+                    </view>
+                    <view>{{item.card_name}}<view style="color:white">({{item.zhengni==1?'逆':'正'}})</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="content" wx:if="{{paixing=='X'}}">
+            <view class="pai" style="justify-content:space-between">
+                <view data-id="{{index}}" wx:if="{{index<2}}" wx:for="{{result}}">
+                    <view style="position: relative;height:360rpx">
+                        <image catchtap="showMe1" data-index="{{index}}" mode="widthFix" src="{{item.card_pic}}" style="position:absolute;left:0;{{item.zhengni==1?'transform:rotate(180deg)':''}}"></image>
+                    </view>
+                    <view>{{item.card_name}}<view style="color:white">({{item.zhengni==1?'逆':'正'}})</view>
+                    </view>
+                </view>
+            </view>
+            <view class="pai" style="justify-content:space-between">
+                <view data-id="{{index}}" wx:if="{{index>2}}" wx:for="{{result}}">
+                    <view style="position: relative;height:360rpx">
+                        <image catchtap="showMe1" data-index="{{index}}" mode="widthFix" src="{{item.card_pic}}" style="position:absolute;left:0;{{item.zhengni==1?'transform:rotate(180deg)':''}}"></image>
+                    </view>
+                    <view>{{item.card_name}}<view style="color:white">({{item.zhengni==1?'逆':'正'}})</view>
+                    </view>
+                </view>
+            </view>
+            <view class="pai paizhong">
+                <view data-id="2">
+                    <view style="position: relative;height:360rpx">
+                        <image catchtap="showMe1" data-index="2" mode="widthFix" src="{{result[2].card_pic}}" style="position:absolute;left:0;{{result[2].zhengni==1?'transform:rotate(180deg)':''}}"></image>
+                    </view>
+                    <view>{{result[2].card_name}}<view style="color:white">({{result[2].zhengni==1?'逆':'正'}})</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="content" wx:if="{{paixing=='SJX'}}">
+            <view class="paisjx">
+                <view data-id="{{index}}" wx:if="{{index==0}}" wx:for="{{result}}">
+                    <view style="position: relative;height:270rpx">
+                        <image catchtap="showMe1" data-index="{{index}}" mode="widthFix" src="{{item.card_pic}}" style="position:absolute;left:0;{{item.zhengni==1?'transform:rotate(180deg)':''}}"></image>
+                    </view>
+                    <view>{{item.card_name}}<view style="color:white">({{item.zhengni==1?'逆':'正'}})</view>
+                    </view>
+                </view>
+            </view>
+            <view class="paisjx">
+                <view data-id="{{index}}" wx:if="{{index!=0}}" wx:for="{{result}}">
+                    <view style="position: relative;height:270rpx">
+                        <image catchtap="showMe1" data-index="{{index}}" mode="widthFix" src="{{item.card_pic}}" style="position:absolute;left:0;{{item.zhengni==1?'transform:rotate(180deg)':''}}"></image>
+                    </view>
+                    <view>{{item.card_name}}<view style="color:white">({{item.zhengni==1?'逆':'正'}})</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="content" wx:if="{{paixing=='SYS'}}">
+            <view class="pai">
+                <view data-id="{{index}}" wx:if="{{index<2}}" wx:for="{{result}}">
+                    <view style="position: relative;height:360rpx">
+                        <image catchtap="showMe1" data-index="{{index}}" mode="widthFix" src="{{item.card_pic}}" style="position:absolute;left:0;{{item.zhengni==1?'transform:rotate(180deg)':''}}"></image>
+                    </view>
+                    <view>{{item.card_name}}<view style="color:white">({{item.zhengni==1?'逆':'正'}})</view>
+                    </view>
+                </view>
+            </view>
+            <view class="pai">
+                <view data-id="{{index}}" wx:if="{{index>1}}" wx:for="{{result}}">
+                    <view style="position: relative;height:360rpx">
+                        <image catchtap="showMe1" data-index="{{index}}" mode="widthFix" src="{{item.card_pic}}" style="position:absolute;left:0;{{item.zhengni==1?'transform:rotate(180deg)':''}}"></image>
+                    </view>
+                    <view>{{item.card_name}}<view style="color:white">({{item.zhengni==1?'逆':'正'}})</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="content" wx:if="{{paixing=='SZJ'}}">
+            <view class="pai">
+                <view wx:if="{{index==0}}" wx:for="{{result}}">
+                    <view style="position: relative;height:360rpx">
+                        <image catchtap="showMe1" data-index="0" mode="widthFix" src="{{result[0].card_pic}}" style="position:absolute;z-index:999;left:0;{{result[0].zhengni==1?'transform:rotate(180deg)':''}}"></image>
+                    </view>
+                    <view style="font-size:25rpx;margin-bottom:20rpx;">{{result[0].card_name}}<view>({{result[0].zhengni==1?'逆':'正'}})</view>
+                    </view>
+                </view>
+            </view>
+            <view class="pai">
+                <view data-id="{{index}}" wx:if="{{index!=0&&index!=4}}" wx:for="{{result}}">
+                    <view style="position: relative;height:360rpx">
+                        <image catchtap="showMe1" data-index="{{index}}" mode="widthFix" src="{{item.card_pic}}" style="position:absolute;left:0;{{item.zhengni==1?'transform:rotate(180deg)':''}}"></image>
+                    </view>
+                    <view>{{item.card_name}}<view style="color:white">({{item.zhengni==1?'逆':'正'}})</view>
+                    </view>
+                </view>
+            </view>
+            <view class="pai">
+                <view>
+                    <view style="position: relative;height:360rpx">
+                        <image catchtap="showMe1" data-index="4" mode="widthFix" src="{{result[4].card_pic}}" style="position:absolute;z-index:999;left:0;{{result[4].zhengni==1?'transform:rotate(180deg)':''}}"></image>
+                    </view>
+                    <view style="font-size:25rpx;margin-bottom:20rpx;">{{result[4].card_name}}<view>({{result[4].zhengni==1?'逆':'正'}})</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="content" wx:if="{{paixing=='SSJ'}}">
+            <view class="pai">
+                <view style="" wx:if="{{index<2}}" wx:for="{{result}}">
+                    <view style="position: relative;height:360rpx">
+                        <image catchtap="showMe1" data-index="{{index}}" mode="widthFix" src="{{item.card_pic}}" style="position:absolute;left:0;{{item.zhengni==1?'transform:rotate(180deg)':''}}"></image>
+                    </view>
+                    <view>{{item.card_name}}<view style="color:white">({{item.zhengni==1?'逆':'正'}})</view>
+                    </view>
+                </view>
+            </view>
+            <view class="pai">
+                <view>
+                    <view style="position: relative;height:360rpx">
+                        <image catchtap="showMe1" data-index="2" mode="widthFix" src="{{result[2].card_pic}}" style="position:absolute;left:0;{{result[2].zhengni==1?'transform:rotate(180deg)':''}}"></image>
+                    </view>
+                    <view>{{result[2].card_name}}<view style="color:white">({{result[2].zhengni==1?'逆':'正'}})</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="content" wx:if="{{paixing=='yun'}}">
+            <view class="pai">
+                <view wx:for="{{result}}">
+                    <view style="position: relative;height:360rpx">
+                        <image catchtap="showMe1" data-index="{{index}}" mode="widthFix" src="{{item.card_pic}}" style="position:absolute;left:0;{{item.zhengni==1?'transform:rotate(180deg)':''}}"></image>
+                    </view>
+                    <view>{{item.card_name}}<view style="color:white">({{item.zhengni==1?'逆':'正'}})</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="topkuang">
+            <image mode="widthFix" src="/images/kuang1.png"></image>
+            <view>塔罗牌分析解读</view>
+        </view>
+        <view class="fu" wx:if="{{cate_id!='6'}}">
+            <view style="margin-bottom:60rpx">
+                <view style="text-align:center">
+                    <image mode="widthFix" src="/images/jiexing.png" style="width:40rpx"></image>
+                </view>
+                <view style="color:#ce9bea;font-size:35rpx;font-weight:700">
+                    <image mode="widthFix" src="/images/yunstar.png" style="margin-right:10rpx"></image>{{cate_id==4?'主牌':'牌1'}}{{'  '+result[0].card_name}}({{result[0].zhengni==1?'逆':'正'}})<image mode="widthFix" src="/images/yunstar.png" style="margin-left:10rpx"></image>
+                </view>
+                <view style="margin-top:20rpx;">{{result[0].result_infos}}</view>
+            </view>
+        </view>
+        <view class="fu" wx:if="{{cate_id!='6'}}">
+            <view style="margin-bottom:60rpx" wx:if="{{index!=0}}" wx:for="{{result}}">
+                <view style="text-align:center">
+                    <image mode="widthFix" src="/images/jiexing.png" style="width:40rpx"></image>
+                </view>
+                <view style="color:#ce9bea;font-size:35rpx;font-weight:700">
+                    <image mode="widthFix" src="/images/yunstar.png" style="margin-right:10rpx"></image>牌{{index+1+'  '+item.card_name}}({{item.zhengni==1?'逆':'正'}})<image mode="widthFix" src="/images/yunstar.png" style="margin-left:10rpx"></image>
+                </view>
+                <view style="margin-top:20rpx;">{{item.result_infos}}</view>
+            </view>
+        </view>
+        <view class="fu" wx:if="{{cate_id=='6'}}">
+            <view style="color:#ce9bea;font-size:35rpx;font-weight:700;margin-bottom:50rpx">{{result[0].card_name}}({{result[0].zhengni==1?'逆':'正'}})</view>
+            <view style="margin-bottom:60rpx" wx:for="{{result[0].cate_title}}">
+                <view style="text-align:center">
+                    <image mode="widthFix" src="/images/ai{{index+1}}.png" style="width:40rpx"></image>
+                </view>
+                <view style="color:#ce9bea">
+                    <image mode="widthFix" src="/images/yunstar.png" style="margin-right:10rpx"></image>{{item}}<image mode="widthFix" src="/images/yunstar.png" style="margin-left:10rpx"></image>
+                </view>
+                <view style="margin-top:10rpx;">{{result[0].result_infos[index]}}</view>
+            </view>
+        </view>
+        <view class="chao">
+            <view bindtap="save" class="share">分享</view>
+            <view bindtap="saveResult" class="share">保存</view>
+        </view>
+        <view bindtap="hide" catchtouchmove="scroll" class="imgs" data-id="0" hidden="{{shows}}">
+            <view class="img">
+                <scroll-view scrollY="true">
+                    <image mode="widthFix" src="{{imgs}}"></image>
+                </scroll-view>
+                <view class="ibottom">
+                    <button openType="share">转发</button>
+                    <button bindtap="saves">保存图片</button>
+                </view>
+            </view>
+        </view>
+        <image mode="widthFix" src="/images/bottom.png" style="width:100%;margin-top:150rpx;position:absolute;bottom:-70rpx"></image>
+    </view>
+    <view class="fullbg" hidden="{{showme1}}">
+        <view class="full">
+            <image src="/images/pai.png"></image>
+            <view catchtap="showMe1" class="paizhu">
+                <image class="close" mode="widthFix" src="/images/close.png"></image>
+                <image class="bgs" src="/images/result1.png"></image>
+                <scroll-view catchtouchmove="scroll" scrollY="true">
+                    <view class="card_title">
+          {{selectResult.card_name}}
+        </view>
+                    <view class="pai" style="{{selectResult.zhengni==1?'transform: rotate(180deg)':''}}">
+                        <image catchtap="preview" src="{{selectResult.card_pic}}"></image>
+                    </view>
+                    <view class="contents" style="padding-top:20rpx;">
+                        <view wx:if="{{paizhen.cate_id!='6'}}">
+                            <view style="text-align:center">
+                                <image mode="widthFix" src="/images/jiexing.png" style="width:40rpx"></image>
+                            </view>
+                            <view class="tops" style="margin-bottom:10rpx;color:#ce9bea">
+                                <image mode="widthFix" src="/images/yunstar.png" style="margin-right:10rpx"></image>{{selectResult.zhengni==1?'逆位':'正位'}}<image mode="widthFix" src="/images/yunstar.png" style="margin-left:10rpx"></image>
+                            </view>
+                            <view class="bottomss">{{selectResult.result_infos}}</view>
+                        </view>
+                        <view wx:if="{{paizhen.cate_id=='6'}}" wx:for="{{selectResult.cate_title}}">
+                            <view style="text-align:center">
+                                <image mode="widthFix" src="/images/ai{{index+1}}.png" style="width:40rpx"></image>
+                            </view>
+                            <view class="tops" style="margin-bottom:10rpx;color:#ce9bea">
+                                <image mode="widthFix" src="/images/yunstar.png" style="margin-right:10rpx"></image>{{item}} {{selectResult.zhengni==1?'逆位':'正位'}}<image mode="widthFix" src="/images/yunstar.png" style="margin-left:10rpx"></image>
+                            </view>
+                            <view class="bottomss">{{selectResult.result_infos[index]}}</view>
+                        </view>
+                        <view>
+                            <view style="text-align:center">
+                                <image mode="widthFix" src="{{paizhen.cate_id==6?'/images/ai4.png':'/images/jiexing.png'}}" style="width:40rpx"></image>
+                            </view>
+                            <view class="tops" style="margin-bottom:10rpx;color:#ce9bea">
+                                <image mode="widthFix" src="/images/yunstar.png" style="margin-right:10rpx"></image>牌面<image mode="widthFix" src="/images/yunstar.png" style="margin-left:10rpx"></image>
+                            </view>
+                            <view class="bottomss">{{selectResult.card_infos}}</view>
+                        </view>
+                    </view>
+                    <view style="height:50rpx"></view>
+                </scroll-view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="fullbg" hidden="{{showme}}">
+    <view class="full">
+        <image src="/images/pai.png"></image>
+        <view catchtap="showMe" class="paizhu">
+            <image class="close" mode="widthFix" src="/images/close.png"></image>
+            <image class="bgs" src="/images/result1.png"></image>
+            <scroll-view catchtouchmove="scroll" scrollY="true">
+                <view class="card_title">
+          {{selectResult.card_name}}
+        </view>
+                <view class="pai" style="{{selectResult.zhengni==1?'transform: rotate(180deg)':''}}">
+                    <image catchtap="preview" src="{{selectResult.card_pic}}"></image>
+                </view>
+                <view class="contents" style="padding-top:20rpx;">
+                    <view wx:if="{{paizhen.cate_id!='6'}}">
+                        <view style="text-align:center">
+                            <image mode="widthFix" src="/images/jiexing.png" style="width:40rpx"></image>
+                        </view>
+                        <view class="tops" style="margin-bottom:10rpx;color:#ce9bea">
+                            <image mode="widthFix" src="/images/yunstar.png" style="margin-right:10rpx"></image>{{selectResult.zhengni==1?'逆位':'正位'}}<image mode="widthFix" src="/images/yunstar.png" style="margin-left:10rpx"></image>
+                        </view>
+                        <view class="bottomss">{{selectResult.result_infos}}</view>
+                    </view>
+                    <view wx:if="{{paizhen.cate_id=='6'}}" wx:for="{{selectResult.cate_title}}">
+                        <view style="text-align:center">
+                            <image mode="widthFix" src="/images/ai{{index+1}}.png" style="width:40rpx"></image>
+                        </view>
+                        <view class="tops" style="margin-bottom:10rpx;color:#ce9bea">
+                            <image mode="widthFix" src="/images/yunstar.png" style="margin-right:10rpx"></image>{{item}} {{selectResult.zhengni==1?'逆位':'正位'}}<image mode="widthFix" src="/images/yunstar.png" style="margin-left:10rpx"></image>
+                        </view>
+                        <view class="bottomss">{{selectResult.result_infos[index]}}</view>
+                    </view>
+                    <view>
+                        <view style="text-align:center">
+                            <image mode="widthFix" src="{{paizhen.cate_id==6?'/images/ai4.png':'/images/jiexing.png'}}" style="width:40rpx"></image>
+                        </view>
+                        <view class="tops" style="margin-bottom:10rpx;color:#ce9bea">
+                            <image mode="widthFix" src="/images/yunstar.png" style="margin-right:10rpx"></image>牌面<image mode="widthFix" src="/images/yunstar.png" style="margin-left:10rpx"></image>
+                        </view>
+                        <view class="bottomss">{{selectResult.card_infos}}</view>
+                    </view>
+                </view>
+                <view style="height:50rpx"></view>
+            </scroll-view>
+        </view>
+    </view>
+</view>
+<view class="out" hidden="{{outAnimation}}" style="{{showResult?'opacity:1':'opacity:0'}};transition:all 1s">
+    <view hidden="{{outAnimation}}">
+        <image class="outzhen" src="/images/outzhen.png"></image>
+        <image class="outquan" src="/images/outquan.png"></image>
+        <image class="outdian" mode="widthFix" src="/images/outdian.png"></image>
+        <image class="out1" mode="widthFix" src="{{outpai[0]}}"></image>
+        <image class="out2" mode="widthFix" src="{{outpai[1]}}"></image>
+        <image class="out3" mode="widthFix" src="{{outpai[2]}}"></image>
+        <image class="out4" mode="widthFix" src="{{outpai[3]}}"></image>
+        <image class="out5" mode="widthFix" src="{{outpai[4]}}"></image>
+    </view>
+</view>

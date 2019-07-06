@@ -1,0 +1,120 @@
+.container {
+    position: absolute;
+    padding-bottom: 0;
+    width: 100%;
+    min-height: 100%;
+    background-color: #F8F8F8;
+}
+
+.section {
+    margin: 0rpx auto;
+    text-align: center;
+}
+
+#swiper {
+    width: 100%;
+    margin: 20rpx 0 30rpx;
+}
+
+.swiper_item {
+    width: 94%;
+    height: 240rpx;
+    margin: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 2px rgba(118,118,118,.08);
+}
+
+.swiper_item image {
+    width: 100%;
+    height: 240rpx;
+}
+
+.section {
+    width: 94%;
+    margin: 10px auto 10px auto;
+}
+
+.ongoing-list-item {
+    position: relative;
+    margin-bottom: 18rpx;
+    height: 174rpx;
+    background-color: #ccc;
+    border-radius: 4px;
+    box-shadow: 0px 1px 4px #D8DDE5;
+    text-align: center;
+    overflow: hidden;
+}
+
+.ongoing-list-item text {
+    position: relative;
+    font-size: 36rpx;
+    color: #fff;
+    line-height: 174rpx;
+    z-index: 1;
+}
+
+.ongoing-list-item image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.longtext {
+    width: 100%;
+    min-height: 60rpx;
+}
+
+.longtext .grid-item-img {
+    float: left;
+    margin: 0 80rpx;
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.longtext .grid-item-name {
+    font-size: 32rpx;
+    line-height: 50rpx;
+    color: green;
+    font-weight: bold;
+}
+
+.longtext .mark-badge {
+    top: -8rpx;
+    right: -10rpx;
+}
+
+.nav-list {
+    position: relative;
+    display: flex;
+    color: #666;
+    align-items: center;
+    padding: 20rpx;
+    margin: 20rpx auto 0;
+    background: #fff;
+    border-radius: 6rpx;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.nav-list.cur {
+    color: #fff;
+    background: rgb(94,185,94);
+    box-shadow: 2px 2px 3px rgba(94,185,94,0.4);
+}
+
+.nav-list .iconfont {
+    flex: 1;
+    text-align: right;
+}
+
+.nav-title {
+    margin-right: 20rpx;
+}
+
+.nav-name {
+    color: #aaa;
+    font-size: 24rpx;
+    text-transform: Capitalize;
+}

@@ -1,0 +1,80 @@
+<!-- <ad unitId="{{unitid}}" wx:if="{{unitid}}"></ad> -->
+<view class="chat-item">
+    <view class="chat-main justify-end flex">
+        <view>
+            <view class="chat-centact success">
+        透明头像素材
+      </view>
+        </view>
+    </view>
+    <open-data class="img-df radius" type="userAvatarUrl"></open-data>
+</view>
+<view class="chat-item chat-left">
+    <image class="img-df radius" mode="widthFix" src="/img/wk-thumb.jpg"></image>
+    <view class="chat-main">
+        <view bindtap="saveImageToPhotosAlbum" data-src="/img/cgbq.png">
+            <view class="chat-centact">
+                <image mode="widthFix" src="/img/cgbq.png"></image>
+            </view>
+            <view class="gray-text text-sm mt-sm">点击下载素材 </view>
+        </view>
+    </view>
+</view>
+<view class="chat-item">
+    <view class="chat-main justify-end flex">
+        <view>
+            <view class="chat-centact success">
+        透明表情素材
+      </view>
+        </view>
+    </view>
+    <open-data class="img-df radius" type="userAvatarUrl"></open-data>
+</view>
+<view class="chat-item chat-left">
+    <image class="img-df radius" mode="widthFix" src="/img/wk-thumb.jpg"></image>
+    <view class="chat-main">
+        <view bindtap="saveImageToPhotosAlbum" data-src="/img/tmbq.jpg">
+            <view class="chat-centact">
+                <image src="/img/tmbq.jpg"></image>
+            </view>
+            <view class="gray-text text-sm mt-sm">点击下载素材 </view>
+        </view>
+    </view>
+</view>
+<!-- <view class="chat-item">
+    <view class="chat-main justify-end flex">
+        <view>
+            <view class="chat-centact success">
+        视频教程
+      </view>
+        </view>
+    </view>
+    <open-data class="img-df radius" type="userAvatarUrl"></open-data>
+</view>
+<view class="chat-item chat-left mb-xl">
+    <image class="img-df radius" mode="widthFix" src="/img/wk-thumb.jpg"></image>
+    <view class="chat-main mb-xl">
+        <view>
+            <view class="chat-centact">
+                <navigator url="/pages/help/video/video?id=0"></navigator>
+                <view>如何设置透明头像？</view>
+                <view class="flex mt-sm">
+                    <image class="basis-sm" mode="widthFix" src="/img/wk-head.png"></image>
+                    <view class="ml-sm text-sm">
+              花式君教你如何设置微信透明头像.
+            </view>
+                </view>
+                <view class="flex solid-top align-center pt-sm mt-sm">
+                    <image class="round img-xs" mode="widthFix" src="/img/wk-thumb.jpg"></image>
+                    <view class="gray-text ml-sm text-sm">花式玩客
+              <text>/ 花式君</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view> -->
+<view class="foot-btn">
+    <button class="black btn round" openType="share">
+        <text class="iconfont icon-share mr-xs"></text> 分享给好友</button>
+</view>

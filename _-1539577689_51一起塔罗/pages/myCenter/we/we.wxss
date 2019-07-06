@@ -1,0 +1,52 @@
+page {
+    background: #eaeaea;
+}
+
+.header {
+    text-align: center;
+}
+
+.header image {
+    border-radius: 50%;
+    width: 210rpx;
+    height: 210rpx;
+    margin: 30rpx 0;
+}
+
+.team {
+    border-radius: 10rpx;
+    width: 85%;
+    margin: 40rpx auto 0;
+    background: white;
+    font-size: 30rpx;
+    padding: 30rpx 40rpx;
+    overflow: hidden;
+}
+
+.avatar {
+    border-radius: 50%;
+    height: 120rpx;
+    width: 120rpx;
+}
+
+.left {
+    margin-left: 20rpx;
+}
+
+.join,.more {
+    border-radius: 10rpx;
+    width: 85%;
+    margin: 40rpx auto 0;
+    background: white;
+    font-size: 30rpx;
+    padding: 60rpx 40rpx;
+    position: relative;
+}
+
+.iconfont {
+    color: #20445e;
+    position: absolute;
+    top: 52rpx;
+    right: 23rpx;
+    font-size: 50rpx;
+}

@@ -1,0 +1,36 @@
+page {
+    background: #eaeaea;
+    padding-bottom: 200rpx;
+}
+
+.item {
+    width: 90%;
+    margin: 30rpx auto 0;
+    display: flex;
+    padding: 20rpx;
+    background: white;
+    font-size: 25rpx;
+}
+
+.left {
+    height: 180rpx;
+    overflow: hidden;
+    border-radius: 10rpx;
+    margin-right: 30rpx;
+}
+
+.item image {
+    width: 250rpx;
+    height: 180rpx;
+}
+
+.right view {
+    height: 67rpx;
+    overflow: hidden;
+}
+
+.tip {
+    width: 100%;
+    position: fixed;
+    top: 0;
+}

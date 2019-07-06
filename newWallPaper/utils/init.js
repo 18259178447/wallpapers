@@ -10,8 +10,8 @@ try {
 }
 wx.windowWidth = sysInfo.windowWidth;
 wx.windowHeight = sysInfo.windowHeight;
-
-var qq = sysInfo.AppPlatform;
+wx.isQQ = sysInfo.AppPlatform || false;
+var qq = wx.isQQ;
 //添加请求头
 wx.requestHeader = {
   deviceInfo: sign.header({

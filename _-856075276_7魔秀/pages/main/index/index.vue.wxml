@@ -1,0 +1,32 @@
+<template name="381578d6">
+    <view class="_div data-v-cf8b3cfc main-bg">
+        <view class="_div data-v-cf8b3cfc" hidden="{{!isConnected}}">
+            <form reportSubmit bindsubmit="handleProxy" class="_form data-v-cf8b3cfc" data-comkey="{{$k}}" data-eventid="{{'2'}}">
+                <image class="_img data-v-cf8b3cfc guide-icon" hidden="{{!(enterNum<3&&isGuide&&sortOption==='main')}}" src="/static/images/guide.png"></image>
+                <template is="3c7fd2ff" data="{{...$root[$kk+'1'],$root:$root}}" wx:if="{{sortOption==='main'}}"></template>
+                <template is="bfe36f38" data="{{...$root[$kk+'0'],$root:$root}}" wx:else></template>
+                <view class="_div data-v-cf8b3cfc tab-container {{[isFit?'tab-container-active':'']}}">
+                    <button bindtap="handleProxy" class="_button data-v-cf8b3cfc submit-btn tab-box" data-comkey="{{$k}}" data-eventid="{{'0'}}" formType="submit">
+                        <image class="_img data-v-cf8b3cfc icon" src="/static/images/main-on.png" wx:if="{{sortOption==='main'}}"></image>
+                        <image class="_img data-v-cf8b3cfc icon" src="/static/images/main.png" wx:else></image>
+                        <view class="_p data-v-cf8b3cfc {{[sortOption==='main'?'word':'']}}">首页</view>
+                    </button>
+                    <button bindtap="handleProxy" class="_button data-v-cf8b3cfc submit-btn tab-box" data-comkey="{{$k}}" data-eventid="{{'1'}}" formType="submit">
+                        <image class="_img data-v-cf8b3cfc icon" src="/static/images/sort-on.png" wx:if="{{sortOption==='sort'}}"></image>
+                        <image class="_img data-v-cf8b3cfc icon" src="/static/images/sort.png" wx:else></image>
+                        <view class="_p data-v-cf8b3cfc {{[sortOption==='sort'?'word':'']}}">分类</view>
+                    </button>
+                </view>
+                <!-- <button class="_button data-v-cf8b3cfc submit-btn service-btn {{[isFit?'service-btn-active':'']}}" formType="submit" openType="contact" sendMessageImg="/static/images/service-share.png" sendMessageTitle="{{sendMessage}}" showMessageCard="true">
+                    <image class="_img data-v-cf8b3cfc get-icon" src="/static/images/get-icon.png"></image>
+                </button> -->
+            </form>
+        </view>
+        <view class="_div data-v-cf8b3cfc network-remind" wx:if="{{!isConnected&&isEnter}}">
+            <image class="_img data-v-cf8b3cfc remind-icon" src="/static/images/network-remind.png"></image>
+            <view class="_p data-v-cf8b3cfc">网络开小差了~ </view>
+        </view>
+    </view>
+</template>
+<import src="/pages/components/main.vue.wxml"></import>
+<import src="/pages/components/sort.vue.wxml"></import>

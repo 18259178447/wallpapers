@@ -1,0 +1,43 @@
+<template name="fb84f7be">
+    <view class="_div data-v-dc32a564 search-container">
+        <view class="_div data-v-dc32a564" hidden="{{!isConnected}}">
+            <form reportSubmit bindsubmit="handleProxy" class="_form data-v-dc32a564" data-comkey="{{$k}}" data-eventid="{{'4'}}">
+                <view class="_div data-v-dc32a564 input-box">
+                    <image class="_img data-v-dc32a564 search-icon" src="/static/images/search.png"></image>
+                    <input bindconfirm="handleProxy" bindinput="handleProxy" class="_input data-v-dc32a564 main-input" confirmType="{{search}}" data-comkey="{{$k}}" data-eventid="{{'0'}}" focus="{{isFocus}}" placeholder="{{placeholder}}" type="text" value="{{inputVal}}"></input>
+                </view>
+                <view class="_div data-v-dc32a564 search-tag-content" hidden="{{!(searchTagOption.length!==0)}}">
+                    <view class="_div data-v-dc32a564 search-tag-cate">
+                        <view class="_div data-v-dc32a564 search-tag-color"></view>
+                        <view class="_p data-v-dc32a564 search-tag-title">热词</view>
+                    </view>
+                    <view class="_div data-v-dc32a564 search-tag-box">
+                        <view class="_div data-v-dc32a564" wx:for="{{searchTagOption}}">
+                            <button bindtap="handleProxy" class="_button data-v-dc32a564 submit-btn search-tag-option" data-comkey="{{$k}}" data-eventid="{{'1_'+index}}" formType="submit">
+            {{item.tag}}
+            </button>
+                        </view>
+                    </view>
+                </view>
+                <view class="_div data-v-dc32a564 search-history-content" hidden="{{!(searchHistoryOption2.length!==0)}}">
+                    <view class="_div data-v-dc32a564 search-tag-cate">
+                        <view class="_div data-v-dc32a564 search-tag-color"></view>
+                        <view class="_p data-v-dc32a564 search-history-title">搜索历史</view>
+                    </view>
+                    <view class="_div data-v-dc32a564 search-history-box">
+                        <view class="_div data-v-dc32a564" wx:for="{{searchHistoryOption2}}">
+                            <button bindtap="handleProxy" class="_button data-v-dc32a564 submit-btn search-tag-option" data-comkey="{{$k}}" data-eventid="{{'2_'+index}}" formType="submit">
+            {{item}}
+            </button>
+                        </view>
+                    </view>
+                </view>
+                <image bindtap="handleProxy" class="_img data-v-dc32a564 home-btn" data-comkey="{{$k}}" data-eventid="{{'3'}}" hidden="{{!isHome}}" src="/static/images/home.png"></image>
+            </form>
+        </view>
+        <view class="_div data-v-dc32a564 network-remind" wx:if="{{!isConnected&&isEnter}}">
+            <image class="_img data-v-dc32a564 remind-icon" src="/static/images/network-remind.png"></image>
+            <view class="_p data-v-dc32a564">网络开小差了~ </view>
+        </view>
+    </view>
+</template>

@@ -1,0 +1,69 @@
+<template name="c7490a1e">
+    <view class="_div data-v-333caa18 match-container">
+        <view class="_div data-v-333caa18 match-wrapper {{[!matchMessage||matchMessage.pair?'active':'']}}" hidden="{{!isConnected}}">
+            <form reportSubmit bindsubmit="handleProxy" class="_form data-v-333caa18" data-comkey="{{$k}}" data-eventid="{{'8'}}">
+                <image class="_img data-v-333caa18 ribbon" src="/static/images/ribbon.png"></image>
+                <image class="_img data-v-333caa18 cloud" src="/static/images/cloud.png"></image>
+                <image class="_img data-v-333caa18 title {{[isFit?'title-active':'']}}" src="/static/images/match-title.png"></image>
+                <image class="_img data-v-333caa18 cloud-bottom cloud-position1" hidden="{{!(isLoad||!matchMessage||matchMessage.pair)}}" src="/static/images/cloud-bottom.png"></image>
+                <view class="_p data-v-333caa18 title-content1">{{content.message1}}</view>
+                <view class="_p data-v-333caa18 title-content2">{{content.message2}}</view>
+                <view class="_div data-v-333caa18 result-box">
+                    <view class="_div data-v-333caa18 match-box" wx:if="{{isLoad}}">
+                        <image class="_img data-v-333caa18 original-fail-pic" mode="{{mode}}" src="{{originalImage}}"></image>
+                        <view class="_div data-v-333caa18 reload-box">
+                            <image class="_img data-v-333caa18 reload-icon" src="/static/images/reload-icon.png"></image>
+                            <view class="_p data-v-333caa18 reload-message">正在匹配</view>
+                        </view>
+                        <view class="_div data-v-333caa18 shade"></view>
+                    </view>
+                    <view class="_div data-v-333caa18" wx:else>
+                        <button bindtap="handleProxy" class="_button data-v-333caa18 submit-btn match-box origin-box" data-comkey="{{$k}}" data-eventid="{{'6'}}" formType="submit" wx:if="{{!matchMessage}}">
+                            <image class="_img data-v-333caa18 add-icon" src="/static/images/add-icon.png"></image>
+                        </button>
+                        <view class="_div data-v-333caa18" wx:else>
+                            <view class="_div data-v-333caa18" wx:if="{{matchMessage.pair}}">
+                                <button bindtap="handleProxy" class="_button data-v-333caa18 submit-btn success-board dashed-board" data-comkey="{{$k}}" data-eventid="{{'0'}}" formType="submit">
+                                    <image class="_img data-v-333caa18 original-pic" mode="{{mode}}" src="{{originalImage}}"></image>
+                                </button>
+                                <button bindtap="handleProxy" class="_button data-v-333caa18 submit-btn success-board" data-comkey="{{$k}}" data-eventid="{{'1'}}" formType="submit" style=" {{'background-image:'+'url('+matchMessage.pair.img[0].data+')'+';'}}"></button>
+                                <button bindtap="handleProxy" class="_button data-v-333caa18 share-btn" data-comkey="{{$k}}" data-eventid="{{'2'}}" formType="submit" openType="share">
+                                    <image class="_img data-v-333caa18 share-icon" src="/static/images/share-red.png"></image>
+                                    <view class="_p data-v-333caa18">点击分享</view>
+                                </button>
+                            </view>
+                            <view class="_div data-v-333caa18" wx:else>
+                                <button bindtap="handleProxy" class="_button data-v-333caa18 submit-btn match-box fail-box" data-comkey="{{$k}}" data-eventid="{{'3'}}" formType="submit">
+                                    <image class="_img data-v-333caa18 original-fail-pic" mode="{{mode}}" src="{{originalImage}}"></image>
+                                    <view class="_div data-v-333caa18 reload-box">
+                                        <image class="_img data-v-333caa18 add-again-icon" src="/static/images/add-again-icon.png"></image>
+                                        <view class="_p data-v-333caa18 reload-message">重新上传</view>
+                                    </view>
+                                    <view class="_div data-v-333caa18 shade"></view>
+                                </button>
+                                <image class="_img data-v-333caa18 cloud-bottom" src="/static/images/cloud-bottom.png"></image>
+                                <view class="_div data-v-333caa18 recommend-container">
+                                    <view class="_div data-v-333caa18 recommend-box">
+                                        <view class="_div data-v-333caa18 recommend-icon"></view>
+                                        <view class="_p data-v-333caa18 recommend">猜你喜欢</view>
+                                    </view>
+                                    <view class="_div data-v-333caa18 recommend-content" wx:for="{{matchMessage.recommend}}">
+                                        <button bindtap="handleProxy" class="_button data-v-333caa18 submit-btn recommend-board" data-comkey="{{$k}}" data-eventid="{{'4_'+index}}" formType="submit" style=" {{'background-image:'+'url('+item.pairs[0].data+')'+';'}}"></button>
+                                        <button bindtap="handleProxy" class="_button data-v-333caa18 submit-btn recommend-board" data-comkey="{{$k}}" data-eventid="{{'5_'+index}}" formType="submit" style=" {{'background-image:'+'url('+item.pairs[1].data+')'+';'}}"></button>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <image class="_img data-v-333caa18 cat" src="/static/images/cat.png"></image>
+                    <image class="_img data-v-333caa18 bear" src="/static/images/bear.png"></image>
+                </view>
+                <image bindtap="handleProxy" class="_img data-v-333caa18 home-btn" data-comkey="{{$k}}" data-eventid="{{'7'}}" hidden="{{!isHome}}" src="/static/images/home.png"></image>
+            </form>
+        </view>
+        <view class="_div data-v-333caa18 network-remind" wx:if="{{!isConnected&&isEnter}}">
+            <image class="_img data-v-333caa18 remind-icon" src="/static/images/network-remind.png"></image>
+            <view class="_p data-v-333caa18">网络开小差了~ </view>
+        </view>
+    </view>
+</template>

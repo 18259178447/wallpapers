@@ -1,0 +1,99 @@
+page {
+    background: #d5d5d5;
+    height: 100%;
+}
+
+.bg {
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+.bg image {
+    width: 100%;
+}
+
+.content {
+    width: 90%;
+    margin: 0 auto;
+    position: absolute;
+    top: 114rpx;
+    left: 5%;
+}
+
+.top {
+    padding-bottom: 50rpx;
+    margin-bottom: 20rpx;
+    display: flex;
+    position: relative;
+}
+
+.mao {
+    width: 150rpx;
+    top: -65rpx;
+    left: 152rpx;
+    position: absolute;
+}
+
+.top .avatar {
+    background: white;
+    width: 180rpx;
+    height: 180rpx;
+    border-radius: 50%;
+    margin-top: -20rpx;
+    margin-left: 39rpx;
+}
+
+.top .name {
+    font-size: 35rpx;
+    margin-top: 48rpx;
+    padding-bottom: 30rpx;
+    color: #fff;
+    margin-left: 74rpx;
+}
+
+.content .item {
+    font-size: 30rpx;
+    padding: 35rpx 30rpx;
+    color: #fff;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+}
+
+.content .item image {
+    width: 65rpx;
+    margin-right: 41rpx;
+}
+
+.content view {
+    margin-top: 12rpx;
+}
+
+.content .item .next {
+    position: absolute;
+    right: 13rpx;
+    top: 50rpx;
+    width: 20rpx;
+    margin-right: 20rpx;
+}
+
+@-webkit-keyframes zhuan {
+    from {
+        transform: translateX(-50%) rotate(0deg);
+    }
+
+    to {
+        transform: translateX(-50%) rotate(360deg);
+    }
+}
+
+@keyframes zhuan {
+    from {
+        transform: translateX(-50%) rotate(0deg);
+    }
+
+    to {
+        transform: translateX(-50%) rotate(360deg);
+    }
+}

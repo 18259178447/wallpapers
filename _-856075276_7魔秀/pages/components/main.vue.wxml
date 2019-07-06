@@ -1,0 +1,26 @@
+<template name="3c7fd2ff">
+    <view class="_div data-v-2eea70df first-bg">
+        <image class="_img data-v-2eea70df title-bg" src="/static/images/title-bg.png"></image>
+        <button bindtap="handleProxy" class="_button data-v-2eea70df input-box submit-btn" data-comkey="{{$k}}" data-eventid="{{'0'}}" formType="submit">
+            <image class="_img data-v-2eea70df search-icon" src="/static/images/search.png"></image>
+            <view class="_p data-v-2eea70df main-input">请输入搜索内容</view>
+        </button>
+        <view class="_div data-v-2eea70df enter-container">
+            <button bindtap="handleProxy" class="_button data-v-2eea70df submit-btn btn" data-comkey="{{$k}}" data-eventid="{{'1'}}" formType="submit">
+                <image class="_img data-v-2eea70df enter-icon match-enter" src="/static/images/match-enter.png"></image>
+            </button>
+            <button bindtap="handleProxy" class="_button data-v-2eea70df submit-btn btn" data-comkey="{{$k}}" data-eventid="{{'2'}}" formType="submit">
+                <image class="_img data-v-2eea70df enter-icon wallpaper-enter" src="/static/images/wallpaper-enter.png"></image>
+            </button>
+        </view>
+        <view class="_div data-v-2eea70df recommend-content">
+            <image class="_img data-v-2eea70df title-icon" src="/static/images/title-icon.png"></image>
+            <view class="_div data-v-2eea70df recommend-box">
+                <view class="_div data-v-2eea70df recommend-wrapper" wx:for="{{recommendArr}}">
+                    <button bindtap="handleProxy" class="_button data-v-2eea70df submit-btn recommend" data-comkey="{{$k}}" data-eventid="{{'3_'+index}}" formType="submit" style=" {{'background-image:'+'url('+item.raw.url+')'+';'}}"></button>
+                </view>
+                <view class="_div data-v-2eea70df recommend recommend-last"></view>
+            </view>
+        </view>
+    </view>
+</template>

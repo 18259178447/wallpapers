@@ -1,0 +1,99 @@
+<image class="bg" mode="widthFix" src="https://weitaluo.xingpei360.com/Public/Api/mp3/12282.jpg"></image>
+<view class="top">
+    <view>
+        <view class="avatar">
+            <image src="{{card.user_headimg}}" widthFix="widthFix"></image>
+        </view>
+        <view class="name">{{card.user_nickname}}</view>
+    </view>
+</view>
+<view class="lingshu">
+    <image mode="widthFix" src="/images/yunstar.png"></image>
+  生命灵数
+  <image mode="widthFix" src="/images/ling{{card.card_lingshu}}.png" style="width:60rpx;display:inline-block;vertical-align:bottom"></image>
+    <image mode="widthFix" src="/images/yunstar.png" style="margin-left:10rpx"></image>
+</view>
+<view class="content">
+    <image bindtap="close" mode="widthFix" src="{{card.card_pic}}"></image>
+</view>
+<view class="tip">
+    <view>测试你与TA的关系数</view>
+    <view>点击底部按钮，收集好友匹配结果</view>
+</view>
+<view class="match">
+    <view class="title">
+        <image mode="widthFix" src="/images/wstar.png" style="margin-right:16rpx"></image>
+    好友测试结果
+    <image mode="widthFix" src="/images/wstar.png" style="margin-left:16rpx"></image>
+        <view style="margin-top:20rpx;" wx:if="{{matchList.length==0}}">暂无测试结果</view>
+    </view>
+    <view class="items">
+        <view class="item" wx:for="{{matchList}}" wx:key="aa">
+            <image class="item_bg" mode="widthFix" src="https://weitaluo.xingpei360.com/Public/Api/mp3/1217.png"></image>
+            <view>
+                <view>
+                    <view class="avatar">
+                        <image mode="widthFix" src="{{item.user_headimg}}"></image>
+                    </view>
+                    <view style="font-size:30rpx;width:90%;margin:25rpx auto 0">{{item.user_nickname}}</view>
+                </view>
+                <view>
+                    <view style="font-weight:bolder;font-size:33rpx;margin-top:22rpx;letter-spacing:2rpx;">关系数</view>
+                    <view style="width:45rpx;margin:60rpx auto 0;border-bottom:5rpx #fff solid">
+                        <image mode="widthFix" src="/images/ling{{item.gxs}}.png" style="width:60rpx;margin-left:-10rpx"></image>
+                    </view>
+                </view>
+                <view>
+                    <view class="avatar">
+                        <image mode="widthFix" src="{{item.p_user_headimg}}"></image>
+                    </view>
+                    <view style="font-size:30rpx;width:90%;margin:25rpx auto 0">{{item.p_user_nickname}}</view>
+                </view>
+            </view>
+            <view class="score">
+                <image mode="widthFix" src="/images/ling{{item.card_lingshu}}.png" style="width:60rpx;margin-left:83rpx"></image>
+                <image mode="widthFix" src="/images/ling{{item.p_card_lingshu}}.png" style="width:60rpx;margin-right:83rpx"></image>
+            </view>
+            <view class="explain">
+        {{item.gxs_infos_c}}
+      </view>
+            <view class="pei">
+                <view bindtap="tomatch" data-index="{{index}}" style="width:230rpx;">查看详情</view>
+            </view>
+        </view>
+    </view>
+    <view class="metoo" wx:if="{{pair.length}}">
+        <view>我也要玩</view>
+    </view>
+</view>
+<view class="button">
+    <view bindtap="getShare">邀请好友来测</view>
+</view>
+<view catchtouchmove="scrollto" class="paijie" hidden="{{cardtu}}">
+    <image class="sbg" mode="widthFix" src="/images/indexbg.jpg"></image>
+    <image bindtap="close" class="close" mode="widthFix" src="/images/close.png"></image>
+    <scroll-view class="luan" scrollY="true">
+        <view style="text-align:center;font-size:30rpx;margin-top:70rpx;color:white">{{card.card_name}}</view>
+        <view class="content" style="margin-top:40rpx">
+            <image catchtap="preview" mode="widthFix" src="{{card.card_pic}}" style="width:400rpx"></image>
+        </view>
+        <view class="lingshu">
+            <image mode="widthFix" src="/images/yunstar.png"></image>
+      生命灵数
+      <image mode="widthFix" src="/images/ling{{card.card_lingshu}}.png" style="width:60rpx;display:inline-block;vertical-align:bottom"></image>
+            <image mode="widthFix" src="/images/yunstar.png"></image>
+        </view>
+        <view class="explain">
+      {{card.card_ls_infos_c}}
+    </view>
+    </scroll-view>
+</view>
+<view bindtap="hiddens" class="bgs" data-id="0" wx:if="{{down}}">
+    <view class="danimg" data-id="1">
+        <image class="bbb" mode="widthFix" src="{{img}}"></image>
+        <view class="ibottom">
+            <button openType="share">转发</button>
+            <button catchtap="saves">保存图片</button>
+        </view>
+    </view>
+</view>

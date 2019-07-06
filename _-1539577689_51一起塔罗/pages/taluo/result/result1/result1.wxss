@@ -1,0 +1,50 @@
+page {
+    color: white;
+    text-align: center;
+}
+
+.bgs {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -9999;
+}
+
+.title {
+    margin-top: 70rpx;
+    font-size: 30rpx;
+}
+
+.pai {
+    margin-top: 30rpx;
+}
+
+.pai image {
+    width: 30%;
+}
+
+.keyword {
+    margin: 10rpx 0;
+    font-size: 30rpx;
+}
+
+.contents {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 20rpx;
+    border-top: 2rpx white solid;
+}
+
+.contents>view {
+    margin-bottom: 20rpx;
+}
+
+.contents .top {
+    font-weight: 700;
+}
+
+.contents .bottom {
+    font-size: 28rpx;
+}

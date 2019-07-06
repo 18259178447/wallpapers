@@ -1,0 +1,330 @@
+page {
+    background: #040212;
+    color: white;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+.bg {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -999;
+}
+
+.time {
+    color: white;
+    position: absolute;
+    z-index: 999;
+    top: 294rpx;
+    left: 122rpx;
+}
+
+.rotate {
+    position: relative;
+    height: 24rpx;
+    margin-left: 10rpx;
+    text-align: right;
+}
+
+.rotate view {
+    top: -10rpx;
+    position: absolute;
+    transform: rotate(90deg);
+}
+
+.topkuang1 {
+    text-align: center;
+    margin: 50rpx 0 20rpx;
+    position: relative;
+}
+
+.topkuang1 image {
+    width: 618rpx;
+}
+
+.topkuang {
+    text-align: center;
+    margin: 50rpx 0 20rpx;
+    position: relative;
+}
+
+.topkuang1>view {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30rpx;
+}
+
+.topkuang view {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 0;
+    line-height: 64rpx;
+    font-size: 30rpx;
+}
+
+.topkuang image {
+    width: 400rpx;
+}
+
+.content {
+    text-align: center;
+    color: white;
+    margin-top: 50rpx;
+}
+
+.pai1 {
+    font-size: 25rpx;
+    padding: 30rpx;
+    position: relative;
+}
+
+.pai {
+    display: flex;
+    justify-content: space-around;
+    font-size: 25rpx;
+    padding: 30rpx;
+    flex-flow: row wrap;
+}
+
+.pai>view,.pai1>view {
+    width: 200rpx;
+    height: 430rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.content image {
+    width: 200rpx;
+}
+
+.content .fenxi {
+    padding-top: 54rpx;
+    font-size: 33rpx;
+    color: #e16dff;
+}
+
+.title {
+    width: 447rpx;
+    text-align: center;
+    color: white;
+    position: absolute;
+    left: 217rpx;
+    top: 288rpx;
+}
+
+.top {
+    text-align: center;
+    margin-top: 70rpx;
+    color: white;
+}
+
+.top .avatar {
+    width: 120rpx;
+    height: 120rpx;
+    background: black;
+    border-radius: 50%;
+}
+
+.button {
+    position: absolute;
+    top: 627rpx;
+    left: -127rpx;
+}
+
+.button view {
+    background: #b959d3;
+    width: 70rpx;
+    padding: 5rpx 30rpx;
+    border-radius: 15rpx;
+}
+
+.button image {
+    width: 70rpx;
+}
+
+.save {
+    margin-top: 10rpx;
+    font-size: 30rpx;
+    font-weight: 700;
+}
+
+canvas {
+    position: fixed;
+    z-index: -999;
+    top: -9999px;
+    left: -9999999999999999px;
+}
+
+.mengc {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    opacity: 0;
+}
+
+.fu {
+    font-size: 28rpx;
+    text-align: center;
+    padding: 0 100rpx;
+}
+
+.fu>view {
+    margin-top: 30rpx;
+}
+
+.chao {
+    position: fixed;
+    bottom: 50rpx;
+    display: flex;
+    width: 100%;
+    z-index: 999;
+    justify-content: space-around;
+}
+
+.share {
+    color: white;
+    background: #643ef4;
+    border-radius: 39rpx;
+    padding: 15rpx 100rpx;
+    font-size: 30rpx;
+}
+
+.imgs {
+    position: fixed;
+    top: 0;
+    background: rgba(0,0,0,.3);
+    width: 100%;
+    bottom: 0;
+    z-index: 999;
+}
+
+.imgs .img {
+    width: 470rpx;
+    position: absolute;
+    top: 40%;
+    height: 1096rpx;
+    transform: translateY(-50%);
+    left: 100%;
+    transform-origin: left bottom;
+    animation: move 1.5s forwards ease-out 1s;
+    overflow: hidden;
+}
+
+.img scroll-view {
+    width: 470rpx;
+    height: 1096rpx;
+}
+
+.img image {
+    width: 470rpx;
+    position: absolute;
+    top: 0;
+}
+
+.ibottom {
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -1rpx;
+    padding: 55rpx 0;
+    background: #20163b;
+    width: 470rpx;
+}
+
+.ibottom>button {
+    width: 40%;
+    font-size: 30rpx;
+    background: #140b26;
+    color: white;
+    animation: big 0.5s infinite;
+}
+
+@-webkit-keyframes move {
+    0% {
+        top: 50%;
+        transform: translate(0,-50%) rotate(-5deg);
+        -webkit-transform: rotate(-10deg);
+        transform: rotate(-10deg);
+    }
+
+    50% {
+        transform: translate(-50%,-50%) rotate(-30deg);
+        top: 50%;
+        left: 50%;
+    }
+
+    100% {
+        transform: translate(-50%,-50%) rotate(0deg);
+        left: 50%;
+        top: 50%;
+    }
+}
+
+@keyframes move {
+    0% {
+        top: 50%;
+        transform: translate(0,-50%) rotate(-5deg);
+        -webkit-transform: rotate(-10deg);
+        transform: rotate(-10deg);
+    }
+
+    50% {
+        transform: translate(-50%,-50%) rotate(-30deg);
+        top: 50%;
+        left: 50%;
+    }
+
+    100% {
+        transform: translate(-50%,-50%) rotate(0deg);
+        left: 50%;
+        top: 50%;
+    }
+}
+
+@-webkit-keyframes big {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes big {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.fu image {
+    width: 30rpx;
+}

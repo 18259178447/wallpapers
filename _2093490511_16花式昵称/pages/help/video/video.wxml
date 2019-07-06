@@ -1,0 +1,14 @@
+<view animation="{{animationData}}" class="page-body">
+    <video autoplay="{{autoplay}}" bindended="bindEnded" bindpause="bindPause" bindplay="bindPlay" bindtap="play" bindtimeupdate="timeupdate" bindtouchcancel="touchcancel" bindtouchend="touchend" bindtouchmove="touchmove" bindtouchstart="touchstart" class="canvas" controls="{{show}}" enableProgressGesture="{{show}}" id="myVideo" loop="{{true}}" objectFit="cover" showCenterPlayBtn="{{show}}" showPlayBtn="{{show}}" showProgress="{{show}}" src="{{videourl}}">
+        <cover-view bindtap="play" class="icon-box">
+            <cover-image class="icon-play" hidden="{{isPlay}}" src="/img/play.png"></cover-image>
+        </cover-view>
+        <cover-view class="jindu-back"></cover-view>
+        <cover-view class="jindu" style="width: {{percent}}%"></cover-view>
+        <cover-view class="desc">
+            <cover-view>
+                <cover-view class="desc-text">{{videotitle}}</cover-view>
+            </cover-view>
+        </cover-view>
+    </video>
+</view>

@@ -1,0 +1,108 @@
+<image class="bg" mode="widthFix" src="https://weitaluo.xingpei360.com/Public/Api/mp3/12282.jpg"></image>
+<view class="top">
+    <view>
+        <view class="avatar">
+            <image src="{{card.user_headimg}}" widthFix="widthFix"></image>
+        </view>
+        <view class="name">{{card.user_nickname}}</view>
+    </view>
+</view>
+<view class="kuang">
+    <image mode="widthFix" src="/images/kuang.png"></image>
+    <view>2019年运势牌</view>
+</view>
+<view class="tips">
+    <view>点击牌面查看运势</view>
+</view>
+<view class="content">
+    <image bindtap="close" mode="widthFix" src="{{card.card_pic}}"></image>
+    <image class="san" mode="widthFix" src="/images/san.png"></image>
+</view>
+<view class="tip">
+    <view>测试你与TA</view>
+    <view>2019的关系走向</view>
+</view>
+<view class="match">
+    <view class="title">
+        <image mode="widthFix" src="/images/wstar.png" style="margin-right:16rpx"></image>
+    好友测试结果
+    <image mode="widthFix" src="/images/wstar.png" style="margin-left:16rpx"></image>
+        <view style="margin-top:20rpx;" wx:if="{{matchList.length==0}}">暂无测试结果</view>
+    </view>
+    <view class="items">
+        <view class="item" wx:for="{{matchList}}" wx:key="aa">
+            <image class="item_bg" mode="widthFix" src="https://weitaluo.xingpei360.com/Public/Api/mp3/1217.png"></image>
+            <image class="item_bg" mode="widthFix" src="https://weitaluo.xingpei360.com/Public/Api/mp3/1217.png" style="transform:translateY(100%)"></image>
+            <view>
+                <view>
+                    <view class="avatar">
+                        <image mode="widthFix" src="{{item.user_headimg}}"></image>
+                    </view>
+                    <view style="font-size:30rpx;width:90%;margin:25rpx auto 0">{{item.user_nickname}}</view>
+                </view>
+                <view>
+                    <image class="qmd" mode="widthFix" src="https://weitaluo.xingpei360.com/Public/Api/mp3/qmd{{item.qmd_val}}.png"></image>
+                    <view>
+                        <view class="dixian">{{item.qmd_val}}
+              <view></view>
+                        </view>
+                    </view>
+                </view>
+                <view>
+                    <view class="avatar">
+                        <image mode="widthFix" src="{{item.p_user_headimg}}"></image>
+                    </view>
+                    <view style="font-size:30rpx;width:90%;margin:25rpx auto 0">{{item.p_user_nickname}}</view>
+                </view>
+            </view>
+            <view class="score">
+                <image mode="widthFix" src="{{item.card_pic}}" style="width:160rpx;margin-left:65rpx"></image>
+                <image mode="widthFix" src="{{item.p_card_pic}}" style="width:160rpx;margin-right:65rpx"></image>
+            </view>
+            <view class="di">
+                <image class="kadi1" mode="widthFix" src="/images/kadi.png"></image>
+                <image class="kadi2" mode="widthFix" src="/images/kadi.png"></image>
+            </view>
+            <view class="explain">
+      {{item.qmd_infos_d}}
+    </view>
+            <view class="pei">
+                <view>
+                    <view bindtap="tomatch" data-index="{{index}}">查看详情</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="metoo" wx:if="{{pair.length}}">
+        <view>我也要玩</view>
+    </view>
+</view>
+<view class="button">
+    <view bindtap="getShare1">邀请好友来测</view>
+</view>
+<view catchtouchmove="scrollto" class="paijie" hidden="{{cardtu}}">
+    <image class="sbg" mode="widthFix" src="/images/indexbg.jpg"></image>
+    <image bindtap="close" class="close" mode="widthFix" src="/images/close1.png"></image>
+    <scroll-view class="luan" scrollY="true">
+        <view style="text-align:center;font-size:30rpx;margin-top:70rpx;color:white">{{card.card_name}}</view>
+        <view class="content" style="margin-top:40rpx">
+            <image catchtap="preview" mode="widthFix" src="{{card.card_pic}}" style="width:400rpx"></image>
+        </view>
+        <view class="explain">
+            <view wx:for="{{card.cate_title}}">
+                <image mode="widthFix" src="/images/yunk.png"></image>
+                <view class="yunti">{{item}}</view>
+                <view class="yunjie">{{card.result_infos[index]}}</view>
+            </view>
+        </view>
+    </scroll-view>
+</view>
+<view bindtap="hiddens" catchtouchmove="move" class="bgs" data-id="0" wx:if="{{down}}">
+    <view class="danimg" data-id="1">
+        <image class="bbb" mode="widthFix" src="{{img}}"></image>
+        <view class="ibottom">
+            <button openType="share">转发</button>
+            <button catchtap="saves">保存图片</button>
+        </view>
+    </view>
+</view>

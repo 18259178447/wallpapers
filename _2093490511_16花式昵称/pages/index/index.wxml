@@ -1,0 +1,72 @@
+<view class="container">
+    <!-- <view id="swiper">
+        <swiper autoplay="{{autoplay}}" circular="{{circular}}" class="swiper_item" duration="{{duration}}" indicatorDots="{{indicatorDots}}" interval="{{interval}}">
+            <swiper-item wx:for="{{swiperlist}}" wx:key="item">
+                <navigator url="{{item.url}}" wx:if="{{item.opentype==0}}"></navigator>
+                <navigator appId="{{item.appid}}" openType="navigate" path="{{item.url}}" target="miniProgram" wx:else></navigator>
+                <image class="slide-image" mode="aspectFill" src="{{item.img}}"></image>
+            </swiper-item>
+        </swiper>
+    </view> -->
+    <view class="g-wrap grid-content">
+        <view class="grid">
+            <navigator url="../nickname/nickname"></navigator>
+            <image class="grid-item-img" src="../../img/class/nicheng.png"></image>
+            <view class="grid-item-name">个性昵称</view>
+        </view>
+        <view class="grid">
+            <navigator url="../textshow/textshow"></navigator>
+            <image class="grid-item-img" src="../../img/class/zixiao.png"></image>
+            <view class="grid-item-name">文字特效</view>
+        </view>
+        <view class="grid">
+            <navigator url="../emoticon/emoticon"></navigator>
+            <image class="grid-item-img" src="../../img/class/biaoqing.png"></image>
+            <view class="grid-item-name">表情字符</view>
+        </view>
+    </view>
+    <view class="section slider-container">
+        <ad unitId="{{unitid}}" wx:if="{{unitid}}"></ad>
+    </view>
+    <view class="g-wrap grid-content">
+        <view class="grid">
+            <navigator url="../facemood/facemood"></navigator>
+            <image class="grid-item-img" src="../../img/class/facemood.png"></image>
+            <view class="grid-item-name">颜文字</view>
+        </view>
+        <view class="grid">
+            <navigator url="../landscape/landscape"></navigator>
+            <image class="grid-item-img" src="../../img/class/landscape.png"></image>
+            <view class="grid-item-name">竖排字</view>
+        </view>
+        <!-- <view class="grid">
+            <navigator url="../screaming/screaming"></navigator>
+            <image class="grid-item-img" src="../../img/class/screaming.png"></image>
+            <view class="grid-item-name">尖叫字</view>
+        </view> -->
+    </view>
+    <official-account></official-account>
+    <view class="nav-list g-wrap">
+        <navigator url="../chat/avatar"></navigator>
+        <view class="nav-title">透明头像</view>
+        <view class="nav-name">QQ透明头像，透明表情素材</view>
+        <view class="iconfont icon-right"></view>
+    </view>
+    <view class="nav-list g-wrap">
+        <navigator url="../chat/nickname"></navigator>
+        <view class="nav-title">空白昵称</view>
+        <view class="nav-name">QQ空白昵称，空白签名设置</view>
+        <view class="iconfont icon-right"></view>
+    </view>
+    <view class="nav-list g-wrap">
+        <navigator url="../en/en"></navigator>
+        <view class="nav-title">英文昵称</view>
+        <view class="nav-name">一键生成英文昵称，字母转换</view>
+        <view class="iconfont icon-right"></view>
+    </view>
+    <!-- <view class="foot-text">
+        <navigator url="/pages/help/follow"></navigator>
+        <text class="iconfont icon-discover"></text>
+        <text> 花式玩客出品</text>
+    </view> -->
+</view>

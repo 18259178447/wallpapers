@@ -1,0 +1,35 @@
+<view class="common-box">
+    <view class="list">
+        <block wx:if="{{list.length}}">
+            <view bindtap="jumptoImg" data-iid="{{item.pic_info.id}}" wx:for="{{list}}" wx:key="{{index}}">
+                <view class="l_item">
+                    <image lazyLoad mode="widthFix" src="{{item.pic_info.pic_left_url}}"></image>
+                </view>
+                <view class="l_item">
+                    <image lazyLoad mode="widthFix" src="{{item.pic_info.pic_right_url}}"></image>
+                </view>
+            </view>
+            <view class="no_more" wx:if="{{isFinish}}">
+        没啦，偶是有底线的~~
+      </view>
+        </block>
+        <block wx:else>
+            <view class="no_more" wx:if="{{isFinish}}">
+        天哪噜~ 居然是空的
+      </view>
+        </block>
+    </view>
+    <view class="bottom-btns">
+        <view bindtap="jumptoindex" class="btn-box">
+            <image src="{{cdn}}/index_gray.png"></image>
+      首页
+    </view>
+        <view bindtap="jumptomine" class="btn-box">
+            <image src="{{cdn}}/mine_gray.png"></image>
+      我的
+    </view>
+    </view>
+    <view catchtap="backTop" class="rocket" wx:if="{{showRocket}}">
+        <image src="{{cdn}}/rocket.png"></image>
+    </view>
+</view>

@@ -1,0 +1,54 @@
+<image class="bg" mode="widthFix" src="/images/matchbg.jpg"></image>
+<view class="relation">
+    <view style="margin-top:20rpx;">
+        <image class="avatar" src="{{pair.user_headimg}}"></image>
+        <view style="margin-top:20rpx">{{pair.user_nickname}}</view>
+    </view>
+    <view class="center">
+        <view style="margin-bottom:30rpx">{{pair.z_user_nickname}}</view>
+        <image class="avatar" src="{{pair.z_user_headimg}}"></image>
+    </view>
+    <view style="margin-top:20rpx;">
+        <image class="avatar" src="{{pair.p_user_headimg}}"></image>
+        <view style="margin-top:20rpx">{{pair.p_user_nickname}}</view>
+    </view>
+    <image class="one" mode="widthFix" src="/images/starline.png"></image>
+    <image class="starleft" mode="widthFix" src="/images/ling{{pair.card_lingshu}}.png"></image>
+    <image class="starright" mode="widthFix" src="/images/ling{{pair.p_card_lingshu}}.png"></image>
+</view>
+<view class="guanxi">
+    <view style="font-weight:bolder;font-size:30rpx;margin-top:22rpx;letter-spacing:2rpx;">匹配结果</view>
+</view>
+<view class="explain">
+    <view class="left">
+        <view>
+            <image mode="widthFix" src="/images/pai.png"></image>
+        </view>
+        <view>
+            <view class="name">女祭司</view>
+            <view class="content">发生的粉色的岗位粉色的</view>
+        </view>
+    </view>
+    <view class="right">
+        <view style="margin-left:50rpx;">
+            <image mode="widthFix" src="/images/pai.png"></image>
+        </view>
+        <view>
+            <view class="name">女祭司</view>
+            <view class="content" style="text-align:left">发生的粉色的岗位粉色的法水电费第三方地方</view>
+        </view>
+    </view>
+</view>
+<view class="button">
+    <view bindtap="metoo">我也要玩</view>
+    <view bindtap="getShare">炫耀结果</view>
+</view>
+<view bindtap="hiddens" class="bgs" data-id="0" wx:if="{{down}}">
+    <view class="danimg" data-id="1">
+        <image class="bbb" mode="widthFix" src="{{img}}"></image>
+        <view class="ibottom">
+            <button openType="share">转发</button>
+            <button catchtap="saves">保存图片</button>
+        </view>
+    </view>
+</view>

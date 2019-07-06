@@ -1,0 +1,26 @@
+{
+  "pages": [
+    "pages/main/index/main",
+    "pages/main/result/main",
+    "pages/main/search/main",
+    "pages/main/details/main",
+    "pages/main/recommend/main",
+    "pages/match/index/main"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "情侣头像",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": false
+  },
+  "networkTimeout": {
+    "request": 8000,
+    "uploadFile": 8000,
+    "downloadFile": 8000
+  },
+  "navigateToMiniProgramAppIdList": [
+    "1109376964"
+  ],
+  "sitemapLocation": "sitemap.json"
+}

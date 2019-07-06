@@ -9,6 +9,7 @@ var date;
 // 云函数入口函数
 exports.main = async(event, context) => {
   date = format("YY-MM-DD");
+  var download = await getadDownloadData();
   var error = await getadErrorData();
   var load = await getadLoadData();
   var click = await getadClickData();
@@ -16,7 +17,8 @@ exports.main = async(event, context) => {
     date,
     error,
     load,
-    click
+    click,
+    download
   }
   await db.collection('stat').add({
     data
@@ -24,7 +26,28 @@ exports.main = async(event, context) => {
   return data
 }
 async function getadClickData(){
-  var adclickCount = await db.collection('adclicks').count();
+  var collection = db.collection('adclicks').orderBy('_openid', 'asc');
+  var result = await getAll(collection);
+  var person = 0;
+  var currentOpenid = "";
+  var count = 0;
+  var person2 = 0;
+  var person3 = 0;
+  var person4 = 0;
+  console.log("adclicks总共" + result.length + "数量")
+  for (i = 0; i < result.length; i++) {
+    let item = result[i];
+    if (item._openid === currentOpenid) {
+      if (count === 0) { person2++;count++}
+      else if (count === 1) { person3++;count++}
+      else if (count === 2) { person4++;count++}
+      continue;
+    }else{
+      count = 0;
+    }
+    person++;
+    currentOpenid = item._openid; 
+  }
   try{
     await db.collection('adclicks').where({
       _openid: _.neq("openid")
@@ -32,7 +55,43 @@ async function getadClickData(){
   }catch(e){
     console.log("点击数据失败",e)
   }
-  return adclickCount
+  return {
+    person,
+    person2: person2 - person3,
+    person3: person3 - person4,
+    person4,
+    total: result.length
+  }
+}
+
+
+
+async function getadDownloadData() {
+  var collection = db.collection('download').orderBy('_openid', 'asc');
+  var result = await getAll(collection);
+  var person = 0;
+  var currentOpenid = "";
+  console.log("download总共" + result.length + "数量")
+  for (i = 0; i < result.length; i++) {
+    let item = result[i];
+    if (item._openid === currentOpenid) {
+      continue;
+    }
+    person++;
+    currentOpenid = item._openid;
+  }
+  try {
+    await db.collection('download').where({
+      _openid: _.neq("openid")
+    }).remove()
+  } catch (e) {
+    console.log("点击数据失败", e)
+  }
+  return {
+    person,
+    ava: result.length/person,
+    total: result.length
+  }
 }
 
 async function getadErrorData() {

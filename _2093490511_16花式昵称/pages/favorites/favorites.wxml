@@ -1,0 +1,11 @@
+<view class="container">
+    <view class="section">
+        <view class="ended-list" wx:for="{{favlist}}" wx:key="item">
+            <view bindtap="textCopy" class="ended-list-item" id="{{item}}">
+                <view class="ended-list-text">
+                    <text class="hero_name">{{item}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

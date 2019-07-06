@@ -1,0 +1,17 @@
+<image class="bg" mode="widthFix" src="../../images/bg.jpg"></image>
+<image class="liu" mode="widthFix" src="../../images/liu.png"></image>
+<image class="zhen" mode="widthFix" src="../../images/zhen.png"></image>
+<view class="top">
+    <view class="title">{{item.theme_title}}</view>
+    <view class="desc">塔罗牌是一种针对人、事、物进行</view>
+    <view class="desc">分析，预测和提供建议的工具。</view>
+</view>
+<view class="items">
+    <view class="xingzuo">
+        <view bindtap="goResult" class="item" data-id="{{index}}" wx:for="{{list}}">
+            <image class="hhh" mode="widthFix" src="{{'/images/'+index+1+'.png'}}"></image>
+            <image class="bbb" mode="widthFix" src="{{item.cons_pic}}"></image>
+            <view style="color:white;font-size:21rpx;">{{item.cons_name}}</view>
+        </view>
+    </view>
+</view>

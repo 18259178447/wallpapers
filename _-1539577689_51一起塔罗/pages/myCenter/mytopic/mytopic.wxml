@@ -1,0 +1,11 @@
+<view bindtap="xiang" class="item" data-id="{{index}}" wx:if="{{list.length!=0}}" wx:for="{{list}}">
+    <view class="left">
+        <image mode="widthFix" src="{{item.theme_logo}}"></image>
+    </view>
+    <view class="right">
+        <view>{{item.theme_title}}</view>
+        <view>测试时间： {{item.dateline}}</view>
+        <text data-id="{{index}}" style="color:grey">查看详情</text>
+    </view>
+</view>
+<image class="tip" mode="widthFix" src="/images/tip.png" wx:if="{{list.length==0}}"></image>

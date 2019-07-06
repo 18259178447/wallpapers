@@ -1,0 +1,23 @@
+<image class="bg" mode="widthFix" src="/images/indexbg.jpg"></image>
+<view class="content">
+    <view class="top">
+        <image class="avatar" src="{{userInfo==''?'':userInfo.userInfo.avatarUrl}}"></image>
+        <image class="mao" mode="widthFix" src="/images/mao.png"></image>
+        <view class="name">{{userInfo==''?'游客':userInfo.userInfo.nickName}}</view>
+    </view>
+    <view bindtap="selectGo" class="item" data-id="1">
+        <image data-id="1" mode="widthFix" src="/images/test.png"></image>
+        <view data-id="1">我的测试</view>
+        <image class="next" data-id="1" mode="widthFix" src="/images/go1.png"></image>
+    </view>
+    <view bindtap="selectGo" class="item" data-id="2">
+        <image data-id="2" mode="widthFix" src="/images/we.png" style="width"></image>
+        <view data-id="2">关于我们</view>
+        <image class="next" data-id="2" mode="widthFix" src="/images/go1.png"></image>
+    </view>
+    <view bindtap="selectGo" class="item" data-id="3" style="border-radius:0 0 10rpx 10rpx;">
+        <image data-id="3" mode="widthFix" src="/images/more.png"></image>
+        <view data-id="3">更多好玩</view>
+        <image class="next" data-id="3" mode="widthFix" src="/images/go1.png"></image>
+    </view>
+</view>

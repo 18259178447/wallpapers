@@ -1,0 +1,39 @@
+<template name="3dcce7c5">
+    <view class="_div data-v-5e936db2 details-container">
+        <view class="_div data-v-5e936db2" hidden="{{!isConnected}}">
+            <form reportSubmit bindsubmit="handleProxy" class="_form data-v-5e936db2" data-comkey="{{$k}}" data-eventid="{{'3'}}">
+                <swiper bindchange="handleProxy" class="_swiper data-v-5e936db2 swiper" current="{{currentIndex}}" data-comkey="{{$k}}" data-eventid="{{'0'}}" duration="{{duration}}" wx:if="{{tag!=='success'}}">
+                    <view class="_div data-v-5e936db2" wx:for="{{avatarArr}}">
+                        <swiper-item class="_swiper-item data-v-5e936db2 swiper-item">
+                            <view class="_div data-v-5e936db2 avatar-detail" style=" {{'background-image:'+'url('+item.raw.url+')'+';'}}"></view>
+                        </swiper-item>
+                    </view>
+                </swiper>
+                <view class="_div data-v-5e936db2 avatar-detail" style=" {{'background-image:'+'url('+avatarUrl+')'+';'}}" wx:else></view>
+                <view class="_div data-v-5e936db2 btn-box">
+                    <button class="_button data-v-5e936db2 btn share-btn" formType="submit" openType="share">
+                        <image class="_img data-v-5e936db2 icon" src="/static/images/share.png"></image>
+                        <view class="_div data-v-5e936db2 down-content share-content">分享头像</view>
+                    </button>
+                    <button bindtap="handleProxy" class="_button data-v-5e936db2 btn down-btn submit-btn" data-comkey="{{$k}}" data-eventid="{{'1'}}" formType="submit" wx:if="{{!isDown}}">
+                        <image class="_img data-v-5e936db2 icon" src="/static/images/down.png"></image>
+                        <view class="_div data-v-5e936db2 down-content">下载头像</view>
+                    </button>
+                    <button class="_button data-v-5e936db2 btn down-btn submit-btn" formType="submit" wx:else>
+                        <image class="_img data-v-5e936db2 icon" src="/static/images/finish.png"></image>
+                        <view class="_div data-v-5e936db2 down-content">下载完成</view>
+                        <view class="_div data-v-5e936db2 btn-shade"></view>
+                    </button>
+                </view>
+                <!-- <button class="_button data-v-5e936db2 submit-btn service-btn detail-serviece-btn" formType="submit" hidden="{{!isService}}" openType="contact" sendMessageImg="/static/images/service-share.png" sendMessageTitle="{{sendMessage}}" showMessageCard="true">
+                    <image class="_img data-v-5e936db2 get-icon" src="/static/images/get-icon.png"></image>
+                </button> -->
+                <image bindtap="handleProxy" class="_img data-v-5e936db2 home-btn" data-comkey="{{$k}}" data-eventid="{{'2'}}" hidden="{{!isHome}}" src="/static/images/home.png"></image>
+            </form>
+        </view>
+        <view class="_div data-v-5e936db2 network-remind" wx:if="{{!isConnected&&isEnter}}">
+            <image class="_img data-v-5e936db2 remind-icon" src="/static/images/network-remind.png"></image>
+            <view class="_p data-v-5e936db2">网络开小差了~ </view>
+        </view>
+    </view>
+</template>

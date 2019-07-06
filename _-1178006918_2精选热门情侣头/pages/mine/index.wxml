@@ -1,0 +1,44 @@
+<view class="common-box">
+    <view class="top_box">
+        <image class="bg" src="{{cdn}}/bg.png"></image>
+        <view class="user_box">
+            <image src="{{user.avatarUrl}}"></image>
+            <view>{{user.nickName}}</view>
+        </view>
+    </view>
+    <view class="op_list_box">
+        <view bindtap="jumptolove" class="o_item">
+            <image src="{{cdn}}/heart.png"></image>
+      我的收藏
+    </view>
+        <view bindtap="openPop" class="o_item">
+            <image src="{{cdn}}/msg.png"></image>
+      问题反馈
+    </view>
+    </view>
+    <view class="bottom-btns">
+        <view bindtap="jumptoindex" class="btn-box">
+            <image src="{{cdn}}/index_gray.png"></image>
+      首页
+    </view>
+        <view bindtap="jumptomine" class="btn-box">
+            <image src="{{cdn}}/mine.png"></image>
+      我的
+    </view>
+    </view>
+</view>
+<view class="pop_box" wx:if="{{showPop}}">
+    <view class="black"></view>
+    <view class="inner_box">
+        <view class="form_box">
+            <view class="form_title">问题反馈</view>
+            <form bindsubmit="bindFormSubmit">
+                <textarea maxlength="100" name="textarea" placeholder="请输入您要提交的内容（100字以内）"></textarea>
+                <button formType="submit"> 提交 </button>
+            </form>
+        </view>
+        <view class="close_btn">
+            <image bindtap="close" src="{{cdn}}/close.png"></image>
+        </view>
+    </view>
+</view>

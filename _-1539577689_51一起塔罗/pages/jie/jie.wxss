@@ -1,0 +1,29 @@
+.bgs {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0rpx;
+    z-index: -1;
+}
+
+.content {
+    text-align: center;
+    color: white;
+    padding-bottom: 100rpx;
+}
+
+.pic {
+    width: 90%;
+}
+
+.content>view {
+    margin-top: 40rpx;
+    font-size: 30rpx;
+    padding: 0 40rpx;
+}
+
+.cc {
+    margin-bottom: 20rpx;
+    font-size: 35rpx;
+    font-weight: 700;
+}

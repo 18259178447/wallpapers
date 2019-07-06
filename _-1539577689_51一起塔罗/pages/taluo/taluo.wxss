@@ -1,0 +1,145 @@
+page {
+    height: 100%;
+    background: #040212;
+}
+
+.bg {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -9999;
+}
+
+.bg2 {
+    width: 100%;
+}
+
+.items {
+    z-index: 1;
+    position: absolute;
+    top: 740rpx;
+    left: 50%;
+    width: 90%;
+    margin-left: -46.5%;
+    padding-bottom: 50rpx;
+}
+
+.zhen {
+    width: 258rpx;
+    position: absolute;
+    top: 157rpx;
+    left: 246rpx;
+    z-index: 1;
+    animation: ni 8s infinite linear;
+}
+
+.liu {
+    position: absolute;
+    width: 225rpx;
+    top: 174rpx;
+    left: 264rpx;
+    animation: shun 9s infinite linear;
+}
+
+.top {
+    position: absolute;
+    top: 524rpx;
+    width: 100%;
+    z-index: 2;
+    color: white;
+}
+
+.top view {
+    text-align: center;
+}
+
+.top .title {
+    font-size: 55rpx;
+    font-weight: 700;
+    letter-spacing: 7rpx;
+    margin-bottom: 15rpx;
+}
+
+.top .desc {
+    font-size: 23rpx;
+}
+
+@-webkit-keyframes ni {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes ni {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+@-webkit-keyframes shun {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes shun {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.xingzuo {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    position: absolute;
+    left: 31rpx;
+    top: -19rpx;
+}
+
+.xingzuo .item {
+    width: 23%;
+    text-align: center;
+    margin-right: 7rpx;
+    margin-bottom: 17rpx;
+    position: relative;
+}
+
+.xingzuo .item image {
+}
+
+.hhh {
+    width: 100%;
+}
+
+.bbb {
+    width: 74%;
+    top: 10rpx;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.xingzuo .item>view {
+    background: #3e2bbc;
+    margin-top: -10rpx;
+    padding: 5rpx 0;
+}

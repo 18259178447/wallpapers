@@ -1,0 +1,28 @@
+<template name="e477cf54">
+    <view class="_div data-v-c5257cfa result-container">
+        <view class="_div data-v-c5257cfa" hidden="{{!isConnected}}">
+            <form reportSubmit bindsubmit="handleProxy" class="_form data-v-c5257cfa" data-comkey="{{$k}}" data-eventid="{{'2'}}">
+                <view class="_div data-v-c5257cfa {{[!isSearch?'result-bg':'']}}">
+                    <view class="_div data-v-c5257cfa input-box result-input" wx:if="{{isSearch}}">
+                        <image class="_img data-v-c5257cfa search-icon" src="/static/images/search.png"></image>
+                        <input bindconfirm="handleProxy" bindinput="handleProxy" class="_input data-v-c5257cfa main-input" data-comkey="{{$k}}" data-eventid="{{'0'}}" placeholder="{{placeholder}}" type="text" value="{{inputVal}}"></input>
+                    </view>
+                    <view class="_div data-v-c5257cfa avatar-box">
+                        <view class="_div data-v-c5257cfa" wx:for="{{avatarArr}}">
+                            <button bindtap="handleProxy" class="_button data-v-c5257cfa submit-btn avatar" data-comkey="{{$k}}" data-eventid="{{'1_'+index}}" formType="submit" style=" {{'background-image:'+'url('+item.raw.url+')'+';'}}"></button>
+                        </view>
+                    </view>
+                </view>
+            </form>
+            <image bindtap="handleProxy" class="_img data-v-c5257cfa home-btn" data-comkey="{{$k}}" data-eventid="{{'3'}}" hidden="{{!isHome}}" src="/static/images/home.png"></image>
+        </view>
+        <view class="_div data-v-c5257cfa network-remind" wx:if="{{!isConnected&&isEnter}}">
+            <image class="_img data-v-c5257cfa remind-icon" src="/static/images/network-remind.png"></image>
+            <view class="_p data-v-c5257cfa">网络开小差了~ </view>
+        </view>
+        <view class="_div data-v-c5257cfa network-remind" wx:if="{{isConnected&&isData&&avatarArr.length===0}}">
+            <image class="_img data-v-c5257cfa remind-icon" src="/static/images/content-remind.png"></image>
+            <view class="_p data-v-c5257cfa">暂无相关内容哦~</view>
+        </view>
+    </view>
+</template>

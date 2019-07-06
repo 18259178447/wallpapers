@@ -1,0 +1,22 @@
+<image class="bgs" mode="widthFix" src="/images/result1.png"></image>
+<view class="content">
+    <image bindtap="preview" class="pic" mode="widthFix" src="{{card.card_pic}}"></image>
+    <view>
+        <view class="cc" style="color:#fb81ff">牌面解释</view>
+        <view style="color:#9d8cc3;">
+      {{card.card_infos}}
+    </view>
+    </view>
+    <view>
+        <view class="cc" style="color:#fb81ff">正位解释</view>
+        <view style="color:#9d8cc3;">
+      {{card.card_zheng}}
+    </view>
+    </view>
+    <view>
+        <view class="cc" style="color:#fb81ff">逆位解释</view>
+        <view style="color:#9d8cc3;">
+      {{card.card_ni}}
+    </view>
+    </view>
+</view>

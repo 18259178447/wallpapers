@@ -1,0 +1,15 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/types/index",
+        "pages/imgs/index",
+        "pages/mine/index",
+        "pages/loves/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#FFEE66",
+        "navigationBarTitleText": "精选热门情侣头像",
+        "navigationBarTextStyle": "black"
+    }
+}

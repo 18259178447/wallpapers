@@ -1,0 +1,262 @@
+@import "../../__wuBaseWxss__/0.wxss";
+
+.common-box {
+    margin-bottom: 150rpx;
+}
+
+.banner_box {
+    width: 100%;
+    height: 368rpx;
+    background: #f8f8f8;
+    padding: 28rpx 0 14rpx;
+}
+
+.banner_box_swiper {
+    height: 350rpx;
+}
+
+.item {
+    width: 100%;
+    height: 350rpx;
+    display: flex;
+    justify-content: center;
+}
+
+.banner_box .itemImg {
+    width: 96%;
+    height: 304rpx;
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 15rpx;
+    z-index: 5;
+    opacity: 0.7;
+    top: 26rpx;
+}
+
+.banner_box .active {
+    width: 100%;
+    opacity: 1;
+    z-index: 10;
+    height: 350rpx;
+    top: 0;
+    transition: all 0.2s ease-in 0s;
+}
+
+.navs {
+    position: relative;
+}
+
+.navs_view {
+    width: 100%;
+    height: 50rpx;
+    padding: 28rpx 0 2rpx;
+    white-space: nowrap;
+}
+
+.navs_view .navs_item {
+    position: relative;
+    height: 50rpx;
+    line-height: 50rpx;
+    text-align: center;
+    font-size: 32rpx;
+    font-weight: 400;
+    padding: 0 24rpx;
+    display: inline-block;
+    color: #999;
+}
+
+.navs_view .active {
+    font-weight: bold;
+    font-size: 38rpx;
+    color: #000;
+}
+
+.navs_view .active::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    border-radius: 12rpx;
+    height: 12rpx;
+    width: 80%;
+    background: #ffeb30;
+    bottom: 12rpx;
+    left: 6rpx;
+    z-index: -1;
+}
+
+.f {
+    width: 96%;
+    padding: 0 2%;
+}
+
+.list {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.title {
+    width: 264rpx;
+    height: 82rpx;
+    line-height: 82rpx;
+    background-repeat: no-repeat;
+    background-size: 264rpx 78rpx;
+    font-size: 28rpx;
+    margin: 24rpx 0;
+    text-indent: 80rpx;
+    font-weight: bold;
+    display: block;
+}
+
+.title_hot {
+    background-image: url(http://static.whiter.com.cn/uploads/wx_qltx_image/hot.png);
+}
+
+.title_love {
+    background-image: url(http://static.whiter.com.cn/uploads/wx_qltx_image/love.png);
+}
+
+.tangram {
+    width: 100%;
+    margin: 18rpx auto 14rpx;
+}
+
+.t_top {
+    width: 100%;
+    height: 344rpx;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-bottom: 10rpx;
+}
+
+.t_top_l {
+    height: 344rpx;
+    overflow: hidden;
+    position: relative;
+    border-radius: 12rpx;
+    flex: 1;
+    margin: 0 5rpx;
+    background: #ffcd36;
+}
+
+.t_top span,.t_bottom span {
+    position: absolute;
+    color: #ffcd36;
+    display: block;
+    font-size: 28rpx;
+    top: 16rpx;
+    left: 16rpx;
+    background: rgba(10,10,10,0.5);
+    padding: 0 4px;
+    border-radius: 26rpx;
+}
+
+.t_top_r {
+    overflow: hidden;
+    height: 344rpx;
+    flex: 2;
+}
+
+.t_top_r .innerbox {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-bottom: 8rpx;
+    height: 168rpx;
+}
+
+.t_top_r .innerbox .t_t_r_item,.t_top_r .innerbox .t_t_r_item2 {
+    border-radius: 12rpx;
+    overflow: hidden;
+    height: 168rpx;
+    position: relative;
+    margin: 0 5rpx;
+    float: left;
+    background: #ffcd36;
+}
+
+.t_top_r .innerbox .t_t_r_item {
+    flex: 1;
+    width: 168rpx;
+}
+
+.t_top_r .innerbox .t_t_r_item2 {
+    flex: 2;
+    width: 336rpx;
+}
+
+.t_top_l image {
+    width: 344rpx;
+    height: 344rpx;
+    margin: -172rpx 0 0 -172rpx;
+}
+
+.t_top_r .innerbox .t_t_r_item image {
+    width: 168rpx;
+    height: 168rpx;
+    margin: -84rpx 0 0 -84rpx;
+}
+
+.t_top_r .innerbox .t_t_r_item2 image {
+    width: 336rpx;
+    height: 336rpx;
+    margin: -168rpx 0 0 -168rpx;
+}
+
+.t_top_l image,.t_top_r .innerbox .t_t_r_item image,.t_top_r .innerbox .t_t_r_item2 image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.t_bottom {
+    width: 100%;
+    height: 24vw;
+    flex-wrap: nowrap;
+    display: flex;
+}
+
+.t_bottom.first {
+    margin-bottom: 10rpx;
+}
+
+.t_bottom .t_bottom_item {
+    flex: 1;
+    height: 24vw;
+    overflow: hidden;
+    background: #ffcd36;
+    position: relative;
+    margin-right: 1vw;
+    border-radius: 12rpx;
+}
+
+.t_bottom .t_bottom_item:nth-of-type(3) {
+    flex: 2;
+    margin-right: 0;
+}
+
+.t_bottom .t_bottom_item image {
+    width: 24vw;
+    height: 24vw;
+}
+
+.t_bottom .t_bottom_item:nth-of-type(3) image {
+    width: 48vw;
+}
+
+.logo {
+    width: 60vw;
+    height: calc(60vw * 363 / 462);
+    display: block;
+    margin: 48rpx auto;
+    border-radius: 16rpx;
+}
+
+.spec_button {
+    font-size: 14px;
+    background: #fff;
+    padding: 0;
+    line-height: 1.5;
+}

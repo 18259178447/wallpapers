@@ -1,0 +1,63 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/yunshi/chou/chou",
+        "pages/yunshi/tomatch/tomatch",
+        "pages/yunshi/match",
+        "pages/match/chou/chou",
+        "pages/match/aimatch/tomatch/tomatch",
+        "pages/match/aimatch/aimatch",
+        "pages/match/match",
+        "pages/match/tomatch/tomatch",
+        "pages/all/all",
+        "pages/jie/jie",
+        "pages/taluo/xi/xi",
+        "pages/taluo/result/result",
+        "pages/myCenter/mytopic/mytopic",
+        "pages/myCenter/myCenter",
+        "pages/myCenter/we/we",
+        "pages/myCenter/jie/jie",
+        "pages/myCenter/more/more",
+        "pages/taluo/taluo",
+        "pages/taluo/result/result1/result1"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#0e081a",
+        "navigationBarTitleText": "一起塔罗",
+        "navigationBarTextStyle": "white",
+        "backgroundColor": "#1c0654"
+    },
+    "tabBar": {
+        "backgroundColor": "#0e081a",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "iconPath": "images/home1.png",
+                "selectedIconPath": "images/home.png"
+            },
+            {
+                "pagePath": "pages/all/all",
+                "iconPath": "images/all1.png",
+                "selectedIconPath": "images/all.png"
+            },
+            {
+                "pagePath": "pages/myCenter/myCenter",
+                "iconPath": "images/my1.png",
+                "selectedIconPath": "images/my.png"
+            }
+        ]
+    },
+    "navigateToMiniProgramAppIdList": [
+        "wxa629c242eb5ccdaa",
+        "wxe3a4e0c2287f26a3",
+        "wx6ea8d024862b546d",
+        "wx115ae13bea1c552d",
+        "wx19c856f9eb196f3c",
+        "wxd1bab7fa5cc1f8df",
+        "wx6206cfec17a74fb8",
+        "wx8b60f9c01e440f0e",
+        "wx34a9e7db041f4298",
+        "wx5e07a9a9e9870bc9"
+    ]
+}

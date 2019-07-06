@@ -27,7 +27,7 @@
     <view class='add-tip__content flex-c'>
       <view class='add-tip__triggle'></view>
       <view class='add-tip__word'>
-        添加到我的小程序，微信首页下拉就可找到我了噢~
+      {{isQQ ? "点击->选择关于高清壁纸精选->置顶小程序->首页下拉就可以很快找到我啦" : "点击->选择添加到我的小程序->微信首页下拉就可找到我了噢~"}}
       </view>
       <view class='add-tip__btn pea' bindtap='iknow'>我知道了</view>
     </view>

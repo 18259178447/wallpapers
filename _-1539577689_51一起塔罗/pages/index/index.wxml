@@ -1,0 +1,67 @@
+<view class="mo" style="{{feng_hide?'opacity:0;z-index:-100;transition:all 1.5s':'opacity:1;z-index:100'}}">
+    <image class="bg chai" mode="widthFix" src="/images/mo.jpg"></image>
+    <image class="modi" mode="widthFix" src="/images/modi.png"></image>
+    <image class="mozhen" mode="widthFix" src="/images/mozhen.png"></image>
+</view>
+<view style="{{feng_hide?'opacity:1;':'opacity:0;'}} transition:all 1.5s">
+    <image class="bg" mode="widthFix" src="/images/indexbg.jpg"></image>
+    <view>
+        <swiper autoplay="true" class="catr" indicatorActiveColor="#e7cd1b" indicatorColor="#fff" indicatorDots="true" interval="3000" nextMargin="20px" previousMargin="35px">
+            <swiper-item bindtap="goTest1" data-id="{{index}}" style="position:relative" wx:for="{{bar}}" wx:key="a">
+                <view class="item">
+                    <view class="zi">
+                        <image mode="widthFix" src="{{item.theme_logo}}"></image>
+                    </view>
+                    <view class="text" style="padding-left:50rpx">{{item.theme_title}}</view>
+                    <view class="text1" wx:if="{{item.type!='jump'}}">{{item.theme_test}}人已测</view>
+                </view>
+            </swiper-item>
+        </swiper>
+    </view>
+    <view class="tab">
+        <text bindtap="select" class="item {{cur==index?'select':''}}" data-id="{{index}}" data-ids="{{item.cate_id}}" wx:for="{{menu}}" wx:key="a">{{item.cate_title}}</text>
+    </view>
+    <view class="content">
+        <view bindtap="goTest" class="item" data-id="{{index}}" wx:for="{{item}}" wx:key="a">
+            <view class="zis">
+                <image mode="widthFix" src="{{item.theme_logo}}"></image>
+            </view>
+            <view class="text">{{item.theme_title}}</view>
+            <view class="text1">{{item.theme_test}}人已测</view>
+        </view>
+    </view>
+</view>
+<view class="loading" wx:if="{{loadct}}">
+    <view class="getinfodark_bg">
+        <view class="getinfolingth_bg">
+            <view class="tit">小程序申请获得权限</view>
+            <view class="content1">获得您的公开信息(头像，昵称等)</view>
+            <button bindgetuserinfo="getUserInfo" class="ok_btn" openType="getUserInfo"> 确定 </button>
+        </view>
+    </view>
+</view>
+<view class="setting" wx:if="{{againSet}}">
+    <view class="nei">
+        <view class="title">是否授权当前位置</view>
+        <view class="tiplo">需要获取您的地理位置，请确认授权</view>
+        <view class="button">
+            <button bindtap="cancel">取消</button>
+            <button bindopensetting="openSetting" openType="openSetting" style="color:#46b740">确认</button>
+        </view>
+    </view>
+</view>
+<view class="tips" hidden="{{show_2019}}">
+    <view class="tip">
+        <image mode="widthFix" src="https://weitaluo.xingpei360.com/Public/Api/mp3/ys.png" style="width:100%;"></image>
+        <image class="wnz" mode="widthFix" src="/images/wnz.png"></image>
+        <image bindtap="go2019" mode="widthFix" src="/images/go.png" style="width:260rpx;"></image>
+        <image bindtap="close2019" class="close" mode="widthFix" src="/images/close.png"></image>
+    </view>
+</view>
+<view bindtap="closetip" class="shoutip" wx:if="{{shoutip}}">
+    <view>
+        <image src="/images/bat{{bianhuan?1:2}}.png"></image>
+        <view>点击添加至我的小程序</view>
+        <view class="jian"></view>
+    </view>
+</view>

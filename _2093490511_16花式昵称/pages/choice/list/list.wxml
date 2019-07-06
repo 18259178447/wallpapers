@@ -1,0 +1,26 @@
+<view class="section">
+    <ad unitId="{{unitid}}" wx:if="{{unitid}}"></ad>
+    <view class="ended-list mt-sm" wx:for="{{datalist}}" wx:key="idx">
+        <view bindtap="copyTitle" class="ended-list-item" data-index="{{item.title}}">
+            <view class="ended-list-text">
+                <text class="hero_name">{{item.title}}</text>
+                <view class="new_tag" wx:if="{{item.isNew}}">new</view>
+            </view>
+            <view class="ended-list-icon">
+                <text class="iconfont icon-copy">复制</text>
+            </view>
+        </view>
+    </view>
+    <view class="loading-more {{loading?'cur':''}} mb-xl">
+        <view class="no-more">
+            <text class="iconfont icon-info"></text> 我也是有底线的！
+      </view>
+        <view class="loading-ing">
+            <text class="iconfont icon-loading iconfont-spin"></text> 加载中...
+      </view>
+    </view>
+</view>
+<view class="foot-btn">
+    <button class="black btn round" openType="share">
+        <text class="iconfont icon-share mr-xs"></text> 分享给好友</button>
+</view>

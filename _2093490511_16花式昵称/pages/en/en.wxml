@@ -1,0 +1,60 @@
+<view class="container">
+    <view class="top-banner-bg">
+        <view class="weui-text-bar">
+            <view class="weui-text-bar__form">
+                <view class="weui-text-bar__box">
+                    <textarea bindblur="maltoseBlur" bindfocus="maltoseFocus" bindinput="bindKeyInput" focus="{{focus}}" name="textarea" placeholder="请输入要转换的英文昵称" value="{{textareaValue}}"></textarea>
+                </view>
+            </view>
+            <view>
+                <button bindtap="clearInput" class="share">清空重新输入</button>
+                <button class="share" openType="share"> 分享给好友</button>
+            </view>
+        </view>
+    </view>
+    <view class='bottom-content'>
+      <scroll-view scroll-y style="height: 100%">
+          <!-- <ad unitId="{{unitid}}" wx:if="{{unitid}}"></ad> -->
+          <view class="bottom-change-list">
+              <view class="bottom-change-list__title">
+                  <view class="badge warning radius capsule-badge">
+                      <text>说明</text>
+                      <text>由于设备兼容问题，目前仅支持IOS用户，安卓部分有效</text>
+                  </view>
+              </view>
+              <view class="bottom-change-list__box">
+                  <!-- <button bindtap="changeText" id="EN18">🇦🇧🇨🇫🇬🇭🇮🇯🇰🇱🇲🇳🇴🇵🇶🇷🇸🇹🇺🇻🇼🇽🇾🇿🇦🇧🇨🇫🇬🇭🇮🇯🇰🇱🇲🇳🇴🇵🇶🇷🇸🇹🇺🇻🇼🇽🇾🇿</button> -->
+                  <button bindtap="changeText" id="EN16">𝒶𝒷𝒸𝒹𝓮𝒻𝓰𝒽𝒾𝒿𝓀𝓁𝓂𝓃𝓸𝓅𝓆𝓇𝓈𝓉𝓊𝓋𝓌𝓍𝓎𝓏</button>
+                  <button bindtap="changeText" id="EN19">𝖆𝖇𝖈𝖉𝖊𝖋𝖌𝖍𝖎𝖏𝖐𝖑𝖒𝖓𝖔𝖕𝖖𝖗𝖘𝖙𝖚𝖛𝖜𝖝𝖞𝖟</button>
+                  <button bindtap="changeText" id="EN20">𝓪𝓫𝓬𝓭𝓮𝓯𝓰𝓱𝓲𝓳𝓴𝓵𝓶𝓷𝓸𝓹𝓺𝓻𝓼𝓽𝓾𝓿𝔀𝔁𝔂𝔃</button>
+                  <button bindtap="changeText" id="EN21">𝕒𝕓𝕔𝕕𝕖𝕗𝕘𝕙𝕚𝕛𝕜𝕝𝕞𝕟𝕠𝕡𝕢𝕣𝕤𝕥𝕦𝕧𝕨𝕩𝕪𝕫</button>
+                  <button bindtap="changeText" id="EN22">ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ</button>
+                  <button bindtap="changeText" id="EN23">ąɓcdęƒɠђįʝķɭɱŋǫƥʠŗşţųvwҳƴʐ</button>
+                  <button bindtap="changeText" id="EN24">ábćďÈfġĥÌjklmńőpqŕśťúvŵxýź</button>
+                  <button bindtap="changeText" id="EN25">ᗩᗷᑕᗪEFGHƖᒍƘᒪᗰᑎOᑭᑫᖇᔕTᑌᐯᗯ᙭ƳZ</button>
+                  <button bindtap="changeText" id="EN26">ᎯᏰᏨᎠᎬᎰᎶᎻᎨᏠᏦᏝᎷᏁᎾᏢᏅᏒᏕᎿᏬᏉᏯᎲᎽᏃ</button>
+                  <button bindtap="changeText" id="EN27">ꍏßꉓꀸꍟŦꁅꃅꀤꀭꀘ꒒ꎭꈤꂦᖘꆰꋪꌗƬꀎᐯꅏꊼꌩꁴ</button>
+                  <button bindtap="changeText" id="EN28">ᗩᕊᙅᖙᙓℱᘐᖺᓮᒎḰᒪᙢᘉᗝᕈᖳᖇᔕtᘎⅤᙡᔕᎩᔓ</button>
+                  <button bindtap="changeText" id="EN29">ΛБϾÐΞŦJHłJКŁMЛФPǪЯSТUVЖШЏZ</button>
+                  <button bindtap="changeText" id="EN01">𝐚𝐛𝐜𝐝𝐞𝐟𝐠𝐡𝐢𝐣𝐤𝐥𝐦𝐧𝐨𝐩𝐪𝐫𝐬𝐭𝐮𝐯𝐰𝐱𝐲𝐳</button>
+                  <button bindtap="changeText" id="EN02">𝗮𝗯𝗰𝗱𝗲𝗳𝗴𝗵𝗶𝗷𝗸𝗹𝗺𝗻𝗼𝗽𝗾𝗿𝘀𝘁𝘂𝘃𝘄𝘅𝘆𝘇</button>
+                  <button bindtap="changeText" id="EN03">𝑎𝑏𝑐𝑑𝑒𝑓𝑔ℎ𝑖𝑗𝑘𝑙𝑚𝑛𝑜𝑝𝑞𝑟𝑠𝑡𝑢𝑣𝑤𝑥𝑦𝑧</button>
+                  <button bindtap="changeText" id="EN04">𝘢𝘣𝘤𝘥𝘦𝘧𝘨𝘩𝘪𝘫𝘬𝘭𝘮𝘯𝘰𝘱𝘲𝘳𝘴𝘵𝘶𝘷𝘸𝘹𝘺𝘻</button>
+                  <button bindtap="changeText" id="EN05">𝙖𝙗𝙘𝙙𝙚𝙛𝙜𝙝𝙞𝙟𝙠𝙡𝙢𝙣𝙤𝙥𝙦𝙧𝙨𝙩𝙪𝙫𝙬𝙭𝙮𝙯</button>
+                  <button bindtap="changeText" id="EN06">𝒂𝒃𝒄𝒅𝒆𝒇𝒈𝒉𝒊𝒋𝒌𝒍𝒎𝒏𝒐𝒑𝒒𝒓𝒔𝒕𝒖𝒗𝒘𝒙𝒚𝒛</button>
+                  <button bindtap="changeText" id="EN07">ᴀʙᴄᴅᴇғɢʜɪᴊᴋʟᴍɴᴏᴘǫʀsᴛᴜᴠᴡxʏᴢ</button>
+                  <button bindtap="changeText" id="EN08">𝚊𝚋𝚌𝚍𝚎𝚏𝚐𝚑𝚒𝚓𝚔𝚕𝚖𝚗𝚘𝚙𝚚𝚛𝚜𝚝𝚞𝚟𝚠𝚡𝚢𝚣</button>
+                  <!-- <button bindtap="changeText" id="EN09">████████████████████████████████████████████████████</button> -->
+                  <button bindtap="changeText" id="EN10">ⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ</button>
+                  <button bindtap="changeText" id="EN11">🅐🅑🅒🅓🅔🅕🅖🅗🅘🅙🅚🅛🅜🅝🅞🅟🅠🅡🅢🅣🅤🅥🅦🅧🅨🅩</button>
+                  <button bindtap="changeText" id="EN12">🄰🄱🄲🄳🄴🄵🄶🄷🄸🄹🄺🄻🄼🄽🄾🄿🅀🅁🅂🅃🅄🅅🅆🅇🅈🅉</button>
+                  <!-- <button bindtap="changeText" id="EN13">🅲🅳🅴🅵🅶🅷🅸🅹🅺🅻🅼🅽🆀🆁🆂🆃🆄🆅🆆🆇🆈🆉</button> -->
+                  <button bindtap="changeText" id="EN14">ABCDEFGHIJKLMNOPQRSTUVWXYZ</button>
+                  <button bindtap="changeText" id="EN15">⒜⒝⒞⒟⒠⒡⒢⒣⒤⒥⒦⒧⒨⒩⒪⒫⒬⒭⒮⒯⒰⒱⒲⒳⒴⒵</button>
+                  
+                  <button bindtap="changeText" id="EN17">𝐚𝐛𝐜𝐝𝐞𝐟𝐠𝐡𝐢𝐣𝐤𝐥𝐦𝐧𝐨𝐩𝐪𝐫𝐬𝐭𝐮𝐯𝐰𝐱𝐲𝐳</button>
+              </view>
+          </view>
+      </scroll-view>
+    </view>
+</view>

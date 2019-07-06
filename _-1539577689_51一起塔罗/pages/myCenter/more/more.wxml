@@ -1,0 +1,16 @@
+<image class="bg" src="/images/byun.png"></image>
+<view style="padding-bottom:160rpx">
+    <view bindtap="goTo" class="item" data-appid="{{item.appid}}" style="background:#61bfe2" wx:if="{{item.appid!=aid}}" wx:for="{{list}}">
+        <view class="left">
+            <image class="avatar" src="{{item.pic}}"></image>
+        </view>
+        <view class="right">
+            <view style="font-size:35rpx">{{item.title}}</view>
+            <view class="desc">{{item.content}}</view>
+        </view>
+        <view class="num">
+    {{item.player_num}}人在玩
+  </view>
+        <icon class="iconfont icon-next"></icon>
+    </view>
+</view>

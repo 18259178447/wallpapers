@@ -1,0 +1,62 @@
+@import "../../__wuBaseWxss__/0.wxss";
+
+.op_btns_box {
+    width: 100%;
+    height: 138rpx;
+}
+
+.op_btns {
+    width: 330rpx;
+    height: 72rpx;
+    line-height: 72rpx;
+    border: solid 6rpx #ffee66;
+    margin: 28rpx auto 0;
+    border-radius: 72rpx;
+}
+
+.op_btns .btn {
+    width: 50%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    font-size: 32rpx;
+    border-radius: 72rpx;
+}
+
+.op_btns .btn.active {
+    background: #ffee66;
+}
+
+.img_box {
+    background: #f8f8f8;
+    width: 100%;
+    height: 490rpx;
+}
+
+.img_box .item {
+    border: solid 4rpx #ffee66;
+    float: left;
+    padding: 0;
+    margin: 60rpx 0 0 30rpx;
+}
+
+.img_box .item,.img_box .item image {
+    width: 322rpx;
+    height: 322rpx;
+    transition: all 0.6s linear;
+}
+
+.img_box.round .item,.img_box.round .item image {
+    width: 322rpx;
+    height: 322rpx;
+    border-radius: 322rpx;
+    overflow: hidden;
+}
+
+button.btn-box {
+    background: #fff!important;
+}
+
+button.btn-box image {
+    margin: 8rpx auto -6rpx!important;
+}

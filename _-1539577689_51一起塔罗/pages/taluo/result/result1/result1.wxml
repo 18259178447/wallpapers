@@ -1,0 +1,25 @@
+<image class="bg" mode="widthFix" src="/images/result1.png"></image>
+<view class="title">
+  {{result.name}}
+</view>
+<view class="pai">
+    <image mode="widthFix" src="/images/pai.png"></image>
+</view>
+<view class="keyword" wx:if="{{result.key_word!=null}}">
+    <view>keyword</view>
+    <view>{{result.key_word}}</view>
+</view>
+<view class="content">
+    <view>
+        <view class="top" style="margin-bottom:10rpx">正位</view>
+        <view class="bottom">{{result.zheng}}</view>
+    </view>
+    <view>
+        <view class="top" style="margin-bottom:10rpx">逆位</view>
+        <view class="bottom">{{result.ni}}</view>
+    </view>
+    <view>
+        <view class="top" style="margin-bottom:10rpx">牌面</view>
+        <view class="bottom">{{result.detail}}</view>
+    </view>
+</view>

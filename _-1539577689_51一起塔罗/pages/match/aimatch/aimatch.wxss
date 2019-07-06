@@ -1,0 +1,419 @@
+page {
+    background: #0c0028;
+    color: white;
+    padding-bottom: 50rpx;
+}
+
+.bg {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: -1;
+}
+
+.top {
+    color: white;
+    text-align: center;
+    padding: 0 60rpx;
+    margin-top: 43rpx;
+}
+
+.avatar {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.name {
+    margin-top: 49rpx;
+    font-size: 35rpx;
+}
+
+.lingshu {
+    text-align: center;
+    font-size: 33rpx;
+    color: #c9a4e9;
+    font-weight: 700;
+    margin-top: 26rpx;
+}
+
+.lingshu image {
+    width: 35rpx;
+}
+
+.content {
+    text-align: center;
+    margin-top: 30rpx;
+    display: flex;
+    justify-content: space-around;
+}
+
+.content image {
+    width: 260rpx;
+    margin: 0 auto;
+}
+
+.tip {
+    font-size: 28rpx;
+    color: #af8fcf;
+    text-align: center;
+    margin-top: 36rpx;
+}
+
+.tip view {
+    margin-top: 20rpx;
+}
+
+.button {
+    margin-top: 50rpx;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 20rpx;
+}
+
+.button view {
+    width: 558rpx;
+    text-align: center;
+    padding: 20rpx 0;
+    border-radius: 65rpx;
+    background: #643ef3;
+    font-size: 32rpx;
+}
+
+.match {
+    background: rgba(255,255,255,.1);
+    padding: 0 25rpx 30rpx 25rpx;
+    margin-top: 45rpx;
+}
+
+.title {
+    text-align: center;
+    font-size: 30rpx;
+    padding: 25rpx 0;
+}
+
+.title image {
+    width: 23rpx;
+}
+
+.item {
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+    padding-bottom: 40rpx;
+    height: 720rpx;
+}
+
+.item .item_bg {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+
+.item>view {
+    display: flex;
+    padding: 40rpx 10rpx 20rpx;
+    justify-content: space-between;
+}
+
+.item>view>view {
+    text-align: center;
+}
+
+.item .explain {
+    font-size: 25rpx;
+    padding: 0 40rpx;
+    line-height: 41rpx;
+    letter-spacing: 4rpx;
+}
+
+.item .pei {
+    width: 100%;
+    display: block;
+    position: absolute;
+    bottom: 62rpx;
+    font-size: 28rpx;
+    padding: 0;
+}
+
+.item .pei>view {
+    background: #643ef3;
+    padding: 15rpx 0;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 50rpx;
+}
+
+.item .score {
+    padding-top: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.metoo {
+    width: 80%;
+    margin: 40rpx auto;
+    border-radius: 50rpx;
+    background: #643ef3;
+    padding: 20rpx 0;
+    font-size: 28rpx;
+    text-align: center;
+}
+
+.paijie {
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background: #0b0126;
+    padding-bottom: 50rpx;
+}
+
+.paijie>image {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.paijie .close {
+    position: fixed;
+    top: 60rpx;
+    left: 65rpx;
+    width: 70rpx;
+}
+
+.paijie .explain {
+    border: 1rpx #8a819c solid;
+    border-radius: 5rpx;
+    font-size: 25rpx;
+    padding: 15rpx;
+    line-height: 41rpx;
+    letter-spacing: 4rpx;
+    color: #978fc3;
+    width: 85%;
+    margin: 50rpx auto 0;
+}
+
+.paijie .sbg {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: -1;
+}
+
+.jiecontent {
+    position: absolute;
+    width: 100%;
+    height: 95%;
+    top: 0;
+    left: 0;
+}
+
+.bgs {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999;
+    background: rgba(0,0,0,.3);
+}
+
+.danimg {
+    border-radius: 20rpx;
+    width: 550rpx;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 50%;
+    height: 979rpx;
+    transform: translateX(-50%) translateY(-50%);
+    animation: down2 1.7s forwards;
+}
+
+.danimg .bbb {
+    width: 100%;
+}
+
+.danimg .bb {
+    width: 38%;
+    animation: scales 0.7s infinite;
+}
+
+.bgs .xia {
+    width: 100%;
+    position: absolute;
+    bottom: 24rpx;
+    display: flex;
+    justify-content: space-around;
+    background: white;
+    height: 117rpx;
+    padding-top: 20rpx;
+}
+
+@-webkit-keyframes down2 {
+    0% {
+        webkit-transform: translate(-50%,-100%);
+        transform: translate(-50%,-100%);
+        top: 0;
+    }
+
+    50% {
+        webkit-transform: translate(-50%,-25%);
+        transform: translate(-50%,-25%);
+        top: 50%;
+    }
+
+    75% {
+        webkit-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+        top: 50%;
+    }
+
+    100% {
+        webkit-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+        top: 50%;
+    }
+}
+
+@keyframes down2 {
+    0% {
+        webkit-transform: translate(-50%,-100%);
+        transform: translate(-50%,-100%);
+        top: 0;
+    }
+
+    50% {
+        webkit-transform: translate(-50%,-25%);
+        transform: translate(-50%,-25%);
+        top: 50%;
+    }
+
+    75% {
+        webkit-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+        top: 50%;
+    }
+
+    100% {
+        webkit-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+        top: 50%;
+    }
+}
+
+.danimg .lianjie {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 99999999999;
+}
+
+.danimg .bbbb {
+    width: 38%;
+    animation: scales 0.7s infinite;
+}
+
+.danimg .bbbb image {
+    width: 100%;
+}
+
+@-webkit-keyframes scales {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes scales {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.ibottom {
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -1rpx;
+    padding: 55rpx 0;
+    background: #20163b;
+    width: 100%;
+}
+
+.ibottom>button {
+    width: 40%;
+    font-size: 30rpx;
+    background: #140b26;
+    color: white;
+    animation: big 0.5s infinite;
+}
+
+.tou {
+    width: 250rpx;
+}
+
+.explain {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 87rpx;
+}
+
+.explain image {
+    width: 120rpx;
+    position: absolute;
+    top: 0;
+}
+
+.explain .right image {
+    right: 0;
+}
+
+.explain .right .nei {
+    right: 92rpx;
+    top: -35rpx;
+    z-index: 2;
+}
+
+.explain .left .nei {
+    left: 92rpx;
+    top: -35rpx;
+    z-index: 2;
+}
+
+.explain .left image {
+    left: 0;
+}
+
+.explain view {
+    width: 250rpx;
+    position: relative;
+    height: 218rpx;
+}
+
+.explain .nei {
+}

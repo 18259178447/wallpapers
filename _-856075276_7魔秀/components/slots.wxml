@@ -1,0 +1,2 @@
+<import src="/pages/components/main.vue.wxml"></import>
+<import src="/pages/components/sort.vue.wxml"></import>

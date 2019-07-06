@@ -1,0 +1,48 @@
+.doc-main {
+    background: #fff;
+    padding: 20rpx;
+    line-height: 52rpx;
+}
+
+.doc-main-title {
+    counter-increment: header;
+    line-height: 80rpx;
+    font-weight: 600;
+    font-size: 36rpx;
+}
+
+.doc-main-title::before {
+    content: counter(header) ". ";
+    color: #888;
+    font-weight: 400;
+}
+
+.doc-main-content {
+    margin-bottom: 20rpx;
+    line-height: 1.6;
+}
+
+.footer {
+    position: fixed;
+    z-index: 1002;
+    bottom: 0px;
+    left: 20rpx;
+    width: 710rpx;
+    height: 140rpx;
+    padding-top: 30rpx;
+}
+
+navigator.send {
+    color: #fff;
+    background-color: #1AAD19;
+    height: 80rpx;
+    width: 100%;
+    line-height: 60rpx;
+    margin-top: 0px;
+    font-size: 30rpx;
+    border-radius: 40rpx;
+    position: relative;
+    display: block;
+    opacity: 1;
+    text-align: center;
+}

@@ -1,0 +1,287 @@
+page,.content {
+    width: 100%;
+    height: auto;
+    background: #f8f8f8;
+}
+
+.content {
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.top-banner-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 300rpx;
+    background: #000;
+}
+
+.weui-text-bar {
+    position: relative;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    border-top: 0 solid #D7D6DC;
+    border-bottom: 0 solid #D7D6DC;
+    border-radius: 4px;
+}
+
+.weui-text-bar__cancel-btn {
+    color: #121212;
+    position: relative;
+    background: #fff;
+    border-radius: 5px;
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 28rpx;
+    padding-left: 10rpx;
+    z-index: 1;
+    margin-top: 20rpx;
+    text-align: center;
+    box-shadow: 0px 1px 4px #dfdfdf;
+}
+
+.weui-text-bar__form {
+    position: relative;
+    border-radius: 5px;
+    background: #fff;
+    border: 1rpx solid #e6e6ea;
+}
+
+.weui-text-bar__box {
+    position: relative;
+    padding-left: 10rpx;
+    padding-right: 10rpx;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.weui-text-bar__box textarea {
+    width: 100%;
+    height: 80rpx;
+    margin: 5rpx 0;
+    box-sizing: border-box;
+    padding: 5rpx;
+    font-size: 28rpx;
+    border-radius: 6rpx;
+}
+
+.weui-setbtn {
+    display: flex;
+    z-index: 88;
+}
+
+.input-content {
+    width: 79%;
+    height: 400rpx;
+    color: #000000;
+    font-size: 26rpx;
+    margin: auto;
+    padding: 15rpx;
+    text-align: left;
+}
+
+.setbtn {
+    position: relative;
+    float: left;
+    margin-top: 28rpx;
+    margin-right: 20rpx;
+    padding: 0;
+    height: 48rpx;
+    line-height: 48rpx;
+    width: calc((50% - 22rpx) + (20rpx / 2));
+    background-color: #000;
+    color: #fff;
+    font-size: 24rpx;
+    border-radius: 4px;
+    border: 1px solid #F8F8F8;
+    text-align: center;
+}
+
+.setbtn:nth-child(2n) {
+    margin-right: 0;
+}
+
+.bottom-change-list {
+    font-size: 24rpx;
+    width: 100%;
+    overflow: hidden;
+}
+
+.bottom-change-list__title {
+    margin-top: 30rpx;
+    text-align: center;
+    line-height: 24rpx;
+    font-size: 24rpx;
+    color: #666;
+}
+
+.bottom-change-list__box {
+    overflow: scroll;
+    padding: 20rpx;
+}
+
+.bottom-change-list__ad {
+    overflow: scroll;
+    width: 94%;
+    padding: 20rpx;
+    padding-bottom: 0rpx;
+    border-radius: 4px;
+}
+
+.selectFonts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20rpx;
+}
+
+.selectSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30rpx;
+    margin-bottom: 20rpx;
+}
+
+.selectBox {
+    border: 1px solid #9d9d9d;
+    background: #e6e6e6;
+    font-size: 26rpx;
+    width: 250rpx;
+    height: 46rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0 11rpx;
+    border-radius: 10rpx;
+}
+
+.xlIcon {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAwklEQVRYhe2SvQnDMBBGH5nAXSbRANnGpcuUGkkTeJW0niFgksIS2KBLrL8LBD24+h28DzqdDoyA/dGNADdgBV7Kt3o3+G+0H7DsuACzonz2zgNXYFGQL94VpfUeDt0lbMMH7Dc5tNuDI9JdovYeHsBwVh6otYcnYFLlAVvhgSlXDuV7cCXyQO4esrpLpO6hqLvEPeGBou6fcCfkVbpLDGxtVbpLGLbGKt0lpsgDzbpL7PfQtLtE2INKdwmDYvfOf/IG6XNSyDxVchEAAAAASUVORK5CYII=) center center no-repeat;
+    background-size: 100%;
+    display: inline-block;
+    width: 20rpx;
+    height: 20rpx;
+}
+
+.radio {
+    margin-right: 20rpx;
+    display: inline-flex;
+    align-items: center;
+}
+
+.radio radio {
+    display: none;
+}
+
+.radio .radioIcon {
+    display: inline-block;
+    width: 28rpx;
+    height: 28rpx;
+    background: #dedede;
+    border: 1px solid #9d9d9d;
+    border-radius: 50%;
+    margin-right: 10rpx;
+}
+
+.radio .actIcon {
+    background: #dedede url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAkElEQVRYhe2UwQ3CMBAEr4SURCfsa2+flEQHuAPoADoKDwiKECIW4hQp2pH8nvHZughjjDE/IAkkr5k5ZuZI8kRyXy4GMMzFH84ZwFAWkJm3L/LXNErkJA9L8ulI2v09oOf2sykcKwK65M+AyyYD1n2C1T9hRPcUWok84rGIFiJa6SKakIS3kCYJ5WJjjNkkdwPeA4LdMnoPAAAAAElFTkSuQmCC) center center no-repeat;
+    background-size: 24rpx;
+}
+
+.saveBox {
+    margin-top: 40rpx;
+}
+
+.saveBox .saveTitle {
+    text-align: center;
+    font-size: 30rpx;
+    color: #9d9d9d;
+    margin-bottom: 20rpx;
+}
+
+.canvasBox {
+    width: 90%;
+    height: 290rpx;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.canvasBox image {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    margin-bottom: 20rpx;
+}
+
+.myCanvas {
+    background: #fff;
+    width: 100%;
+    height: 260rpx;
+}
+
+.colorMask,.sendMask {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+}
+
+.maskBox,.sendBox {
+    width: 620rpx;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 8rpx;
+    background: #fff;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.maskTxt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 130rpx;
+    border-bottom: 1px solid #d9d9d9;
+    font-size: 32rpx;
+    box-sizing: border-box;
+    padding: 0 25rpx;
+}
+
+.maskIcon {
+    display: inline-block;
+    width: 34rpx;
+    height: 34rpx;
+    border: 1px solid #717171;
+    border-radius: 50%;
+    margin-right: 10rpx;
+}
+
+.maskActIcon {
+    border: 1px solid #07928b;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABKElEQVRYhe1Xy42EMAzNBaeNlEAplDIdzNwi7EMUpyDoYKYD6GDogD1MdsQCmuWTELTaJ1kip+c8PwdbiH+sQGYwB0dXyVSBxbtk6iVT778rcHTNDObBicGVhbTYfBP+GhYbcGWxn9loJZmqxcTTqITRahN3ZjAHS88d5L489Fxdlsxgvpd4HMuTMFqFuPmcEovKIRnr0OQ/PPEJ4MoiIvlLiU/dIZna2AlIi80seQzjrTIkWLodlYBkuhxtvlFgPVWA6ZE0gQPl7yVTf74ETlCC1CZM3YbJHyJvxPhPMVM7Sy7ECX5G8c04Y74JjFbA2AW/OWO3eD5MO5INkgihBDB223cFo9U+T2C9eSwfwnfHmhZtwywmI/hd4fZSZajM+3yJspr9aXwB3b9DIfzW9CoAAAAASUVORK5CYII=) 8rpx 8rpx no-repeat;
+    background-size: 18rpx;
+}
+
+.sendBox button::after {
+    border: none;
+}
+
+.sendBox button {
+    border-bottom: 1px solid #dedede;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: left;
+    font-size: 30rpx;
+    border-radius: 0;
+}

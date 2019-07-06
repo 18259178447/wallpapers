@@ -1,0 +1,29 @@
+@import "../../__wuBaseWxss__/0.wxss";
+
+.common-box {
+    margin-bottom: 150rpx;
+}
+
+.list {
+    width: 92vw;
+    height: 900rpx;
+    margin: 32rpx auto;
+}
+
+.l_item {
+    width: 44vw;
+    height: 44vw;
+    float: left;
+    margin-bottom: 4vw;
+    padding: 0;
+}
+
+.l_item:nth-of-type(even) {
+    margin-left: 4vw;
+}
+
+.l_item image {
+    width: 100%;
+    box-shadow: 0 0 6rpx #333;
+    border-radius: 8rpx;
+}

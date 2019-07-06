@@ -1,0 +1,23 @@
+<view class="content">
+    <view class="top-banner-bg">
+        <view class="weui-text-bar">
+            <view class="weui-text-bar__form">
+                <view class="weui-text-bar__box">
+                    <textarea bindinput="setContent" class="input-content" maxlength="-1" placeholder="请在这里输入你的内容..." placeholderClass="default-class" value="{{wordContent}}"></textarea>
+                </view>
+            </view>
+            <view class="weui-setbtn">
+                <button bindtap="clearContent" class="setbtn">清空重新输入</button>
+                <picker bindchange="bindMultiPickerChange" class="setbtn" mode="multiSelector" range="{{multiArray}}" value="{{multiIndex}}">修改设置</picker>
+                <button bindtap="copyContent" class="setbtn"> 完成并复制</button>
+            </view>
+        </view>
+    </view>
+    <scroll-view scrollY style="height: calc(100% - 500rpx);position:fixed; bottom: 0;left: 0;">
+        <!-- <ad unitId="{{unitid}}" wx:if="{{unitid}}"></ad> -->
+        <view class="bottom-change-list">
+            <!-- <view bindtap="previewImage" class="nav-zan" data-name="zan_pay"> 查看效果图</view> -->
+            <button class="share" hoverClass="btn-hover" openType="share"> 分享给好友</button>
+        </view>
+    </scroll-view>
+</view>

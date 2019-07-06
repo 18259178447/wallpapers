@@ -1,0 +1,59 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/chat/nickname",
+    "pages/chat/avatar",
+    "pages/chat/colorname",
+    "pages/en/en",
+    "pages/nickname/nickname",
+    "pages/textshow/textshow",
+    "pages/emoticon/emoticon",
+    "pages/facemood/facemood",
+    "pages/landscape/landscape",
+    "pages/screaming/screaming",
+    "pages/favorites/favorites",
+    "pages/help/follow",
+    "pages/help/associated",
+    "pages/help/video/video",
+    "pages/choice/choice",
+    "pages/lib/lib",
+    "pages/choice/list/list",
+    "pages/choice/album/album"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "个性昵称",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "color": "#bfbfbf",
+    "selectedColor": "#121212",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "img/icon-index.png",
+        "selectedIconPath": "img/icon-index-hover.png"
+      },
+      {
+        "pagePath": "pages/choice/choice",
+        "text": "精选",
+        "iconPath": "img/icon-choice.png",
+        "selectedIconPath": "img/icon-choice-hover.png"
+      },
+      {
+        "pagePath": "pages/lib/lib",
+        "text": "模板",
+        "iconPath": "img/icon-lib.png",
+        "selectedIconPath": "img/icon-lib-hover.png"
+      }
+    ]
+  },
+  "navigateToMiniProgramAppIdList": [
+
+  ],
+  "sitemapLocation": "sitemap.json"
+}

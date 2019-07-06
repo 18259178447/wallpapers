@@ -1,0 +1,31 @@
+<view class="common-box">
+    <view class="{{'img_box '+(isF?'':'round')}}">
+        <view class="item" wx:for="{{imgs}}" wx:key="{{index}}">
+            <image mode="widthFix" src="{{item}}"></image>
+        </view>
+    </view>
+    <view class="op_btns_box">
+        <view class="op_btns">
+            <view bindtap="showF" class="{{'btn '+(isF?'active':'')}}">方图</view>
+            <view bindtap="showR" class="{{'btn '+(isF?'':'active')}}">圆图</view>
+        </view>
+    </view>
+    <view class="bottom-btns downpage">
+        <view bindtap="jumptoindex" class="btn-box">
+            <image src="{{cdn}}/index_gray.png"></image>
+      首页
+    </view>
+        <view bindtap="loveIt" class="btn-box">
+            <image src="{{cdn}}/heart{{isLove?'_red':''}}.png"></image>
+      {{isLove?'取消':'收藏'}}
+    </view>
+        <button class="btn-box" openType="share">
+            <image src="{{cdn}}/share.png"></image>
+      分享
+    </button>
+        <view bindtap="downImg" class="btn-box">
+            <image src="{{cdn}}/download.png"></image>
+      下载
+    </view>
+    </view>
+</view>

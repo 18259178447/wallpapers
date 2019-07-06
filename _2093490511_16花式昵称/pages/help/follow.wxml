@@ -1,0 +1,31 @@
+<view class="container">
+    <view class="bar solid-bottom mt-sm">
+        <view class="ml-sm">
+            <text class="iconfont icon-titles success-text"></text>
+            <text class="text-lg ml-xs">欢迎关注【花式玩客】公众号</text>
+        </view>
+    </view>
+    <view class="doc-main">
+        <view class="flex doc-box p-df flex-direction text-left">
+            <view class="danger-text">花式玩客每天分享花式技巧，又酷又好玩的花式玩客，推荐壁纸，头像，表情，配图等</view>
+            <view class="mt-sm">1. 微信搜索"花式玩客" 或 "huashiwanke" 即可关注</view>
+            <view class="mt-sm">
+                <button bindtap="copymp" class="success btn navigator-hover">点击复制公众号</button>
+            </view>
+            <view class="mt-sm">2. 如有疑问可以联系"牛大大"微信 (*^▽^*)</view>
+            <view class="mt-sm">
+                <button bindtap="copywx" class="danger btn button-hover">点击复制微信号</button>
+            </view>
+        </view>
+    </view>
+    <ad unitId="{{unitid}}" wx:if="{{unitid}}"></ad>
+    <view class="bar solid-bottom mt-sm">
+        <view class="ml-sm">
+            <text class="iconfont icon-titles success-text"></text>
+            <text class="text-lg ml-xs">长按图片可以保存公众号二维码</text>
+        </view>
+    </view>
+    <view class="doc-main">
+        <image bindlongtap="saveImage" mode="widthFix" src="{{canvasImg}}" style="width:710rpx;"></image>
+    </view>
+</view>

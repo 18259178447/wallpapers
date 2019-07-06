@@ -1,0 +1,67 @@
+<view class="content">
+    <view class="top-banner-bg">
+        <view class="weui-text-bar">
+            <view class="weui-text-bar__form">
+                <view class="weui-text-bar__box">
+                    <textarea bindinput="textInput" class="input-content" placeholder="请输入要生成的内容，最多支持11个字符." placeholderClass="default-class" value="{{content}}" wx:if="{{!isShowMask||!isShowSave}}"></textarea>
+                </view>
+            </view>
+            <view bindtap="transformImg" class="weui-text-bar__cancel-btn">一键转换</view>
+            <view class="weui-setbtn">
+                <button bindtap="clearContent" class="setbtn">清空输入</button>
+                <button class="setbtn" openType="share"> 分享给好友</button>
+            </view>
+        </view>
+    </view>
+    <scroll-view scrollY style="height: calc(100% - 300rpx);position:fixed; bottom: 0;left: 0;">
+        <!-- <ad unitId="{{unitid}}" wx:if="{{unitid}}"></ad> -->
+        <view class="bottom-change-list">
+            <view class="selectFonts">
+                <view class="selectSection">
+                    <text>字体大小：</text>
+                    <radio-group bindchange="radioChange" class="radio-group">
+                        <label class="radio" wx:for="{{fontSize}}" wx:key="i">
+                            <icon class="radioIcon {{item.checked?'actIcon':''}}"></icon>
+                            <radio checked="{{item.checked}}" value="{{item.name}}"></radio>{{item.value}}
+                    </label>
+                    </radio-group>
+                </view>
+                <view class="selectSection">
+                    <text>背景颜色：</text>
+                    <view bindtap="showMask" class="selectBox" data-isback="true">
+                        <text>{{fontInfo.background.title}}</text>
+                        <icon class="xlIcon"></icon>
+                    </view>
+                </view>
+                <view bindtap="showMask" class="selectSection" data-isback="false">
+                    <text>字体颜色：</text>
+                    <view class="selectBox">
+                        <text>{{fontInfo.fontColor.title}}</text>
+                        <icon class="xlIcon"></icon>
+                    </view>
+                </view>
+            </view>
+            <view class="saveBox">
+                <view class="saveTitle">长按图片可以保存到手机</view>
+                <view class="canvasBox">
+                    <canvas bindlongtap="saveImage" canvasId="myCanvas" class="myCanvas" style="background:{{fontInfo.background.color}}" wx:if="{{!isShowMask}}"></canvas>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>
+<view class="colorMask" wx:if="{{isShowMask}}">
+    <view class="maskBox">
+        <view bindtap="changeColor" class="maskTxt" data-colortype="{{isBack?'bColors':'fontColors'}}" data-index="{{index}}" wx:for="{{isBack?bColors:fontColors}}">
+            <text>{{item.title}}</text>
+            <icon class="maskIcon {{item.checked?'maskActIcon':''}}"></icon>
+        </view>
+    </view>
+</view>
+<view catchtap="langSave" class="sendMask" wx:if="{{isShowSave}}">
+    <view class="sendBox">
+        <button openType="share">发送给朋友</button>
+        <button bindtap="saveToPhone">保存到手机</button>
+        <button bindtap="shoucang">收藏</button>
+    </view>
+</view>

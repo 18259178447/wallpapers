@@ -1,0 +1,50 @@
+<view class="nav center-nav bar topfix shadow">
+    <view class="nav-item-box">
+        <view bindtap="navTab" class="nav-item {{index==navSelected?'cur':''}}" data-index="{{index}}" wx:for="{{navlist}}" wx:key="item">
+       {{item.catname}}</view>
+    </view>
+</view>
+<view style="margin-top:100rpx;" wx:if="{{index==navSelected}}" wx:for="{{navlist}}" wx:key="item">
+    <view class="mt-sm ml-sm">
+        <text class="iconfont icon-title success-text"></text> {{item.catname}}分类
+  </view>
+    <view class="type_list flex_start">
+        <view bindtap="subListTo" class="type_wrap" data-index="{{item.catname}}" id="{{item.id}}" wx:for="{{item.sublist}}" wx:key="item">
+            <text>{{item.catname}}</text>
+        </view>
+    </view>
+</view>
+<view class="mt-sm ml-sm mr-sm">
+    <ad unitId="{{unitid}}" wx:if="{{unitid}}"></ad>
+</view>
+<view class="mt-sm ml-sm">
+    <text class="iconfont icon-title success-text"></text> 精选专辑
+</view>
+<view class="card-list-box" wx:if="{{navSelected==0}}">
+    <view bindtap="albumTo" class="ins-list-li" data-index="{{item.title}}" id="{{item.id}}" wx:for="{{nlist}}" wx:key="item">
+        <view class="ins-list-img">
+            <image mode="widthFix" src="{{item.thumb}}"></image>
+        </view>
+        <view class="ins-list-author">
+            <view class="ins-list-name">{{item.title}}</view>
+        </view>
+    </view>
+</view>
+<view class="card-list-box" wx:else>
+    <view bindtap="albumTo" class="ins-list-li" data-index="{{item.title}}" id="{{item.id}}" wx:for="{{qlist}}" wx:key="item">
+        <view class="ins-list-img">
+            <image mode="widthFix" src="{{item.thumb}}"></image>
+        </view>
+        <view class="ins-list-author">
+            <view class="ins-list-name">{{item.title}}</view>
+        </view>
+    </view>
+</view>
+<view class="loading-more {{loading?'cur':''}}">
+    <view class="no-more">
+        <text class="iconfont icon-info"></text> 还在更新，尽情期待！
+  </view>
+    <view class="loading-ing">
+        <text class="iconfont icon-loading iconfont-spin"></text> 加载中...
+  </view>
+</view>

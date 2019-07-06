@@ -1,0 +1,157 @@
+.common-box {
+    height: auto;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.none {
+    display: none;
+}
+
+.list {
+    width: 92vw;
+    min-height: 200rpx;
+    margin: 0 auto;
+}
+
+.l_item {
+    width: 44vw;
+    height: 44vw;
+    float: left;
+    margin-bottom: 4vw;
+    padding: 0;
+    overflow: hidden;
+}
+
+.l_item:nth-of-type(even) {
+    margin-left: 4vw;
+}
+
+.l_item image {
+    width: 100%;
+    box-shadow: 0 0 1rpx #ccc;
+    border-radius: 8rpx;
+}
+
+.bottom-btns {
+    width: 100%;
+    height: 150rpx;
+    display: flex;
+    position: fixed;
+    bottom: 0rpx;
+    left: 0rpx;
+    background: #fff;
+}
+
+.bottom-btns .btn-box {
+    flex: 1;
+    height: 150rpx;
+    text-align: center;
+    font-size: 28rpx;
+    font-weight: bold;
+}
+
+.bottom-btns .btn-box image {
+    display: block;
+    margin: 8rpx auto;
+    width: 52rpx;
+    height: 52rpx;
+}
+
+.pop_box {
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    z-index: 999;
+}
+
+.pop_box,.pop_box .black {
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+
+.pop_box .black {
+    position: absolute;
+    z-index: 1;
+    background: rgba(0,0,0,0.6);
+}
+
+.pop_box .inner_box {
+    position: absolute;
+    z-index: 2;
+    width: 80vw;
+    height: 90vw;
+    top: 20vw;
+    left: 10vw;
+}
+
+.pop_box .inner_box .form_box {
+    width: calc(80vw - 12rpx);
+    height: calc(90vw - 160rpx);
+    background: #ffeb30;
+    border: solid 6rpx #1c2233;
+    border-radius: 48rpx;
+    padding: 12rpx;
+    font-size: 28rpx;
+}
+
+.pop_box .inner_box .form_box .form_title {
+    text-indent: 24rpx;
+}
+
+.pop_box .inner_box textarea {
+    height: 300rpx;
+    background: #fff;
+    margin: 8rpx auto;
+    padding: 24rpx;
+}
+
+.pop_box .inner_box textarea,.pop_box .inner_box button {
+    width: 80%;
+    border-radius: 48rpx;
+}
+
+.pop_box .inner_box button {
+    width: 80%;
+    padding: 0 24rpx;
+}
+
+button::after {
+    border: none;
+}
+
+.pop_box .inner_box .close_btn {
+    width: 120rpx;
+    height: 120rpx;
+    margin: 40rpx auto 0;
+}
+
+.pop_box .inner_box .close_btn image {
+    width: 120rpx;
+    height: 120rpx;
+}
+
+.no_more {
+    text-align: center;
+    font-size: 32rpx;
+    color: #684f44;
+}
+
+.rocket {
+    width: 108rpx;
+    height: 108rpx;
+    position: fixed;
+    bottom: 228rpx;
+    right: 22rpx;
+    z-index: 99;
+}
+
+.rocket image {
+    width: 108rpx;
+    height: 108rpx;
+}

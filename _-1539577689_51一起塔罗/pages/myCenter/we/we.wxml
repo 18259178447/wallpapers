@@ -1,0 +1,75 @@
+<image mode="widthFix" src="/images/indexbg.jpg" style="position:fixed;top:0;bottom:0;width:100%;left:0;z-index:-99999"></image>
+<view style="position:relative;z-index:9999">
+    <view class="header">
+        <image src="{{yu+list.logo}}" style="border:1rpx black solid;"></image>
+        <view style="color:white">
+      {{list.name}}
+    </view>
+        <view style="margin-top:70rpx;font-size:30rpx;color:white">
+      制作团队
+    </view>
+    </view>
+    <view class="team">
+        <view style="display:flex">
+            <view style="flex:1;border-right:1rpx black solid;">
+                <view style="display: flex;height:200rpx;">
+                    <view class="right">
+                        <image class="avatar" src="/images/a1.png"></image>
+                    </view>
+                    <view class="left">
+                        <view style="font-size:25rpx;margin:3rpx 0 10rpx">
+            产品
+          </view>
+                        <view style="font-size:25rpx;padding-left:10rpx">
+                            <view wx:for="{{list.product}}">{{item}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view style="border-top:1rpx black solid;display: flex;padding-top:30rpx;">
+                    <view class="right">
+                        <image class="avatar" src="/images/a3.png"></image>
+                    </view>
+                    <view class="left">
+                        <view style="font-size:25rpx;margin:3rpx 0 10rpx">
+            前端
+          </view>
+                        <view style="font-size:25rpx;padding-left:10rpx">
+                            <view wx:for="{{list.html}}">{{item}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view style="flex:1;">
+                <view style="display: flex;height:200rpx;;padding-left:40rpx">
+                    <view class="right">
+                        <image class="avatar" src="/images/a2.png"></image>
+                    </view>
+                    <view class="left">
+                        <view style="font-size:25rpx;margin-bottom:10rpx">
+            设计
+          </view>
+                        <view style="font-size:25rpx;padding-left:10rpx">
+                            <view wx:for="{{list.design}}">{{item}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view style="border-top:1rpx black solid;display: flex;padding:30rpx 0 0 40rpx;">
+                    <view class="right">
+                        <image class="avatar" src="/images/a4.png"></image>
+                    </view>
+                    <view class="left">
+                        <view style="font-size:25rpx;margin-bottom:10rpx">
+            后端
+          </view>
+                        <view style="font-size:25rpx;padding-left:10rpx">
+                            <view wx:for="{{list.php}}">{{item}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="more" style="margin-bottom:20rpx;">
+    加入我们 {{list.join_us}}
+  </view>
+</view>

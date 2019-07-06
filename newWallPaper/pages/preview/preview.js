@@ -101,6 +101,11 @@ wx.Page({
     wx.showLoading({title: '下载中,请稍后...',mask: !0});
     wx.Tool.downloadImage(imageItem).then(res=>{
       wx.msg("下载成功!");
+      wx.$("download").add({
+        data: {
+          image: imageItem
+        }
+      })
     }).catch(e => {
       console.log(e)
       wx.hideLoading();

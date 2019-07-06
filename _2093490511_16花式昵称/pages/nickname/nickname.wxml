@@ -1,0 +1,37 @@
+<view class="container">
+    <view class="top-banner-bg">
+        <view class="weui-text-bar">
+            <view class="weui-text-bar__form">
+                <view class="weui-text-bar__box">
+                    <input bindinput="bindKeyInput" class="weui-text-bar__input" placeholder="请输入要生成的昵称" type="search" value="{{inputVal}}"></input>
+                    <view bindtap="clearInput" class="weui-icon-clear" hidden="{{!inputShowed}}">
+                        <icon size="20" type="clear"></icon>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="textCopy" class="weui-text-bar__cancel-btn">{{textareaValue}}</view>
+            <view>
+                <button class="share">
+                    <navigator url="../favorites/favorites"></navigator>
+                    <view>我的收藏</view>
+                </button>
+                <button class="share" openType="share"> 分享给好友</button>
+            </view>
+        </view>
+    </view>
+    <scroll-view scrollY style="height: calc(100% - 300rpx);position:fixed; bottom: 0;left: 0;">
+        <ad unitId="{{unitid}}" wx:if="{{unitid}}"></ad>
+        <view class="bottom-change-list__title">
+            <view class="badge warning radius capsule-badge">
+                <text>说明</text>
+                <text>已测试均可设置昵称，由于设备兼容IOS与安卓显示效果有所差异</text>
+            </view>
+        </view>
+        <view class="bottom-change-list" wx:for="{{nickdata}}" wx:for-item="i" wx:key="i">
+            <view class="bottom-change-list__title">{{i.class}}</view>
+            <view class="bottom-change-list__box">
+                <button bindtap="changeText" id="{{i}}" wx:for="{{i.datalist}}" wx:for-item="i" wx:key="i">{{i}}</button>
+            </view>
+        </view>
+    </scroll-view>
+</view>
